@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/diary.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Päiväkirja</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navigation-logo"><a href="home.html">Insightly</a></div> 
+        <div class="navbar-menu">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="login.html" class="nav-link">Log Out</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="image-container">
+            <img src="../img/diary.png" alt="IMG">
+        </div>
+
+        <div class="form-container">
+            <h1>DIARY</h1>
+            <div class="forms">
+                <form action="#" method="POST" class="diaryForm">
+                    <label class="form-label" for="entry_date">Entry Date:</label>
+                    <input class="form-input" type="date" name="entry_date" id="entry_date" required>
+
+                    <label class="form-label" for="mood">Mood:</label>
+                    <input class="form-input" type="text" name="mood" id="mood" placeholder="Happy, stressed, relaxed...">
+
+                    <label class="form-label" for="energy_level">Energy Level:</label>
+                    <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Rate from 1-10 (low to high)" min="0">
+
+                    <label class="form-label" for="stress_level">Stress Level:</label>
+                    <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Rate from 1-10 (low to high)" min="0">
+
+                    <label class="form-label" for="sleep_hours">Sleep (hours):</label>
+                    <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="e.g., 7.5 hours" min="0">
+
+                    <label class="form-label" for="notes">Notes:</label>
+                    <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
+
+                    <label class="form-label" for="goals">Goals:</label>
+                    <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
+
+                    <input name="submit" type="submit" value="Save My Entry" class="createEntry">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diary Entry Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Your Diary Summary</h2>
+            <div class="diary-popup"></div> <!-- Entry summary -->
+            <div class="category-text">
+                <strong>Your Stress Level Rating:</strong>
+                <p id="category"></p>
+            </div>
+            <div class="analysis">
+                <strong>What This Means for You:</strong>
+                <p id="analysis"></p>
+            </div>
+            <button class="close-button" id="close-popup">Close</button>
+            <a href="tools.html" class="tips-button">Read More Tips</a>
+        </div>
+    </div>
+
+    <div id="diary"></div>
+
+    <!-- Include JavaScript -->
+    <script type="module" src="../js/diaryentries.js"></script>
+</body>
+</html>

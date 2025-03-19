@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="../css/login.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+   <title>Login Form</title>
+</head>
+<body>
+   <div class="login-container">
+      <img src="../img/3.jpg" alt="User Login Image" class="login-image">
+
+      <form action="" class="login-form">
+         <h1 class="login-title">Login</h1>
+
+         <div class="login-fields">
+            <div class="login-field">
+
+               <div class="login-input-container">
+                  <input type="text" required class="login-input" id="login-username" placeholder=" ">
+                  <label for="login-username" class="login-label">Username</label>
+               </div>
+            </div>
+
+            <div class="login-field">
+               <div class="login-input-container">
+                  <input type="password" required class="login-input" id="login-pass" placeholder=" ">
+                  <label for="login-pass" class="login-label">Password</label>
+               </div>
+            </div>
+         </div>
+
+         <div class="login-options">
+            <div class="login-remember"></div>
+            <a href="#" class="login-forgot-password">Forgot Password?</a>
+         </div>
+
+         <button type="submit" class="login-button">Login</button>
+
+         <p class="login-register">
+            Don't have an account? <a href="register.html">Register</a>
+         </p>
+      </form>
+   </div>
+
+   <script type="module" src="../js/login.js"></script>
+
+</body>
+</html>
