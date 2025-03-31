@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSS Stress Test with Gauge</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f5f9fa;
+    }
+    h1 { color: #316174; }
+    label { display: block; margin: 10px 0 5px; }
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #009893;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #gaugeContainer {
+      margin-top: 40px;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #nextBtn {
+      margin-top: 30px;
+      display: none;
+      background-color: #ff9800;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PSS-10 Stress Test</h1>
+  <form id="stressForm">
+    <p>Answer how often you've felt a certain way during the past month.</p>
+
+    <div id="questions"></div>
+
+    <button type="submit">Calculate My Score</button>
+  </form>
+
+  <div id="result"></div>
+
+  <div id="gaugeContainer">
+    <canvas id="gaugeChart"></canvas>
+  </div>
+
+  <button id="nextBtn" onclick="window.location.href=''">
+  </button>
+
+  <script>
+    const questions = [
+      "1. Upset because of something unexpected?",
+      "2. Unable to control the important things in your life?",
+      "3. Nervous and 'stressed'?",
+      "4. Confident about your ability to handle personal problems?",
+      "5. Felt that things were going your way?",
+      "6. Found that you could not cope with all the things you had to do?",
+      "7. Been able to control irritations in your life?",
+      "8. Felt that you were on top of things?",
+      "9. Been angered because of things outside of your control?",
+      "10. Difficulties were piling up so high that you couldn’t overcome them?"
+    ];
+
+    const reverseScored = [3, 4, 6, 7];
+
+    const options = [
+      { text: "Never", value: 0 },
+      { text: "Almost Never", value: 1 },
+      { text: "Sometimes", value: 2 },
+      { text: "Fairly Often", value: 3 },
+      { text: "Very Often", value: 4 }
+    ];
+
+    const qContainer = document.getElementById("questions");
+
+    questions.forEach((q, i) => {
+      const label = document.createElement("label");
+      label.textContent = q;
+      const select = document.createElement("select");
+      select.name = `q${i}`;
+      select.required = true;
+
+      options.forEach(opt => {
+        const option = document.createElement("option");
+        option.value = opt.value;
+        option.textContent = opt.text;
+        select.appendChild(option);
+      });
+
+      qContainer.appendChild(label);
+      qContainer.appendChild(select);
+    });
+
+    const ctx = document.getElementById("gaugeChart").getContext("2d");
+    let gaugeChart = null;
+
+    document.getElementById("stressForm").onsubmit = function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      let score = 0;
+
+      questions.forEach((q, i) => {
+        let val = parseInt(formData.get(`q${i}`));
+        if (reverseScored.includes(i)) {
+          val = 4 - val;
+        }
+        score += val;
+      });
+
+      let level = "Low";
+      if (score >= 14 && score <= 26) level = "Moderate";
+      else if (score > 26) level = "High";
+
+      document.getElementById("result").innerText = `Your Score: ${score} (${level} Stress)`;
+      document.getElementById("nextBtn").style.display = "inline-block";
+
+      if (gaugeChart) gaugeChart.destroy();
+
+      gaugeChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Your Score', 'Remaining'],
+          datasets: [{
+            data: [score, 40 - score],
+            backgroundColor: [
+              score <= 13 ? '#29B6F6' :
+              score <= 26 ? '#FFA726' :
+              '#EF5350',
+              '#e0e0e0'
+            ],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          rotation: -90,
+          circumference: 180,
+          cutout: '70%',
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false },
+            title: {
+              display: true,
+              text: `${score} - ${level}`,
+              font: { size: 20 },
+              color: '#316174'
+            }
+          }
+        }
+      });
+    };
+  </script>
+
+</body>
+</html>

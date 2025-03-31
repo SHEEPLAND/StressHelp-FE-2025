@@ -24,6 +24,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .section-container {
@@ -109,8 +110,7 @@ body {
 }
 
 header {
-  background-image: 
-    url("../img/home.jpg");
+  background-image: url("../img/serene-scene-depicting-person-meditating-vibrant-leaves-tropical-plants-promoting-mindfulness-tranquility.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -118,25 +118,23 @@ header {
 }
 
 nav {
-  max-width: 1100px; /* Controls width, moves everything inward */
-  margin: auto; /* Centers the nav bar */
+  max-width: var(--max-width);
+  margin: auto; 
   padding: 2rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Even spacing */
+  justify-content: space-between; 
+  background-color:rgba(0, 0, 0, 0.679);
+ 
 }
-.navigation-logo {
-  margin-left: 83px; /* Moves it slightly inward */
-}
+
 
 .navigation-logo a {
   font-size: 2rem;
   font-weight: 700;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
   padding: 8px 18px;
   border-radius: 15px;
-  text-decoration: none;
 }
 
 
@@ -144,18 +142,26 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Reduces spacing */
-  margin-right: 80px; /* Moves it inward */
+  gap: 2rem; 
 }
 
 .navigation-link a {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color:rgb(51, 51, 181);
-  padding: 6px 10px;
-  border-radius: 10px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color:whitesmoke;
   transition: all 0.3s ease-in-out;
 }
+
+.navigation-link a.active {
+  color: rgb(45, 114, 46);
+  text-decoration: underline;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+ 
+}
+
 
 .navigation-link a:hover {
   color:rgb(156, 108, 171);
@@ -165,18 +171,18 @@ nav {
 .navigation-menu-button {
   display: none;
   font-size: 1.5rem;
-  
 }
 
 .header-container {
   padding-block: 5rem 12rem;
 }
 
+
 .header-container h1 {
   max-width: 900px;
   margin-inline: auto;
   margin-bottom: 2rem;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
 }
@@ -184,6 +190,7 @@ nav {
 .header-container .button {
   margin: auto;
 }
+
 .button{
   border-radius: 30px;
   padding: 15px 25px;
@@ -345,36 +352,7 @@ nav {
 }
 
 
-
-
-
 @media (width < 900px) {
-  .navigation-links  {
-    gap: 1.5rem;
-  }
-
-  .about-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .statistics-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .statistics-image {
-    grid-area: 1/1/2/2;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .Info-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1rem;
-  }
-
-}
-
-@media (width < 600px) {
   nav {
     position: fixed;
     width: 100%;
@@ -383,7 +361,7 @@ nav {
     z-index: 99;
   }
 
-  .navigation-links{
+  .navigation-links  {
     position: absolute;
     left: 0;
     top: 68px;
@@ -412,9 +390,32 @@ nav {
     display: block;
   }
 
+  .about-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .statistics-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .statistics-image {
+    grid-area: 1/1/2/2;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .Info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+}
+
+@media (width < 600px) {
+
   .header-container h1{
     margin-top: 4rem;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .statistics-image  {

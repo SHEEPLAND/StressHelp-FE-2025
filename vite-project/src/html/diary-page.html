@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/diary.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
     <title>Päiväkirja</title>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navigation-logo"><a href="home.html">Insightly</a></div> 
-        <div class="navbar-menu">
-            <a href="home.html" class="nav-link">Home</a>
-            <a href="login.html" class="nav-link">Log Out</a>
+    <nav>
+        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
+        <ul class="navigation-links" id="navigation-links">
+
+          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="tools.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="login.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="login.html">Vinkit & Tuki</a></li>
+          <li class="navigation-link"><a href="login.html">Rekisteröidy</a></li>
+        
+        </ul>
+        <div class="navigation-menu-button" id="menu-button">
+          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
-    </nav>
+      </nav>
 
     <!-- Main Container -->
     <div class="container">
@@ -76,5 +87,8 @@
 
     <!-- Include JavaScript -->
     <script type="module" src="../js/diaryentries.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="../js/home.js"></script>
+
 </body>
 </html>

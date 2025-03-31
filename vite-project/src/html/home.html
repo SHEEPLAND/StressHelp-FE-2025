@@ -2,29 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="../css/home.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
     <title>Vite App</title>
   </head>
   <body>
     <header>
-      <!-- Navigation -->
       <nav>
-        <div class="navigation-logo"><a href="home.html">Insightly</a></div>
+        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
         <ul class="navigation-links" id="navigation-links">
-          <li class="navigation-link"><a href="tools.html">Self-Care Kit </a></li>
-          <li class="navigation-link"><a href="login.html">Log In</a></li>
-        </ul>
 
+          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="tools.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="login.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="login.html">Vinkit & Tuki</a></li>
+          <li class="navigation-link"><a href="login.html">Rekisteröidy</a></li>
+        
+        </ul>
         <div class="navigation-menu-button" id="menu-button">
-          <span><i class="ri-menu-line"></i></span>
+          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
       </nav>
 
       <div class="section-container header-container" id="home">
-        <h1>Small Entries,Big Changes</h1> <h3>- Reflect on your day and discover patterns that empower personal growth.</h3> 
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1> <h3>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3> 
       </div>
     </header>
     
@@ -59,7 +66,7 @@
               <h4>Understand Your Stress & Sleep Patterns</h4>
             </div>
             <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
+              <span><i class="ri-triangle-fill"></i></span>
               <h4>Set Goals & Reflect on Your Progress</h4>
             </div>
           </div>
@@ -92,6 +99,7 @@
         </div>
       </div>
     </section>
+
     
     <section class="statistics" id="statistics">
       <div class="section-container statistics-container">
@@ -126,16 +134,20 @@
             </div>
           </div>
         </div>
-        
         <div class="statistics-image">
           <img src="../img/feedback.png" alt="statistics" />
         </div>
       </div>
-
-
     </section>
 
- 
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
