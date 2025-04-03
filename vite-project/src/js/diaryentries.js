@@ -180,13 +180,13 @@ const getEntries = async () => {
         return;
     }
 
-    const token = localStorage.getItem("token");
-    if (!token) {
-        console.error("No token found! Redirecting to login...");
-        alert("You must be logged in to access this page.");
-        window.location.href = "login.html";
-        return;
-    }
+    //const token = localStorage.getItem("token");
+    //if (!token) {
+       // console.error("No token found! Redirecting to login...");
+       // alert("You must be logged in to access this page.");
+      //  window.location.href = "login.html";
+       // return;
+   //}
 
     const url = "http://127.0.0.1:3000/api/entries";
     const response = await fetchData(url, {

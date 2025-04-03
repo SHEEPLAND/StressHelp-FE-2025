@@ -62,6 +62,17 @@ if (typeof ScrollReveal !== "undefined") {
     ...scrollRevealOption,
     interval: 500,
   });
+  ScrollReveal().reveal(".cta-buttons", {
+    ...scrollRevealOption,
+    delay: 300,
+  });
+
+  // ✅ Optional: Stagger each CTA button
+  ScrollReveal().reveal(".cta-btn", {
+    ...scrollRevealOption,
+    interval: 200,
+  });
+  
 } else {
   console.warn("ScrollReveal not found");
 }
@@ -72,4 +83,25 @@ const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".swiper-pagination",
   },
+});
+
+const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach((accordion) => {
+  const panel = accordion.nextElementSibling;
+  const icon = accordion.querySelector(".accordion-icon");
+
+  // Open by default if .active
+  if (accordion.classList.contains("active")) {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    if (icon) icon.textContent = "−";
+  }
+
+  accordion.addEventListener("click", function () {
+    this.classList.toggle("active");
+    const isActive = this.classList.contains("active");
+
+    panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
+    if (icon) icon.textContent = isActive ? "−" : "+";
+  });
 });
