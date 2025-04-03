@@ -118,43 +118,46 @@
   }
   
   nav {
-    max-width: 1100px; /* Controls width, moves everything inward */
-    margin: auto; /* Centers the nav bar */
+    max-width: var(--max-width);
+    margin: auto; 
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Even spacing */
-  }
-  .navigation-logo {
-    margin-left: 83px; /* Moves it slightly inward */
+    justify-content: space-between; 
+    background-color:rgba(0, 0, 0, 0.679);
+   
   }
   
   .navigation-logo a {
     font-size: 2rem;
     font-weight: 700;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
     padding: 8px 18px;
     border-radius: 15px;
-    text-decoration: none;
   }
-  
-  
+
   .navigation-links {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Reduces spacing */
-    margin-right: 80px; /* Moves it inward */
+    gap: 2rem; 
   }
   
   .navigation-link a {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 10px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:whitesmoke;
     transition: all 0.3s ease-in-out;
+  }
+  
+  .navigation-link a.active {
+    color: rgb(45, 114, 46);
+    text-decoration: underline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+   
   }
   
   .navigation-link a:hover {
@@ -165,9 +168,8 @@
   .navigation-menu-button {
     display: none;
     font-size: 1.5rem;
-    
   }
-  
+
   .header-container {
     padding-block: 5rem 12rem;
   }
