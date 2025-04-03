@@ -317,6 +317,9 @@ transition: background 0.3s ease;
 background: var(--hover-color, rgb(30, 90, 180)); /* Darker on hover */
 }
 
+#diary {
+  display: none;
+}
 
 
 /* Responsive Navbar */
