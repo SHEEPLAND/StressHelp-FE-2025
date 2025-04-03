@@ -1,10 +1,9 @@
-.lora-text{
+lora-text{
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
   }
-  
   
   :root {
     --primary-color: #84ad83;
@@ -17,7 +16,6 @@
   
     --border-radius-m: 30px;
     --dark-color:#252525;
-  
   }
   
   * {
@@ -357,7 +355,6 @@
       margin-top: 4rem;
       font-size: 2.5rem;
     }
-  
   
     .Info-grid {
       grid-template-columns: repeat(1, 1fr);
