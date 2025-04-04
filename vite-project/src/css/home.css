@@ -301,6 +301,14 @@ nav {
   color: var(--text-light);
 }
 
+.info-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -315,7 +323,7 @@ nav {
   align-items: center;
   gap: 12px;
   padding: 1.2rem 2.2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 40px;
   border: 2px solid;
