@@ -274,7 +274,6 @@
   border: none;
   border-radius: var(--border-radius-m);
   transition: background-color 0.3s ease;
-  margin-bottom: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -287,7 +286,7 @@
   color: black;
 }
 
-accordion-icon {
+.accordion-icon {
   font-size: 1.5rem;
   font-weight: bold;
   transition: transform 0.3s ease;
@@ -353,6 +352,231 @@ accordion-icon {
   color: var(--text-light);
   line-height: 1.6;
 }
+
+
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.2rem 2.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 40px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #eae9dd;
+  color: #1e3d4c;
+}
+
+.cta-btn.primary {
+  border-color: #6b9f7e;
+}
+
+.cta-btn.secondary {
+  border-color: #2e3d4c;
+}
+
+.cta-btn .arrow {
+  font-size: 1.5rem;
+  transform: translateY(1px);
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #dcdcd2;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover .arrow {
+  animation: arrow-bounce 0.4s ease forwards;
+}
+
+/* Measurement Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.596);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+
+}
+
+.circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.progress-ring {
+  stroke: var(--primary-color);
+  fill: transparent;
+  stroke-width: 10;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.progress-ring-progress {
+  stroke: #f6b500;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bpm {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.label {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.timer {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.label, .timer, .bpm {
+  transition: opacity 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+
+#cancelBtn {
+  background-color: #eee;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#doneText {
+  font-size: 1.1rem;
+  color: green;
+  margin-top: 15px;
+}
+
+#popup-results {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #fdfdfd;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  color: #1e1e1e;
+  text-align: left;
+}
+
+#popup-results h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #2a4d6f;
+  font-weight: 600;
+}
+
+#popup-results h4 {
+  font-size: 1rem;
+  margin: 12px 0 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+#popup-results ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  color: #444;
+}
+
+#popup-results ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+#popup-results li span {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#popup-results .close-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 28px;
+  background-color: #c44747;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#popup-results .close-button:hover {
+  background-color: #a93636;
+}
+
+
+#show-results {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background-color: #5c7f67;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#show-results:hover {
+  background-color: #4d6d58;
+}
+
+
+
+@keyframes arrow-bounce {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+  100% { transform: translateX(3px); }
+}
+
 
   .statistics {
     background-color: #fbfbf6;

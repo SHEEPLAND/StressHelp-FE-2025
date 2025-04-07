@@ -21,7 +21,7 @@
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
           <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
-          <li class="navigation-link"><a href="login.html">Kirjaudu Sisään</a></li>
+          <li class="navigation-link"><a href="login.html">Kirjaudu ulos</a></li>
         
         </ul>
         <div class="navigation-menu-button" id="menu-button">
@@ -75,52 +75,136 @@
 
     <!-- Info -->
    
-<section class="Info" id="Info">
-  <div class="section-container Info-container">
-    <p class="section-subheader">Get Started</p>
-    <h2 class="section-header">How to use Insightly</h2>
-
-    <div class="accordion-container">
-      <button class="accordion active">
-        Click to view the steps
-        <span class="accordion-icon">−</span>
-      </button>
-      <div class="panel">
-        <div class="Info-grid">
-          <div class="Info-card">
-            <img src="../img/login.png" alt="Step 1">
-            <h4>Step 1: Log In & Set Up</h4>
-            <p>Create an account and personalize your well-being tracking experience.</p>
-          </div>
-      
-          <div class="Info-card">
-            <img src="../img/entry.png" alt="Step 2">
-            <h4>Step 2: Add Your First Entry</h4>
-            <p>In just a few minutes, log your daily mood, sleep, and stress levels by logging in.</p>
-          </div>
-      
-          <div class="Info-card">
-            <img src="../img/last.png" alt="Step 3">
-            <h4>Step 3: Reflect & Improve</h4>
-            <p>Get personalized well-being recommendations based on your daily logs and improve your lifestyle.</p>
+    <section class="Info" id="Info">
+      <div class="section-container Info-container">
+        <p class="section-subheader">Get Started</p>
+        <h2 class="section-header">How to use Insightly</h2>
+    
+        <div class="accordion-container">
+          <button class="accordion active">
+            Click to view the steps
+            <span class="accordion-icon">−</span>
+          </button>
+          <div class="panel">
+            <div class="Info-grid">
+              <div class="Info-card">
+                <img src="../img/login.png" alt="Step 1">
+                <h4>Step 1: Log In & Set Up</h4>
+                <p>Create an account and personalize your well-being tracking experience.</p>
+              </div>
+              <div class="Info-card">
+                <img src="../img/entry.png" alt="Step 2">
+                <h4>Step 2: Add Your First Entry</h4>
+                <p>Log your daily mood, sleep, and stress levels.</p>
+              </div>
+              <div class="Info-card">
+                <img src="../img/last.png" alt="Step 3">
+                <h4>Step 3: Reflect & Improve</h4>
+                <p>Get personalized recommendations based on your logs.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>      
-    </div>
-  </div>
-</section>
+    
+        <div class="cta-buttons">
+          <button class="cta-btn primary" id="start-measurement">Aloita Stressimittaus <span class="arrow">&raquo;</span></button>
+        </div>
+    
+        <!-- Result Popup -->
+
+       <!-- POPUP -->
+      <div class="popup" id="measurementPopup">
+        <div class="popup-content" id="popup-measurement">
+          <div class="circle-container">
+            <svg width="200" height="200">
+              <circle class="progress-ring" r="90" cx="100" cy="100" />
+              <circle class="progress-ring progress-ring-progress" r="90" cx="100" cy="100" />
+            </svg>
+            <div class="circle-content">
+              <div class="header-bpm">bpm</div>
+              <div id="bpm" class="bpm">00</div>
+              <div id="label" class="label">Rentoutumisjakso</div>
+              <div id="countdown" class="timer">00:30</div>
+            </div>
+          </div>
+
+          <div id="doneText" style="display: none;">Mittaus valmis!</div>
+
+          <button id="cancelBtn">Peruuta</button>
+          <button id="show-results" class="button-green" style="display: none;">Näytä tulokset</button>
+        </div>
+
+        <!-- POPUP-TULOSNÄKYMÄ -->
+        <div class="popup-content" id="popup-results" style="display: none;">
+          <h3>Stressitaso:</h3>
+          <h4>Mittauksen tulokset:</h4>
+          <ul>
+            <li><strong>Readiness %:</strong> <span id="result-readiness">–</span></li>
+            <li><strong>Stressi Indeksi:</strong> <span id="result-stress">–</span></li>
+            <li><strong>PNS-indeksi:</strong> <span id="result-pns">–</span></li>
+            <li><strong>Keskimääräinen syke (BPM):</strong> <span id="result-bpm">–</span></li>
+
+          </ul>
+          <button class="close-button" id="close-popup">Sulje</button>
+        </div>
+      </div>
+
+
+            </div>
+    </section>
+    
 
     
     <section class="statistics" id="statistics">
       <div class="section-container statistics-container">
         <div class="statistics-content">
-          <p class="section-subheader">Your Journey with Insightly</p>
-          <h2 class="section-header">Track Progress, Gain Insights</h2>
+          <p class="section-subheader">Data Historia</p>
+          <h2 class="section-header">Vimeisimmat Tulokset</h2>
           <p class="paragraph">
-            Insightly empowers you to understand your well-being through daily tracking. 
-            By consistently logging your mood, stress levels, sleep, and energy, you can 
-            recognize patterns and make informed decisions for self-improvement.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, optio maxime sed quia magnam cumque. Totam accusantium sapiente cumque ea quidem delectus accusamus, laudantium magnam. Laboriosam, voluptatem. Harum, sunt voluptatum.
           </p>
+
+          <div class="statistics-grid">
+            <div class="statistics-card">
+              <span><i class="ri-building-4-line"></i></span>
+              <h4>10,0000+</h4>
+              <p>Entries Logged</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-trophy-fill"></i></span>
+              <h4>Over 100+</h4>
+              <p>Daily Logs Created</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-user-fill"></i></span>
+              <h4>85%</h4>
+              <p>Users Report Improved Mood</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-trophy-fill"></i></span>
+              <h4>Over 90%</h4>
+              <p>Users Achieve Their Goals</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="statistics-image">
+          <img src="../img/feedback.png" alt="statistics" />
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="statistics" id="statistics">
+      <div class="section-container statistics-container">
+        <div class="statistics-content">
+          <p class="section-subheader">Data Historia</p>
+          <h2 class="section-header">Vimeisimmat Tulokset</h2>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, optio maxime sed quia magnam cumque. Totam accusantium sapiente cumque ea quidem delectus accusamus, laudantium magnam. Laboriosam, voluptatem. Harum, sunt voluptatum.
+          </p>
+
           <div class="statistics-grid">
             <div class="statistics-card">
               <span><i class="ri-building-4-line"></i></span>
@@ -157,6 +241,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="module" src="../js/data.js"></script>
 
 
   </body>
