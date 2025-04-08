@@ -7,6 +7,59 @@ body {
     padding: 20px;
 }
 
+nav {
+    max-width: var(--max-width);
+    margin: auto; 
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color:rgba(0, 0, 0, 0.679);
+   
+  }
+  
+  .navigation-logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    padding: 8px 18px;
+    border-radius: 15px;
+  }
+  
+  .navigation-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+  }
+  
+  .navigation-link a {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:whitesmoke;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navigation-link a.active {
+    color: rgb(45, 114, 46);
+    text-decoration: underline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+   
+  }
+  
+  .navigation-link a:hover {
+    color:rgb(156, 108, 171);
+    text-decoration: underline;
+  }
+  
+  .navigation-menu-button {
+    display: none;
+    font-size: 1.5rem;
+  }
+
 .container {
     background-color: white;
     padding: 20px;
