@@ -3,13 +3,15 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
    <link rel="stylesheet" href="../css/login.css">
    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-
    <title>Kirjaudu</title>
 </head>
 <body>
+   <nav>
+      <div class="navigation-logo"><a href="home.html"><span style="color:#448355;">Stress</span><span style="color:#000000;">Help</span></span></a></div>
+   </nav>
+
    <div class="login-container">
       <img src="../img/3.jpg" alt="User Login Image" class="login-image">
 
@@ -18,10 +20,9 @@
 
          <div class="login-fields">
             <div class="login-field">
-
                <div class="login-input-container">
-                  <input type="text" required class="login-input" id="login-username" placeholder=" ">
-                  <label for="login-username" class="login-label">Käyttäjätunnus</label>
+                  <input type="text" required class="login-input" id="login-email" placeholder=" ">
+                  <label for="login-email" class="login-label">Sähköposti</label>
                </div>
             </div>
 
@@ -47,6 +48,5 @@
    </div>
 
    <script type="module" src="../js/login.js"></script>
-
 </body>
 </html>

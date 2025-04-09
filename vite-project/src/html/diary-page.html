@@ -30,9 +30,27 @@
 
     <!-- Main Container -->
     <div class="container">
-        <div class="image-container">
-            <img src="../img/diary.png" alt="IMG">
-        </div>
+        <div class="left-side">
+            <div class="calendar-top">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <button id="prev-month">&#8249;</button>
+                  <div id="month-year"></div>
+                  <button id="next-month">&#8250;</button>
+                </div>
+                <div class="calendar-days">
+                  <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+                </div>
+                <div id="calendar-dates" class="calendar-dates"></div>
+              </div>
+            </div>
+        
+            <div class="image-below">
+              <img src="../img/diary.png" alt="Diary Illustration" />
+            </div>
+          </div>
+        
+          
 
         <div class="form-container">
             <h1>Päiväkirja</h1>
@@ -89,6 +107,7 @@
     <script type="module" src="../js/diaryentries.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/calender.js"></script>
 
 </body>
 </html>
