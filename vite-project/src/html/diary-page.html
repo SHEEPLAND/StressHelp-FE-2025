@@ -13,20 +13,23 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
+      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
         <ul class="navigation-links" id="navigation-links">
 
           <li class="navigation-link"><a href="home.html">Etusivu</a></li>
-          <li class="navigation-link"><a href="tools.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="login.html">Stressimittaus</a></li>
-          <li class="navigation-link"><a href="login.html">Vinkit & Tuki</a></li>
-          <li class="navigation-link"><a href="login.html">Rekisteröidy</a></li>
+          <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+          <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
         
         </ul>
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
       </nav>
+
+    <div class="nav-spacer"></div>
 
     <!-- Main Container -->
     <div class="container">
@@ -102,6 +105,23 @@
     </div>
 
     <div id="diary"></div>
+
+
+    <script>
+      function adjustSpacer() {
+        const spacer = document.querySelector(".nav-spacer");
+        const nav = document.querySelector("nav");
+    
+        if (spacer && nav) {
+          const navHeight = nav.offsetHeight;
+          spacer.style.height = `${navHeight}px`;
+        }
+      }
+    
+      window.addEventListener("DOMContentLoaded", adjustSpacer);
+      window.addEventListener("resize", adjustSpacer);
+    </script>
+    
 
     <!-- Include JavaScript -->
     <script type="module" src="../js/diaryentries.js"></script>

@@ -30,8 +30,8 @@
 
 /* Body Styling */
 body {
-  font-family: "Lora", serif;
-  overflow-x: hidden; /* allow vertical scroll */
+  font-family: monospace, sans-serif;
+  overflow-x: hidden; 
   background: linear-gradient(to right, #f4f3e4, #FFFFFF);
 
 }
@@ -41,22 +41,31 @@ body {
   scroll-behavior: smooth;
 }
 
+body, .container {
+  overflow-x: hidden;
+}
+
+
 nav {
-  max-width: 1200px;
   margin: auto; 
-  padding: 2rem 1rem;
+  padding: 1.3rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  background-color:rgba(0, 0, 0, 0.679);
+  background-color:rgb(20, 19, 19);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(4, 4, 4, 0.722);
  
 }
 
 
 .navigation-logo a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: rgb(255, 255, 255);
   padding: 8px 18px;
   border-radius: 15px;
 }
@@ -66,21 +75,20 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem; 
+  gap: 1.8rem;  
 }
 
 .navigation-link a {
   padding: 5px;
-  font-size: 15px;
-  font-weight: 500;
-  color:whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
+  color:white;
   transition: all 0.3s ease-in-out;
 }
 
 .navigation-link a.active {
-  color: rgb(45, 114, 46);
-  text-decoration: underline;
-  letter-spacing: 3px;
+  color: #4faae6;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
  
@@ -88,8 +96,9 @@ nav {
 
 
 .navigation-link a:hover {
-  color:rgb(156, 108, 171);
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transform: translateY(-1px);
 }
 
 
@@ -100,15 +109,16 @@ nav {
 
 .navigation-menu-button {
   display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--accent-color);
-  padding-right: 1rem;
+  font-size: 1.5rem;
 }
 
+.nav-spacer {
+  height: 0; 
+}
 
 .container {
-  
+
+  margin-top: 120px;
   display: flex;
   align-items: flex-start;
   gap: 2rem;

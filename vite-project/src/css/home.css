@@ -117,19 +117,23 @@ header {
 }
 
 nav {
-  max-width: var(--max-width);
   margin: auto; 
-  padding: 2rem 1rem;
+  padding: 1.3rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  background-color:rgba(0, 0, 0, 0.684);
- 
+  background-color:rgb(20, 19, 19);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(4, 4, 4, 0.722);
 }
 
 
 .navigation-logo a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   padding: 8px 18px;
   border-radius: 15px;
@@ -152,8 +156,7 @@ nav {
 }
 
 .navigation-link a.active {
-  color: #1198f2;;
-  text-decoration: underline;
+  color: #4faae6;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
@@ -162,8 +165,9 @@ nav {
 
 
 .navigation-link a:hover {
-  color:rgb(156, 108, 171);
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transform: translateY(-1px);
 }
 
 .navigation-menu-button {
@@ -173,6 +177,7 @@ nav {
 
 .header-container {
   padding-block: 5rem 12rem;
+  padding-top: 200px;
 }
 
 
@@ -362,7 +367,7 @@ nav {
 }
 
 
-@media (width < 900px) {
+@media (width < 1200px) {
   nav {
     position: fixed;
     width: 100%;
@@ -399,7 +404,10 @@ nav {
   .navigation-menu-button {
     display: block;
   }
+ 
+}
 
+@media (width < 900px) {
   .about-grid {
     grid-template-columns: repeat(1, 1fr);
   }

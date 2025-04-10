@@ -118,51 +118,57 @@
   }
   
   nav {
-    max-width: var(--max-width);
-    margin: auto; 
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    background-color:rgba(0, 0, 0, 0.679);
-   
+  margin: auto; 
+  padding: 1.3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color:rgb(20, 19, 19);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(4, 4, 4, 0.722);
   }
   
+  
   .navigation-logo a {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: rgb(255, 255, 255);
     padding: 8px 18px;
     border-radius: 15px;
   }
-
+  
+  
   .navigation-links {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem; 
+    gap: 1.8rem; 
   }
   
   .navigation-link a {
     padding: 5px;
-    font-size: 15px;
-    font-weight: 500;
-    color:whitesmoke;
+    font-size: 1rem;
+    font-weight: bold;
+    color:white;
     transition: all 0.3s ease-in-out;
   }
   
   .navigation-link a.active {
-    color: rgb(45, 114, 46);
-    text-decoration: underline;
-    letter-spacing: 3px;
+    color: #4faae6;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 600;
    
   }
   
+  
   .navigation-link a:hover {
-    color:rgb(156, 108, 171);
-    text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transform: translateY(-1px);
   }
   
   .navigation-menu-button {
@@ -172,6 +178,8 @@
 
   .header-container {
     padding-block: 5rem 12rem;
+    padding-top: 200px;
+  
   }
   
   .header-container h1 {
@@ -295,27 +303,7 @@
     color: var(--text-light);
   }  
   
-  @media (width < 900px) {
-    .navigation-links  {
-      gap: 1.5rem;
-    }
-  
-    .about-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  
-    .statistics-container {
-      grid-template-columns: repeat(1, 1fr);
-    }   
-  
-    .Info-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem 1rem;
-    }
-  
-  }
-  
-  @media (width < 600px) {
+  @media (width < 1200px) {
     nav {
       position: fixed;
       width: 100%;
@@ -324,7 +312,7 @@
       z-index: 99;
     }
   
-    .navigation-links{
+    .navigation-links  {
       position: absolute;
       left: 0;
       top: 68px;
@@ -334,7 +322,7 @@
       transform: scaleY(0);
       transform-origin: top;
       transition: 0.5s;
-      background-color: rgba(200, 216, 200, 0.9);
+      background-color: rgba(0, 0, 0, 0.9);
     }
   
     .navigation-links .navigation-link a {
@@ -352,10 +340,27 @@
     .navigation-menu-button {
       display: block;
     }
+   
+  }
+  
+  @media (width < 900px) {
+    .about-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+  
+    .Info-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 1rem;
+    }
+  
+  }
+  
+  @media (width < 600px) {
   
     .header-container h1{
       margin-top: 4rem;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
     }
   
   
@@ -363,4 +368,15 @@
       grid-template-columns: repeat(1, 1fr);
     }
   
+    .cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .cta-btn {
+      width: 80%;
+      justify-content: center;
+    }
+  
   }
+  

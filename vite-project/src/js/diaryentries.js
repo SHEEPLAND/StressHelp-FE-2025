@@ -1,5 +1,7 @@
 import { fetchData } from "./fetch.js";
 
+  
+
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
 
@@ -178,8 +180,8 @@ const getEntries = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
         console.error("No token found! Redirecting to login...");
-        alert("You must be logged in to access this page.");
-        window.location.href = "login.html";
+        //alert("You must be logged in to access this page.");
+        //window.location.href = "";
         return;
     }
 
