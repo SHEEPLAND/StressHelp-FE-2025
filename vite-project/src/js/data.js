@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startBtn.addEventListener('click', () => {
     popup.style.display = "flex";
     popupMeasurement.style.display = "block";
-    startCountdown(30, "relax"); // Start with relaxation phase
+    startCountdown(5, "relax"); // Relaxation phase
   });
 
   // Cancel button event

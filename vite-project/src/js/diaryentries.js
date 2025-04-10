@@ -3,16 +3,14 @@ import { fetchData } from "./fetch.js";
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
 
-   
     if (dateInput) {
         dateInput.addEventListener("focus", function () {
             this.setAttribute("type", "date");
         });
     }
 
-    getEntries(); // Fetch diary entries when the page loads
+    getEntries(); // Fetch diary entries on load
 
-    // Form submission logic with popup
     const form = document.querySelector(".diaryForm");
     const popup = document.getElementById("popup");
     const diaryPopup = document.querySelector(".diary-popup");
@@ -21,9 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById("close-popup");
 
     form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+        event.preventDefault();
 
-        // Get values from form inputs
+        const submitBtn = form.querySelector('input[type="submit"]');
+        submitBtn.disabled = true;
+
         let entryDate = document.getElementById("entry_date").value;
         let mood = document.getElementById("mood").value.toLowerCase();
         let energyLevel = document.getElementById("energy_level").value;
@@ -32,27 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
         let notes = document.getElementById("notes").value;
         let goals = document.getElementById("goals").value;
 
-        // Check if required fields are filled
         if (!entryDate || isNaN(stressLevel) || isNaN(sleepHours)) {
             alert("Please fill out all required fields before saving.");
+            submitBtn.disabled = false;
             return;
         }
 
-        // Categorize stress levels
         let stressCategory = "";
         let stressMessage = "";
 
-
         if (stressLevel >= 8) {
             stressCategory = "High Stress";
-            const highStressTips = [
-                "Try deep breathing.",
-                "Listen to calming music.",
-                "Step outside for fresh air.",
-                "Write down your thoughts.",
-            ];
-            const randomTip = highStressTips[Math.floor(Math.random() * highStressTips.length)];
-            stressMessage = `Your stress level is high. ${randomTip}`;
+            const tips = ["Try deep breathing.", "Listen to calming music.", "Step outside for fresh air.", "Write down your thoughts."];
+            stressMessage = `Your stress level is high. ${tips[Math.floor(Math.random() * tips.length)]}`;
         } else if (stressLevel >= 4) {
             stressCategory = "Moderate Stress";
             stressMessage = "Your stress level is moderate. Take breaks & practice self-care.";
@@ -60,9 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stressCategory = "Normal Stress";
             stressMessage = "You're managing stress well!";
         }
-    
 
-        // Provide sleep recommendations
         let sleepMessage = "";
         if (sleepHours < 4) {
             sleepMessage = "Too little sleep! Improve your habits.";
@@ -72,39 +62,47 @@ document.addEventListener("DOMContentLoaded", function () {
             sleepMessage = "Great job! Your sleep duration is healthy.";
         }
 
-        
-       // Assign messages based on mood
         let moodMessage = "";
-        if (["happy", "joyful", "excited"].some(m => mood.includes(m))) {
-            moodMessage = "It's great to see you feeling positive!";
-        } else if (["calm", "relaxed", "content"].some(m => mood.includes(m))) {
-            moodMessage = "You're feeling peaceful today, that's wonderful!";
-        } else if (["motivated", "proud", "grateful", "hopeful"].some(m => mood.includes(m))) {
-            moodMessage = "You're feeling empowered! Keep pushing forward and achieving great things!";
-        } else if (["stressed", "anxious", "worried", "overwhelmed"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling stressed? Take deep breaths and give yourself a break.";
-        } else if (["depressed", "sad", "lonely", "disappointed"].some(m => mood.includes(m))) {
-            moodMessage = "It's okay to have bad days. You are not alone. Reach out to someone who cares.";
-        } else if (["tired", "bored", "indifferent"].some(m => mood.includes(m))) {
-            moodMessage = "Maybe today feels slow, but tomorrow is a new opportunity! Take care of yourself.";
-        } else if (["angry", "frustrated"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling angry or frustrated? Try a deep breath or stepping away for a moment. You're stronger than this! 💪";
-        } else if (["confused", "nostalgic", "shy"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling uncertain? It's okay. Take your time to reflect, and things will get clearer.";
-        } else {
-            moodMessage = "Thanks for sharing your mood! Remember, every feeling is valid. Keep taking care of yourself. 🌟";
+        const moodMap = {
+            positive: ["happy", "joyful", "excited"],
+            calm: ["calm", "relaxed", "content"],
+            empowered: ["motivated", "proud", "grateful", "hopeful"],
+            stressed: ["stressed", "anxious", "worried", "overwhelmed"],
+            down: ["depressed", "sad", "lonely", "disappointed"],
+            meh: ["tired", "bored", "indifferent"],
+            angry: ["angry", "frustrated"],
+            confused: ["confused", "nostalgic", "shy"]
+        };
+
+        for (let [key, list] of Object.entries(moodMap)) {
+            if (list.some(m => mood.includes(m))) {
+                moodMessage = {
+                    positive: "It's great to see you feeling positive!",
+                    calm: "You're feeling peaceful today, that's wonderful!",
+                    empowered: "You're feeling empowered! Keep pushing forward and achieving great things!",
+                    stressed: "Feeling stressed? Take deep breaths and give yourself a break.",
+                    down: "It's okay to have bad days. You're not alone. Reach out to someone who cares.",
+                    meh: "Maybe today feels slow, but tomorrow is a new opportunity! Take care of yourself.",
+                    angry: "Feeling angry or frustrated? Try deep breathing or take a walk. You've got this 💪",
+                    confused: "Feeling uncertain? It's okay. Take time to reflect — things will become clearer."
+                }[key];
+                break;
+            }
         }
 
-        // Display diary entry summary in the popup
+        if (!moodMessage) {
+            moodMessage = "Thanks for sharing your mood! Every feeling is valid. 🌟";
+        }
+
         diaryPopup.innerHTML = `
             <h3>Diary Entry Summary</h3>
             <p><strong>Date:</strong> ${entryDate}</p>
             <p><strong>Mood:</strong> ${mood.charAt(0).toUpperCase() + mood.slice(1)}</p>
-            <p><strong>Energy Level:</strong> ${energyLevel ? energyLevel : "Not provided"}</p>
+            <p><strong>Energy Level:</strong> ${energyLevel || "Not provided"}</p>
             <p><strong>Stress Level:</strong> ${stressLevel} (${stressCategory})</p>
             <p><strong>Sleep Hours:</strong> ${sleepHours}</p>
-            <p><strong>Notes:</strong> ${notes ? notes : "No notes added."}</p>
-            <p><strong>Goals:</strong> ${goals ? goals : "No goals added."}</p>
+            <p><strong>Notes:</strong> ${notes || "No notes added."}</p>
+            <p><strong>Goals:</strong> ${goals || "No goals added."}</p>
         `;
 
         categoryText.textContent = `Stress Level: ${stressCategory}`;
@@ -121,25 +119,24 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>✨ Keep going! Every small step matters for your well-being.</strong></p>
         `;
 
-        // Show the popup
         popup.style.display = "block";
 
-        // Store entry in backend
         const token = localStorage.getItem("token");
         if (!token) {
             alert("You must be logged in to save entries.");
+            submitBtn.disabled = false;
             return;
         }
 
-        const url = "http://127.0.0.1:3000/api/entries"; // API endpoint
+        const url = "http://127.0.0.1:3000/api/entries";
         const entryData = {
             entry_date: entryDate,
-            mood: mood,
+            mood,
             energy_level: energyLevel,
             stress_level: stressLevel,
             sleep_hours: sleepHours,
-            notes: notes,
-            goals: goals,
+            notes,
+            goals
         };
 
         const response = await fetchData(url, {
@@ -148,29 +145,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(entryData),
+            body: JSON.stringify(entryData)
         });
 
         if (response.error) {
             console.error("Error saving diary entry!", response.error);
             alert("There was an error saving your diary entry.");
+            submitBtn.disabled = false;
             return;
         }
 
         console.log("Diary entry saved successfully!");
-
-        // Refresh diary entries
         getEntries();
+        submitBtn.disabled = false;
     });
 
-    // Close popup event
     closeBtn.addEventListener("click", function () {
         popup.style.display = "none";
-        form.reset(); // Reset the form after closing the popup
+        form.reset();
     });
 });
 
-// Fetch existing diary entries
 const getEntries = async () => {
     console.log("Fetching diary entries...");
     const diaryContainer = document.getElementById("diary");
@@ -202,18 +197,24 @@ const getEntries = async () => {
         return;
     }
 
+    
+
     diaryContainer.innerHTML = "";
+
     response.forEach((entry) => {
+        const formattedDate = new Date(entry.entry_date).toLocaleDateString("fi-FI");
+        
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-            <p><strong>Date:</strong> ${entry.entry_date}</p>
-            <p><strong>Mood:</strong> ${entry.mood}</p>
-            <p><strong>Energy Level:</strong> ${entry.energy_level}</p>
-            <p><strong>Stress Level:</strong> ${entry.stress_level}</p>
-            <p><strong>Sleep:</strong> ${entry.sleep_hours} hours</p>
-            <p><strong>Notes:</strong> ${entry.notes}</p>
-            <p><strong>Goals:</strong> ${entry.goals}</p>
+        <p><strong>Date:</strong> ${formattedDate}</p>
+        <p><strong>Mood:</strong> ${entry.mood}</p>
+        <p><strong>Energy Level:</strong> ${entry.energy_level}</p>
+        <p><strong>Stress Level:</strong> ${entry.stress_level}</p>
+        <p><strong>Sleep:</strong> ${entry.sleep_hours} hours</p>
+        <p><strong>Notes:</strong> ${entry.notes}</p>
+        <p><strong>Goals:</strong> ${entry.goals}</p>
+        <button class="delete-btn" data-id="${entry._id}"> Delete</button>
         `;
         diaryContainer.appendChild(card);
     });

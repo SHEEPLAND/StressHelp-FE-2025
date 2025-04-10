@@ -123,7 +123,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  background-color:rgba(0, 0, 0, 0.55);
+  background-color:rgba(0, 0, 0, 0.684);
  
 }
 
@@ -140,21 +140,21 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem; 
+  gap: 1.8rem; 
 }
 
 .navigation-link a {
   padding: 5px;
-  font-size: 15px;
-  font-weight: 500;
-  color:whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
+  color:white;
   transition: all 0.3s ease-in-out;
 }
 
 .navigation-link a.active {
-  color: rgb(45, 114, 46);
+  color: #1198f2;;
   text-decoration: underline;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
  

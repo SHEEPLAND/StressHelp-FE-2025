@@ -1,0 +1,8 @@
+node_modules
+vite.svg
+package.json
+package-lock.json
+dist
+
+node_modules
+.hintrc
