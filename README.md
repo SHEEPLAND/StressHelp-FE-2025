@@ -105,8 +105,9 @@ Login To Health Diary
 ## Lopputulos
 Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
-- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
-- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
+- [Testiloki (log.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/log.html)
+
+- [Testiraportti (report.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/report.html)
 
 ## Tekoälyn käyttö
 Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
