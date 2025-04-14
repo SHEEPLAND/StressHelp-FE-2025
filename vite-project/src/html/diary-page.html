@@ -13,7 +13,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
         <ul class="navigation-links" id="navigation-links">
 
           <li class="navigation-link"><a href="home.html">Etusivu</a></li>
@@ -77,10 +77,10 @@
                     <label class="form-label" for="notes">Muistiinpanoja:</label>
                     <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
 
-                    <label class="form-label" for="goals">Goals:</label>
+                    <label class="form-label" for="goals">Tavoitteet:</label>
                     <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
 
-                    <input name="submit" type="submit" value="Save My Entry" class="createEntry">
+                    <input name="submit" type="submit" value="Tallenna merkintä" class="createEntry">
                 </form>
             </div>
         </div>
@@ -100,11 +100,25 @@
                 <p id="analysis"></p>
             </div>
             <button class="close-button" id="close-popup">Sulje</button>
-            <a href="moretools.html" class="tips-button">Lue lisää stressivinkkejä:</a>
+            <a href="moretools.html" class="tips-button">Päiväkirjahistoria</a>
         </div>
     </div>
 
-    <div id="diary"></div>
+    <section id="diary">
+      <h2 class="diary-title">📖 Päiväkirjahistoria</h2>
+      <p class="diary-subtext">Viimeisimmät merkintäsi – voit selata muistojasi täältä 💬</p>
+    
+      <div class="diary-history-content">
+        <div class="swiper diary-swiper">
+          <div class="swiper-wrapper" id="diary-entries"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    
+    
 
 
     <script>
@@ -117,7 +131,6 @@
           spacer.style.height = `${navHeight}px`;
         }
       }
-    
       window.addEventListener("DOMContentLoaded", adjustSpacer);
       window.addEventListener("resize", adjustSpacer);
     </script>
@@ -125,6 +138,7 @@
 
     <!-- Include JavaScript -->
     <script type="module" src="../js/diaryentries.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script type="module" src="../js/calender.js"></script>

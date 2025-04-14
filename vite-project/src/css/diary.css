@@ -290,16 +290,12 @@ border-top-right-radius: var(--border-radius-m);
 }
 
 
-
-
-/* Sliders */
 input[type="range"] {
   width: 100%;
   margin: 10px 0;
   accent-color: var(--accent-color);
 }
 
-/* Submit Button */
 input[type="submit"] {
   font-size: 1.2rem;
   font-weight: bold;
@@ -417,6 +413,7 @@ transition: background 0.3s ease;
 background: var(--hover-color, rgb(30, 90, 180)); /* Darker on hover */
 }
 
+
 #diary {
   display: block;
   margin-top: 2rem;
@@ -432,6 +429,67 @@ background: var(--hover-color, rgb(30, 90, 180)); /* Darker on hover */
 }
 
 
+.diary-swiper {
+  width: 100%;
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+.swiper-slide .card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide .card:hover {
+  transform: scale(1.01);
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--accent-color);
+}
+
+.swiper-pagination-bullet {
+  background: var(--accent-color);
+}
+
+.swiper-slide {
+  opacity: 0;
+  transform: translateY(1px);
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-slide.swiper-slide-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entry-header-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2b4b6c;
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 12px;
+}
+.diary-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2b4b6c;
+  font-weight: 700;
+  font-family: "Lora", serif;
+}
 
 
 /* Responsive Navbar */
