@@ -1,0 +1,51 @@
+(node:10594) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-04-14T19:24:05.971Z","pid":10594,"hostname":"MACBOOK.local","msg":"Listening on 57654"}
+{"level":30,"time":"2025-04-14T19:24:07.087Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-04-14T19:24:08.216Z","pid":10594,"hostname":"MACBOOK.local","msg":"Adding browser to stack: chromium, version: 134.0.6998.35"}
+{"level":30,"time":"2025-04-14T19:24:08.218Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-04-14T19:24:08.217Z","pid":10594,"hostname":"MACBOOK.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-04-14T19:24:08.245Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-04-14T19:24:08.247Z","pid":10594,"hostname":"MACBOOK.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-04-14T19:24:08.418Z","pid":10594,"hostname":"MACBOOK.local","msg":"Changed active context"}
+{"level":30,"time":"2025-04-14T19:24:10.176Z","pid":10594,"hostname":"MACBOOK.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-04-14T19:24:10.177Z","pid":10594,"hostname":"MACBOOK.local","msg":"Changed active page"}
+{"level":30,"time":"2025-04-14T19:24:10.513Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-04-14T19:24:10.541Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-04-14T19:24:10.542Z","pid":10594,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=login-username in page."}
+{"level":30,"time":"2025-04-14T19:24:11.822Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-04-14T19:24:11.840Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-04-14T19:24:11.840Z","pid":10594,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=login-pass in page."}
+{"level":30,"time":"2025-04-14T19:24:16.038Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-04-14T19:24:16.047Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-04-14T19:24:16.047Z","pid":10594,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with css=.login-button in page."}
+{"level":30,"time":"2025-04-14T19:24:16.101Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method click"}
+{"level":30,"time":"2025-04-14T19:24:18.111Z","pid":10594,"hostname":"MACBOOK.local","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-04-14T19:24:18.193Z","pid":10594,"hostname":"MACBOOK.local","msg":"Removed page=5500cb52-daf4-4d41-b7fa-58523382b8d7 from context=7c10d14e-9123-4c6a-9f9f-577db4e64dc2 page stack"}
+{"level":30,"time":"2025-04-14T19:24:18.691Z","pid":10594,"hostname":"MACBOOK.local","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
