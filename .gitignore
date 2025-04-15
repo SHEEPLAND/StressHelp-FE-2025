@@ -6,3 +6,5 @@ dist
 
 node_modules
 .hintrc
+.venv
+vite.config.js
