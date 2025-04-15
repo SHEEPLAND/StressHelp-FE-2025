@@ -359,5 +359,14 @@ lora-text{
     .Info-grid {
       grid-template-columns: repeat(1, 1fr);
     }
-  
+
+    .center-card {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
   }
