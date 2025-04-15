@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginUser = async (event) => {
     event.preventDefault();
 
-    // Extract values from your input fields
+    // Extract values input fields
     const username = document.querySelector("#login-username").value.trim();
     const password = document.querySelector("#login-pass").value.trim();
 
@@ -69,6 +69,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  // Attach event listener
   loginForm.addEventListener("submit", loginUser);
 });

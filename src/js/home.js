@@ -67,7 +67,6 @@ if (typeof ScrollReveal !== "undefined") {
     delay: 300,
   });
 
-  // ✅ Optional: Stagger each CTA button
   ScrollReveal().reveal(".cta-btn", {
     ...scrollRevealOption,
     interval: 200,
@@ -77,13 +76,6 @@ if (typeof ScrollReveal !== "undefined") {
   console.warn("ScrollReveal not found");
 }
 
-// Swiper (only if you’re using it)
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
 
 const accordions = document.querySelectorAll(".accordion");
 

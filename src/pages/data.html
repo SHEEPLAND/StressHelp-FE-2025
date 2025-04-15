@@ -7,6 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+
+
     
     <title>Data</title>
   </head>
@@ -54,7 +61,7 @@
           <div class="about-list">
             <div class="about-item about-table">
               <div>
-                <p class="section-subheader section-subheader--color"">Viimeisin merkintä 🗓️</p>
+                <p class="section-subheader section-subheader--color">Viimeisin merkintä 🗓️</p>
 
                 
                 <table class="latest-entry-table">
@@ -121,38 +128,6 @@
         </div>
       </div>
     </div>
-
-    <!-- CTA Button -->
-    <div class="cta-wrapper">
-      <p class="cta-note">Aloita mittaus nyt napsauttamalla alla!</p>
-      <div class="cta-buttons">
-        <button class="cta-btn primary" id="start-measurement">
-          Aloita Stressimittaus <span class="arrow">&raquo;</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- POPUP -->
-    <div class="popup" id="measurementPopup">
-      <div class="popup-content" id="popup-measurement">
-        <div class="circle-container">
-          <svg width="200" height="200">
-            <circle class="progress-ring" r="90" cx="100" cy="100" />
-            <circle class="progress-ring progress-ring-progress" r="90" cx="100" cy="100" />
-          </svg>
-          <div class="circle-content">
-            <div class="header-bpm">bpm</div>
-            <div id="bpm" class="bpm">00</div>
-            <div id="label" class="label">Rentoutumisjakso</div>
-            <div id="countdown" class="timer">00:30</div>
-          </div>
-        </div>
-
-        <div id="doneText" style="display: none;">Mittaus valmis!</div>
-        <button id="cancelBtn">Peruuta</button>
-        <button id="show-results" class="button-green" style="display: none;">Näytä tulokset</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -198,51 +173,48 @@
   </div>
 </section>
 
-<section class="Info" id="Info">
-  <div class="section-container Info-container">
-    <p class="section-subheader"></p>
-    <h2 class="section-header">llll</h2>
+<!-- Chart Section -->
+<section class="chart-section">
+  <div class="section-container">
+    <p class="section-subheader">StressHelp</p>
+    <h2 class="section-header">Visualisointi</h2>
+    <p class="paragraph">
+      Seuraa stressi- ja valmiustasojen muutoksia eri aikaväleillä. Vaihda näkymää tai aikajännettä nähdäksesi yksityiskohtaisia mittaustietoja.
+    </p>
 
-    <div class="accordion-container">
-      <button class="accordion active">
-        Click to view the steps
-        <span class="accordion-icon">−</span>
-      </button>
-      <div class="panel">
-        <div class="Info-grid">
-        </div>
+    <div class="controls">
+      <div class="range-toggle">
+        <button class="range-btn active" data-range="3months">3 kuukautta</button>
+        <button class="range-btn" data-range="month">Kuukausi</button>
+        <button class="range-btn" data-range="week">Viikko</button>
       </div>
 
-      <div class="accordion-container">
-        <button class="accordion active">
-          Click to view the steps
-          <span class="accordion-icon">−</span>
-        </button>
-        <div class="panel">
-          <div class="Info-grid">
-          </div>
-        </div>
-
-        <div class="accordion-container">
-          <button class="accordion active">
-            Click to view the steps
-            <span class="accordion-icon">−</span>
-          </button>
-          <div class="panel">
-            <div class="Info-grid">
-            </div>
-          </div>
+      <label for="chartTypeSelect">Valitse näkymä:</label>
+      <select id="chartTypeSelect">
+        <option value="bar">📊 Sessioyhteenveto Historia</option>
+        <option value="line">📈 Edistymisen aikajana</option>
+        
+      </select>
     </div>
+
+    <div id="chartdiv"></div>
   </div>
 </section>
+
+
+
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module" src="../js/home.js"></script>
+<script type="module" src="../js/test.js"></script>
 <script type="module" src="../js/data.js"></script>
-<script type="module" src="../js/data-extra.js"></script>
+
+
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 
 

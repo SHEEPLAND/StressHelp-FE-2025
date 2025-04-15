@@ -19,7 +19,7 @@ const scrollRevealOption = {
   duration: 1000,
 };
 
-// Ensure ScrollReveal is loaded before using it
+// Ensure ScrollReveal
 if (typeof ScrollReveal !== "undefined") {
   ScrollReveal().reveal(".header-container h1", {
     ...scrollRevealOption,

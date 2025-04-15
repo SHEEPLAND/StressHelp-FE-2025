@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const chartData = [data.readiness, data.stress, data.pns, data.bpm];
     const labels = ["Readiness %", "Stress Index", "PNS Index", "Average BPM"];
 
-    // Get CSS variables for chart colors
     const styles = getComputedStyle(document.documentElement);
     const chartColors = [
       styles.getPropertyValue('--chart-readiness').trim(),
