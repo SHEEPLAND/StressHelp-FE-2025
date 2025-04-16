@@ -8,15 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-
-
-    
     <title>Data</title>
   </head>
+
   <body>
     <header>
       <!-- Navigation -->
@@ -61,17 +55,11 @@
           <div class="about-list">
             <div class="about-item about-table">
               <div>
-                <p class="section-subheader section-subheader--color">Viimeisin merkintä 🗓️</p>
-
-                
+                <p class="section-subheader section-subheader--color">Viimeisin päiväkirjamerkintä 🗓️</p>
                 <table class="latest-entry-table">
                   <tr>
                     <th>Päivä </th>
                     <td id="latest-date">-</td>
-                  </tr>
-                  <tr>
-                    <th>HRV</th>
-                    <td id="latest-hrv">-</td>
                   </tr>
                   <tr>
                     <th>Stressitaso</th>
@@ -85,7 +73,7 @@
             
                 <div class="entry-buttons">
                   <button class="entry-btn" onclick="startMeasurement()">+ Uusi mittaus</button>
-                  <button class="entry-btn" onclick="openDiaryForm()">+ Uusi merkintä</button>
+                  <button class="entry-btn" onclick="openDiaryForm()">+ Uusi päiväkirjamerkintä</button>
                 </div>
               </div>
             </div>
@@ -96,33 +84,32 @@
       </div>
     </section>
 
-    <!-- Info -->
 <!-- Info -->
 <section class="Info" id="Info">
   <div class="section-container Info-container">
     <p class="section-subheader">Lorem</p>
-    <h2 class="section-header">How to use StresHelp</h2>
+    <h2 class="section-header">....</h2>
 
     <div class="accordion-container">
       <button class="accordion active">
-        Click to view the steps
+        Lorem
         <span class="accordion-icon">−</span>
       </button>
       <div class="panel">
         <div class="Info-grid">
           <div class="Info-card">
             <img src="../img/login.png" alt="Step 1">
-            <h4>Step 1: </h4>
+            <h4>Vaihe 1: </h4>
             <p>Lorem.</p>
           </div>
           <div class="Info-card">
             <img src="../img/entry.png" alt="Step 2">
-            <h4>Step 2:</h4>
+            <h4>Vaihe 2:</h4>
             <p>Lorem.</p>
           </div>
           <div class="Info-card">
             <img src="../img/last.png" alt="Step 3">
-            <h4>Step 3: </h4>
+            <h4>Vaihe 3: </h4>
             <p></p>
           </div>
         </div>
@@ -131,49 +118,57 @@
   </div>
 </section>
 
+
+<!-- Last updated or most recent chart information -->
 <section class="statistics" id="statistics">
   <div class="section-container statistics-container">
     <div class="statistics-content">
       <p class="section-subheader">Data Analyysi</p>
       <h2 class="section-header">Tulokset</h2>
       <p class="paragraph">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, optio maxime sed quia magnam cumque...
+        Kubiosin HRV-mittauksen reaaliaikaiset tulokset
       </p>
-
+      
       <div class="statistics-grid">
         <div class="statistics-card">
+          
           <span><i class="ri-building-4-line"></i></span>
           <h4 id="readiness-value">--%</h4>
           <p>Readiness %</p>
         </div>
+
         <div class="statistics-card">
           <span><i class="ri-trophy-fill"></i></span>
-          <h4 id="stress-value">--</h4>
-          <p>Stressi Indeksi</p>
+          <h4 id="sns-value">--</h4>
+          <p>SNS-Indeksi</p>
         </div>
+
         <div class="statistics-card">
           <span><i class="ri-user-fill"></i></span>
           <h4 id="pns-value">--</h4>
           <p>PNS-indeksi</p>
         </div>
+
         <div class="statistics-card">
-          <span><i class="ri-trophy-fill"></i></span>
+          <span><i class="ri-heart-pulse-line"></i></span>
           <h4 id="bpm-value">-- bpm</h4>
           <p>Keskimääräinen syke</p>
         </div>
+
+        <p class="para" id="stress-level-text">Stressi taso: --</p>
+
       </div>
-      
+      </div> 
+      <div class="statistics-image">
+        <canvas id="resultsChart"></canvas>
+      </div> 
     </div>
-
-    <div class="statistics-image">
-      <canvas id="resultsChart"></canvas>
-    </div>
-
-    
+   
   </div>
 </section>
 
-<!-- Chart Section -->
+
+<!-- Chart history Section -->
 <section class="chart-section">
   <div class="section-container">
     <p class="section-subheader">StressHelp</p>
@@ -181,6 +176,8 @@
     <p class="paragraph">
       Seuraa stressi- ja valmiustasojen muutoksia eri aikaväleillä. Vaihda näkymää tai aikajännettä nähdäksesi yksityiskohtaisia mittaustietoja.
     </p>
+
+    
 
     <div class="controls">
       <div class="range-toggle">
@@ -191,12 +188,10 @@
 
       <label for="chartTypeSelect">Valitse näkymä:</label>
       <select id="chartTypeSelect">
-        <option value="bar">📊 Sessioyhteenveto Historia</option>
         <option value="line">📈 Edistymisen aikajana</option>
-        
+        <option value="bar">📊 Sessioyhteenveto historia</option>
       </select>
     </div>
-
     <div id="chartdiv"></div>
   </div>
 </section>
@@ -207,14 +202,18 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script type="module" src="../js/home.js"></script>
-<script type="module" src="../js/test.js"></script>
-<script type="module" src="../js/data.js"></script>
-
 
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/statistics-chart.js"></script>
+
+<script type="module" src="../js/home.js"></script>
+<script type="module" src="../js/test.js"></script>
+<script type="module" src="../js/data-extra.js"></script>
+<script type="module" src="../js/data.js"></script>
 
 
 

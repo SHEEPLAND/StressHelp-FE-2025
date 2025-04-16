@@ -9,16 +9,9 @@
   
     --border-radius-m: 30px;
     --dark-color:#252525;
-
-    --chart-readiness: #84ad83;
-    --chart-stress: #f6b500;
-    --chart-pns: #7d9eaa;
-    --chart-bpm: #c44747;
-  
   }
 
 
-  
   * {
     padding: 0;
     margin: 0;
@@ -26,6 +19,7 @@
     scroll-behavior: smooth;
   }
   
+  /* Basics */
   .section-container {
     max-width: var(--max-width);
     margin: auto;
@@ -115,7 +109,8 @@
     background-size: cover;
   
   }
-  
+
+  /* Navigation */
   nav {
     margin: auto; 
     padding: 1.3rem 1rem;
@@ -420,12 +415,12 @@
   line-height: 1.6;
 }
 
-
+/* Statistics and Chart*/
 .statistics {
     background-color: #fbfbf6;
   }
   
-  .statistics-container {
+.statistics-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -444,7 +439,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    align-items: start;
   }
+  
   
   .statistics-card span{
     font-size: 1.75rem;
@@ -460,6 +457,7 @@
     font-weight: 500;
   }
   
+ 
   .statistics-image {
     display: grid;
     justify-content: center;
@@ -468,15 +466,22 @@
   }
   
 
-.statistics-image canvas {
-  width: 100%;
-  max-width: 500px;  
-  height: 400px; 
-  margin: auto;
-  border-radius: 5px;
+  .statistics-image canvas {
+    width: 100%;
+    max-width: 500px;  
+    height: 400px; 
+    margin: auto;
+    border-radius: 5px;
+  }
+
+  #resultsChart {
+    max-width: 600px;
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
   }
   
-
+/* Chart History Section */
   .chart-section {
     background-color: var(--secondary-color);
   }

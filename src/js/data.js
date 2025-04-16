@@ -3,10 +3,10 @@ import { fetchData } from "./fetch.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
 
-  if (!token) {
-    alert("Kirjaudu sisään nähdäksesi tietosi.");
-    return;
-  }
+  //if (!token) {
+  //  alert("Kirjaudu sisään nähdäksesi tietosi.");
+  //  return;
+  //}
 
   try {
     const url = "http://127.0.0.1:3000/api/entries";
