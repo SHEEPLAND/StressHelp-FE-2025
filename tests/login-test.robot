@@ -4,7 +4,7 @@ Library     Browser    auto_closing_level=KEEP
 *** Variables ***
 ${URL}        http://127.0.0.1:3001/vite-project/src/html/login.html
 ${Username}   mickey
-${Password}   salansana
+${Password}   juvtaw-Jighog-2qogvi
 
 *** Test Cases ***
 Login To Health Diary
