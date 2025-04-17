@@ -13,9 +13,8 @@ Tässä tehtävässä suoritettiin automaattinen kirjautumistesti StressHelp-sov
 # Projektin rakenne
 ```
 StressHelp-FE-2025/
-├── vite-project/
-│   └── src/
-│       └── html/
+├── src/
+│   └── html/
 │           └── login.html
 ├── tests/
 │   └── login-test.robot
@@ -58,7 +57,7 @@ Testitoteutus tehtiin tiedostossa `tests/login-test.robot`.
 Library     Browser    auto_closing_level=KEEP
 
 *** Variables ***
-${URL}        http://127.0.0.1:3001/vite-project/src/html/login.html
+${URL}        http://127.0.0.1:3001/src/html/login.html
 ${Username}   mickey
 ${Password}   salansana
 
@@ -108,6 +107,8 @@ Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 - [Testiloki (log.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/log.html)
 
 - [Testiraportti (report.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/report.html)
+
+-  Sisäänkirjautuminen epäonnistumisen varteen käytetään väärä tunnus tai salasana.
 
 ## Tekoälyn käyttö
 Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
