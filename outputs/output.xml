@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.4 on darwin)" generated="2025-04-17T11:38:38.565551" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.4 on darwin)" generated="2025-04-17T11:44:06.935293" rpa="false" schemaversion="5">
 <suite id="s1" name="Login-Test" source="/Users/abonti/Documents/StressHelp-FE-2025/tests/login-test.robot">
 <test id="s1-t1" name="Login To Health Diary" line="10">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-04-17T11:38:39.168753" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/abonti/Documents/StressHelp-FE-2025/outputs/browser/traces/temp/5df2e1e7-37be-4da1-a1c0-b54885f687ab"}</msg>
-<msg time="2025-04-17T11:38:39.271953" level="INFO">Starting Browser process /Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js using port 59192</msg>
-<msg time="2025-04-17T11:38:39.272370" level="INFO">Node startup parameters: ['node', '/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js', '59192']</msg>
-<msg time="2025-04-17T11:38:55.438680" level="FAIL">Could not connect to the playwright process at port 59192.</msg>
+<msg time="2025-04-17T11:44:07.400927" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/abonti/Documents/StressHelp-FE-2025/outputs/browser/traces/temp/691452f6-037f-4ffc-8658-ee40e8a56d88"}</msg>
+<msg time="2025-04-17T11:44:07.530279" level="INFO">Starting Browser process /Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js using port 59757</msg>
+<msg time="2025-04-17T11:44:07.530611" level="INFO">Node startup parameters: ['node', '/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js', '59757']</msg>
+<msg time="2025-04-17T11:44:23.687271" level="FAIL">Could not connect to the playwright process at port 59757.</msg>
 <arg>chromium</arg>
 <arg>headless=No</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="FAIL" start="2025-04-17T11:38:39.159703" elapsed="16.296542">Could not connect to the playwright process at port 59192.</status>
+<status status="FAIL" start="2025-04-17T11:44:07.397764" elapsed="16.301000">Could not connect to the playwright process at port 59757.</status>
 </kw>
 <kw name="New Page" owner="Browser">
 <arg>${URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.457641" elapsed="0.000443"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.700348" elapsed="0.000419"/>
 </kw>
 <kw name="Get Title" owner="Browser">
 <arg>==</arg>
@@ -28,7 +28,7 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.458633" elapsed="0.000242"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.701665" elapsed="0.000296"/>
 </kw>
 <kw name="Type Text" owner="Browser">
 <arg>id=login-username</arg>
@@ -37,7 +37,7 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.459368" elapsed="0.000226"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.702399" elapsed="0.000275"/>
 </kw>
 <kw name="Type Secret" owner="Browser">
 <arg>id=login-pass</arg>
@@ -47,30 +47,30 @@
 <tag>Setter</tag>
 <doc>Types the given secret from ``variable_name`` into the text field
 found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.460073" elapsed="0.000306"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.703151" elapsed="0.000267"/>
 </kw>
 <kw name="Click" owner="Browser">
 <arg>css=.login-button</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.461160" elapsed="0.000256"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.704115" elapsed="0.000206"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2 s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.461874" elapsed="0.001362"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.705974" elapsed="0.000243"/>
 </kw>
 <kw name="Close Browser" owner="Browser">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-04-17T11:38:55.466152" elapsed="0.000205"/>
+<status status="NOT RUN" start="2025-04-17T11:44:23.706861" elapsed="0.001432"/>
 </kw>
-<msg time="2025-04-17T11:38:55.467465" level="INFO">Using previously saved or imported port 59192, skipping Browser process start</msg>
-<status status="FAIL" start="2025-04-17T11:38:39.157526" elapsed="16.309568">Could not connect to the playwright process at port 59192.</status>
+<msg time="2025-04-17T11:44:23.715214" level="INFO">Using previously saved or imported port 59757, skipping Browser process start</msg>
+<status status="FAIL" start="2025-04-17T11:44:07.395545" elapsed="16.319413">Could not connect to the playwright process at port 59757.</status>
 </test>
-<status status="FAIL" start="2025-04-17T11:38:38.568721" elapsed="33.343426"/>
+<status status="FAIL" start="2025-04-17T11:44:06.937809" elapsed="32.995027"/>
 </suite>
 <statistics>
 <total>
@@ -83,7 +83,7 @@ found by ``selector``.</doc>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-17T11:39:11.909955" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: Could not connect to the playwright process at port 59192.</msg>
-<msg time="2025-04-17T11:39:28.399783" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: Could not connect to the playwright process at port 59192.</msg>
+<msg time="2025-04-17T11:44:39.928154" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: Could not connect to the playwright process at port 59757.</msg>
+<msg time="2025-04-17T11:44:56.224655" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: Could not connect to the playwright process at port 59757.</msg>
 </errors>
 </robot>
