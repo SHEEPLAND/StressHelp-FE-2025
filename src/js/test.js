@@ -107,7 +107,7 @@ function renderLineChart(data) {
 }
 
 // -------------------------------------------
-// Bar Chart: RMSSD and Mean HR
+// Bar Chart: RMSSD, Mean HR, PNS, SNS
 // -------------------------------------------
 function renderBarChart(data) {
   clearChart();
