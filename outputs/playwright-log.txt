@@ -1,24 +1,51 @@
-node:internal/modules/cjs/loader:1247
-  throw err;
-  ^
-
-Error: Cannot find module 'google-protobuf'
-Require stack:
-- /Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js
-    at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)
-    at Function._load (node:internal/modules/cjs/loader:1070:27)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
-    at Module.require (node:internal/modules/cjs/loader:1335:12)
-    at require (node:internal/modules/helpers:136:16)
-    at node/playwright-wrapper/generated/playwright_pb.js (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:40:16)
-    at __require (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:9:50)
-    at Object.<anonymous> (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:10566:36)
-    at Module._compile (node:internal/modules/cjs/loader:1562:14) {
-  code: 'MODULE_NOT_FOUND',
-  requireStack: [
-    '/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js'
-  ]
-}
-
-Node.js v22.13.1
+{"level":30,"time":"2025-04-17T08:52:41.794Z","pid":12117,"hostname":"MACBOOK.local","msg":"Listening on 61395"}
+(node:12117) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-04-17T08:52:42.909Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-04-17T08:52:45.167Z","pid":12117,"hostname":"MACBOOK.local","msg":"Adding browser to stack: chromium, version: 134.0.6998.35"}
+{"level":30,"time":"2025-04-17T08:52:45.169Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-04-17T08:52:45.169Z","pid":12117,"hostname":"MACBOOK.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-04-17T08:52:45.198Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-04-17T08:52:45.198Z","pid":12117,"hostname":"MACBOOK.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-04-17T08:52:45.227Z","pid":12117,"hostname":"MACBOOK.local","msg":"Changed active context"}
+{"level":30,"time":"2025-04-17T08:52:46.486Z","pid":12117,"hostname":"MACBOOK.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-04-17T08:52:46.488Z","pid":12117,"hostname":"MACBOOK.local","msg":"Changed active page"}
+{"level":30,"time":"2025-04-17T08:52:46.923Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-04-17T08:52:46.979Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-04-17T08:52:46.980Z","pid":12117,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=login-username in page."}
+{"level":30,"time":"2025-04-17T08:52:48.382Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-04-17T08:52:48.392Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-04-17T08:52:48.392Z","pid":12117,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=login-pass in page."}
+{"level":30,"time":"2025-04-17T08:52:52.567Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-04-17T08:52:52.575Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-04-17T08:52:52.575Z","pid":12117,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with css=.login-button in page."}
+{"level":30,"time":"2025-04-17T08:52:52.690Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method click"}
+{"level":30,"time":"2025-04-17T08:52:54.703Z","pid":12117,"hostname":"MACBOOK.local","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-04-17T08:52:54.755Z","pid":12117,"hostname":"MACBOOK.local","msg":"Removed page=879e8aa0-4821-4b26-a8d7-9bdc95462c5a from context=2bc361c1-0006-4347-af44-3c78655e668e page stack"}
+{"level":30,"time":"2025-04-17T08:52:55.311Z","pid":12117,"hostname":"MACBOOK.local","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12223:15)
+    at PlaywrightServer.getActiveBrowser (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13119:59)
+    at PlaywrightServer.setTimeout (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/index.js:13367:57)
+    at Object.onReceiveHalfClose (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Users/abonti/Documents/StressHelp-FE-2025/.venv/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
