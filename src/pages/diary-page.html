@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/diary.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <title>Päiväkirja</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
+        <ul class="navigation-links" id="navigation-links">
+
+          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+          <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
+        
+        </ul>
+        <div class="navigation-menu-button" id="menu-button">
+          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+        </div>
+      </nav>
+
+    <div class="nav-spacer"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="left-side">
+            <div class="calendar-top">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <button id="prev-month">&#8249;</button>
+                  <div id="month-year"></div>
+                  <button id="next-month">&#8250;</button>
+                </div>
+                <div class="calendar-days">
+                  <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+                </div>
+                <div id="calendar-dates" class="calendar-dates"></div>
+              </div>
+            </div>
+        
+            <div class="image-below">
+              <img src="../img/diary.png" alt="Diary Illustration" />
+            </div>
+          </div>
+        
+          
+
+        <div class="form-container">
+            <h1>Päiväkirja</h1>
+            <div class="forms">
+                <form action="#" method="POST" class="diaryForm">
+                    <label class="form-label" for="entry_date">Päivämäärä:</label>
+                    <input class="form-input" type="date" name="entry_date" id="entry_date" required>
+
+                    <label class="form-label" for="mood">Mieliala:</label>
+                    <input class="form-input" type="text" name="mood" id="mood" placeholder="Esim. Iloinen, stressaantunut, rentoutunut...">
+
+                    <label class="form-label" for="energy_level">Energiataso:</label>
+                    <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+
+                    <label class="form-label" for="stress_level">Stressitaso:</label>
+                    <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+
+                    <label class="form-label" for="sleep_hours">Uni (tunteina):</label>
+                    <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7.5 tuntia" min="0">
+
+                    <label class="form-label" for="notes">Muistiinpanoja:</label>
+                    <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
+
+                    <label class="form-label" for="goals">Tavoitteet:</label>
+                    <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
+
+                    <input name="submit" type="submit" value="Tallenna merkintä" class="createEntry">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diary Entry Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Yhteenvetosi</h2>
+            
+            <!-- Entry summary -->
+            <div class="diary-popup"></div> 
+            <div class="category-text">
+                <strong>Stressitasosi:</strong>
+                <p id="category"></p>
+            </div>
+            <div class="analysis">
+                <strong>Mitä tämä tarkoittaa::</strong>
+                <p id="analysis"></p>
+            </div>
+            <button class="close-button" id="close-popup">Sulje</button>
+            <a href="moretools.html" class="tips-button">Päiväkirjahistoria</a>
+        </div>
+    </div>
+
+    <section id="diary">
+      <h2 class="diary-title">📖 Päiväkirjahistoria</h2>
+      <p class="diary-subtext">Viimeisimmät merkintäsi – voit selata muistojasi täältä 💬</p>
+    
+      <div class="diary-history-content">
+        <div class="swiper diary-swiper">
+          <div class="swiper-wrapper" id="diary-entries"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+
+    <script>
+      function adjustSpacer() {
+        const spacer = document.querySelector(".nav-spacer");
+        const nav = document.querySelector("nav");
+    
+        if (spacer && nav) {
+          const navHeight = nav.offsetHeight;
+          spacer.style.height = `${navHeight}px`;
+        }
+      }
+      window.addEventListener("DOMContentLoaded", adjustSpacer);
+      window.addEventListener("resize", adjustSpacer);
+    </script>
+    
+
+    <!-- JavaScript -->
+    <script type="module" src="../js/diaryentries.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/calender.js"></script>
+
+</body>
+</html>
