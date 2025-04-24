@@ -55,3 +55,23 @@ if (typeof ScrollReveal !== "undefined") {
   console.warn("ScrollReveal library is not loaded.");
 }
 
+const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach((accordion) => {
+  const panel = accordion.nextElementSibling;
+  const icon = accordion.querySelector(".accordion-icon");
+
+  // Open by default if .active
+  if (accordion.classList.contains("active")) {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    if (icon) icon.textContent = "−";
+  }
+
+  accordion.addEventListener("click", function () {
+    this.classList.toggle("active");
+    const isActive = this.classList.contains("active");
+
+    panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
+    if (icon) icon.textContent = isActive ? "−" : "+";
+  });
+});

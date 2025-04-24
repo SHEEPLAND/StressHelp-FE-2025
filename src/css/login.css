@@ -22,8 +22,7 @@
     margin: 0;
   }
 
-  
-  
+
   input, button {
     font-size: var(--normal-font-size);
     font-family: var(--body-font);

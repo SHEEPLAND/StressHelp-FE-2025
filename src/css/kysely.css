@@ -41,10 +41,6 @@ body {
     color: var(--white);
   }
 
-
-
-
-
 nav {
     margin: auto; 
     padding: 1.3rem 1rem;
@@ -67,7 +63,6 @@ nav {
     padding: 8px 18px;
     border-radius: 15px;
   }
-  
   
   .navigation-links {
     list-style: none;
@@ -189,3 +184,4 @@ button:hover {
 .info a:hover {
     text-decoration: underline;
 }
+

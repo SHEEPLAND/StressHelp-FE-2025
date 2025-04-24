@@ -2,8 +2,7 @@
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="../css/moretools.css"> 
+    <link rel="stylesheet" href="../css/tools.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stressivinkit</title>
@@ -89,15 +88,34 @@
             </div>
 
             <div class="Info-card">
-                <img src="../img/Breathing exercise-pana.svg" alt="Info" />
-                <h4> Hengitysharjoitukset</h4>
-                <p>Tee hengitysharjoitus, jolla rauhoitat hermostoasi.</p>
+              <img src="../img/Breathing exercise-pana.svg" alt="Info" />
+              <h4>Hengitysharjoitukset</h4>
+              <p>Tee hengitysharjoitus, jolla rauhoitat hermostoasi.</p>
+            
+              <div class="accordion-container">
+                <button class="accordion active">
+                  Avaa hengitysharjoitus
+                  <span class="accordion-icon">−</span>
+                </button>
+            
+                <div class="panel">
+                  <div class="breathing-exercise">
+                    <div class="anim-circle"></div>
+                    <p>Hengitä sisään 4 sekuntia, pidätä 4 sekuntia, uloshengitys 4 sekuntia.</p>
+                  </div>
+                </div>
+              </div>
             </div>
+            
+            
+
 
             <div class="Center-card">
               <img src="../img/online-medical-consultation-support-services-concept-tele-medicine-ehealth-service-flat-vector-modern-illustration.png" alt="Info" />
               <h4>Hae apua</h4>
               <p>Jos itsehoito ei auta tai stressi on ylitsepäätsemätöntä, harkitse avun hakemista ammattilaisilta.</p>
+              <a href="#apu" class="button button-primary">Ota yhteyttä</a>
+
             </div>
             
 

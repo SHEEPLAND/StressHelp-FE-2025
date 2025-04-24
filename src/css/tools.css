@@ -118,20 +118,19 @@
   }
   
   nav {
-  margin: auto; 
-  padding: 1.3rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  background-color:rgb(20, 19, 19);
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(4, 4, 4, 0.722);
-  }
+    margin: auto; 
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color:rgb(20, 19, 19);
   
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(4, 4, 4, 0.722);
+  }
   
   .navigation-logo a {
     font-size: 2.2rem;
@@ -139,7 +138,6 @@
     padding: 8px 18px;
     border-radius: 15px;
   }
-  
   
   .navigation-links {
     list-style: none;
@@ -158,17 +156,16 @@
   
   .navigation-link a.active {
     color: #4faae6;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
    
   }
   
-  
   .navigation-link a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  transform: translateY(-1px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transform: translateY(-1px);
   }
   
   .navigation-menu-button {
@@ -270,6 +267,10 @@
     gap: 2rem;
   }
   
+  .Info-card {
+    position: relative;
+  }
+  
   .Info-card img {
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -303,6 +304,135 @@
     color: var(--text-light);
   }  
 
+
+  .accordion-container {
+    margin-top: 1.5rem; 
+  }
+  
+.accordion {
+  background-color: var(--secondary-color-light);
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-m);
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.accordion:hover,
+.accordion.active {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.accordion.active .accordion-icon {
+  transform: rotate(180deg); /* + turns into × */
+}
+
+/* Accordion panel */
+.panel {
+  background-color: var(--secondary-color); 
+  color: var(--text-light);
+  padding: 1rem 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+  
+.Info {
+  background-color: var(--secondary-color);
+}
+
+.Info-container {
+  background-color: var(--secondary-color);
+}
+
+.Info-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+}
+
+.Info-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.Info-card:hover {
+  transform: translateY(-5px);
+}
+
+.Info-card img {
+  width: 100%;
+  border-radius: 5px;
+  height: 200px;   
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.Info-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.Info-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.breathing-exercise {
+  text-align: center;
+  padding: 2rem;
+}
+
+.breathing-exercise .anim-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  background: rgba(188, 237, 243, 0.3);
+  animation: breathe 10s ease-in-out infinite;
+}
+
+  
+  
+  @keyframes breathe {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+    }
+  }
+
   .Center-card {
     grid-column: 1 / -1;
     display: flex;
@@ -311,8 +441,8 @@
     max-width: 400px;
     margin: 0 auto;
   }
-  
-  
+
+
   @media (width < 1200px) {
     nav {
       position: fixed;
