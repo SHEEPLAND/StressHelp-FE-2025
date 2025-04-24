@@ -84,6 +84,8 @@ function renderLineChart(data) {
   addLineSeries("readiness", 0x28a745, "Readiness");
   addLineSeries("stress_index", 0xdc3545, "Stress Index");
 
+  
+
   chart.set("cursor", am5xy.XYCursor.new(root, { behavior: "zoomX", xAxis }));
   chart.set("scrollbarX", am5.Scrollbar.new(root, { orientation: "horizontal" }));
 
@@ -92,6 +94,8 @@ function renderLineChart(data) {
     x: am5.p50,
     layout: root.horizontalLayout
   }));
+
+
 
   chart.series.each(series => {
     legend.data.push(series);

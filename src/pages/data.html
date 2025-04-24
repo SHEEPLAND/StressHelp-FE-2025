@@ -132,33 +132,46 @@
       
       <div class="statistics-grid">
         <div class="statistics-card">
-          
           <span><i class="ri-building-4-line"></i></span>
+
+
           <h4 id="readiness-value">--%</h4>
-          <p>Readiness %</p>
+          <p>Readiness(%)</p>
+          <div class="tooltiptext">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
         </div>
+
 
         <div class="statistics-card">
           <span><i class="ri-trophy-fill"></i></span>
           <h4 id="sns-value">--</h4>
-          <p>Stressi Indeksi</p>
+          <p>Readiness(%)</p>
+          <div class="tooltiptext">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
+          
         </div>
 
         <div class="statistics-card">
           <span><i class="ri-user-fill"></i></span>
           <h4 id="pns-value">--</h4>
-          <p>RMSSD</p>
+          <p>Readiness(%)</p>
+          <div class="tooltiptext">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
+          
         </div>
 
         <div class="statistics-card">
           <span><i class="ri-heart-pulse-line"></i></span>
           <h4 id="bpm-value">-- bpm</h4>
-          <p>Keskimääräinen syke</p>
+          <p>Readiness(%)</p>
+          <div class="tooltiptext">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
         </div>
 
         <p class="para" id="stress-level-text">Stressi taso: --</p>
 
       </div>
+      
+
+
+
+
       </div> 
       <div class="statistics-image">
         <canvas id="resultsChart"></canvas>
@@ -179,20 +192,26 @@
     </p>
 
     
-
     <div class="controls">
+      <label for="chartTypeSelect">Valitse näkymä:</label>
+    
+      <div class="custom-select-wrapper">
+        <select id="chartTypeSelect">
+          <option value="line">📈 Edistymisen aikajana</option>
+          <option value="bar">📊 Sessioyhteenveto historia</option>
+        </select>
+        <div class="custom-arrow">
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+      </div>
+    
       <div class="range-toggle">
         <button class="range-btn active" data-range="3months">3 kuukautta</button>
         <button class="range-btn" data-range="month">Kuukausi</button>
         <button class="range-btn" data-range="week">Viikko</button>
       </div>
-
-      <label for="chartTypeSelect">Valitse näkymä:</label>
-      <select id="chartTypeSelect">
-        <option value="line">📈 Edistymisen aikajana</option>
-        <option value="bar">📊 Sessioyhteenveto historia</option>
-      </select>
     </div>
+    
     <div id="chartdiv"></div>
   </div>
 </section>
@@ -213,7 +232,6 @@
 
 <script type="module" src="../js/home.js"></script>
 <script type="module" src="../js/test.js"></script>
-<script type="module" src="../js/data-extra.js"></script>
 <script type="module" src="../js/data.js"></script>
 
 

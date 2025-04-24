@@ -365,6 +365,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  cursor: pointer;
 }
 
 .Info {
@@ -441,7 +442,8 @@
     gap: 2rem;
     align-items: start;
   }
-  
+ 
+
   
   .statistics-card span{
     font-size: 1.75rem;
@@ -456,6 +458,51 @@
   .statistics-card p {
     font-weight: 500;
   }
+
+
+  .statistics-card {
+    position: relative;
+  }
+  .statistics-card .tooltiptext {
+    position: absolute;
+    bottom: calc(100% - 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color-light);
+    color: var(--secondary-color);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-width: 220px;
+    width: fit-content;
+    z-index: 10;
+    text-align: center;
+    white-space: normal;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--secondary-color-light) transparent transparent transparent;
+  }
+  
+  
+  .statistics-card:hover .tooltiptext {
+    opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-5px);
+  }
   
  
   .statistics-image {
@@ -464,7 +511,8 @@
     align-items: center;
     gap: 2rem; 
   }
-  
+
+
 
   .statistics-image canvas {
     width: 100%;
@@ -473,12 +521,14 @@
     margin: auto;
     border-radius: 5px;
   }
+  
 
   #resultsChart {
     max-width: 600px;
     width: 100%;
     height: 300px;
     border-radius: 5px;
+    cursor: pointer;
   }
   
 /* Chart History Section */
@@ -499,10 +549,52 @@
     gap: 1rem;
   }
   
+  #chartdiv {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  .custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+  }
+  
+  #chartTypeSelect {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 50px; 
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    color: black;
+    border: 2px solid #302d2f;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 16px; 
+    transform: translateY(-50%);
+    font-size: 1.5rem; 
+    color: black;
+    pointer-events: none;  
+    
+  }
+
   .range-toggle {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+    
   }
   
   .range-btn {
@@ -510,10 +602,10 @@
     border-radius: 20px;
     border: 1px solid #ccc;
     background: #f0f0f0;
-    cursor: pointer;
     font-weight: bold;
     min-width: 120px;
     transition: all 0.3s ease;
+    cursor: pointer;
   }
   
   .range-btn.active {
@@ -522,22 +614,14 @@
     border-color: var(--primary-color);
   }
   
-  #chartdiv {
-    width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    margin: 0 auto;
-  }
   
 
-  
   @keyframes arrow-bounce {
     0% { transform: translateX(0); }
     50% { transform: translateX(6px); }
     100% { transform: translateX(3px); }
   }
   
-
 
   @media (width < 1200px) {
     nav {
