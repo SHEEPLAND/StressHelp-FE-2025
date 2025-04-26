@@ -354,6 +354,64 @@ input[type="submit"]:hover {
 }
 
 
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 2px auto 0;
+}
+
+.dot.red {
+  background-color: #e74c3c; 
+}
+
+.dot.yellow {
+  background-color: #f1c40f; 
+}
+
+.dot.green {
+  background-color: #2ecc71; 
+}
+
+
+
+#calender-terms {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.term {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.legend-green {
+  background-color: #2ecc71; 
+  
+}
+
+.legend-yellow {
+  background-color: #f1c40f; 
+}
+
+.legend-red {
+  background-color: #e74c3c; 
+}
+
+
+
+
 .diary-text {
   background: #f8f8f8;
   padding: 10px;
@@ -408,90 +466,113 @@ border-radius: var(--border-radius-s);
 transition: background 0.3s ease; 
 }
 
-/* Hover effect */
 .tips-button:hover {
-background: var(--hover-color, rgb(30, 90, 180)); /* Darker on hover */
+background: var(--hover-color, rgb(30, 90, 180)); 
 }
 
 
-#diary {
-  display: block;
-  margin-top: 2rem;
+/* Popup Styling for Diary Entries */
+#history-popup {
+  display: none;  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: var(--border-radius-s);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  max-width: 95%;
+  z-index: 9999;
 }
 
-#diary .card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+#history-popup-content {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
 }
 
-
-.diary-swiper {
-  width: 100%;
-  max-width: 700px;
-  margin: 3rem auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-
-.swiper-slide .card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
-
-.swiper-slide .card:hover {
-  transform: scale(1.01);
-}
-
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: var(--accent-color);
-}
-
-.swiper-pagination-bullet {
-  background: var(--accent-color);
-}
-
-.swiper-slide {
-  opacity: 0;
-  transform: translateY(1px);
-  transition: all 0.3s ease-in-out;
-}
-
-.swiper-slide.swiper-slide-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.entry-header-date {
-  font-size: 1.2rem;
-  font-weight: bold;
+#history-popup h2 {
   text-align: center;
-  margin-bottom: 1rem;
-  color: #2b4b6c;
-  background-color: #ccc;
+}
+
+#history-popup .diary-popup {
+  background: var(--white);
+  border-radius: var(--border-radius-s);
   padding: 10px;
-  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: black;
+  line-height: 1.4;
 }
-.diary-title {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #2b4b6c;
-  font-weight: 700;
-  font-family: "Lora", serif;
+
+#history-popup .close-button {
+  background: rgb(196, 71, 71);
+  border-radius: var(--border-radius-s);
+  padding: 10px;
+  color: white;
 }
 
 
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px 0;
+    margin-bottom: 5px;
+  }
+  
+  .calendar-days div {
+    padding: 4px 0;
+    letter-spacing: 1px;
+  }
+  
+
+  .popup-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .modify-entry, .delete-entry {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .modify-entry {
+    background-color: #4faae6;
+    color: white;
+  }
+  
+  .delete-entry {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .popup-entry-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .popup-entry {
+    text-align: left;
+  }
+  
+  
 /* Responsive Navbar */
 @media (max-width: 900px) {
   nav {

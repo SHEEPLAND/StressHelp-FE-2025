@@ -53,8 +53,8 @@ if (typeof ScrollReveal !== "undefined") {
   });
 
   ScrollReveal().reveal(".statistics-card", {
-    interval: 500,
-    duration: 500,
+    interval: 450,
+    duration: 300,
     delay: 1000,
   });
 

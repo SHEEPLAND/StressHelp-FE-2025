@@ -1,16 +1,9 @@
 import { fetchData } from "./fetch.js";
+import { getEntries, diaryEntries, renderCalendar } from "./calender.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
-
-    if (dateInput) {
-        dateInput.addEventListener("focus", function () {
-            this.setAttribute("type", "date");
-        });
-    }
-
-    getEntries(); // Fetch diary entries on load
-
     const form = document.querySelector(".diaryForm");
     const popup = document.getElementById("popup");
     const diaryPopup = document.querySelector(".diary-popup");
@@ -23,21 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const submitBtn = form.querySelector('input[type="submit"]');
         submitBtn.disabled = true;
 
-        let entryDate = document.getElementById("entry_date").value;
-        let mood = document.getElementById("mood").value.toLowerCase();
-        let energyLevel = document.getElementById("energy_level").value;
-        let stressLevel = parseInt(document.getElementById("stress_level").value);
-        let sleepHours = parseInt(document.getElementById("sleep_hours").value);
-        let notes = document.getElementById("notes").value;
-        let goals = document.getElementById("goals").value;
+        const entryDate = document.getElementById("entry_date").value;
+        const mood = document.getElementById("mood").value.toLowerCase();
+        const energyLevel = document.getElementById("energy_level").value;
+        const stressLevel = parseInt(document.getElementById("stress_level").value);
+        const sleepHours = parseInt(document.getElementById("sleep_hours").value);
+        const notes = document.getElementById("notes").value;
+        const goals = document.getElementById("goals").value;
 
         if (!entryDate || isNaN(stressLevel) || isNaN(sleepHours)) {
-            alert("Please fill out all required fields before saving.");
+            alert("Please fill out all required fields.");
             submitBtn.disabled = false;
             return;
         }
 
-        // Mood logic
+        // Mood, Stress, and Sleep Analysis
         let stressCategory = "";
         let stressMessage = "";
 
@@ -94,6 +87,58 @@ document.addEventListener("DOMContentLoaded", function () {
             moodMessage = "Thanks for sharing your mood! Every feeling is valid.";
         }
 
+        
+        const entryData = {
+            entry_date: entryDate,
+            mood,
+            energy_level: energyLevel,
+            stress_level: stressLevel,
+            sleep_hours: sleepHours,
+            notes,
+            goals
+        };
+
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You must be logged in.");
+            submitBtn.disabled = false;
+            return;
+        }
+
+        const url = "http://127.0.0.1:3000/api/entries";
+        const response = await fetchData(url, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(entryData)
+        });
+
+        if (response.error) {
+            console.error("Error saving diary entry!", response.error);
+            alert("There was an error saving your diary entry.");
+            submitBtn.disabled = false;
+            return;
+        }
+
+        console.log("Diary entry saved successfully!");
+
+        
+        diaryEntries.push({
+            entry_date: entryDate,
+            mood,
+            energy_level: energyLevel,
+            stress_level: stressLevel,
+            sleep_hours: sleepHours,
+            notes,
+            goals
+        });
+        renderCalendar();
+
+        submitBtn.disabled = false;
+
+        // Popup summary 
         diaryPopup.innerHTML = `
             <h3>Diary Entry Summary</h3>
             <p><strong>Date:</strong> ${entryDate}</p>
@@ -105,156 +150,23 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>Goals:</strong> ${goals || "No goals added."}</p>
         `;
 
-        categoryText.textContent = `Stress Level: ${stressCategory}`;
+        categoryText.textContent = `Stress Category: ${stressCategory}`;
         analysisText.innerHTML = `
-            <h4>🧘🏻 Stress Level Insights:</h4>
+            <h4>🧘 Stress Insights:</h4>
             <p>${stressMessage}</p>
-            <h4>💤 Sleep Analysis:</h4>
+            <h4>💤 Sleep Insights:</h4>
             <p>${sleepMessage}</p>
             <h4>🤔 Mood Reflection:</h4>
             <p>${moodMessage}</p>
-            <p><strong>✨ Keep going! Every small step matters for your well-being.</strong></p>
+            <p><strong>✨ Keep going! Small steps lead to big changes.</strong></p>
         `;
 
         popup.style.display = "block";
 
-        // Save entry to backend
-        const token = localStorage.getItem("token");
-        if (!token) {
-            alert("You must be logged in to save entries.");
-            submitBtn.disabled = false;
-            return;
-        }
-
-        const url = "http://127.0.0.1:3000/api/entries";
-        const entryData = {
-            entry_date: entryDate,
-            mood,
-            energy_level: energyLevel,
-            stress_level: stressLevel,
-            sleep_hours: sleepHours,
-            notes,
-            goals
-        };
-
-        const response = await fetchData(url, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(entryData)
-        });
-
-        console.log("Full backend response:", response);
-
-        if (response.error) {
-            console.error("Error saving diary entry!", response.error);
-            alert("There was an error saving your diary entry.");
-            submitBtn.disabled = false;
-            return;
-        }
-
-        console.log("Diary entry saved successfully!");
-        getEntries();
-        submitBtn.disabled = false;
+        form.reset();
     });
 
     closeBtn.addEventListener("click", function () {
         popup.style.display = "none";
-        form.reset();
     });
 });
-
-function formatDate(isoString) {
-    const date = new Date(isoString);
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-}
-
-const getEntries = async () => {
-    console.log("Fetching diary entries...");
-    const diaryContainer = document.getElementById("diary");
-
-    if (!diaryContainer) {
-        console.error("Diary container not found!");
-        return;
-    }
-
-    const token = localStorage.getItem("token");
-    if (!token) {
-        alert("You must be logged in to access this page.");
-        window.location.href = "login.html";
-        return;
-    }
-
-    const url = "http://127.0.0.1:3000/api/entries";
-    const response = await fetchData(url, {
-        method: "GET",
-        headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-        }
-    });
-
-    if (response.error) {
-        console.error("Error fetching diary data!", response.error);
-        return;
-    }
-
-    let entries = [];
-
-    if (Array.isArray(response)) {
-        entries = response;
-    } else if (Array.isArray(response.entries)) {
-        entries = response.entries;
-    } else if (Array.isArray(response.data)) {
-        entries = response.data;
-    } else {
-        console.error("Unexpected response format:", response);
-    }
-
-    entries.sort((a, b) => new Date(b.entry_date) - new Date(a.entry_date));
-
-
-    const container = document.getElementById("diary-entries");
-
-    entries.forEach((entry) => {
-        const slide = document.createElement("div");
-        slide.className = "swiper-slide";
-
-        slide.innerHTML = `
-            <div class="card">
-                <div class="entry-header-date">🗓 Päiväkirjamerkintä päivältä ${formatDate(entry.entry_date)}</div>
-                <p><strong>Mieliala:</strong> ${entry.mood}</p>
-                <p><strong>Energiataso:</strong> ${entry.energy_level}</p>
-                <p><strong>Stressitaso:</strong> ${entry.stress_level}</p>
-                <p><strong>Uni:</strong> ${entry.sleep_hours} tuntia</p>
-                <p><strong>Muistiinpanot:</strong> ${entry.notes}</p>
-                <p><strong>Tavoitteet:</strong> ${entry.goals}</p>
-                <button class="delete-btn">Poista</button>
-            </div>
-        `;
-
-        container.appendChild(slide);
-    });
-
-    new Swiper(".diary-swiper", {
-        initialSlide: 0, 
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        grabCursor: true,
-    });
-};
-
-export { getEntries };

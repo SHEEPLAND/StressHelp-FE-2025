@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <title>Päiväkirja</title>
+  <title>Päiväkirja</title>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -45,6 +45,19 @@
                   <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
                 </div>
                 <div id="calendar-dates" class="calendar-dates"></div>
+                <div id="calender-terms">
+                  <div class="term">
+                    <div class="legend-dot legend-green"></div> Matala Stressi
+                  </div>
+                  <div class="term">
+                    <div class="legend-dot legend-yellow"></div> Kohtalainen Stressi
+                  </div>
+                  <div class="term">
+                    <div class="legend-dot legend-red"></div> Korkea Stressi
+                  </div>
+                  
+                </div>
+                
               </div>
             </div>
         
@@ -106,19 +119,19 @@
         </div>
     </div>
 
-    <section id="diary">
-      <h2 class="diary-title">📖 Päiväkirjahistoria</h2>
-      <p class="diary-subtext">Viimeisimmät merkintäsi – voit selata muistojasi täältä 💬</p>
+    <!-- Diary History Popup -->
+<div class="popup" id="history-popup">
+  <div class="popup-content">
+    <h2>Diary Entries for <span id="popup-date"></span></h2>
     
-      <div class="diary-history-content">
-        <div class="swiper diary-swiper">
-          <div class="swiper-wrapper" id="diary-entries"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+    <!-- Diary Entries List -->
+    <div id="history-popup-content"></div>
+
+    <button class="close-button" id="close-history-popup">Close</button>
+  </div>
+  <div id="diary"></div>
+</div>
+
     
     
 
@@ -140,10 +153,12 @@
 
     <!-- JavaScript -->
     <script type="module" src="../js/diaryentries.js"></script>
-    
+    <script type="module" src="../js/calender.js"></script>
+  
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
-    <script type="module" src="../js/calender.js"></script>
+   
 
 </body>
 </html>
