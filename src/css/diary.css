@@ -126,6 +126,7 @@ nav {
   margin: 0 auto;
   max-width: 1200px;
   justify-content: space-between;
+  
     
 }
 
@@ -242,8 +243,6 @@ border-top-right-radius: var(--border-radius-m);
   max-width: 600px;
   width: 100%;
   padding: 2.5rem 2rem;
-  border-radius: var(--border-radius-m);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -661,7 +660,13 @@ background: var(--hover-color, rgb(30, 90, 180));
   display: flex;
   flex-direction: column;
   align-items: center;
-    }
+  }
 
+  #menu-btn-icon {
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+    text-shadow: 0 0 1px white;
+  }
 
 }

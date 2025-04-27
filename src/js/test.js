@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: `Mittauspäivä: ${formattedDate}`,
         data: [latest.readiness, latest.sns, latest.pns, latest.bpm],
-        backgroundColor: ['#4E79A7', '#F28E2B', '#76B7B2', '#E15759'], // Modernit värit
+        backgroundColor: ['#4E79A7', '#F28E2B', '#76B7B2', '#E15759'], 
         borderRadius: 12,
         barThickness: 40,
         categoryPercentage: 0.6,

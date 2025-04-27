@@ -466,8 +466,6 @@
     bottom: calc(100% - 6px);
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--secondary-color-light);
-    color: var(--secondary-color);
     padding: 0.75rem 1rem;
     border-radius: 8px;
     font-size: 0.8rem;
@@ -491,17 +489,57 @@
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: var(--secondary-color-light) transparent transparent transparent;
   }
-  
-  
+
+ 
   .statistics-card:hover .tooltiptext {
     opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(-5px);
   }
+
+  .tooltip-readiness {
+    background-color: #4E79A7; 
+    color: white;
+    font-weight: 600;
+  }
   
+  .tooltip-readiness::after {
+    border-color: #4E79A7 transparent transparent transparent; 
+  }
+
+
+  .tooltip-stressi-indeksi{
+    background-color: #F28E2B; 
+    color: white;
+    font-weight: 600;
+  }
+
+  .tooltip-stressi-indeksi::after {
+    border-color: #F28E2B transparent transparent transparent; 
+  }
+
+.tooltip-RMSSD{
+    background-color: #76B7B2; 
+    color: white;
+    font-weight: 600;
+}
+
+.tooltip-RMSSD::after {
+  border-color: #76B7B2 transparent transparent transparent; 
+}
+
+.tooltip-Syke {
+  background-color: #E15759; 
+  color: white;
+  font-weight: 600;
+
+}
+
+.tooltip-Syke::after {
+  border-color: #E15759 transparent transparent transparent; 
+}
  
   .statistics-image {
     display: grid;
@@ -612,6 +650,8 @@
     border-color: var(--primary-color);
   }
   
+
+
   
 
   @keyframes arrow-bounce {
@@ -658,6 +698,14 @@
     .navigation-menu-button {
       display: block;
     }
+
+
+  #menu-btn-icon {
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+    text-shadow: 0 0 1px white;
+  }
    
   }
 

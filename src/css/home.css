@@ -381,6 +381,13 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
   }
 
+  #menu-btn-icon {
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+    text-shadow: 0 0 1px white;
+  }
+  
   .navigation-links .navigation-link a {
     opacity: 0;
   }
@@ -395,6 +402,7 @@ nav {
 
   .navigation-menu-button {
     display: block;
+    
   }
  
 }

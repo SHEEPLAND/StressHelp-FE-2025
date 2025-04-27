@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("nimi", response.user.username);
       alert("Login successful! Redirecting...");
       // Redirect to another page after successful login
-      window.location.href = "diary-page.html"; 
+      window.location.href = "data.html"; 
     }
 
     console.log("Login response:", response);
