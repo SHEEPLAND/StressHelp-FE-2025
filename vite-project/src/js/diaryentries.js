@@ -1,5 +1,7 @@
 import { fetchData } from "./fetch.js";
 
+let swiper;
+
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
 
@@ -220,6 +222,8 @@ const getEntries = async () => {
 
 
     const container = document.getElementById("diary-entries");
+    
+    container.innerHTML = "";
 
     entries.forEach((entry) => {
         const slide = document.createElement("div");
@@ -234,27 +238,47 @@ const getEntries = async () => {
                 <p><strong>Uni:</strong> ${entry.sleep_hours} tuntia</p>
                 <p><strong>Muistiinpanot:</strong> ${entry.notes}</p>
                 <p><strong>Tavoitteet:</strong> ${entry.goals}</p>
-                <button class="delete-btn">Poista</button>
+                <button class="delete-btn" data-id="${entry.entry_id}">Poista</button>
             </div>
         `;
 
         container.appendChild(slide);
     });
 
-    new Swiper(".diary-swiper", {
-        initialSlide: 0, 
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        grabCursor: true,
+    document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+            const entryId = btn.dataset.id;
+            const token = localStorage.getItem("token");
+    
+            if (!token) return alert("Kirjaudu sisään.");
+            if (!confirm("Poistetaanko merkintä?")) return;
+    
+            const res = await fetch(`http://127.0.0.1:3000/api/entries/${entryId}`, {
+                method: "DELETE",
+                headers: { "Authorization": `Bearer ${token}` }
+            });
+    
+            if (res.ok) {
+                alert("Poistettu.");
+                getEntries(); // Päivitä näkymä
+            } else {
+                alert("Poistaminen epäonnistui.");
+            }
+        });
     });
-};
+    
+    // Päivitä Swiper
+  if (swiper) swiper.destroy(true, true);
+  swiper = new Swiper(".diary-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    grabCursor: true,
+  });
+}
 
 export { getEntries };
