@@ -69,4 +69,3 @@ function formatDate(isoString) {
     .padStart(2, "0")}.${date.getFullYear()}`;
 }
 }
-

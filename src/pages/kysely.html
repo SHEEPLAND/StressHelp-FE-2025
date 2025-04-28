@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Stressikysely</title>
     <link rel="stylesheet" href="../css/kysely.css">
 </head>
@@ -10,20 +13,36 @@
     <header>
         <nav>
             <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-          <ul class="navigation-links" id="navigation-links">
-  
-            <li class="navigation-link"><a href="home.html">Etusivu</a></li>
-            <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-            <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
-            <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
-            <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
-            <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
-          
-          </ul>
-          <div class="navigation-menu-button" id="menu-button">
-            <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
-          </div>
-        </nav>
+            <ul class="navigation-links" id="navigation-links">
+    
+              <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+              <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+              <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+              <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+              <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+    
+              <li class="navigation-link profile-dropdown">
+                <button class="profile-button">
+                  <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+                </button>
+              
+                <div class="profile-dropdown-box">
+                  <div class="arrow-up"></div> 
+                  <div class="profile-dropdown-content">
+                    <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                    <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+                  </div>
+                </div>
+              </li>
+              <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+              <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
+            </ul>
+    
+            <div class="navigation-menu-button" id="menu-button">
+              <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+            </div>
+            
+          </nav>
 
 
   <section >
@@ -157,5 +176,8 @@
     
 
     <script src="../js/kysely.js"></script>
+    <script type="module" src="../js/home.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
 </html>

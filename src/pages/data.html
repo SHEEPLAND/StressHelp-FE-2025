@@ -23,12 +23,28 @@
           <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
-          <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
-        
+
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+          
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
         </ul>
+
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
+        
       </nav>
 
       <div class="section-container header-container" id="home">
@@ -42,7 +58,7 @@
         <div class="about-grid">
           <div class="about-content">
             <p class="section-subheader">StressHelp</p>
-            <h2 class="section-header">Tervetuloa!</h2>
+            <h2 class="section-header">Tervetuloa, <span id="given-name"></span></h2> 
             <p class="paragraph">
               Olet kirjautunut sisään Kubios-tililläsi. Voit nyt seurata hyvinvointiasi mittausten ja päiväkirjamerkintöjen avulla.
             
@@ -143,7 +159,7 @@
 
         <div class="statistics-card">
           <span><i class="ri-trophy-fill"></i></span>
-          <h4 id="sns-value">--</h4>
+          <h4 id="stress-index-value"></h4>
           <p>Stressi-indeksi</p>
           <div class="tooltiptext tooltip-stressi-indeksi">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
           
@@ -151,7 +167,7 @@
 
         <div class="statistics-card">
           <span><i class="ri-user-fill"></i></span>
-          <h4 id="pns-value">--</h4>
+          <h4 id="rmssd-value">-- ms</h4>
           <p>RMSSD- sykevälivaihtelua</p>
           <div class="tooltiptext tooltip-RMSSD">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
           
@@ -159,7 +175,7 @@
 
         <div class="statistics-card">
           <span><i class="ri-heart-pulse-line"></i></span>
-          <h4 id="bpm-value">-- bpm</h4>
+          <h4 id="mean-hr-value">-- bpm</h4>
           <p>Keskimääräinen Syke</p>
           <div class="tooltiptext tooltip-Syke">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
         </div>
@@ -228,11 +244,12 @@
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../js/statistics-chart.js"></script>
+
 
 <script type="module" src="../js/home.js"></script>
-<script type="module" src="../js/test.js"></script>
 <script type="module" src="../js/data.js"></script>
+<script type="module" src="../js/test.js"></script>
+
 
 
 

@@ -97,3 +97,22 @@ accordions.forEach((accordion) => {
     if (icon) icon.textContent = isActive ? "−" : "+";
   });
 });
+
+
+
+const profileButton = document.querySelector('.profile-button');
+const dropdownBox = document.querySelector('.profile-dropdown-box');
+
+
+profileButton.addEventListener('click', function(event) {
+  event.stopPropagation();
+ 
+  dropdownBox.style.display = (dropdownBox.style.display === 'block') ? 'none' : 'block';
+});
+
+
+document.addEventListener('click', function(event) {
+  if (!profileButton.contains(event.target) && !dropdownBox.contains(event.target)) {
+    dropdownBox.style.display = 'none';
+  }
+});
