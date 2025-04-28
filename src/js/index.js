@@ -1,5 +1,3 @@
-import '../css/style.css';
-import '../css/snackbar.css';
 import { fetchData } from './fetch.js';
 
 console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');

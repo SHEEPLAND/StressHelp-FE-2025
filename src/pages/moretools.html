@@ -2,16 +2,19 @@
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/tools.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
   <title>Stressivinkit</title>
 </head>
 
 <body>
     <header>
       <nav>
-        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
+        <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
         <ul class="navigation-links" id="navigation-links">
 
           <li class="navigation-link"><a href="home.html">Etusivu</a></li>
@@ -77,13 +80,40 @@
               <img src="../img/freepik__background__963.png" alt="Info" />
               <h4>Musiikki</h4>
               <p>Kuuntele rauhoittavaa musiikkia.</p>
-
+              <div class="accordion-container">
+                <button class="accordion active">
+                  Avaa rentoutusmusiikki
+                  <span class="accordion-icon">−</span>
+                </button>
+            
+                <div class="panel">
+                  <div class="Info-grid">
+                    <div class="Info-card">
+                      <p>Hengitä sisään 4 sekuntia, pidätä 4 sekuntia, uloshengitys 4 sekuntia.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
 
             <div class="Info-card">
                 <img src="../img/organic-flat-people-meditating-illustration.png" alt="Info" />
                 <h4>Mindfulness</h4>
                 <p>Hidasta ja huomioi, mitä aistit.</p> 
+                <div class="accordion-container">
+                  <button class="accordion active">
+                    Avaa mindfulness-harjoitus
+                    <span class="accordion-icon">−</span>
+                  </button>
+              
+                  <div class="panel">
+                    <div class="Info-grid">
+                      <div class="Info-card">
+                        <p>Hengitä sisään 4 sekuntia, pidätä 4 sekuntia, uloshengitys 4 sekuntia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
 
@@ -99,9 +129,10 @@
                 </button>
             
                 <div class="panel">
-                  <div class="breathing-exercise">
-                    <div class="anim-circle"></div>
-                    <p>Hengitä sisään 4 sekuntia, pidätä 4 sekuntia, uloshengitys 4 sekuntia.</p>
+                  <div class="Info-grid">
+                    <div class="Info-card">
+                      <div class="anim-circle"></div>
+                      <p>Hengitä sisään 4 sekuntia, pidätä 4 sekuntia, uloshengitys 4 sekuntia.</p>
                   </div>
                 </div>
               </div>
