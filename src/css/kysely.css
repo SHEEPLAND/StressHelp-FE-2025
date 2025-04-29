@@ -52,6 +52,8 @@ nav {
   background-color: rgba(4, 4, 4, 0.722);
 }
 
+
+
 .navigation-logo a {
   font-size: 2.2rem;
   font-weight: 700;
@@ -207,46 +209,50 @@ button:hover {
 }
 
 @media (width < 1200px) {
-  nav {
-    position: fixed;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--black);
-    z-index: 99;
-  }
-
-  .navigation-links  {
-    position: absolute;
-    left: 0;
-    top: 68px;
-    padding: 2rem;
-    width: 100%;
-    flex-direction: column;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 0.5s;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
-  .navigation-links .navigation-link a {
-    opacity: 0;
-  }
-
-  .navigation-links.open .navigation-link a {
-    opacity: 1;
-  }
-
-  .navigation-links.open  {
-    transform: scaleY(1);
-  }
-
-  .navigation-menu-button {
-    display: block;
+  @media (width < 1200px) {
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--black);
+      z-index: 99;
+    }
+  
+    .navigation-links  {
+      position: absolute;
+      left: 0;
+      top: 68px;
+      padding: 2rem;
+      width: 100%;
+      flex-direction: column;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.5s;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  
+    .navigation-links .navigation-link a {
+      opacity: 0;
+    }
+  
+    .navigation-links.open .navigation-link a {
+      opacity: 1;
+    }
+  
+    .navigation-links.open  {
+      transform: scaleY(1);
+    }
+  
+    .navigation-menu-button {
+      display: block;
+    }
+   
   }
  
 }
 
 @media (width < 900px) {
+
   .about-grid {
     grid-template-columns: repeat(1, 1fr);
   }
