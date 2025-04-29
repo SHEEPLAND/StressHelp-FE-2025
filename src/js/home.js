@@ -1,5 +1,8 @@
 const menuButton = document.getElementById("menu-button");
 const navigationLinks = document.getElementById("navigation-links");
+
+
+
 const menuBtnIcon = menuButton.querySelector("i");
 
 menuButton.addEventListener("click", () => {

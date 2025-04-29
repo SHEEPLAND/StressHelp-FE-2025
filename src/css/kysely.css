@@ -41,9 +41,6 @@ body {
     color: var(--white);
   }
 
-
-
-
   nav {
     margin: auto; 
     padding: 1.3rem 1rem;
@@ -258,7 +255,8 @@ button:hover {
 }
 
 
- 
+
+
 /* Responsive Navbar */
 @media (max-width: 1200px) {
   nav {
@@ -272,7 +270,7 @@ button:hover {
 
   .navigation-links {
     position: absolute;
-    top: 68px; /* height of nav */
+    top: 68px;
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -283,31 +281,50 @@ button:hover {
 
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     z-index: 999;
-  }
+}
 
-  .navigation-links .navigation-link a {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: white; 
-  }
+.navigation-links .navigation-link a {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white; 
+}
 
-  .navigation-links.open {
-    transform: scaleY(1);
-  }
+.navigation-links.open {
+  transform: scaleY(1);
+}
 
-  .navigation-links.open .navigation-link a {
-    opacity: 1;
-  }
+.navigation-links.open .navigation-link a {
+  opacity: 1;
+}
 
-  .navigation-menu-button {
+.navigation-links .navigation-link {
+  margin-bottom: 1.2rem;
+}
+
+.navigation-menu-button {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     cursor: pointer;
     z-index: 100;
   }
+
+  .navigation-links.open .navigation-link a.active {
+    color: #4faae6;
+  }
+  
+
+  .profile-dropdown {
+    display: none; 
+  }
+  
+  .mobile-only {
+    display: block; 
+  }
+  
+
 
   .container {
   display: flex;
@@ -326,8 +343,6 @@ button:hover {
       max-width: 250px;
       justify-content: center;
     }
-
-
 
   .form-container {
       width: 100%;

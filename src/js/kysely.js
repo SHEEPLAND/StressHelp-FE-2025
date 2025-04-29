@@ -77,3 +77,5 @@ document.getElementById("close-popup").addEventListener("click", function () {
     document.getElementById("moderateStressOptions").style.display = "none";
     document.getElementById("highStressOptions").style.display = "none";
 });
+
+
