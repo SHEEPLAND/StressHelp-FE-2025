@@ -5,6 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="../css/tools.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stressivinkit</title>
   </head>
@@ -21,10 +23,27 @@
           <li class="navigation-link"><a href="moretools.html">Vinkit ja tuki</a></li>
           <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
         
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+          
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
         </ul>
+
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
+        
       </nav>
 
       <div class="section-container header-container" id="home">
@@ -116,6 +135,7 @@
  
     <script type="module" src="../js/tools.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   </body>
 </html>

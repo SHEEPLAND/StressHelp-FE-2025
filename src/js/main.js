@@ -1,4 +1,4 @@
-import {getUsers, addUser} from './users.js';
+import {getUsers, addUser} from '';
 import { loginUser } from "./login.js"; 
 import {getEntries} from './diaryentries.js';
 

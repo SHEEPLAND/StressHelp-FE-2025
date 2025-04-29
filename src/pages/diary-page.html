@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/diary.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <title>Päiväkirja</title>
+  <title>Päiväkirja</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
+  <header>
     <nav>
-      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
-        <ul class="navigation-links" id="navigation-links">
+      <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+      <ul class="navigation-links" id="navigation-links">
 
           <li class="navigation-link"><a href="home.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
@@ -22,14 +23,35 @@
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="moretools.html">Vinkit ja tuki</a></li>
           <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
-        
-        </ul>
-        <div class="navigation-menu-button" id="menu-button">
-          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
-        </div>
-      </nav>
 
-    <div class="nav-spacer"></div>
+        <li class="navigation-link profile-dropdown">
+          <button class="profile-button">
+            <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+          </button>
+        
+          <div class="profile-dropdown-box">
+            <div class="arrow-up"></div> 
+            <div class="profile-dropdown-content">
+              <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+              <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+            </div>
+          </div>
+        </li>
+        <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+        <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
+      </ul>
+
+      <div class="navigation-menu-button" id="menu-button">
+        <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+      </div>
+      
+    </nav>
+
+    <div class="section-container header-container" id="home">
+      <h1></h1> <h3></h3> 
+    </div>
+</header>
+
 
     <!-- Main Container -->
     <div class="container">
@@ -45,6 +67,19 @@
                   <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
                 </div>
                 <div id="calendar-dates" class="calendar-dates"></div>
+                <div id="calender-terms">
+                  <div class="term">
+                    <div class="legend-dot legend-green"></div> Matala Stressi
+                  </div>
+                  <div class="term">
+                    <div class="legend-dot legend-yellow"></div> Kohtalainen Stressi
+                  </div>
+                  <div class="term">
+                    <div class="legend-dot legend-red"></div> Korkea Stressi
+                  </div>
+                  
+                </div>
+                
               </div>
             </div>
         
@@ -72,7 +107,7 @@
                     <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
 
                     <label class="form-label" for="sleep_hours">Uni (tunteina):</label>
-                    <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7.5 tuntia" min="0">
+                    <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7 tuntia" min="0">
 
                     <label class="form-label" for="notes">Muistiinpanoja:</label>
                     <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
@@ -106,19 +141,19 @@
         </div>
     </div>
 
-    <section id="diary">
-      <h2 class="diary-title">📖 Päiväkirjahistoria</h2>
-      <p class="diary-subtext">Viimeisimmät merkintäsi – voit selata muistojasi täältä 💬</p>
+    <!-- Diary History Popup -->
+<div class="popup" id="history-popup">
+  <div class="popup-content">
+    <h2>Diary Entries for <span id="popup-date"></span></h2>
     
-      <div class="diary-history-content">
-        <div class="swiper diary-swiper">
-          <div class="swiper-wrapper" id="diary-entries"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+    <!-- Diary Entries List -->
+    <div id="history-popup-content"></div>
+
+    <button class="close-button" id="close-history-popup">Close</button>
+  </div>
+  <div id="diary"></div>
+</div>
+
     
     
 
@@ -140,10 +175,12 @@
 
     <!-- JavaScript -->
     <script type="module" src="../js/diaryentries.js"></script>
-    
+    <script type="module" src="../js/calender.js"></script>
+  
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
-    <script type="module" src="../js/calender.js"></script>
+   
 
 </body>
 </html>

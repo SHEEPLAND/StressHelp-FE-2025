@@ -1,5 +1,8 @@
 const menuButton = document.getElementById("menu-button");
 const navigationLinks = document.getElementById("navigation-links");
+
+
+
 const menuBtnIcon = menuButton.querySelector("i");
 
 menuButton.addEventListener("click", () => {
@@ -53,8 +56,8 @@ if (typeof ScrollReveal !== "undefined") {
   });
 
   ScrollReveal().reveal(".statistics-card", {
-    interval: 500,
-    duration: 500,
+    interval: 450,
+    duration: 300,
     delay: 1000,
   });
 
@@ -96,4 +99,23 @@ accordions.forEach((accordion) => {
     panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
     if (icon) icon.textContent = isActive ? "−" : "+";
   });
+});
+
+
+
+const profileButton = document.querySelector('.profile-button');
+const dropdownBox = document.querySelector('.profile-dropdown-box');
+
+
+profileButton.addEventListener('click', function(event) {
+  event.stopPropagation();
+ 
+  dropdownBox.style.display = (dropdownBox.style.display === 'block') ? 'none' : 'block';
+});
+
+
+document.addEventListener('click', function(event) {
+  if (!profileButton.contains(event.target) && !dropdownBox.contains(event.target)) {
+    dropdownBox.style.display = 'none';
+  }
 });

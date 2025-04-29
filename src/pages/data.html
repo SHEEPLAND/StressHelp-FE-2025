@@ -24,11 +24,28 @@
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="moretools.html">Vinkit ja tuki</a></li>
           <li class="navigation-link"><a href="login.html">Kirjaudu Ulos</a></li>
-        
+
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+          
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
         </ul>
+
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
+        
       </nav>
 
       <div class="section-container header-container" id="home">
@@ -42,13 +59,13 @@
         <div class="about-grid">
           <div class="about-content">
             <p class="section-subheader">StressHelp</p>
-            <h2 class="section-header">Data</h2>
+            <h2 class="section-header">Tervetuloa, <span id="given-name"></span></h2> 
             <p class="paragraph">
-              Tervetuloa <strong>StressHelp</strong>, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <br />
-            <p class="paragraph">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, debitis voluptatum. Quod sit, aut optio magnam quasi voluptatibus possimus error, maxime rem maiores ex dicta excepturi aliquam, quaerat illo ullam!
-            </p>
+              Olet kirjautunut sisään Kubios-tililläsi. Voit nyt seurata hyvinvointiasi mittausten ja päiväkirjamerkintöjen avulla.
+            
+              
+            <br> <br />
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, beatae? Aperiam nulla totam vitae, deserunt id harum laudantium? Qui iure corporis et pariatur laudantium dolorem unde est obcaecati officia consectetur.
           </div>
           
           <!-- About list -->
@@ -72,8 +89,8 @@
                 </table>
             
                 <div class="entry-buttons">
-                  <button class="entry-btn" onclick="startMeasurement()">+ Uusi mittaus</button>
-                  <button class="entry-btn" onclick="openDiaryForm()">+ Uusi päiväkirjamerkintä</button>
+                  <button class="entry-btn" onclick="window.location.href='diary-page.html'">+ Uusi päiväkirjamerkintä</button>
+                  <a href="#statistics-second" class="entry-btn">Siirry Mittausdataan</a>
                 </div>
               </div>
             </div>
@@ -87,30 +104,31 @@
 <!-- Info -->
 <section class="Info" id="Info">
   <div class="section-container Info-container">
-    <p class="section-subheader">Lorem</p>
-    <h2 class="section-header">....</h2>
+    <p class="section-subheader">Ohjeet ensimmäiseen mittaukseen</p>
+  
 
     <div class="accordion-container">
       <button class="accordion active">
-        Lorem
+  
+        Miten mittaus toimii?
         <span class="accordion-icon">−</span>
       </button>
       <div class="panel">
         <div class="Info-grid">
           <div class="Info-card">
-            <img src="../img/login.png" alt="Step 1">
-            <h4>Vaihe 1: </h4>
-            <p>Lorem.</p>
+            <img src="" alt="Step 1">
+            <h4>Vaihe 1: Lainaa mittauslaite </h4>
+            <p>Tarvitset sykevälivaihtelua mittaavan laitteen (esim. Polar H10). Voit lainata sen koululta tai YTHS:ltä.</p>
           </div>
           <div class="Info-card">
-            <img src="../img/entry.png" alt="Step 2">
-            <h4>Vaihe 2:</h4>
-            <p>Lorem.</p>
+            <img src="" alt="Step 2">
+            <h4>Vaihe 2: Suorita mittaus</h4>
+            <p>Käynnistä mittaus Kubios-sovelluksessa laitteen avulla. Pidä mittaushetki rauhallisena ja istu paikallasi.</p>
           </div>
           <div class="Info-card">
-            <img src="../img/last.png" alt="Step 3">
-            <h4>Vaihe 3: </h4>
-            <p></p>
+            <img src="" alt="Step 3">
+            <h4>Vaihe 3: Seuraa tuloksia</h4>
+            <p>Kun mittaus on valmis, tuloksesi näkyvät täällä StressHelpissä. Voit myös tehdä päiväkirjamerkintöjä ja seurata kehitystäsi.</p>
           </div>
         </div>
       </div>
@@ -124,40 +142,53 @@
   <div class="section-container statistics-container">
     <div class="statistics-content">
       <p class="section-subheader">Data Analyysi</p>
-      <h2 class="section-header">Tulokset</h2>
+      <h2 class="section-header">Viimeisin mittaustulos</h2>
       <p class="paragraph">
-        Kubiosin HRV-mittauksen reaaliaikaiset tulokset
+        Tulokset perustuvat viimeisimpään mittaukseesi Kubiosin kautta. Mittauksesi tulokset auttavat sinua ymmärtämään kehon stressitasoa ja palautumiskykyä.
       </p>
       
       <div class="statistics-grid">
         <div class="statistics-card">
-          
           <span><i class="ri-building-4-line"></i></span>
+
+
           <h4 id="readiness-value">--%</h4>
-          <p>Readiness %</p>
+          <p>Readiness(%)</p>
+          <div class="tooltiptext tooltip-readiness" >Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
         </div>
+
 
         <div class="statistics-card">
           <span><i class="ri-trophy-fill"></i></span>
-          <h4 id="sns-value">--</h4>
-          <p>SNS-Indeksi</p>
+          <h4 id="stress-index-value"></h4>
+          <p>Stressi-indeksi</p>
+          <div class="tooltiptext tooltip-stressi-indeksi">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
+          
         </div>
 
         <div class="statistics-card">
           <span><i class="ri-user-fill"></i></span>
-          <h4 id="pns-value">--</h4>
-          <p>PNS-indeksi</p>
+          <h4 id="rmssd-value">-- ms</h4>
+          <p>RMSSD- sykevälivaihtelua</p>
+          <div class="tooltiptext tooltip-RMSSD">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
+          
         </div>
 
         <div class="statistics-card">
           <span><i class="ri-heart-pulse-line"></i></span>
-          <h4 id="bpm-value">-- bpm</h4>
-          <p>Keskimääräinen syke</p>
+          <h4 id="mean-hr-value">-- bpm</h4>
+          <p>Keskimääräinen Syke</p>
+          <div class="tooltiptext tooltip-Syke">Kertoo, kuinka valmis kehosi on suoriutumaan fyysisesti ja henkisesti.</div>
         </div>
 
         <p class="para" id="stress-level-text">Stressi taso: --</p>
 
       </div>
+      
+
+
+
+
       </div> 
       <div class="statistics-image">
         <canvas id="resultsChart"></canvas>
@@ -169,29 +200,35 @@
 
 
 <!-- Chart history Section -->
-<section class="chart-section">
+<section class="chart-section" id="statistics-second">
   <div class="section-container">
-    <p class="section-subheader">StressHelp</p>
-    <h2 class="section-header">Visualisointi</h2>
+    <p class="section-subheader">Historia</p>
+    <h2 class="section-header">Kubios Mittaushistoria</h2>
     <p class="paragraph">
       Seuraa stressi- ja valmiustasojen muutoksia eri aikaväleillä. Vaihda näkymää tai aikajännettä nähdäksesi yksityiskohtaisia mittaustietoja.
     </p>
 
     
-
     <div class="controls">
+      <label for="chartTypeSelect">Valitse näkymä:</label>
+    
+      <div class="custom-select-wrapper">
+        <select id="chartTypeSelect">
+          <option value="line">📈 Edistymisen aikajana</option>
+          <option value="bar">📊 Sessioyhteenveto historia</option>
+        </select>
+        <div class="custom-arrow">
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+      </div>
+    
       <div class="range-toggle">
         <button class="range-btn active" data-range="3months">3 kuukautta</button>
         <button class="range-btn" data-range="month">Kuukausi</button>
         <button class="range-btn" data-range="week">Viikko</button>
       </div>
-
-      <label for="chartTypeSelect">Valitse näkymä:</label>
-      <select id="chartTypeSelect">
-        <option value="line">📈 Edistymisen aikajana</option>
-        <option value="bar">📊 Sessioyhteenveto historia</option>
-      </select>
     </div>
+    
     <div id="chartdiv"></div>
   </div>
 </section>
@@ -208,12 +245,12 @@
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../js/statistics-chart.js"></script>
+
 
 <script type="module" src="../js/home.js"></script>
-<script type="module" src="../js/test.js"></script>
-<script type="module" src="../js/data-extra.js"></script>
 <script type="module" src="../js/data.js"></script>
+<script type="module" src="../js/test.js"></script>
+
 
 
 
