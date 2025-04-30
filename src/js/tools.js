@@ -47,7 +47,7 @@ if (typeof ScrollReveal !== "undefined") {
     delay: 1000,
   });
 
-  ScrollReveal().reveal(".Info-card", {
+  ScrollReveal().reveal(".accordion-card", {
     ...scrollRevealOption,
     interval: 500,
   });

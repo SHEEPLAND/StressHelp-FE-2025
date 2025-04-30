@@ -2,7 +2,7 @@ import { fetchData } from "./fetch.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.querySelector(".login-form"); // Adjusted selector
+  const logaccordionrm = document.querySelector(".login-form"); // Adjusted selector
 
   const loginUser = async (event) => {
     event.preventDefault();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log("Login response:", response);
-    loginForm.reset(); // Clear form fields
+    logaccordionrm.reset(); // Clear form fields
   };
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -69,5 +69,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  loginForm.addEventListener("submit", loginUser);
+  logaccordionrm.addEventListener("submit", loginUser);
 });

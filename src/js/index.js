@@ -8,11 +8,11 @@ const loginUser = async (event) => {
 	event.preventDefault();
 
 	// Haetaan oikea formi
-	const loginForm = document.querySelector('.loginForm');
+	const logaccordionrm = document.querySelector('.logaccordionrm');
 
 	// Haetaan formista arvot, tällä kertaa käyttäen attribuuutti selektoreita
-	const username = loginForm.querySelector('input[name=username]').value;
-	const password = loginForm.querySelector('input[name=password]').value;
+	const username = logaccordionrm.querySelector('input[name=username]').value;
+	const password = logaccordionrm.querySelector('input[name=password]').value;
 
 	// Luodaan body lähetystä varten taustapalvelun vaatimaan muotoon
 	const bodyData = {
@@ -50,8 +50,8 @@ const loginUser = async (event) => {
 	}
 
 	console.log(response);
-	loginForm.reset(); // tyhjennetään formi
+	logaccordionrm.reset(); // tyhjennetään formi
 };
 
-const loginForm = document.querySelector('.loginForm');
-loginForm.addEventListener('submit', loginUser);
+const logaccordionrm = document.querySelector('.logaccordionrm');
+logaccordionrm.addEventListener('submit', loginUser);

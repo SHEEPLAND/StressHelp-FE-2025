@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "http://127.0.0.1:3000/api/kubios-data/user-info";
+  const url = "http://127.0.0.1:3000/api/kubios-data/user-accordion";
   
   const options = {
     method: "GET",
