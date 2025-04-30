@@ -515,6 +515,59 @@ nav {
 }
 
 
+.statistics {
+  background-color: #fbfbf6;
+}
+
+.statistics-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.statistics-content .section-header {
+  margin-bottom: 1rem;
+}
+
+.statistics-content .paragraph {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.statistics-card span{
+  font-size: 1.75rem;
+  color: var(--primary-color);
+}
+
+.statistics-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.statistics-card p {
+  font-weight: 500;
+}
+
+.statistics-image {
+  display: grid;
+  gap: 2rem;
+}
+
+.statistics-image img {
+  max-width: 450px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
