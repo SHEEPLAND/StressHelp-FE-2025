@@ -57,21 +57,16 @@ if (typeof ScrollReveal !== "undefined") {
 
 const accordions = document.querySelectorAll(".accordion");
 
-accordions.forEach((accordion) => {
-  const panel = accordion.nextElementSibling;
-  const icon = accordion.querySelector(".accordion-icon");
-
-  // Open by default if .active
-  if (accordion.classList.contains("active")) {
-    panel.style.maxHeight = panel.scrollHeight + "px";
-    if (icon) icon.textContent = "−";
-  }
-
-  accordion.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const isActive = this.classList.contains("active");
-
-    panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
-    if (icon) icon.textContent = isActive ? "−" : "+";
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", () => {
+      accordion.classList.toggle("active");
+      const panel = accordion.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        accordion.querySelector(".accordion-icon").textContent = "+";
+      } else {
+        panel.style.display = "block";
+        accordion.querySelector(".accordion-icon").textContent = "−";
+      }
+    });
   });
-});

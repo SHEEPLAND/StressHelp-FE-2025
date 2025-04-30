@@ -11,7 +11,7 @@
     --secondary-color: #fbfbf6;
     --secondary-color-light: rgb(43, 75, 108);
     --text-light: black;
-    --white:rgb(43, 75, 108);
+    --white:rgb(98, 117, 137);
     --black: #000000;
     --max-width: 1200px;
   
@@ -44,18 +44,6 @@
     padding-left: 20px;
     font-size: 1.2rem;
     font-weight: 600;
-  }
-  
-  .section-subheader::after {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 45px;
-    aspect-ratio: 1;
-    background-color: var(--primary-color);
-    z-index: -1;
   }
   
   .button {
@@ -378,6 +366,9 @@
 
   .accordion-container {
     margin-top: 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
   }
   
 .accordion {
@@ -416,12 +407,10 @@
 
 /* Accordion panel */
 .panel {
-  background-color: var(--secondary-color); 
-  color: var(--text-light);
-  padding: 1rem 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  display: none; 
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
 }
 
   
@@ -473,32 +462,14 @@
   line-height: 1.6;
 }
 
-
-.Info-card .anim-circle {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1rem auto;
-  border-radius: 50%;
-  background: rgba(188, 237, 243, 0.3);
-  animation: breathe 10s ease-in-out infinite;
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background-color: #eaf4ff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: left;
 }
-
-  
-  
-  @keyframes breathe {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.5);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.7;
-    }
-  }
 
   .Center-card {
     grid-column: 1 / -1;
@@ -572,12 +543,10 @@
       grid-template-columns: repeat(1, 1fr);
     }
   
-  
     .Info-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 2rem 1rem;
-    }
-  
+    }  
   }
   
   @media (width < 600px) {
