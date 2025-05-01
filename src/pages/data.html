@@ -33,12 +33,12 @@
               <div class="arrow-up"></div> 
               <div class="profile-dropdown-content">
                 <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
-                <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
               </div>
             </div>
           </li>
           <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-          <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
         </ul>
 
         <div class="navigation-menu-button" id="menu-button">
@@ -64,7 +64,7 @@
             
               
             <br> <br />
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, beatae? Aperiam nulla totam vitae, deserunt id harum laudantium? Qui iure corporis et pariatur laudantium dolorem unde est obcaecati officia consectetur.
+            Stressi vaikuttaa meihin eri tavoin – siksi on tärkeää tunnistaa omat kuormituksen merkit. Tällä sivulla näet mittaustuloksesi, jotka auttavat ymmärtämään, miten kehosi reagoi arjen haasteisiin. Säännölliset merkinnät ja mittaukset tukevat matkaasi kohti tasapainoisempaa arkea.
           </div>
           
           <!-- About list -->
@@ -83,7 +83,7 @@
                   </tr>
                   <tr>
                     <th>Merkintä</th>
-                    <td id="latest-note">-</td>
+                    <td id="latest-notes">-</td>
                   </tr>
                 </table>
             
@@ -245,7 +245,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
+<script type="module" src="../js/auth.js"></script>
+<script type="module" src="../js/user-info.js"></script>
 <script type="module" src="../js/home.js"></script>
 <script type="module" src="../js/data.js"></script>
 <script type="module" src="../js/test.js"></script>

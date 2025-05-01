@@ -33,12 +33,12 @@
                 <div class="arrow-up"></div> 
                 <div class="profile-dropdown-content">
                   <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
-                  <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+                  <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
                 </div>
               </div>
             </li>
             <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-            <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
+            <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
           </ul>
   
           <div class="navigation-menu-button" id="menu-button">
@@ -182,7 +182,7 @@
 
   </section>
     
-
+    <script type="module" src="../js/auth.js"></script>
     <script src="../js/kysely.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>

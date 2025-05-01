@@ -32,12 +32,12 @@
             <div class="arrow-up"></div> 
             <div class="profile-dropdown-content">
               <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
-              <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
           </div>
         </li>
         <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-        <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
+        <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
       </ul>
 
       <div class="navigation-menu-button" id="menu-button">
@@ -143,7 +143,7 @@
     <!-- Diary History Popup -->
 <div class="popup" id="history-popup">
   <div class="popup-content">
-    <h2>Diary Entries for <span id="popup-date"></span></h2>
+    <h2>Päiväkirjamerkinnät päivältä <span id="popup-date"></span></h2>
     
     <!-- Diary Entries List -->
     <div id="history-popup-content"></div>
@@ -173,6 +173,7 @@
     
 
     <!-- JavaScript -->
+    <script type="module" src="../js/auth.js"></script>
     <script type="module" src="../js/diaryentries.js"></script>
     <script type="module" src="../js/calender.js"></script>
   
