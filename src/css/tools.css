@@ -1,17 +1,9 @@
-.lora-text{
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-
 :root {
   --primary-color: #84ad83;
   --secondary-color: #fbfbf6;
   --secondary-color-light: rgb(43, 75, 108);
   --text-light: black;
-  --white:rgb(43, 75, 108);
+  --white:rgb(43, 69, 94);
   --black: #000000;
   --max-width: 1200px;
 
@@ -29,7 +21,7 @@
 .section-container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 3.5rem 1rem;
+  padding: 2.5rem 1rem;
 }
 
 .section-header {
@@ -43,7 +35,7 @@
   margin-bottom: 1rem;
   padding-left: 20px;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .section-subheader::after {
@@ -109,8 +101,7 @@ body {
 }
 
 header {
-  background-image: 
-    url("../img/thoughtful-woman-stands-amidst-colorful-foliage-symbolizing-contemplation-creativity-vibrant-artistic-environment.jpg");
+  background-image: url("../img/401692905_1137f67f-6c27-4d47-8f21-80d50c37c6e2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -203,6 +194,7 @@ nav {
   
 }
 
+
 .arrow-up {
   width: 0;
   height: 0;
@@ -248,7 +240,6 @@ nav {
 .header-container {
   padding-block: 5rem 12rem;
   padding-top: 200px;
-
 }
 
 .header-container h1 {
@@ -667,6 +658,7 @@ nav {
   .mobile-only {
     display: block;
   }
+ 
  
 }
 
