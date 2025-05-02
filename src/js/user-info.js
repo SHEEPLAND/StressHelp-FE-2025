@@ -36,6 +36,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   } catch (error) {
     console.error("Virhe:", error);
-    alert("Virhe tietoja haettaessa.");
   }
 });

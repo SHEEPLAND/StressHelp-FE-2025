@@ -18,36 +18,36 @@
 </head>
 <body>
     <header>
-        <nav>
-          <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-          <ul class="navigation-links" id="navigation-links">
-  
-            <li class="navigation-link"><a href="home.html">Etusivu</a></li>
-            <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-            <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
-            <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
-            <li class="navigation-link"><a href="moretools.html">Vinkit & tuki</a></li>
-            
-            <li class="navigation-link profile-dropdown">
-              <button class="profile-button">
-                <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
-              </button>
-            
-              <div class="profile-dropdown-box">
-                <div class="arrow-up"></div> 
-                <div class="profile-dropdown-content">
-                  <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
-                  <a href="login.html"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
-                </div>
+      <nav>
+        <div class="navigation-logo"><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+        <ul class="navigation-links" id="navigation-links">
+
+          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+          
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
               </div>
-            </li>
-            <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-            <li class="navigation-link mobile-only"><a href="login.html">Kirjaudu Sisään</a></li>
-          </ul>
-  
-          <div class="navigation-menu-button" id="menu-button">
-            <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
-          </div>
+            </div>
+          </li>
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
+        </ul>
+
+        <div class="navigation-menu-button" id="menu-button">
+          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+        </div>
           
         </nav>
   
@@ -146,7 +146,7 @@
             <button type="button" onclick="calculateStress()">Lasketaan stressitasosi</button>
         </form>
 
-        <div class="info">
+        <div class="accordion">
             <h3>Miten kyselyn tulokset arvioidaan?</h3>
             <p>Tämä kysely perustuu Perceived Stress Scale (PSS) -kyselyyn.</p>
             <p>Stressitasosi määräytyy yleisesti ottaen seuraavasti:</p>
@@ -183,8 +183,26 @@
         </div>
     </div>
 
-  
-    <script type="module" src="../js/tools.js"></script>
+
+  </section>
+
+  <footer class="footer">
+    <div class="section-container footer-container">
+      <div class="footer-section">
+        <h5><a href="home.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
+        <p>
+          StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
+        </p>
+
+    </div>
+    <div class="footer-bar">
+      &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+
+    </div>
+  </footer>
+    
+    <script type="module" src="../js/auth.js"></script>
+    <script src="../js/kysely.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script type="module" src="../js/kysely.js"></script>

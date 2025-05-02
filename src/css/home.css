@@ -422,6 +422,50 @@ nav {
   animation: arrow-bounce 0.4s ease forwards;
 }
 
+
+.footer {
+  background-color: #eae9dd;
+  padding: 0.8rem 1rem 1rem;
+}
+
+.footer-container {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-section h5 a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  text-decoration: none;
+}
+
+.footer-section h5 {
+  text-align: center;
+}
+
+
+.footer-section p {
+  margin-top: 1rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+
+}
+
+.footer-bar {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #000000;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+
+
+
 @keyframes arrow-bounce {
   0% { transform: translateX(0); }
   50% { transform: translateX(6px); }
@@ -495,6 +539,12 @@ nav {
   .Info-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 1rem;
+  }
+
+
+  .footer-bar {
+    text-align: center;
+    margin-top: 1.5rem;
   }
 
 }

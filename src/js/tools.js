@@ -1,72 +1,14 @@
-const menuButton = document.getElementById("menu-button");
-const navigationLinks = document.getElementById("navigation-links");
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
 
-menuButton.addEventListener("click", () => {
-  navigationLinks.classList.toggle("open");
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    
+    tabButtons.forEach(btn => btn.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
 
-  const isOpen = navigationLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+ 
+    button.classList.add("active");
+    document.getElementById(button.dataset.tab).classList.add("active");
+  });
 });
-
-navigationLinks.addEventListener("click", () => {
-  navigationLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
-
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
-
-// Ensure ScrollReveal
-if (typeof ScrollReveal !== "undefined") {
-  ScrollReveal().reveal(".header-container h1", {
-    ...scrollRevealOption,
-  });
-
-  ScrollReveal().reveal(".header-container .button", {
-    ...scrollRevealOption,
-    delay: 500,
-  });
-
-  ScrollReveal().reveal(".about-item", {
-    ...scrollRevealOption,
-    interval: 500,
-  });
-
-  ScrollReveal().reveal(".statistics-image img", {
-    ...scrollRevealOption,
-    origin: "right",
-    interval: 500,
-  });
-
-  ScrollReveal().reveal(".statistics-card", {
-    interval: 500,
-    duration: 500,
-    delay: 1000,
-  });
-
-  ScrollReveal().reveal(".Info-card", {
-    ...scrollRevealOption,
-    interval: 500,
-  });
-} else {
-  console.warn("ScrollReveal library is not loaded.");
-}
-
-const accordions = document.querySelectorAll(".accordion");
-
-  accordions.forEach((accordion) => {
-    accordion.addEventListener("click", () => {
-      accordion.classList.toggle("active");
-      const panel = accordion.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-        accordion.querySelector(".accordion-icon").textContent = "+";
-      } else {
-        panel.style.display = "block";
-        accordion.querySelector(".accordion-icon").textContent = "−";
-      }
-    });
-  });

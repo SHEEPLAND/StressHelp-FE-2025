@@ -1,7 +1,6 @@
 import { fetchData } from "./fetch.js";
 import { getEntries, diaryEntries, renderCalendar } from "./calender.js";
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
     const form = document.querySelector(".diaryForm");
@@ -25,69 +24,69 @@ document.addEventListener("DOMContentLoaded", function () {
         const goals = document.getElementById("goals").value;
 
         if (!entryDate || isNaN(stressLevel) || isNaN(sleepHours)) {
-            alert("Please fill out all required fields.");
+            alert("Täytä kaikki vaaditut kentät.");
             submitBtn.disabled = false;
             return;
         }
 
-        // Mood, Stress, and Sleep Analysis
+        // Mieliala, Stressi ja Unianalyysi
         let stressCategory = "";
         let stressMessage = "";
 
         if (stressLevel >= 8) {
-            stressCategory = "High Stress";
-            const tips = ["Try deep breathing.", "Listen to calming music.", "Step outside for fresh air.", "Write down your thoughts."];
-            stressMessage = `Your stress level is high. ${tips[Math.floor(Math.random() * tips.length)]}`;
+            stressCategory = "Korkea stressi";
+            const tips = ["Kokeile syvähengitystä.", "Kuuntele rauhoittavaa musiikkia.", "Mene ulos raikkaaseen ilmaan.", "Kirjoita ajatuksiasi ylös."];
+            stressMessage = `Stressitasosi on korkea. ${tips[Math.floor(Math.random() * tips.length)]}`;
         } else if (stressLevel >= 4) {
-            stressCategory = "Moderate Stress";
-            stressMessage = "Your stress level is moderate. Take breaks & practice self-care.";
+            stressCategory = "Kohtalainen stressi";
+            stressMessage = "Stressitasosi on kohtalainen. Pidä taukoja ja huolehdi itsestäsi.";
         } else {
-            stressCategory = "Normal Stress";
-            stressMessage = "You're managing stress well!";
+            stressCategory = "Normaali stressi";
+            stressMessage = "Hallitset stressiä hyvin!";
         }
 
         let sleepMessage = "";
         if (sleepHours < 4) {
-            sleepMessage = "Too little sleep! Improve your habits.";
+            sleepMessage = "Liian vähän unta! Paranna tapojasi.";
         } else if (sleepHours < 7) {
-            sleepMessage = "Your sleep could be better. Aim for at least 7 hours.";
+            sleepMessage = "Unesi voisi olla parempi. Pyri nukkumaan vähintään 7 tuntia.";
         } else {
-            sleepMessage = "Great job! Your sleep duration is healthy.";
+            sleepMessage = "Hienoa! Unesi kesto on terveellistä.";
         }
 
         let moodMessage = "";
         const moodMap = {
-            positive: ["happy", "joyful", "excited"],
-            calm: ["calm", "relaxed", "content"],
-            empowered: ["motivated", "proud", "grateful", "hopeful"],
-            stressed: ["stressed", "anxious", "worried", "overwhelmed"],
-            down: ["depressed", "sad", "lonely", "disappointed"],
-            meh: ["tired", "bored", "indifferent"],
-            angry: ["angry", "frustrated"],
-            confused: ["confused", "nostalgic", "shy"]
+            positiivinen: ["onnellinen", "iloinen", "innoissaan"],
+            rauhallinen: ["rauhallinen", "rentoutunut", "tyytyväinen"],
+            voimaantunut: ["motivoitunut", "ylpeä", "kiitollinen", "toiveikas"],
+            stressaantunut: ["stressaantunut", "ahdistunut", "huolestunut", "ylikuormittunut"],
+            alakuloinen: ["masentunut", "surullinen", "yksinäinen", "pettynyt"],
+            tylsä: ["väsynyt", "tylsistynyt", "välinpitämätön"],
+            vihainen: ["vihaiset", "turhautunut"],
+            hämmentynyt: ["hämmentynyt", "nostalginen", "ujo"]
         };
 
         for (let [key, list] of Object.entries(moodMap)) {
             if (list.some(m => mood.includes(m))) {
                 moodMessage = {
-                    positive: "It's great to see you feeling positive!",
-                    calm: "You're feeling peaceful today, that's wonderful!",
-                    empowered: "You're feeling empowered! Keep pushing forward!",
-                    stressed: "Feeling stressed? Take deep breaths and give yourself a break.",
-                    down: "It's okay to have bad days. You're not alone. Reach out to someone who cares.",
-                    meh: "Maybe today feels slow, but tomorrow is a new opportunity!",
-                    angry: "Feeling angry or frustrated? Try breathing or take a walk.",
-                    confused: "Feeling uncertain? It's okay. Things will become clearer."
+                    positiivinen: "On hienoa nähdä, että tunnet itsesi positiiviseksi!",
+                    rauhallinen: "Tänään tunnet olosi rauhalliseksi, se on upeaa!",
+                    voimaantunut: "Tunnet itsesi voimaantuneeksi! Jatka samaan malliin!",
+                    stressaantunut: "Tunnetko stressiä? Hengitä syvään ja pidä tauko.",
+                    alakuloinen: "On ok, että joskus on huonoja päiviä. Et ole yksin, ota yhteyttä johonkin, joka välittää.",
+                    tylsä: "Ehkä tänään on hitaampaa, mutta huominen tuo uuden mahdollisuuden!",
+                    vihainen: "Tunnetko itsesi vihaiseksi tai turhautuneeksi? Kokeile hengittää syvään tai lähde kävelylle.",
+                    hämmentynyt: "Tunnetko epävarmuutta? Se on ok, ajan kanssa asiat selkeytyvät."
                 }[key];
                 break;
             }
         }
 
+
         if (!moodMessage) {
-            moodMessage = "Thanks for sharing your mood! Every feeling is valid.";
+            moodMessage = "Kiitos, että jaoit mielialasi! Kaikki tunteet ovat tärkeitä.";
         }
 
-        
         const entryData = {
             entry_date: entryDate,
             mood,
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const token = localStorage.getItem("token");
         if (!token) {
-            alert("You must be logged in.");
+            alert("Sinun täytyy olla kirjautuneena.");
             submitBtn.disabled = false;
             return;
         }
@@ -116,16 +115,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (response.error) {
-            console.error("Error saving diary entry!", response.error);
-            alert("There was an error saving your diary entry.");
+            console.error("Virhe päiväkirjamerkinnän tallentamisessa!", response.error);
+            alert("Päiväkirjamerkintää ei voitu tallentaa.");
             submitBtn.disabled = false;
             return;
         }
 
-        console.log("Diary entry saved successfully!");
+        console.log("Päiväkirjamerkintä tallennettu onnistuneesti!");
 
-        
+        // Tarkistetaan, että API palauttaa entry_id ja lisätään se diaryEntries-taulukkoon
+        console.log("API-vastaus:", response);
         diaryEntries.push({
+            entry_id: response.entry_id,
             entry_date: entryDate,
             mood,
             energy_level: energyLevel,
@@ -134,35 +135,34 @@ document.addEventListener("DOMContentLoaded", function () {
             notes,
             goals
         });
-        renderCalendar();
 
+        renderCalendar();
         submitBtn.disabled = false;
 
-        // Popup summary 
+        // Popupin yhteenveto
         diaryPopup.innerHTML = `
-            <h3>Diary Entry Summary</h3>
-            <p><strong>Date:</strong> ${entryDate}</p>
-            <p><strong>Mood:</strong> ${mood.charAt(0).toUpperCase() + mood.slice(1)}</p>
-            <p><strong>Energy Level:</strong> ${energyLevel || "Not provided"}</p>
-            <p><strong>Stress Level:</strong> ${stressLevel} (${stressCategory})</p>
-            <p><strong>Sleep Hours:</strong> ${sleepHours}</p>
-            <p><strong>Notes:</strong> ${notes || "No notes added."}</p>
-            <p><strong>Goals:</strong> ${goals || "No goals added."}</p>
+        <h3>Päiväkirjamerkinnän yhteenveto</h3>
+        <p><strong>Päivämäärä:</strong> ${new Date(entryDate).toLocaleDateString("fi-FI")}</p>
+        <p><strong>Mieliala:</strong> ${mood.charAt(0).toUpperCase() + mood.slice(1)}</p>
+        <p><strong>Energiataso:</strong> ${energyLevel || "Ei annettu"}</p>
+        <p><strong>Stressitaso:</strong> ${stressLevel} (${stressCategory})</p>
+        <p><strong>Uni:</strong> ${sleepHours} tuntia</p>
+        <p><strong>Muistiinpanoja:</strong> ${notes || "Ei merkintöjä lisätty."}</p>
+        <p><strong>Tavoitteet:</strong> ${goals || "Ei tavoitteita lisätty."}</p>
         `;
 
-        categoryText.textContent = `Stress Category: ${stressCategory}`;
+        categoryText.textContent = `${stressCategory}`;
         analysisText.innerHTML = `
-            <h4>🧘 Stress Insights:</h4>
+            <h4>🧘 Stressi-analyysi:</h4>
             <p>${stressMessage}</p>
-            <h4>💤 Sleep Insights:</h4>
+            <h4>💤 Unianalyysi:</h4>
             <p>${sleepMessage}</p>
-            <h4>🤔 Mood Reflection:</h4>
+            <h4>🤔 Mielialan pohdinta:</h4>
             <p>${moodMessage}</p>
-            <p><strong>✨ Keep going! Small steps lead to big changes.</strong></p>
+            <p><strong>✨ Jatka eteenpäin! Pienet askeleet vievät suuriin muutoksiin.</strong></p>
         `;
 
         popup.style.display = "block";
-
         form.reset();
     });
 
