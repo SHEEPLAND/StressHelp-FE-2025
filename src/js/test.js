@@ -1,3 +1,5 @@
+
+
 let kubiosData = [];
 
 const getKubiosData = async () => {
@@ -103,11 +105,11 @@ function renderLatestSummary(latest) {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Readiness %', 'BPM', 'RMSSD (ms)', 'Stress Index'],
+      labels: ['Valmiusindeksi (%)', 'Stressi-indeksi', 'RMSSD', 'Keskisyke (BPM)'],
       datasets: [{
         label: `Mittauspäivä: ${formattedDate}`,
-        data: [latest.readiness, latest.mean_hr_bpm, latest.rmssd_ms, latest.stress_index],
-        backgroundColor: ['#4E79A7', '#F28E2B', '#76B7B2', '#E15759'],
+        data: [latest.readiness, latest.stress_index, latest.rmssd_ms, latest.mean_hr_bpm],
+        backgroundColor: ['#4E79A7', '#E15759', '#76B7B2', '#F28E2B'],
         borderRadius: 12,
         barThickness: 40,
         categoryPercentage: 0.6,
@@ -137,14 +139,17 @@ function renderLatestSummary(latest) {
             label: function(context) {
               const label = context.dataset.label || '';
               let value = context.raw;
-              if (context.label === 'Readiness %') {
+          
+              if (context.label === 'Valmiusindeksi (%)') {
                 return `${label}: ${value.toFixed(1)}%`;
-              } else if (context.label === 'BPM') {
+              } else if (context.label === 'Keskisyke (BPM)') {
                 return `${label}: ${value.toFixed(0)} bpm`;
-              } else if (context.label === 'RMSSD (ms)') {
+              } else if (context.label === 'RMSSD') {
                 return `${label}: ${value.toFixed(1)} ms`;
-              } else {
+              } else if (context.label === 'Stressi-indeksi') {
                 return `${label}: ${value.toFixed(2)}`;
+              } else {
+                return `${label}: ${value}`;
               }
             }
           }
@@ -183,6 +188,10 @@ function clearChart() {
 function renderLineChart(data) {
   clearChart();
   root = am5.Root.new("chartdiv");
+  
+  
+  
+
   root.setThemes([am5themes_Animated.new(root)]);
 
   chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -236,8 +245,8 @@ function renderLineChart(data) {
     series.data.setAll(formattedData);
   }
 
-  addLineSeries("readiness", 0x28a745, "Readiness");
-  addLineSeries("stress_index", 0xdc3545, "Stress Index");
+  addLineSeries("readiness", 0x28a745, "Valmiusindeksi (%)");
+  addLineSeries("stress_index", 0xdc3545, "Stressi-indeksi");
 
   chart.set("cursor", am5xy.XYCursor.new(root, { behavior: "zoomX", xAxis }));
   chart.set("scrollbarX", am5.Scrollbar.new(root, { orientation: "horizontal" }));
@@ -264,6 +273,9 @@ function renderLineChart(data) {
 function renderBarChart(data) {
   clearChart();
   root = am5.Root.new("chartdiv");
+ 
+ 
+
   root.setThemes([am5themes_Animated.new(root)]);
 
   chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -333,10 +345,11 @@ function renderBarChart(data) {
     legend.data.push(series);
   }
 
+  addBarSeries("readiness", 0x36a2eb, "Valmiusindeksi (%)");
+  addBarSeries("stress_index", 0xff6384, "Stressi-indeksi");
   addBarSeries("rmssd_ms", 0x007bff, "RMSSD");
-  addBarSeries("mean_hr_bpm", 0xff9f40, "BPM");
-  addBarSeries("stress_index", 0xff6384, "Stress Index");
-  addBarSeries("readiness", 0x36a2eb, "Readiness");
+  addBarSeries("mean_hr_bpm", 0xff9f40, "Keskisyke (BPM)");
+ 
 
   chart.appear(1000, 100);
 }
