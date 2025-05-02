@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "http://127.0.0.1:3000/api/kubios-data/user-accordion";
+  const url = "http://127.0.0.1:3000/api/kubios-data/user-info";
   
   const options = {
     method: "GET",
@@ -36,6 +36,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   } catch (error) {
     console.error("Virhe:", error);
-    alert("Virhe tietoja haettaessa.");
   }
 });

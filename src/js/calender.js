@@ -11,12 +11,16 @@ const historyContent = document.getElementById("history-popup-content");
 const popupDate = document.getElementById("popup-date");
 const closeHistoryPopup = document.getElementById("close-history-popup");
 
-let diaryEntries = []; 
+let diaryEntries = [];
 let date = new Date();
+getEntries();
 
 function formatDateOnly(dateString) {
     const d = new Date(dateString);
-    return d.toISOString().split('T')[0];
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
 }
 
 function hasEntryForDate(dateStr) {
@@ -24,11 +28,9 @@ function hasEntryForDate(dateStr) {
 }
 
 async function getEntries() {
-    console.log("Fetching diary entries...");
-
     const token = localStorage.getItem("token");
     if (!token) {
-        alert("You must be logged in to access diary.");
+        alert("Kirjaudu sisään.");
         window.location.href = "login.html";
         return;
     }
@@ -43,19 +45,13 @@ async function getEntries() {
     });
 
     if (response.error) {
-        console.error("Error fetching diary data!", response.error);
+        console.error("Virhe haettaessa tietoja!", response.error);
         return;
     }
 
-    if (Array.isArray(response)) {
-        diaryEntries = response;
-    } else if (Array.isArray(response.entries)) {
-        diaryEntries = response.entries;
-    } else if (Array.isArray(response.data)) {
-        diaryEntries = response.data;
-    } else {
-        console.error("Unexpected diary data format", response);
-    }
+    diaryEntries = Array.isArray(response) ? response :
+                   Array.isArray(response.entries) ? response.entries :
+                   Array.isArray(response.data) ? response.data : [];
 
     diaryEntries.sort((a, b) => new Date(b.entry_date) - new Date(a.entry_date));
     renderCalendar();
@@ -88,30 +84,21 @@ function renderCalendar() {
             i === today.getDate() &&
             month === today.getMonth() &&
             year === today.getFullYear();
-
         const isSelected = dateInput && dateInput.value === fullDate;
-        const hasEntry = hasEntryForDate(fullDate);
 
         function getDotHTML(dateStr) {
-          const entries = diaryEntries.filter(entry => formatDateOnly(entry.entry_date) === dateStr);
-      
-          if (entries.length === 0) return "";
-      
-          
-          const highestStress = Math.max(...entries.map(e => e.stress_level ?? 0));
-          const moods = entries.map(e => e.mood.toLowerCase());
-      
-          if (highestStress >= 8) {
-              return '<div class="dot red"></div>';
-          } else if (highestStress >= 4) {
-              return '<div class="dot yellow"></div>';
-          } else if (moods.some(m => ["happy", "joyful", "relaxed", "content"].includes(m))) {
-              return '<div class="dot green"></div>';
-          }
+            const entries = diaryEntries.filter(entry => formatDateOnly(entry.entry_date) === dateStr);
+            if (entries.length === 0) return "";
 
-          
-      }
-      
+            const highestStress = Math.max(...entries.map(e => e.stress_level ?? 0));
+            const moods = entries.map(e => e.mood?.toLowerCase());
+
+            if (highestStress >= 8) return '<div class="dot red"></div>';
+            if (highestStress >= 4) return '<div class="dot yellow"></div>';
+            //if (moods.some(m => ["happy", "joyful", "relaxed", "content", "hyvä fiilis!"].includes(m))) {
+            else return '<div class="dot green"></div>';
+
+        }
 
         calendarDates.innerHTML += `
             <div class="calendar-date ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${fullDate}">
@@ -121,58 +108,78 @@ function renderCalendar() {
     }
 
     const todayEl = document.querySelector(".calendar-date.today");
-    if (todayEl) {
-        todayEl.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+    if (todayEl) todayEl.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 calendarDates.addEventListener("click", (e) => {
-    if (e.target.classList.contains("calendar-date") || e.target.closest('.calendar-date')) {
-        const dateElement = e.target.closest('.calendar-date');
-        const selectedDate = dateElement.getAttribute("data-date");
+    const dateElement = e.target.closest('.calendar-date');
+    if (!dateElement) return;
 
-        if (dateInput) {
-            dateInput.value = selectedDate;
-        }
+    const selectedDate = dateElement.getAttribute("data-date");
 
-        document.querySelectorAll(".calendar-date").forEach(el => el.classList.remove("selected"));
-        dateElement.classList.add("selected");
+    if (dateInput) dateInput.value = selectedDate;
 
-        popupDate.textContent = selectedDate;
-        historyContent.innerHTML = "";
+    document.querySelectorAll(".calendar-date").forEach(el => el.classList.remove("selected"));
+    dateElement.classList.add("selected");
 
-        const entriesForDate = diaryEntries.filter(entry => formatDateOnly(entry.entry_date) === selectedDate);
+    const formattedPopupDate = new Date(selectedDate).toLocaleDateString("fi-FI");
+    popupDate.textContent = formattedPopupDate;
 
-        if (entriesForDate.length === 0) {
-            historyContent.innerHTML = "<p>Ei merkintöjä tälle päivälle.</p>";
-        } else {
-          entriesForDate.forEach(entry => {
-            const card = document.createElement("div");  
-            
+    historyContent.innerHTML = "";
+
+    const entriesForDate = diaryEntries.filter(entry => formatDateOnly(entry.entry_date) === selectedDate);
+
+    if (entriesForDate.length === 0) {
+        historyContent.innerHTML = "<p>Ei merkintöjä tälle päivälle.</p>";
+    } else {
+        entriesForDate.forEach(entry => {
+            const card = document.createElement("div");
             card.className = "popup-entry-card";
-          
-            card.innerHTML = `
-              <div class="popup-entry">
-                <h4>Mieliala: ${entry.mood || "Ei ilmoitettu"}</h4>
-                <p><strong>Energiataso:</strong> ${entry.energy_level ?? "Ei tietoa"}</p>
-                <p><strong>Stressitaso:</strong> ${entry.stress_level ?? "Ei tietoa"}</p>
-                <p><strong>Uni (tunnit):</strong> ${entry.sleep_hours ?? "Ei tietoa"}</p>
-                <p><strong>Muistiinpanot:</strong> ${entry.notes || "Ei muistiinpanoja."}</p>
-                <p><strong>Tavoitteet:</strong> ${entry.goals || "Ei tavoitteita."}</p>
-                <div class="popup-buttons">
-                  <button class="modify-entry" data-id="${entry.id}">✏️ Muokkaa</button>
-                  <button class="delete-entry" data-id="${entry.id}">🗑️ Poista</button>
-                </div>
-              </div>
-            `;
-          
-            historyContent.appendChild(card);
-          });
-          
-        }
+            console.log(entry.entry_id);
 
-        historyPopup.style.display = "block";
+            card.innerHTML = `
+                <div class="popup-entry">
+                    <h4>Mieliala: ${entry.mood || "Ei ilmoitettu"}</h4>
+                    <p><strong>Energiataso:</strong> ${entry.energy_level ?? "Ei tietoa"}</p>
+                    <p><strong>Stressitaso:</strong> ${entry.stress_level ?? "Ei tietoa"}</p>
+                    <p><strong>Uni (tunnit):</strong> ${entry.sleep_hours ?? "Ei tietoa"}</p>
+                    <p><strong>Muistiinpanot:</strong> ${entry.notes || "Ei muistiinpanoja."}</p>
+                    <p><strong>Tavoitteet:</strong> ${entry.goals || "Ei tavoitteita."}</p>
+                    <div class="popup-buttons">
+                        <button class="modify-entry" data-id="${entry.entry_id}">✏️ Muokkaa</button>
+                        <button class="delete-entry" data-id="${entry.entry_id}">🗑️ Poista</button>
+                    </div>
+                </div>
+            `;
+
+            const deleteBtn = card.querySelector(".delete-entry");
+            deleteBtn.addEventListener("click", async (e) => {
+                const entryId = e.currentTarget.dataset.id;
+                const token = localStorage.getItem("token");
+
+                if (!token) return alert("Kirjaudu sisään.");
+                if (!confirm("Poistetaanko merkintä?")) return;
+
+                const res = await fetch(`http://127.0.0.1:3000/api/entries/${entryId}`, {
+                    method: "DELETE",
+                    headers: { "Authorization": `Bearer ${token}` }
+                });
+
+                if (res.ok) {
+                    alert("Poistettu.");
+                    historyPopup.style.display = "none";
+                    await getEntries();
+                    renderCalendar();
+                } else {
+                    alert("Poistaminen epäonnistui.");
+                }
+            });
+
+            historyContent.appendChild(card);
+        });
     }
+
+    historyPopup.style.display = "block";
 });
 
 closeHistoryPopup.addEventListener("click", () => {
@@ -189,7 +196,4 @@ nextBtn.addEventListener("click", () => {
     renderCalendar();
 });
 
-getEntries(); 
-
 export { getEntries, diaryEntries, renderCalendar };
-

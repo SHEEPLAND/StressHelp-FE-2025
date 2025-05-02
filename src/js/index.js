@@ -21,7 +21,7 @@ const loginUser = async (event) => {
 	};
 
 	// Endpoint
-	const url = 'http://localhost:3000/api/auth/login';
+	const url = 'http://127.0.0.1:3000/api/auth/login';
 
 	// Options
 	const options = {
