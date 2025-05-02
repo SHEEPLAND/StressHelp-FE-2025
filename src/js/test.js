@@ -79,8 +79,26 @@ function renderLatestSummary(latest) {
   document.getElementById("rmssd-value").textContent = `${latest.rmssd_ms} ms`;
   document.getElementById("stress-index-value").textContent = `${latest.stress_index}`;
 
+
+  const readinessCategory = document.getElementById("readiness-category");
+
+  if (latest.readiness < 25) {
+    readinessCategory.textContent = "🔴 Erittäin matala valmiustaso";
+    readinessCategory.style.color = "#e74c3c";
+  } else if (latest.readiness < 50) {
+    readinessCategory.textContent = "🟠 Matala valmiustaso";
+    readinessCategory.style.color = "#f39c12";
+  } else if (latest.readiness < 75) {
+    readinessCategory.textContent = "🔵 Normaali valmiustaso";
+    readinessCategory.style.color = "#3498db";
+  } else {
+    readinessCategory.textContent = "🟢 Korkea valmiustaso";
+    readinessCategory.style.color = "#27ae60";
+  }
+
   const stressText = document.getElementById("stress-level-text");
   let stressLevel = "", message = "";
+
 
   if (latest.readiness < 50) {
     stressLevel = "Stressi taso: Korkea";
