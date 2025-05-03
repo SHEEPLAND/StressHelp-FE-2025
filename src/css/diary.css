@@ -47,7 +47,8 @@ body, .container {
 
 
 .section-container {
-  max-width: var(--max-width);
+  max-width: var(--site-max-width);
+
   margin: auto;
   padding: 2.5rem 1rem;
 }
@@ -60,7 +61,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  background-color:rgb(20, 19, 19);
 
   position: fixed;
   top: 0;
@@ -483,8 +483,6 @@ input[type="submit"]:hover {
 }
 
 
-
-
 .diary-text {
   background: #f8f8f8;
   padding: 10px;
@@ -496,6 +494,7 @@ input[type="submit"]:hover {
   margin: 15px 0;
   font-weight: bold;
   color: rgb(43, 75, 108);
+  line-height: 1.5;
 }
 
 .analysis {
@@ -543,6 +542,29 @@ transition: background 0.3s ease;
 background: var(--hover-color, rgb(30, 90, 180)); 
 }
 
+.analysis-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-body {
+  text-align: left;
+  line-height: 1.8;
+}
+
+.analysis-body p {
+  margin-bottom: 18px;
+}
+
+.encouragement {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
 
 /* Popup Styling for Diary Entries */
 #history-popup {
@@ -568,6 +590,8 @@ background: var(--hover-color, rgb(30, 90, 180));
 
 #history-popup h2 {
   text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 #history-popup .diary-popup {
@@ -575,9 +599,9 @@ background: var(--hover-color, rgb(30, 90, 180));
   border-radius: var(--border-radius-s);
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: black;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 #history-popup .close-button {
@@ -588,20 +612,6 @@ background: var(--hover-color, rgb(30, 90, 180));
 }
 
 
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0px;
-    text-align: center;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #333;
-    text-transform: uppercase;
-    padding: 10px 0;
-    margin-bottom: 5px;
-  }
-  
   .calendar-days div {
     padding: 4px 0;
     letter-spacing: 1px;

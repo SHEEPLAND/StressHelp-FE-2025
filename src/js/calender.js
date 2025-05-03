@@ -95,9 +95,7 @@ function renderCalendar() {
 
             if (highestStress >= 8) return '<div class="dot red"></div>';
             if (highestStress >= 4) return '<div class="dot yellow"></div>';
-            //if (moods.some(m => ["happy", "joyful", "relaxed", "content", "hyvä fiilis!"].includes(m))) {
             else return '<div class="dot green"></div>';
-
         }
 
         calendarDates.innerHTML += `
@@ -135,7 +133,6 @@ calendarDates.addEventListener("click", (e) => {
         entriesForDate.forEach(entry => {
             const card = document.createElement("div");
             card.className = "popup-entry-card";
-            console.log(entry.entry_id);
 
             card.innerHTML = `
                 <div class="popup-entry">
@@ -167,12 +164,33 @@ calendarDates.addEventListener("click", (e) => {
 
                 if (res.ok) {
                     alert("Poistettu.");
-                    historyPopup.style.display = "none";
                     await getEntries();
                     renderCalendar();
+
+                    // Päivitä historia-popup uudelleen
+                    dateElement.dispatchEvent(new Event("click"));
                 } else {
                     alert("Poistaminen epäonnistui.");
                 }
+            });
+
+            const editBtn = card.querySelector(".modify-entry");
+            editBtn.addEventListener("click", async () => {
+                document.getElementById("entry_id").value = entry.entry_id;
+                document.getElementById("entry_date").value = formatDateOnly(entry.entry_date);
+                document.getElementById("mood").value = entry.mood || "";
+                document.getElementById("energy_level").value = entry.energy_level ?? "";
+                document.getElementById("stress_level").value = entry.stress_level ?? "";
+                document.getElementById("sleep_hours").value = entry.sleep_hours ?? "";
+                document.getElementById("notes").value = entry.notes || "";
+                document.getElementById("goals").value = entry.goals || "";
+
+                historyPopup.style.display = "none";
+                window.scrollTo({ top: 0, behavior: "smooth" });
+
+                
+                await getEntries();
+                renderCalendar();
             });
 
             historyContent.appendChild(card);

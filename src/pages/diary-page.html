@@ -94,6 +94,7 @@
             <div class="forms">
                 <form action="#" method="POST" class="diaryForm">
                     <label class="form-label" for="entry_date">Päivämäärä:</label>
+                    <input type="hidden" id="entry_id" name="entry_id">
                     <input class="form-input" type="date" name="entry_date" id="entry_date" required>
 
                     <label class="form-label" for="mood">Mieliala:</label>
@@ -115,6 +116,7 @@
                     <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
 
                     <input name="submit" type="submit" value="Tallenna merkintä" class="createEntry">
+
                 </form>
             </div>
         </div>
@@ -127,12 +129,7 @@
             
             <!-- Entry summary -->
             <div class="diary-popup"></div> 
-            <div class="category-text">
-                <strong>Stressitasosi:</strong>
-                <p id="category"></p>
-            </div>
             <div class="analysis">
-                <strong>Mitä tämä tarkoittaa::</strong>
                 <p id="analysis"></p>
             </div>
             <button class="close-button" id="close-popup">Sulje</button>
@@ -143,7 +140,7 @@
     <!-- Diary History Popup -->
 <div class="popup" id="history-popup">
   <div class="popup-content">
-    <h2>Diary Entries for <span id="popup-date"></span></h2>
+    <h2>Päiväkirjamerkinnät <span id="popup-date"></span></h2>
     
     <!-- Diary Entries List -->
     <div id="history-popup-content"></div>
@@ -168,21 +165,6 @@
   </div>
 </footer>
     
-
-
-    <script>
-      function adjustSpacer() {
-        const spacer = document.querySelector(".nav-spacer");
-        const nav = document.querySelector("nav");
-    
-        if (spacer && nav) {
-          const navHeight = nav.offsetHeight;
-          spacer.style.height = `${navHeight}px`;
-        }
-      }
-      window.addEventListener("DOMContentLoaded", adjustSpacer);
-      window.addEventListener("resize", adjustSpacer);
-    </script>
     
 
     <!-- JavaScript -->

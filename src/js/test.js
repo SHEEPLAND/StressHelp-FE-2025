@@ -5,8 +5,8 @@ let kubiosData = [];
 const getKubiosData = async () => {
   const token = localStorage.getItem("token");
   if (!token) {
-    //alert("Sinun täytyy olla kirjautuneena nähdäksesi tämän datan.");
-    //window.location.href = "login.html";
+    alert("Sinun täytyy olla kirjautuneena nähdäksesi tämän datan.");
+    window.location.href = "login.html";
     return;
   }
 
