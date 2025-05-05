@@ -104,7 +104,6 @@ nav {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
- 
 }
 
 
@@ -452,6 +451,7 @@ border-top: 1px solid #ccc;
 margin-top: 2rem;
 font-weight: bold;
 }
+
 
 
 /* Responsive Navbar */

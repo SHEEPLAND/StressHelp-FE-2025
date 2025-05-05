@@ -105,7 +105,8 @@ function renderCalendar() {
   if (selectedYearEl) selectedYearEl.textContent = year;
 
   for (let i = offset; i > 0; i--) {
-    calendarDates.innerHTML += `<div style="opacity: 0.4">${prevLastDate - i + 1}</div>`;
+    calendarDates.innerHTML += `<div class="calendar-date" style="opacity: 0.4">${prevLastDate - i + 1}</div>`;
+
   }
 
   for (let i = 1; i <= lastDate; i++) {
@@ -130,12 +131,13 @@ function renderCalendar() {
       ? '<div id="live-time" style="font-size: 0.6rem; font-weight: bold; margin-top: 4px;"></div>'
       : '';
 
-    calendarDates.innerHTML += `
+      calendarDates.innerHTML += `
       <div class="calendar-date ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${fullDate}">
-        ${i}
+        <div class="date-number">${i}</div>
         ${getDotHTML(fullDate)}
         ${liveTimeHTML}
       </div>`;
+    
   }
 
   const todayEl = document.querySelector(".calendar-date.today");
@@ -282,18 +284,22 @@ updateLiveTime();
 updateTodaySection();
 
 if (jumpToTodayBtn) {
-    jumpToTodayBtn.addEventListener("click", () => {
-      date = new Date();
-      renderCalendar();
+  jumpToTodayBtn.addEventListener("click", () => {
+    date = new Date();
+
+
+    if (dateInput) dateInput.value = "";
+
+    document.querySelectorAll(".calendar-date.selected").forEach(el => {
+      el.classList.remove("selected");
     });
-  
-    jumpToTodayBtn.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        date = new Date();
-        renderCalendar();
-      }
-    });
-  }
+
+    renderCalendar(); 
+  });
+}
+
   
 
 export { getEntries, diaryEntries, renderCalendar };
+
+

@@ -45,7 +45,6 @@
       </div>
       
     </nav>
-
     <div class="section-container header-container" id="home">
       <h1></h1> <h3></h3> 
     </div>
@@ -177,6 +176,17 @@
 
   </div>
 </footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('nav');
+  if (nav) {
+    const navHeight = nav.offsetHeight;
+    document.body.style.paddingTop = navHeight + 'px';
+  }
+});
+
+</script>
     
     
 
