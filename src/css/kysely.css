@@ -200,6 +200,24 @@ button:hover {
     text-align: center;
 }
 
+.button-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  background-color:#4faae6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
 .close-button {
     margin-top: 10px;
     padding: 8px;
@@ -209,36 +227,13 @@ button:hover {
     width: 100%;
 }
 
+.close-button:hover {
+  background: #cc392f;
+}
+
 #result-content {
     text-align: left;
     margin-bottom: 15px;
-}
-
-.accordion {
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
-
-.accordion h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.accordion p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.accordion a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.accordion a:hover {
-    text-decoration: underline;
 }
 
 
@@ -427,6 +422,11 @@ button:hover {
   font-weight: bold;
 }
 
+.accordion {
+  padding: 20px;
+}
+
+
 #result-content {
   text-align: left;
   margin-bottom: 15px;
@@ -464,7 +464,6 @@ button:hover {
 }
 
 @media (width < 1200px) {
-  @media (width < 1200px) {
     nav {
       position: fixed;
       width: 100%;

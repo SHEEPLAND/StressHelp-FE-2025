@@ -132,38 +132,3 @@ if (typeof ScrollReveal !== "undefined") {
 } else {
   console.warn("ScrollReveal library is not loaded.");
 }
-
-
-const menuButton = document.getElementById("menu-button");
-const navigationLinks = document.getElementById("navigation-links");
-const menuBtnIcon = menuButton.querySelector("i");
-
-menuButton.addEventListener("click", () => {
-  navigationLinks.classList.toggle("open");
-  const isOpen = navigationLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-});
-
-navigationLinks.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    navigationLinks.classList.remove("open");
-    menuBtnIcon.setAttribute("class", "ri-menu-line");
-  }
-});
-
-const currentPath = window.location.pathname.split('/').pop();
-
-document.querySelectorAll('.navigation-link a').forEach(link => {
-  const linkHref = link.getAttribute('href');
-  if (linkHref === currentPath) {
-    link.classList.add('active');
-  }
-});
-
-document.getElementById('stressSurvey').addEventListener('submit', function(e) {
-    e.preventDefault(); // Estää sivun uudelleenlatauksen
-
-    // Näytä vinkkiosiot
-    document.getElementById('tips-section').style.display = 'block';
-    document.getElementById('Info').style.display = 'block';
-  });
