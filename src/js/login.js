@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // API Endpoint
-    const url = "http://4.231.239.48/api/auth/login";
+    const url = "http://127.0.0.1:3000/api/auth/login";
 
     // API Request Options
     const options = {

@@ -696,7 +696,85 @@ background: var(--hover-color, rgb(30, 90, 180));
   font-weight: bold;
 }
   
-  
+
+.calendar-footer-box {
+  background: #fffdfa;
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-family: "Lora", serif;
+}
+
+.today-info-group {
+  margin-bottom: 1rem;
+}
+
+.calendar-today-label {
+  font-size: 1rem;
+  color: #6c63ff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+#calendar-meta {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#calendar-meta .meta-time {
+  font-family: monospace;
+}
+
+.calendar-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+#calendar-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: #333;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#calendar-legend .legend-dot {
+  margin-right: 6px;
+}
+
+.month-year-selector {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.month-year-selector .clickable {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.month-year-selector .clickable:hover {
+  text-decoration: underline;
+  color: #fec045;
+}
+
+
+ 
 /* Responsive Navbar */
 @media (max-width: 1200px) {
   nav {

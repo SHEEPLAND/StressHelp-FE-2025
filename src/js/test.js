@@ -10,7 +10,7 @@ const getKubiosData = async () => {
     return;
   }
 
-  const url ="http://4.231.239.48/api/kubios-data/user-data";
+  const url ="http://127.0.0.1:3000/api/kubios-data/user-data";
   
 
   try {

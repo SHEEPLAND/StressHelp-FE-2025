@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const entryId = document.getElementById("entry_id").value;
         const method = entryId ? "PUT" : "POST";
         const url = entryId
-            ? `http://4.231.239.48/api/entries/${entryId}`
-            : "http://4.231.239.48/api/entries";
+            ? `http://127.0.0.1:3000/api/entries/${entryId}`
+            : "http://127.0.0.1:3000/api/entries";
 
         const entryDate = document.getElementById("entry_date").value;
         const mood = document.getElementById("mood").value.toLowerCase();
