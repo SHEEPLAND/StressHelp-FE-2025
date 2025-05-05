@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "http://127.0.0.1:3000/api/entries";
+  const url = "http://4.231.239.48//api/entries";
   const options = {
     method: 'GET',
     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }

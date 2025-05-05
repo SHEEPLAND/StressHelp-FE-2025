@@ -1,0 +1,1 @@
+const t=async(e,o={})=>{try{console.log("Requesting API:",e),console.log("Options:",o);const r=await fetch(e,o);if(!r.ok){const s=await r.json();return console.error("API Response Error:",s),{error:s.message||"An error occurred"}}return await r.json()}catch(r){return console.error("fetchData() error:",r.message),{error:r.message}}};export{t as f};

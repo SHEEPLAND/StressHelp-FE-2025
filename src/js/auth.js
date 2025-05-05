@@ -18,7 +18,7 @@ export function setupAuthLinks() {
   
   export function logout() {
     localStorage.removeItem("token");
-    window.location.href = "home.html";
+    window.location.href = "index.html";
   }
   document.addEventListener("DOMContentLoaded", setupAuthLinks);
   

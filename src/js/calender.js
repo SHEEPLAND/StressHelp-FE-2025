@@ -35,7 +35,7 @@ async function getEntries() {
         return;
     }
 
-    const url = "http://127.0.0.1:3000/api/entries";
+    const url = "http://4.231.239.48/api/entries";
     const response = await fetchData(url, {
         method: "GET",
         headers: {
@@ -157,7 +157,7 @@ calendarDates.addEventListener("click", (e) => {
                 if (!token) return alert("Kirjaudu sisään.");
                 if (!confirm("Poistetaanko merkintä?")) return;
 
-                const res = await fetch(`http://127.0.0.1:3000/api/entries/${entryId}`, {
+                const res = await fetch(`http://4.231.239.48/api/entries/${entryId}`, {
                     method: "DELETE",
                     headers: { "Authorization": `Bearer ${token}` }
                 });
