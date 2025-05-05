@@ -11,6 +11,10 @@
     
     <title>Stressikysely</title>
     <link rel="stylesheet" href="../css/kysely.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
 </head>
 <body>
     <header>
@@ -154,30 +158,37 @@
             <a href="https://www.das.nh.gov/wellness/docs/percieved%20stress%20scale.pdf" target="_blank" rel="noopener">Lataa tieteellinen tutkimus PDF-muodossa</a>
         </div>
     </div>
-
+    
     <div class="popup" id="popup">
         <div class="popup-content">
             <h2>Stressitasosi</h2>
             <p id="stressMessage"></p>
-
-            <div id="lowStressOptions" class="popup-options">
-                <p>Voit lukea stressinhallintavinkkejä</p>
-                <a href="stressinhallinta.html" class="tips-button">Lue vinkkejä</a>
+    
+            <div class="popup-options" id="lowStressOptions">
+                <p>Voit lukea stressinhallintavinkkejä.</p>
+                <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
             </div>
-
-            <div id="moderateStressOptions" class="popup-options">
-                <p>Haluaisitko seurata stressitasoasi tarkemmin?</p>
-                <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
+    
+            <div class="popup-options" id="moderateStressOptions">
+                <p>Haluaisitko seurata stressitasoasi tarkemmin tai lukea vinkkejä?</p>
+                <div class="button-row">
+                    <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
+                    <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
+                </div>
             </div>
-
-            <div id="highStressOptions" class="popup-options">
-                <p>Haluaisitko seurata stressitasoasi tarkemmin?</p>
-                <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
+    
+            <div class="popup-options" id="highStressOptions">
+                <p>Haluaisitko seurata stressitasoasi tarkemmin tai lukea vinkkejä?</p>
+                <div class="button-row">
+                    <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
+                    <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
+                </div>
             </div>
-
+    
             <button class="close-button" id="close-popup">Sulje</button>
         </div>
     </div>
+    
 
 
   </section>
@@ -201,6 +212,6 @@
     <script src="../js/kysely.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="../js/kysely.js"></script>
 </body>
 </html>
