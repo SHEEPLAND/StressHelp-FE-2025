@@ -1,73 +1,68 @@
-import { fetchData } from "./fetch.js"; 
-
+import { fetchData } from "./fetch.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const logaccordionrm = document.querySelector(".login-form"); // Adjusted selector
+  const loginForm = document.querySelector(".login-form");
 
   const loginUser = async (event) => {
     event.preventDefault();
 
-    // Extract values input fields
+    // Haetaan kenttien arvot
     const username = document.querySelector("#login-username").value.trim();
     const password = document.querySelector("#login-pass").value.trim();
 
- 
     const bodyData = {
-      username: username, 
-      password: password,
+      username,
+      password,
     };
 
-    // API Endpoint
     const url = "http://127.0.0.1:3000/api/auth/login";
 
-    // API Request Options
     const options = {
-      body: JSON.stringify(bodyData),
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
+      body: JSON.stringify(bodyData),
     };
 
-    console.log("Sending request:", options);
+    try {
+      console.log("Lähetetään kirjautumispyyntö:", options);
+      const response = await fetchData(url, options);
 
-    // Call the API using fetchData function
-    const response = await fetchData(url, options);
+      if (response.error) {
+        console.error("Kirjautumisvirhe:", response.error);
+        alert("Virheelliset tunnistetiedot.");
+        return;
+      }
 
-    if (response.error) {
-      console.error("Login error:", response.error);
-      alert("Invalid login credentials");
-      return;
+      if (response.message) {
+        console.log("Kirjautuminen onnistui:", response.message);
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("nimi", response.user.username);
+        alert("Kirjautuminen onnistui! Uudelleenohjataan...");
+        window.location.href = "data.html";
+      }
+
+      loginForm.reset();
+    } catch (err) {
+      console.error("Odottamaton virhe:", err);
+      alert("Jokin meni pieleen. Yritä uudelleen.");
     }
-
-    if (response.message) {
-      console.log(response.message, "success");
-      localStorage.setItem("token", response.token);
-      localStorage.setItem("nimi", response.user.username);
-      alert("Login successful! Redirecting...");
-      // Redirect to another page after successful login
-      window.location.href = "data.html"; 
-    }
-
-    console.log("Login response:", response);
-    logaccordionrm.reset(); // Clear form fields
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const logoutButton = document.getElementById("logout-button");
+  // Lisätään tapahtumankuuntelija lomakkeelle
+  if (loginForm) {
+    loginForm.addEventListener("submit", loginUser);
+  }
 
-    if (logoutButton) {
-        logoutButton.addEventListener("click", () => {
-            console.log("Logging out...");
-
-            localStorage.removeItem("token");
-            localStorage.removeItem("user_id");
-
-            window.location.href = "login.html";
-        });
-    }
-});
-
-
-  logaccordionrm.addEventListener("submit", loginUser);
+  // Uloskirjautuminen (jos nappi löytyy)
+  const logoutButton = document.getElementById("logout-button");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      console.log("Kirjaudutaan ulos...");
+      localStorage.removeItem("token");
+      localStorage.removeItem("user_id");
+      window.location.href = "login.html";
+    });
+  }
 });

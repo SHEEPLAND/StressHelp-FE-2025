@@ -21,14 +21,14 @@
 
     <!-- Login Form -->
     <form action="" class="login-form">
-      <h1 class="login-title">Kirjaudu</h1>
+      <h1 class="login-title">Kirjaudu sisään</h1>
 
       <!-- Input Fields -->
       <div class="login-fields">
         <div class="login-field">
           <div class="login-input-container">
             <input type="text" required class="login-input" id="login-username" placeholder=" ">
-            <label for="login-username" class="login-label">Käyttäjätunnus</label>
+            <label for="login-username" class="login-label"> Sähköpostiosoite</label>
           </div>
         </div>
 
@@ -41,13 +41,11 @@
       </div>
 
       <!-- Options and actions -->
-      <div class="login-options">
-        <div class="login-remember"></div> 
-        <a href="#" class="login-forgot-password">Unohditko salasanasi?</a>
-      </div>
+      <div class="login-info">Kirjautuminen edellyttää rekisteröitymistä sekä Kubios Cloudiin että StressHelpiin samalla sähköpostiosoitteella.</div> 
+      
       <button type="submit" class="login-button">Kirjaudu</button>
       <p class="login-register">
-        Ei käyttäjää? <a href="https://kubioscloud.auth.eu-west-1.amazoncognito.com/login?response_type=code&client_id=1h4rmoi5s66u2cliaqcpuejgpg&redirect_uri=https://analysis.kubioscloud.com/v2/portal/login&scope=openid%20profile%20email%20phone">Rekisteröidy</a>
+        Uusi käyttäjä? <a href="https://kubioscloud.auth.eu-west-1.amazoncognito.com/login?response_type=code&client_id=1h4rmoi5s66u2cliaqcpuejgpg&redirect_uri=https://analysis.kubioscloud.com/v2/portal/login&scope=openid%20profile%20email%20phone">Rekisteröidy tästä.</a>
       </p>
     </form>
   </div>

@@ -95,17 +95,18 @@ nav {
     margin-inline: 1.5rem;
     padding: 2.5rem 1.5rem;
     border-radius: 1rem;
-    -webkit-backdrop-filter: blur(10px); 
-    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(20px); 
+    backdrop-filter: blur(20px); 
 }
 
   
   /* Title */
   .login-title {
     text-align: center;
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-medium);
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
   }
   
   /* Input Fields */
@@ -160,26 +161,25 @@ nav {
     margin-bottom: 1.5rem;
   }
   
-  .login-label, .login-forgot-password, .login-register {
+  .login-label, .login-register {
     font-size: var(--small-font-size);
   }
   
   
-  
-  .login-forgot-password {
-    color: black;
+  .login-info {
+    font-size: 0.7rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
     font-weight: 500;
-   
   }
   
-  .login-forgot-password:hover {
-    text-decoration: underline;
-  }
   
   /* Login Button */
   .login-button {
     width: 100%;
-    padding: 1rem;
+    padding: 0.2rem;
     border-radius: 0.5rem;
     background-color: var(--white-color);
     box-shadow: 4px 4px 15px rgba(44, 76, 44, 0.3);
@@ -221,7 +221,12 @@ nav {
     }
   
     .login-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .login-info{
+      font-weight:bold;
     }
   }
   
+ 
