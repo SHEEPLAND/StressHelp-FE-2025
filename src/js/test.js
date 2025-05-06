@@ -101,11 +101,11 @@ function renderLatestSummary(latest) {
   if (latest.readiness < 50) {
     stressLevel = "Stressi taso: Korkea";
     message = `<p style="color: #ff5555; font-weight: bold;">Suosittelemme vierailemaan 
-      <a href="" target="_blank" style="color: #4faae6;">StressHelpin tukisivulla</a>.</p>`;
+      <a href="tools.html" target="_blank" style="color: #4faae6;">StressHelpin tukisivulla</a>.</p>`;
   } else if (latest.readiness < 75) {
     stressLevel = "Stressi taso: Keskitaso";
     message = `<p style="color: #f6b500; font-weight: bold;">Stressitasosi on kohtalainen. Kokeile 
-      <a href="" target="_blank" style="color: #4faae6;">rentoutumistyökaluja</a>.</p>`;
+      <a href="tools.html" target="_blank" style="color: #4faae6;">rentoutumistyökaluja.</a></p>`;
   } else {
     stressLevel = "Stressi taso: Matala";
     message = `<p style="color: #84ad83; font-weight: bold;">Hienoa! Stressitasosi on matala. Jatka samaan malliin!</p>`;

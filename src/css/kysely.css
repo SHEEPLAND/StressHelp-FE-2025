@@ -527,14 +527,6 @@ margin-top: 100px;
 gap: 2rem;
 }
 
-.calendar {
-    max-width: 100%;
-  }
-  
-.image-below img {
-    max-width: 250px;
-    justify-content: center;
-  }
 
 .form-container {
     width: 100%;
@@ -548,7 +540,7 @@ gap: 2rem;
   }
 
 .left-side {
-    width: 100%;
+width: 100%;
 max-width: 400px;
 margin: 0 auto;
 display: flex;
