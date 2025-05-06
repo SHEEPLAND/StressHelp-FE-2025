@@ -1,8 +1,6 @@
 const menuButton = document.getElementById("menu-button");
 const navigationLinks = document.getElementById("navigation-links");
 
-
-
 const menuBtnIcon = menuButton.querySelector("i");
 
 menuButton.addEventListener("click", () => {
@@ -64,8 +62,8 @@ if (typeof ScrollReveal !== "undefined") {
 
   ScrollReveal().reveal(".statistics-card", {
     interval: 450,
-    duration: 300,
-    delay: 1000,
+    duration: 600,
+    delay: 400,
   });
 
   ScrollReveal().reveal(".Info-card", {
@@ -87,33 +85,11 @@ if (typeof ScrollReveal !== "undefined") {
 }
 
 
-const accordions = document.querySelectorAll(".accordion");
-
-accordions.forEach((accordion) => {
-  const panel = accordion.nextElementSibling;
-  const icon = accordion.querySelector(".accordion-icon");
-
-  // Open by default if .active
-  if (accordion.classList.contains("active")) {
-    panel.style.maxHeight = panel.scrollHeight + "px";
-    if (icon) icon.textContent = "−";
-  }
-
-  accordion.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const isActive = this.classList.contains("active");
-
-    panel.style.maxHeight = isActive ? panel.scrollHeight + "px" : null;
-    if (icon) icon.textContent = isActive ? "−" : "+";
-  });
-});
-
-
-
 const profileButton = document.querySelector('.profile-button');
 const dropdownBox = document.querySelector('.profile-dropdown-box');
 
 
+// Accordion
 profileButton.addEventListener('click', function(event) {
   event.stopPropagation();
  
@@ -126,5 +102,85 @@ document.addEventListener('click', function(event) {
     dropdownBox.style.display = 'none';
   }
 });
+
+window.addEventListener("load", () => {
+  document.querySelectorAll(".accordion").forEach((accordion) => {
+    const panel = accordion.nextElementSibling;
+    const icon = accordion.querySelector(".accordion-icon");
+
+    const setPanelHeight = () => {
+      requestAnimationFrame(() => {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+
+        setTimeout(() => {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }, 300);
+      });
+    };
+
+    const waitForImages = (container, callback) => {
+      const images = container.querySelectorAll("img");
+      if (images.length === 0) return callback();
+
+      let loaded = 0;
+      const check = () => {
+        loaded++;
+        if (loaded === images.length) callback();
+      };
+
+      images.forEach((img) => {
+        if (img.complete) {
+          check();
+        } else {
+          img.addEventListener("load", check);
+          img.addEventListener("error", check);
+        }
+      });
+    };
+
+    // Handle default open
+    if (accordion.classList.contains("active")) {
+      waitForImages(panel, () => {
+        setPanelHeight();
+        if (icon) icon.textContent = "−";
+      });
+    } else {
+      if (icon) icon.textContent = "+";
+    }
+
+    accordion.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const isActive = this.classList.contains("active");
+
+      if (isActive) {
+        waitForImages(panel, () => {
+          setPanelHeight();
+          if (typeof ScrollReveal !== "undefined") {
+            ScrollReveal().sync?.();
+          }
+        });
+        if (icon) icon.textContent = "−";
+      } else {
+        panel.style.maxHeight = null;
+        if (icon) icon.textContent = "+";
+      }
+    });
+  });
+});
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".accordion.active").forEach((accordion) => {
+    const panel = accordion.nextElementSibling;
+
+    requestAnimationFrame(() => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    });
+
+    setTimeout(() => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }, 300);
+  });
+});
+
 
 

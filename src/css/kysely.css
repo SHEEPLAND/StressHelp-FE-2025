@@ -518,36 +518,6 @@ margin-bottom: 1.2rem;
   display: block; 
 }
 
-.container {
-display: flex;
-flex-direction: column;
-align-items: center; 
-padding: 0.5rem;
-margin-top: 100px;
-gap: 2rem;
-}
-
-
-.form-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.form-container h1 {
-    text-align: center;
-  }
-
-.left-side {
-width: 100%;
-max-width: 400px;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
 #menu-btn-icon {
   color: white;
   cursor: pointer;
@@ -555,4 +525,52 @@ align-items: center;
   text-shadow: 0 0 1px white;
 }
 
+.container,
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .kysely-container {
+    padding: 2rem 1rem;
+    margin: 120px auto 60px;
+    width: 95%;
+  }
+
+  .question p {
+    font-size: 1rem;
+  }
+
+  .popup {
+    width: 95%;
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .accordion {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+}
+
+
+
+@media (max-width: 900px){
+  .footer-bar {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+  }
+  
 }

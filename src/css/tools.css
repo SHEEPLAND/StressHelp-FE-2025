@@ -572,7 +572,6 @@ nav {
 }
 
 
-
 .statistics-card h4 {
   font-size: 1.05rem;
   font-weight: 600;
@@ -736,6 +735,21 @@ nav {
     grid-area: 1 / 1 / 2 / 2;
     gap: 1rem;
   }
+
+  .section-header {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+  }
+
+   .header-container h1{
+    margin-top: 4rem;
+    font-size: 3.5rem;
+  }
+
+
 }
 
 @media (max-width: 768px) {

@@ -3,67 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    
+     
     <title>Stressikysely</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-  <script type="module" crossorigin src="../../assets/kysely-aBS9iKCR.js"></script>
+  <script type="module" crossorigin src="../../assets/kysely-CjCYlpve.js"></script>
   <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="../../assets/home-BLxqoWyD.js">
-  <link rel="stylesheet" crossorigin href="../../assets/kysely-sEakDLHM.css">
+  <link rel="modulepreload" crossorigin href="../../assets/home-B7Iwr7-j.js">
+  <link rel="stylesheet" crossorigin href="../../assets/kysely-DPZ-yUKN.css">
 </head>
 <body>
-    <header>
-      <nav>
-        <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-        <ul class="navigation-links" id="navigation-links">
+  <header>
+    <nav>
+      <div class="navigation-logo">
+        <a href="index.html">
+          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
+        </a>
+      </div>
 
-          <li class="navigation-link"><a href="index.html">Etusivu</a></li>
-          <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
-          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
-          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+      <ul class="navigation-links" id="navigation-links">
+        <li class="navigation-link"><a href="index.html">Etusivu</a></li>
+        <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+        <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+        <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+        <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
-          <li class="navigation-link profile-dropdown">
-            <button class="profile-button">
-              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
-            </button>
-          
-            <div class="profile-dropdown-box">
-              <div class="arrow-up"></div> 
-              <div class="profile-dropdown-content">
-                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
-                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
-              </div>
+        <!-- Profile Dropdown -->
+        <li class="navigation-link profile-dropdown">
+          <button class="profile-button">
+            <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="profile-dropdown-box">
+            <div class="arrow-up"></div> 
+            <div class="profile-dropdown-content">
+              <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+              <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
-          </li>
-          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
-        </ul>
+          </div>
+        </li>
 
-        <div class="navigation-menu-button" id="menu-button">
-          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
-        </div>
-          
-        </nav>
-  
-        <div class="section-container header-container" id="home">
-          <h1></h1> <h3></h3> 
-        </div>
-    </header>
+        <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+        <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
+      </ul>
+
+      <div class="navigation-menu-button" id="menu-button">
+        <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+      </div>
+    </nav>
+
+    <div class="section-container header-container" id="home"></div>
+  </header>
 
           
   <section >
 
-    <div class="container" >
-        <h1>Stressitason Itsearviointikysely</h1>
+    <section class="about" id="about">
+      <div class="section-container kysely-container">
+        <h1 class="section-header">Stressitason Itsearviointikysely</h1>
         <form id="stressSurvey">
             <!-- Kysymykset -->
             <div class="question">
@@ -146,72 +144,55 @@
                 <label><input type="radio" name="q10" value="3"> Melko usein</label><br>
                 <label><input type="radio" name="q10" value="4"> Hyvin usein</label><br>
             </div>
-            <button type="button" onclick="calculateStress()">Lasketaan stressitasosi</button>
+            <button type="button" id="calculate-btn">Lasketaan stressitasosi</button>
         </form>
 
+
         <div class="accordion">
-            <h3>Miten kyselyn tulokset arvioidaan?</h3>
-            <p>Tämä kysely perustuu Perceived Stress Scale (PSS) -kyselyyn.</p>
-            <p>Stressitasosi määräytyy yleisesti ottaen seuraavasti:</p>
-            <ul>
-                <li><strong>Matala stressitaso:</strong> Alle 16 pistettä</li>
-                <li><strong>Kohtalainen stressitaso:</strong> 16–26 pistettä</li>
-                <li><strong>Korkea stressitaso:</strong> Yli 26 pistettä</li>
-            </ul>
-            <a href="https://www.das.nh.gov/wellness/docs/percieved%20stress%20scale.pdf" target="_blank" rel="noopener">Lataa tieteellinen tutkimus PDF-muodossa</a>
+          <h3>Miten kyselyn tulokset arvioidaan?</h3>
+          <p>Tämä kysely perustuu Perceived Stress Scale (PSS) -kyselyyn.</p>
+          <p>Stressitasosi määräytyy yleisesti ottaen seuraavasti:</p>
+          <ul>
+            <li><strong>Matala stressitaso:</strong> Alle 16 pistettä</li>
+            <li><strong>Kohtalainen stressitaso:</strong> 16–26 pistettä</li>
+            <li><strong>Korkea stressitaso:</strong> Yli 26 pistettä</li>
+          </ul>
+          <a href="https://www.das.nh.gov/wellness/docs/percieved%20stress%20scale.pdf" target="_blank" rel="noopener">Lataa tutkimus PDF</a>
         </div>
-    </div>
-    
-    <div class="popup" id="popup">
+      </div>
+  
+      <div class="popup" id="popup">
         <div class="popup-content">
-            <h2>Stressitasosi</h2>
-            <p id="stressMessage"></p>
-    
-            <div class="popup-options" id="lowStressOptions">
-                <p>Voit lukea stressinhallintavinkkejä.</p>
-                <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
-            </div>
-    
-            <div class="popup-options" id="moderateStressOptions">
-                <p>Haluaisitko seurata stressitasoasi tarkemmin tai lukea vinkkejä?</p>
-                <div class="button-row">
-                    <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
-                    <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
-                </div>
-            </div>
-    
-            <div class="popup-options" id="highStressOptions">
-                <p>Haluaisitko seurata stressitasoasi tarkemmin tai lukea vinkkejä?</p>
-                <div class="button-row">
-                    <a href="kirjaudu.html" class="login-button">Aloita HRV-mittaus</a>
-                    <a href="tools.html" class="login-button">Lue stressivinkkejä</a>
-                </div>
-            </div>
-    
-            <button class="close-button" id="close-popup">Sulje</button>
+          <h2>Stressitasosi</h2>
+          <p id="stressMessage"></p>
+          <p>Haluaisitko seurata stressitasosi kehittymistä tarkemmin tai saada käytännön vinkkejä arkeen?</p>
+          <div class="popup-button-group">
+            <a href="data.html" class="popup-button primary">Tutustu HRV-mittaukseen</a>
+            <a href="tools.html" class="popup-button secondary">Lue stressivinkkejä</a>
+          </div>
+          <button id="close-popup">Sulje</button>
         </div>
-    </div>
+      </div>
+    </section>
+  
+    <footer class="footer">
+      <div class="section-container footer-container">
+        <div class="footer-section">
+          <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></a></h5>
+          <p>
+            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+          </p>          
+        </div>
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+        </div>
+      </div>
+    </footer>
+
+ 
+  
     
-
-
-  </section>
-
-  <footer class="footer">
-    <div class="section-container footer-container">
-      <div class="footer-section">
-        <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
-        <p>
-          StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
-        </p>
-
-    </div>
-    <div class="footer-bar">
-      &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
-
-    </div>
-  </footer>
-    
-    <script src="../js/kysely.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    
 </body>
 </html>
