@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="../css/data.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
@@ -12,23 +12,27 @@
   </head>
 
   <body>
+    <!-- Header and Navigation -->
     <header>
-      <!-- Navigation -->
       <nav>
-        <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-        <ul class="navigation-links" id="navigation-links">
+        <div class="navigation-logo">
+          <a href="index.html">
+            <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
+          </a>
+        </div>
 
+        <ul class="navigation-links" id="navigation-links">
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
           <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
+          <!-- Profile dropdown-->
           <li class="navigation-link profile-dropdown">
             <button class="profile-button">
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
-          
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
               <div class="profile-dropdown-content">
@@ -37,23 +41,20 @@
               </div>
             </div>
           </li>
+
           <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
         </ul>
 
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
-        
       </nav>
 
-
-      <div class="section-container header-container" id="home">
-        <h1></h1> <h3></h3> 
-      </div>
+      <div class="section-container header-container" id="home"></div>
     </header>
-    
-    <!-- About -->
+
+    <!-- Welcome + Diary Entry Overview -->
     <section class="about" id="about">
       <div class="section-container about-container">
         <div class="about-grid">
@@ -62,32 +63,22 @@
             <h2 class="section-header">Tervetuloa <span id="given-name"></span></h2> 
             <p class="paragraph">
               Olet kirjautunut sisään Kubios-tililläsi. Voit nyt seurata hyvinvointiasi mittausten ja päiväkirjamerkintöjen avulla.
-            
-              
-            <br> <br />
-            Stressi vaikuttaa meihin eri tavoin – siksi on tärkeää tunnistaa omat kuormituksen merkit. Tällä sivulla näet mittaustuloksesi, jotka auttavat ymmärtämään, miten kehosi reagoi arjen haasteisiin. Säännölliset merkinnät ja mittaukset tukevat matkaasi kohti tasapainoisempaa arkea.
+              <br><br />
+              Tällä sivulla näet mittaustuloksesi, jotka auttavat ymmärtämään kehon reaktioita arkeen. 
+              Säännölliset merkinnät tukevat matkaasi kohti tasapainoa.
+            </p>
           </div>
-          
-          <!-- About list -->
+
+          <!-- Diary Table -->
           <div class="about-list">
             <div class="about-item about-table">
               <div>
                 <p class="section-subheader section-subheader--color">Viimeisin päiväkirjamerkintä 🗓️</p>
                 <table class="latest-entry-table">
-                  <tr>
-                    <th>Päivä </th>
-                    <td id="latest-date">-</td>
-                  </tr>
-                  <tr>
-                    <th>Stressitaso</th>
-                    <td id="latest-stress">-</td>
-                  </tr>
-                  <tr>
-                    <th>Merkintä</th>
-                    <td id="latest-notes">-</td>
-                  </tr>
+                  <tr><th>Päivä</th><td id="latest-date">-</td></tr>
+                  <tr><th>Stressitaso</th><td id="latest-stress">-</td></tr>
+                  <tr><th>Merkintä</th><td id="latest-notes">-</td></tr>
                 </table>
-            
                 <div class="entry-buttons">
                   <button class="entry-btn" onclick="window.location.href='diary-page.html'">+ Uusi päiväkirjamerkintä</button>
                   <a href="#statistics-second" class="entry-btn">Siirry Mittausdataan</a>
@@ -95,178 +86,174 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-<!-- Info -->
-<section class="Info" id="Info">
-  <div class="section-container Info-container">
-    <p class="section-subheader section-subheader--logo">Ohjeet ensimmäiseen mittaukseen</p>
+    <!-- Measurement Instructions Accordion -->
+    <section class="Info" id="Info">
+      <div class="section-container Info-container">
+        <p class="section-subheader section-subheader--logo">Ohjeet ensimmäiseen mittaukseen</p>
 
-  
+        <div class="accordion-container">
+          <button class="accordion active">Miten mittaus toimii?
+            <span class="accordion-icon">−</span>
+          </button>
 
-    <div class="accordion-container">
-      <button class="accordion active">
-  
-        Miten mittaus toimii?
-        <span class="accordion-icon">−</span>
-      </button>
-      <div class="panel">
-        <div class="Info-grid">
-          <div class="Info-card">
-            <img src="" alt="Step 1">
-            <h4>Vaihe 1: Lainaa mittauslaite </h4>
-            <p>Tarvitset sykevälivaihtelua mittaavan laitteen (esim. Polar H10). Voit lainata sen koululta tai YTHS:ltä.</p>
-          </div>
-          <div class="Info-card">
-            <img src="" alt="Step 2">
-            <h4>Vaihe 2: Suorita mittaus</h4>
-            <p>Käynnistä mittaus Kubios-sovelluksessa laitteen avulla. Pidä mittaushetki rauhallisena ja istu paikallasi.</p>
-          </div>
-          <div class="Info-card">
-            <img src="" alt="Step 3">
-            <h4>Vaihe 3: Seuraa tuloksia</h4>
-            <p>Kun mittaus on valmis, tuloksesi näkyvät täällä StressHelpissä. Voit myös tehdä päiväkirjamerkintöjä ja seurata kehitystäsi.</p>
+          <div class="panel">
+            <div class="Info-grid">
+              <div class="Info-card">
+                <img src="" alt="Step 1">
+                <h4>Vaihe 1: Lainaa mittauslaite</h4>
+                <p>Tarvitset sykevälivaihtelua mittaavan laitteen (esim. Polar H10).</p>
+              </div>
+
+              <div class="Info-card">
+                <img src="" alt="Step 2">
+                <h4>Vaihe 2: Suorita mittaus</h4>
+                <p>Käynnistä mittaus Kubios-sovelluksessa. Istu rauhassa paikallasi mittauksen ajan.</p>
+              </div>
+
+              <div class="Info-card">
+                <img src="" alt="Step 3">
+                <h4>Vaihe 3: Seuraa tuloksia</h4>
+                <p>Näet tulokset täällä StressHelpissä ja voit kirjata päiväkirjaan lisähuomiot.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- Latest Measurements Summary -->
+    <section class="statistics" id="statistics">
+      <div class="section-container statistics-container">
+        <div class="statistics-content">
+          <p class="section-subheader">Data Analyysi</p>
+          <h2 class="section-header">Viimeisin mittaustulos</h2>
+          <p class="paragraph">
+            Mittaukset perustuvat Kubiosin dataan. Ne kuvaavat stressitasoa ja palautumiskykyä.
+          </p>
 
-<!-- Last updated or most recent chart information -->
-<section class="statistics" id="statistics">
-  <div class="section-container statistics-container">
-    <div class="statistics-content">
-      <p class="section-subheader">Data Analyysi</p>
-      <h2 class="section-header">Viimeisin mittaustulos</h2>
-      <p class="paragraph">
-        Tulokset perustuvat viimeisimpään mittaukseesi Kubiosin kautta. Mittauksesi tulokset auttavat sinua ymmärtämään kehon stressitasoa ja palautumiskykyä.
-      </p>
-      
-      <div class="statistics-grid">
-        <div class="statistics-card">
-          <span><i class="ri-building-4-line"></i></span>
+          <!-- Stat cards -->
+          <div class="statistics-grid">
+            <div class="statistics-card">
+              <span><i class="ri-building-4-line"></i></span>
+              <h4 id="readiness-value">--%</h4>
+              <p>Valmiusindeksi (%)</p>
+              <div class="tooltiptext tooltip-readiness">
+                Kuvaa kehosi valmiutta selviytyä haasteista. Perustuu HRV-arvoihin ja stressitasoon.
+              </div>
+              <p id="readiness-category"></p>
+            </div>
 
+            <div class="statistics-card">
+              <span><i class="ri-trophy-fill"></i></span>
+              <h4 id="stress-index-value">--</h4>
+              <p>Stressi-indeksi</p>
+              <div class="tooltiptext tooltip-stressi-indeksi">
+                Korkea arvo = korkea stressi, matala HRV.
+              </div>
+            </div>
 
-          <h4 id="readiness-value">--%</h4>
-          <p>Valmiusindeksi (%)</p>
-          <div class="tooltiptext tooltip-readiness" >Kuvaa kehosi valmiutta fyysisiin ja henkisiin haasteisiin. 
-            <br>
-            
-            Luku (0–100 %) perustuu leposykevälivaihtelun (HRV) vertailuun aiempiin arvoihisi ja huomioi palautumisen, stressitason ja autonomisen hermoston toiminnan</div>
-          <p id="readiness-category" ></p>
+            <div class="statistics-card">
+              <span><i class="ri-user-fill"></i></span>
+              <h4 id="rmssd-value">-- ms</h4>
+              <p>RMSSD – sykevälivaihtelu</p>
+              <div class="tooltiptext tooltip-RMSSD">
+                Korkea arvo = hyvä palautuminen, aktiivinen parasympaattinen hermosto.
+              </div>
+            </div>
+
+            <div class="statistics-card">
+              <span><i class="ri-heart-pulse-line"></i></span>
+              <h4 id="mean-hr-value">-- bpm</h4>
+              <p>Keskisyke (BPM)</p>
+              <div class="tooltiptext tooltip-Syke">
+                Matala leposyke = hyvä kunto ja palautuminen.
+              </div>
+            </div>
+
+            <p class="para" id="stress-level-text">Stressi taso: --</p>
+          </div>
         </div>
 
+        <!-- Chart canvas -->
+        <div class="statistics-image">
+          <canvas id="resultsChart"></canvas>
+        </div>
+      </div>
+    </section>
 
-        <div class="statistics-card">
-          <span><i class="ri-trophy-fill"></i></span>
-          <h4 id="stress-index-value">--</h4>
-          <p>Stressi-indeksi</p>
-          <div class="tooltiptext tooltip-stressi-indeksi">Korkea arvo viittaa kohonneeseen sympaattisen hermoston aktiivisuuteen ja matalaan sykevälivaihteluun – merkki stressistä ja kuormituksesta. </div>
+    <!-- Measurement History Chart -->
+    <section class="chart-section" id="statistics-second">
+      <div class="section-container">
+        <p class="section-subheader">Historia</p>
+        <h2 class="section-header">Kubios Mittaushistoria</h2>
+        <p class="paragraph">
+          Seuraa stressin ja valmiuden muutoksia eri aikaväleillä.
+        </p>
+
+        <!-- Chart controls -->
+        <div class="controls">
+          <label for="chartTypeSelect">Valitse näkymä:</label>
+
+          <div class="custom-select-wrapper">
+            <select id="chartTypeSelect">
+              <option value="line">📈 Edistymisen aikajana</option>
+              <option value="bar">📊 Sessioyhteenveto historia</option>
+            </select>
+            <div class="custom-arrow">
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+          </div>
+
+          <div class="range-toggle">
+            <button class="range-btn active" data-range="3months">3 kuukautta</button>
+            <button class="range-btn" data-range="month">Kuukausi</button>
+            <button class="range-btn" data-range="week">Viikko</button>
+          </div>
+        </div>
+
+        <div id="chartdiv"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container footer-container">
+        <div class="footer-section">
+          <h5>
+            <a href="index.html">
+              <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
+            </a>
+          </h5>
+          <p>
+            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+          </p>
           
         </div>
 
-        <div class="statistics-card">
-          <span><i class="ri-user-fill"></i></span>
-          <h4 id="rmssd-value">-- ms</h4>
-          <p>RMSSD – sykevälivaihtelu</p>
-          <div class="tooltiptext tooltip-RMSSD">Mittaa sykevälivaihtelua sydämen lyöntien välillä. Korkea arvo kertoo hyvästä palautumisesta ja parasympaattisen hermoston aktiivisuudesta.</div>
-          
-        </div>
-
-        <div class="statistics-card">
-          <span><i class="ri-heart-pulse-line"></i></span>
-          <h4 id="mean-hr-value">-- bpm</h4>
-          <p>Keskisyke (BPM)</p>
-          <div class="tooltiptext tooltip-Syke">Leposyke. Matala syke viittaa usein parempaan kardiovaskulaariseen kuntoon ja palautumiseen.</div>
-        </div>
-
-        <p class="para" id="stress-level-text">Stressi taso: --</p>
-
-      </div>
-      </div> 
-      <div class="statistics-image">
-        <canvas id="resultsChart"></canvas>
-      </div> 
-    </div>
-   
-  </div>
-</section>
-
-
-<!-- Chart history Section -->
-<section class="chart-section" id="statistics-second">
-  <div class="section-container">
-    <p class="section-subheader">Historia</p>
-    <h2 class="section-header">Kubios Mittaushistoria</h2>
-    <p class="paragraph">
-      Seuraa stressi- ja valmiustasojen muutoksia eri aikaväleillä. Vaihda näkymää tai aikajännettä nähdäksesi yksityiskohtaisia mittaustietoja.
-    </p>
-
-    
-    <div class="controls">
-      <label for="chartTypeSelect">Valitse näkymä:</label>
-    
-      <div class="custom-select-wrapper">
-        <select id="chartTypeSelect">
-          <option value="line">📈 Edistymisen aikajana</option>
-          <option value="bar">📊 Sessioyhteenveto historia</option>
-        </select>
-        <div class="custom-arrow">
-          <i class="ri-arrow-down-s-line"></i>
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
         </div>
       </div>
-    
-      <div class="range-toggle">
-        <button class="range-btn active" data-range="3months">3 kuukautta</button>
-        <button class="range-btn" data-range="month">Kuukausi</button>
-        <button class="range-btn" data-range="week">Viikko</button>
-      </div>
-    </div>
-    
-    <div id="chartdiv"></div>
-  </div>
-</section>
+    </footer>
 
-<footer class="footer">
-  <div class="section-container footer-container">
-    <div class="footer-section">
-      <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
-      <p>
-        StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
-      </p>
+    <!-- Scripts and libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
-  </div>
-  <div class="footer-bar">
-    &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
-
-  </div>
-</footer>
-
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-<script type="module" src="../js/auth.js"></script>
-<script type="module" src="../js/user-info.js"></script>
-<script type="module" src="../js/home.js"></script>
-<script type="module" src="../js/data.js"></script>
-<script type="module" src="../js/test.js"></script>
-
-
+    <!-- Local JS modules -->
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/user-info.js"></script>
+    <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/data.js"></script>
+    <script type="module" src="../js/test.js"></script>
   </body>
 </html>

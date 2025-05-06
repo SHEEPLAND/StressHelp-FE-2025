@@ -20,12 +20,19 @@ navigationLinks.addEventListener("click", (e) => {
 
 const currentPath = window.location.pathname.split('/').pop();
 
-document.querySelectorAll('.navigation-link a').forEach(link => {
-  const linkHref = link.getAttribute('href');
-  if (linkHref === currentPath) {
-    link.classList.add('active');
-  }
+window.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".navigation-link a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPath) {
+      setTimeout(() => {
+        link.classList.add("active"); 
+      }, 10); 
+    }
+  });
 });
+
 
 // ScrollReveal
 const scrollRevealOption = {
@@ -119,3 +126,5 @@ document.addEventListener('click', function(event) {
     dropdownBox.style.display = 'none';
   }
 });
+
+

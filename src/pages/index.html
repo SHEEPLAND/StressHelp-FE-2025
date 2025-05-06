@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="fi">
   <head>
-    <meta charset="UTF-8" />
-        
+    <meta charset="UTF-8" />      
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <link rel="stylesheet" href="../css/home.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
     <title>Etusivu</title>
   </head>
+  
   <body>
+    <!-- Header and Navigation -->
     <header>
       <nav>
-        <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-        <ul class="navigation-links" id="navigation-links">
+        <div class="navigation-logo">
+          <a href="index.html">
+            <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
+          </a>
+        </div>
 
+        <ul class="navigation-links" id="navigation-links">
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
           <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
+          <!-- Profile Dropdown -->
           <li class="navigation-link profile-dropdown">
             <button class="profile-button">
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
-          
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
               <div class="profile-dropdown-content">
@@ -37,22 +41,20 @@
               </div>
             </div>
           </li>
+
           <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
         </ul>
 
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
-        
       </nav>
 
-      <div class="section-container header-container" id="home">
-        <h1></h1> <h3></h3> 
-      </div>
+      <div class="section-container header-container" id="home"></div>
     </header>
-    
-    <!-- About -->
+
+    <!-- About Section -->
     <section class="about" id="about">
       <div class="section-container about-container">
         <div class="about-grid">
@@ -63,14 +65,8 @@
               <strong>StressHelp</strong> tekee stressinhallinnasta selkeää ja saavutettavaa.
               Tarkkaile oloasi, mittaa kehosi reaktiota ja löydä sinulle sopivat keinot jaksamiseen.
             </p>
-            <br />
-
-
           </div>
-          
-          
-          
-          <!-- About list -->
+
           <div class="about-list">
             <div class="about-item">
               <span><i class="ri-heart-pulse-line"></i></span>
@@ -89,77 +85,75 @@
       </div>
     </section>
 
-    <!-- Info -->
+    <!-- Info Section -->
     <section class="Info" id="Info">
       <div class="section-container Info-container">
         <p class="section-subheader">Aloitusopas</p>
         <h2 class="section-header">Kolme askelta stressinhallintaan</h2>
+
         <div class="Info-grid">
-          
-        <a href="kysely.html" class="info-link-wrapper">
-          <div class="Info-card">
-            <img src="../img/business-concept-with-people-are-planning-day.png" alt="Info" />
+          <a href="kysely.html" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/business-concept-with-people-are-planning-day.png" alt="Info" />
+              <h4>Tunnista itsesi</h4> 
+              <p>Tee itsearviointi ja selvitä stressitasosi. <strong>Ei vaadi kirjautumista!</strong></p>
+            </div>
+          </a>
 
-            <h4>Tunnista itsesi </h4> 
-            <p>Tee itsearviointi ja selvitä stressitasosi. <strong>Ei vaadi kirjautumista!</strong> </p>
-          </div>
-        </a>
+          <a href="data.html" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/fruit-flat-vector-icon.png" alt="Info" />
+              <h4>Seuraa kehoasi</h4>
+              <p>Tunnista kehosi stressitaso – rekisteröidy Kubiosiin ja seuraa HRV-dataasi reaaliajassa.</p>
+            </div>
+          </a>
 
-       
-        <a href="data.html" class="info-link-wrapper">
-          <div class="Info-card">
-            <img src="../img/fruit-flat-vector-icon.png" alt="Info" />
-            <h4>Seuraa kehoasi</h4>
-            <p> Tunnista kehosi stressitaso – rekisteröidy Kubiosiin ja seuraa HRV-dataasi reaaliajassa. </p>
-          </div>
-        </a>
-
-        <a href="tools.html" class="info-link-wrapper">
-          <div class="Info-card">
-            <img src="../img/simple-flat-illustration-person-practicing-mindfulness-meditation.png" alt="Info" />
-            <h4>Palaudu paremmin</h4>
-            <p>Vinkkejä sinulle – ja halutessasi yhteys ammattilaiseen.</p>
-          </div>
-
-        </a>
-       
-          
-
+          <a href="tools.html" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/simple-flat-illustration-person-practicing-mindfulness-meditation.png" alt="Info" />
+              <h4>Palaudu paremmin</h4>
+              <p>Vinkkejä sinulle – ja halutessasi yhteys ammattilaiseen.</p>
+            </div>
+          </a>
         </div>
 
-          <div class="cta-buttons">
-            <a href="kysely.html" class="cta-btn primary">
-              Tee itsearviointi <span class="arrow">&raquo;</span>
-            </a>
-            <a href="login.html" class="cta-btn secondary">
-              Rekisteröidy Kubiosissa <span class="arrow">&raquo;</span>
-            </a>
-              
-          </div>
+        <!-- Call to action buttons -->
+        <div class="cta-buttons">
+          <a href="kysely.html" class="cta-btn primary">
+            Tee itsearviointi <span class="arrow">&raquo;</span>
+          </a>
+          <a href="login.html" class="cta-btn secondary">
+            Rekisteröidy Kubiosissa <span class="arrow">&raquo;</span>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="section-container footer-container">
         <div class="footer-section">
-          <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
+          <h5>
+            <a href="index.html">
+              <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
+            </a>
+          </h5>
           <p>
-            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
+            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
           </p>
+          
+        </div>
 
-      </div>
-      <div class="footer-bar">
-        &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
-
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+        </div>
       </div>
     </footer>
 
-
+    <!-- JavaScript and external libraries -->
     <script type="module" src="../js/auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-
   </body>
 </html>

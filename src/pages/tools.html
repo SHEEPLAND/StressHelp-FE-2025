@@ -2,32 +2,29 @@
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/tools.css">
-   
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stressivinkit</title>
   </head>
   <body>
     <header>
+      <!-- Navigation Links -->
       <nav>
         <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
         <ul class="navigation-links" id="navigation-links">
-
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
           <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & tuki</a></li>
-        
+    
           <li class="navigation-link profile-dropdown">
             <button class="profile-button">
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
-          
+          <!-- Profile Dropdown -->
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
               <div class="profile-dropdown-content">
@@ -50,7 +47,7 @@
         <h1></h1> <h3></h3> 
       </div>
     </header>
-
+<!-- About section-->
     <section class="about" id="about">
       <div class="section-container about-container">
         <div class="about-grid">
@@ -134,7 +131,7 @@
       </section>
 
 
-
+ <!-- Moretips section -->
       <section class="moretips" id="moretips">
         <div class="section-container moretips-container">
           <p class="section-subheader">Asioita, joita voit tehdä päivittäin</p>
@@ -261,10 +258,8 @@
 
               
             </div>
-            
-            
-      
-            <!-- Movement tab -->
+
+            <!-- Apps tab -->
             <div class="tab-content" id="apps">
               <h4>Sovellukset avuksi</h4>
               <p>
@@ -297,19 +292,15 @@
                     </div>
                     <p class="video-caption">Calm</p>
                   </div>
-
-                  
                 </div>
               </div>
             </div>
-            
-      
           </div> 
         </div> 
       </section>
 
 
-      
+     <!-- Professional help section --> 
       <section class="statistics" id="statistics">
         <div class="section-container statistics-container">
           <div class="statistics-content">
@@ -356,8 +347,9 @@
           <div class="footer-section">
             <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
             <p>
-              StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
+              StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
             </p>
+            
   
         </div>
         <div class="footer-bar">
@@ -365,10 +357,7 @@
   
         </div>
       </footer>
-    
-
-
-
+    <!-- JavaScript Files -->
     <script type="module" src="../js/auth.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script type="module" src="../js/tools.js"></script>

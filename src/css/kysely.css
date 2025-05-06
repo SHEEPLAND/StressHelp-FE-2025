@@ -12,17 +12,14 @@
 
 }
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
-.section-container,
-.container {
-  max-width: 900px; 
+.section-container {
+  max-width: var(--max-width);
   margin: auto;
   padding: 2.5rem 1rem;
 }
@@ -32,10 +29,9 @@
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   padding: 3rem 2rem;
-  margin-top: 150px;
-  margin-bottom: 100px; 
+  max-width: 900px;
+  margin: 150px auto 100px;
 }
-
 
 .section-header {
   font-size: 2.5rem;
@@ -90,13 +86,12 @@ nav {
   align-items: center;
   gap: 1.8rem; 
 }
-
 .navigation-link a {
   padding: 5px;
   font-size: 1rem;
   font-weight: bold;
-  color:white;
-  transition: all 0.3s ease-in-out;
+  color: white;
+  transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
 }
 
 .navigation-link a.active {
@@ -104,7 +99,9 @@ nav {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
+  transform: scale(1.05); 
 }
+
 
 
 .navigation-link a:hover {

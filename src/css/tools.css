@@ -143,8 +143,8 @@ nav {
   padding: 5px;
   font-size: 1rem;
   font-weight: bold;
-  color:white;
-  transition: all 0.3s ease-in-out;
+  color: white;
+  transition: color 0.3s ease, letter-spacing 0.3s ease, transform 0.3s ease;
 }
 
 .navigation-link a.active {
@@ -152,7 +152,7 @@ nav {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
- 
+  transform: scale(1.05); 
 }
 
 

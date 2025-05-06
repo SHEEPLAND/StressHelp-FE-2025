@@ -1,204 +1,200 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/diary.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="../css/diary.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
   <title>Päiväkirja</title>
 </head>
 <body>
+  <!-- Header and Navigation -->
   <header>
     <nav>
-      <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
-      <ul class="navigation-links" id="navigation-links">
+      <div class="navigation-logo">
+        <a href="index.html">
+          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
+        </a>
+      </div>
 
+      <ul class="navigation-links" id="navigation-links">
         <li class="navigation-link"><a href="index.html">Etusivu</a></li>
         <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
         <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
         <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
         <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
+        <!-- Profile Dropdown -->
         <li class="navigation-link profile-dropdown">
           <button class="profile-button">
             <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
           </button>
-        
           <div class="profile-dropdown-box">
-            <div class="arrow-up"></div> 
+            <div class="arrow-up"></div>
             <div class="profile-dropdown-content">
               <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
               <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
           </div>
         </li>
+
         <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
-        <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
+        <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
       </ul>
 
       <div class="navigation-menu-button" id="menu-button">
         <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
       </div>
-      
     </nav>
-    <div class="section-container header-container" id="home">
-      <h1></h1> <h3></h3> 
-    </div>
-</header>
+  </header>
 
+  <!-- Main Diary Section -->
+  <div class="section-container">
 
-    <!-- Main Container -->
-    <div class="container">
-        <div class="left-side">
-            <div class="calendar-top">
-              <div class="calendar">
-                <div class="calendar-header">
-                  <button id="prev-month">&#8249;</button>
-                  <div id="month-year" class="month-year-selector">
-                    <span id="selected-month" class="clickable">Toukokuu</span>
-                    <span id="selected-year" class="clickable">2025</span>
-                  </div>                  
-                  <button id="next-month">&#8250;</button>
-                </div>
-                <div class="calendar-days">
-                  <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
-                </div>
-                <div id="calendar-dates" class="calendar-dates"></div>
-               
-                <div class="calendar-footer-box">
-                  <div class="today-info-group">
-                    <div class="calendar-today-label" id="jump-to-today" tabindex="0">TÄNÄÄN</div>
-                    <div id="calendar-meta">
-                      <span id="today-clock" class="meta-time">--:--:--</span> |
-                      <span id="today-date" class="meta-date">Loading date...</span>
-                    </div>
-                  </div>
-                
-                  <hr class="calendar-divider">
-                
-                  <div id="calendar-legend">
-                    <span><span class="legend-dot legend-green"></span> Matala Stressi</span>
-                    <span><span class="legend-dot legend-yellow"></span> Kohtalainen Stressi</span>
-                    <span><span class="legend-dot legend-red"></span> Korkea Stressi</span>
-                  </div>
-                </div>
-                
-                
-                
-                
-                
+  <div class="container">
+    <!-- Left Calendar Section -->
+    <div class="left-side">
+      <div class="calendar-top">
+        <div class="calendar">
+          <div class="calendar-header">
+            <button id="prev-month">&#8249;</button>
+            <div id="month-year" class="month-year-selector">
+              <span id="selected-month" class="clickable">Toukokuu</span>
+              <span id="selected-year" class="clickable">2025</span>
+            </div>
+            <button id="next-month">&#8250;</button>
+          </div>
+
+          <!-- Day Labels -->
+          <div class="calendar-days">
+            <div>Ma</div><div>Ti</div><div>Ke</div><div>To</div><div>Pe</div><div>La</div><div>Su</div>
+          </div>
+          <div id="calendar-dates" class="calendar-dates"></div>
+
+          <div class="calendar-footer-box">
+            <div class="today-info-group">
+              <div class="calendar-today-label" id="jump-to-today" tabindex="0">TÄNÄÄN</div>
+              <div id="calendar-meta">
+                <span id="today-clock" class="meta-time">--:--:--</span> |
+                <span id="today-date" class="meta-date">Loading date...</span>
               </div>
             </div>
-        
-            <div class="image-below">
-              <img src="../img/diary.png" alt="Diary Illustration" />
+
+            <hr class="calendar-divider">
+
+            <!-- Stress Level Legend -->
+            <div id="calendar-legend">
+              <span><span class="legend-dot legend-green"></span> Matala Stressi</span>
+              <span><span class="legend-dot legend-yellow"></span> Kohtalainen Stressi</span>
+              <span><span class="legend-dot legend-red"></span> Korkea Stressi</span>
             </div>
           </div>
-        
-          
-
-        <div class="form-container">
-            <h1>Päiväkirja</h1>
-            <div class="forms">
-                <form action="#" method="POST" class="diaryForm">
-                    <label class="form-label" for="entry_date">Päivämäärä:</label>
-                    <input type="hidden" id="entry_id" name="entry_id">
-                    <input class="form-input" type="date" name="entry_date" id="entry_date" required>
-
-                    <label class="form-label" for="mood">Mieliala:</label>
-                    <input class="form-input" type="text" name="mood" id="mood" placeholder="Esim. Iloinen, stressaantunut, rentoutunut...">
-
-                    <label class="form-label" for="energy_level">Energiataso:</label>
-                    <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
-
-                    <label class="form-label" for="stress_level">Stressitaso:</label>
-                    <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
-
-                    <label class="form-label" for="sleep_hours">Uni (tunteina):</label>
-                    <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7 tuntia" min="0">
-
-                    <label class="form-label" for="notes">Muistiinpanoja:</label>
-                    <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
-
-                    <label class="form-label" for="goals">Tavoitteet:</label>
-                    <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
-
-                    <input name="submit" type="submit" value="Tallenna merkintä" class="createEntry">
-
-                </form>
-            </div>
         </div>
+      </div>
+      <div class="image-below">
+        <img src="../img/diary.png" alt="Diary Illustration" />
+      </div>
     </div>
 
-    <!-- Diary Entry Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Yhteenvetosi</h2>
-            
-            <!-- Entry summary -->
-            <div class="diary-popup"></div> 
-            <div class="analysis">
-                <p id="analysis"></p>
-            </div>
-            <button class="close-button" id="close-popup">Sulje</button>
-            <a href="moretools.html" class="tips-button">Päiväkirjahistoria</a>
-        </div>
+    <!-- Right Form Section -->
+    <div class="form-container">
+      <h1>Päiväkirja</h1>
+      <div class="forms">
+        <form action="#" method="POST" class="diaryForm">
+          <label class="form-label" for="entry_date">Päivämäärä:</label>
+          <input type="hidden" id="entry_id" name="entry_id">
+          <input class="form-input" type="date" name="entry_date" id="entry_date" required>
+
+          <label class="form-label" for="mood">Mieliala:</label>
+          <input class="form-input" type="text" name="mood" id="mood" placeholder="Esim. Iloinen, stressaantunut, rentoutunut...">
+
+          <label class="form-label" for="energy_level">Energiataso:</label>
+          <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+
+          <label class="form-label" for="stress_level">Stressitaso:</label>
+          <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+
+          <label class="form-label" for="sleep_hours">Uni (tunteina):</label>
+          <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7 tuntia" min="0">
+
+          <label class="form-label" for="notes">Muistiinpanoja:</label>
+          <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>
+
+          <label class="form-label" for="goals">Tavoitteet:</label>
+          <textarea class="form-input" id="goals" name="goals" rows="5"></textarea>
+
+          <input name="submit" type="submit" value="Tallenna merkintä" class="createEntry">
+        </form>
+      </div>
     </div>
-
-    <!-- Diary History Popup -->
-<div class="popup" id="history-popup">
-  <div class="popup-content">
-    <h2>Päiväkirjamerkinnät <span id="popup-date"></span></h2>
-    
-    <!-- Diary Entries List -->
-    <div id="history-popup-content"></div>
-
-    <button class="close-button" id="close-history-popup">Close</button>
   </div>
-  <div id="diary"></div>
-</div>
-
-<footer class="footer">
-  <div class="section-container footer-container">
-    <div class="footer-section">
-      <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
-      <p>
-        StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen. Tavoitteemme on tehdä mielen hyvinvoinnista helpommin saavutettavaa kaikille.
-      </p>
-
-  </div>
-  <div class="footer-bar">
-    &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
-
-  </div>
-</footer>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('nav');
-  if (nav) {
-    const navHeight = nav.offsetHeight;
-    document.body.style.paddingTop = navHeight + 'px';
-  }
-});
-
-</script>
     
-    
-
-    <!-- JavaScript -->
-    <script type="module" src="../js/auth.js"></script>
-    <script type="module" src="../js/diaryentries.js"></script>
-    <script type="module" src="../js/calender.js"></script>
+  </div>
   
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script type="module" src="../js/home.js"></script>
-   
 
+
+
+  <!-- Diary Entry Summary Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>Yhteenvetosi</h2>
+      <div class="diary-popup"></div>
+      <div class="analysis">
+        <p id="analysis"></p>
+      </div>
+      <button class="close-button" id="close-popup">Sulje</button>
+      <a href="tools.html" class="tips-button">Lue stressivinkkejä</a>
+    </div>
+  </div>
+
+  <!-- Diary History Popup -->
+  <div class="popup" id="history-popup">
+    <div class="popup-content">
+      <h2>Päiväkirjamerkinnät <span id="popup-date"></span></h2>
+      <div id="history-popup-content"></div>
+      <button class="close-button" id="close-history-popup">Close</button>
+    </div>
+    <div id="diary"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-container footer-container">
+      <div class="footer-section">
+        <h5>
+          <a href="index.html">
+            <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
+          </a>
+        </h5>
+        <p>
+          StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+        </p>        
+      </div>
+      <div class="footer-bar">
+        &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('nav');
+      if (nav) {
+        const navHeight = nav.offsetHeight;
+        document.body.style.paddingTop = navHeight + 'px';
+      }
+    });
+  </script>
+
+  <!-- JavaScript Modules and Libraries -->
+  <script type="module" src="../js/auth.js"></script>
+  <script type="module" src="../js/diaryentries.js"></script>
+  <script type="module" src="../js/calender.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script type="module" src="../js/home.js"></script>
 </body>
 </html>
