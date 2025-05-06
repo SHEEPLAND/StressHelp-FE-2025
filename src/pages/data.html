@@ -103,7 +103,7 @@
           <div class="panel">
             <div class="Info-grid">
               <div class="Info-card">
-                <img src="" alt="Step 1">
+                <img src="../img/30800e66-e2b1-48ae-8438-c80d359ed023.jpg" alt="Step 1">
                 <h4>Vaihe 1: Valmistele mittaus</h4>
                 <p>Lataa puhelimeesi Kubios HRV -sovellus ja käytä yhteensopivaa laitetta (esim. Polar H10).
                   Voit käyttää omaa laitetta tai lainata sellaisen YTHS:ltä tai oppilaitoksestasi.
@@ -111,13 +111,13 @@
               </div>
 
               <div class="Info-card">
-                <img src="" alt="Step 2">
+                <img src="../img/30800e66-e2b1-48ae-8438-c80d359ed023.jpg" alt="Step 2">
                 <h4>Vaihe 2: Suorita mittaus</h4>
                 <p>Käynnistä mittaus Kubios-sovelluksessa. Istu rauhassa paikallasi mittauksen ajan (noin 3–5 minuuttia).</p>
               </div>
 
               <div class="Info-card">
-                <img src="" alt="Step 3">
+                <img src="../img/30800e66-e2b1-48ae-8438-c80d359ed023.jpg" alt="Step 3">
                 <h4>Vaihe 3: Seuraa tuloksia</h4>
                 <p>Näet mittaustulokset täällä StressHelpissä. Voit myös lisätä päiväkirjamerkintöjä ja seurata hyvinvointisi kehitystä.</p>
               </div>
@@ -182,8 +182,11 @@
 
         <!-- Chart canvas -->
         <div class="statistics-image">
-          <canvas id="resultsChart"></canvas>
+          <div class="chart-wrapper">
+            <canvas id="resultsChart"></canvas>
+          </div>
         </div>
+        
       </div>
     </section>
 
@@ -241,6 +244,9 @@
         </div>
       </div>
     </footer>
+
+
+    
 
     <!-- Scripts and libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

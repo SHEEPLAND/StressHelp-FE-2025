@@ -1,5 +1,3 @@
-
-
 let kubiosData = [];
 
 const getKubiosData = async () => {
