@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #84ad83;
+  --primary-color: #bde4f4;
   --secondary-color: #fbfbf6;
-  --secondary-color-light: rgb(43, 75, 108);
-  --text-light: black;
+  --secondary-color-dark: #142d4c;
+  --text-dark: black;
   --white:rgb(43, 69, 94);
   --black: #000000;
   --max-width: 1200px;
@@ -35,7 +35,7 @@
   margin-bottom: 1rem;
   padding-left: 20px;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .section-subheader::after {
@@ -188,9 +188,9 @@ nav {
   top: 122%;
   margin-top: 10px;
   min-width: 220px;
-  background: white;
+  background: #fbfbf6;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(32, 31, 31, 0.2);
   z-index: 20;
   
 }
@@ -224,7 +224,7 @@ nav {
 }
 
 .profile-dropdown-content a:hover {
-  background-color: #f5f5f5;
+  background-color: #e7e7e7;
 }
 
 
@@ -295,12 +295,16 @@ nav {
 }
 
 .about-content .paragraph{
-  color: var(--text-light);
+  color: var(--text-dark);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about-list {
   display: grid;
   gap: 2rem;
+  color: #13445a;
 }
 
 .about-item {
@@ -312,8 +316,8 @@ nav {
 .about-item span {
   padding: 13px 20px;
   font-size: 1.75rem;
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  color: #13445a;
+
   border-radius: 5px;
 }
 
@@ -332,6 +336,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  
+  
 }
 
 .Info-card img {
@@ -348,7 +354,7 @@ nav {
 
 .Info-card div span {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .Info-card div span i {
@@ -359,13 +365,18 @@ nav {
 
 .Info-card h4 {
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  
 }
 
 .Info-card p {
-  color: var(--text-light);
+  color: var(--text-dark);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
+
 
 .info-link-wrapper {
   text-decoration: none;
@@ -396,15 +407,15 @@ nav {
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #eae9dd;
-  color: #1e3d4c;
+  color: black;
 }
 
 .cta-btn.primary {
-  border-color: #6b9f7e;
+  border-color: #4d6b58;
 }
 
 .cta-btn.secondary {
-  border-color: #2e3d4c;
+  border-color: black;
 }
 
 .cta-btn .arrow {
@@ -413,8 +424,9 @@ nav {
   transition: transform 0.3s ease;
 }
 
+
 .cta-btn:hover {
-  background-color: #dcdcd2;
+  background-color: #fbfbf6;
   transform: scale(1.05) translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }

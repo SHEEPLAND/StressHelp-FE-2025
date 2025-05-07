@@ -1,8 +1,8 @@
 :root {
   --primary-color: #84ad83;
   --secondary-color: #fbfbf6;
-  --secondary-color-light: rgb(43, 75, 108);
-  --text-light: black;
+  --secondary-color-dark: rgb(43, 75, 108);
+  --text-dark: black;
   --white:rgb(43, 69, 94);
   --black: #000000;
   --max-width: 1200px;
@@ -37,8 +37,9 @@
   margin-bottom: 1rem;
   padding-left: 20px;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
+
 
 .section-subheader::after {
   position: absolute;
@@ -296,7 +297,10 @@ nav {
 }
 
 .about-content .paragraph{
-  color: var(--text-light);
+  color: var(--text-dark);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about-table .section-subheader {
@@ -309,7 +313,7 @@ padding: 3.5rem 1rem;
 }
 
 .section-subheader--color::after {
-background-color: #bec0d6; 
+background-color: #a8c686; 
 }
 
 .section-subheader--logo::after {
@@ -326,8 +330,6 @@ background-color: #bec0d6;
   padding-left: 48px;
 }
 
-
-
 .about-table {
   align-items: flex-start;
   width: 100%;
@@ -336,8 +338,8 @@ background-color: #bec0d6;
 .latest-entry-table {
   width: 100%;
   font-size: 1rem;
-  color: var(--text-light);
-  margin-top: 1rem;
+  color: rgb(43, 69, 94);
+  margin-top: 3rem;
 }
 
 .latest-entry-table th,
@@ -389,7 +391,7 @@ color: #c44747;
 
 .entry-btn {
   padding: 12px 26px;
-  background-color: var(--primary-color);
+  background-color: #2c786c;;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -400,7 +402,8 @@ color: #c44747;
 }
 
 .entry-btn:hover {
-  background-color: #6e9574;
+  background-color: #a8c686;
+  color: #000000;
 }
 
 /* Accordion */
@@ -410,7 +413,7 @@ color: #c44747;
 }
 
 .accordion {
-background-color: var(--secondary-color-light);
+background-color: var(--secondary-color-dark);
 color: var(--secondary-color);
 cursor: pointer;
 padding: 1rem 1.5rem;
@@ -428,7 +431,7 @@ align-items: center;
 
 .accordion:hover,
 .accordion.active {
-background-color: var(--primary-color);
+background-color: #a8c686;
 color: black;
 }
 
@@ -446,7 +449,7 @@ transform: rotate(180deg); /* + turns into × */
 /* Accordion panel */
 .panel {
 background-color: var(--secondary-color); 
-color: var(--text-light);
+color: var(--text-dark);
 padding: 1rem 0;
 max-height: 0;
 overflow: hidden;
@@ -471,7 +474,7 @@ background-color: var(--secondary-color);
   }
 
 .Info-card {
-    background-color: #fff;
+    background-color:inherit;
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -507,8 +510,11 @@ transform: translateY(-5px);
   }
 
 .Info-card p {
-color: var(--text-light);
+color: var(--text-dark);
 line-height: 1.5;
+text-align: justify;
+-webkit-hyphens: auto;
+hyphens: auto;
 }
 
 /* Statistics and Chart*/
@@ -528,7 +534,7 @@ line-height: 1.5;
 
 .statistics-content .paragraph {
   margin-bottom: 2rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .statistics-grid {
@@ -539,7 +545,7 @@ line-height: 1.5;
 
 .statistics-card span{
   font-size: 1.75rem;
-  color: var(--primary-color);
+  color: #34718d;
 }
 
 .statistics-card h4 {
@@ -567,15 +573,11 @@ line-height: 1.5;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   max-width: 800px; 
   width: 100%;     
-
   white-space: normal;
   z-index: 10;
   text-align: center;
-         
-
   transition: opacity 0.3s ease, transform 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -683,7 +685,7 @@ border-color: #E15759 transparent transparent transparent;
 }
 
 .chart-section .paragraph {
-  color: var(--text-light);
+  color: black;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
@@ -711,7 +713,7 @@ border-color: #E15759 transparent transparent transparent;
   width: 100%;
   padding: 12px 16px;
   padding-right: 50px; 
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: #f0f0f0;
   color: black;
   border: 2px solid #302d2f;
@@ -746,18 +748,19 @@ border-color: #E15759 transparent transparent transparent;
 .range-btn {
   padding: 8px 16px;
   border-radius: 20px;
-  border: 1px solid #ccc;
-  background: #f0f0f0;
+  border: 1px solid #ededed;
+  background:  #a8c686;
   font-weight: bold;
   min-width: 120px;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .range-btn.active {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  background: #2c786c;
+  color: rgba(255, 255, 255, 0.896);
+  border-color: #585858;
 }
 
 

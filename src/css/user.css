@@ -1,9 +1,8 @@
-
 :root {
     --primary-color: #84ad83;
     --secondary-color: #fbfbf6;
-    --secondary-color-light: rgb(43, 75, 108);
-    --text-light: black;
+    --secondary-color-dark: rgb(43, 75, 108);
+    --text-dark: black;
     --white:rgb(43, 69, 94);
     --black: #000000;
     --max-width: 1200px;
@@ -292,7 +291,7 @@ body {
   }
   
   .profile-info p span {
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 1rem;
     flex: 1;
   }

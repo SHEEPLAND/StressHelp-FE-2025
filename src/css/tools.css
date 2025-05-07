@@ -1,8 +1,8 @@
 :root {
   --primary-color: #84ad83;
   --secondary-color: #fbfbf6;
-  --secondary-color-light: rgb(43, 75, 108);
-  --text-light: black;
+  --secondary-color-dark: rgb(43, 75, 108);
+  --text-dark: black;
   --white:rgb(43, 69, 94);
   --black: #000000;
   --max-width: 1200px;
@@ -35,8 +35,9 @@
   margin-bottom: 1rem;
   padding-left: 20px;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
+
 
 .section-subheader::after {
   position: absolute;
@@ -292,7 +293,10 @@ nav {
 }
 
 .about-content .paragraph{
-  color: var(--text-light);
+  color: var(--text-dark);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about-list {
@@ -310,7 +314,6 @@ nav {
   padding: 13px 20px;
   font-size: 1.75rem;
   color: var(--primary-color);
-  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 
@@ -344,7 +347,7 @@ nav {
 
 .Info-card div span {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .Info-card div span i {
@@ -360,7 +363,7 @@ nav {
 }
 
 .Info-card p {
-  color: var(--text-light);
+  color: var(--text-dark);
 }  
 
 .moretips {
@@ -380,7 +383,7 @@ nav {
   text-align: left;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--text-light);
+  color: var(--text-dark);
 
 }
 
@@ -448,7 +451,7 @@ nav {
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  color: var(--text-light);
+  color: var(--text-dark);
   text-align: center;
 }
 
@@ -456,7 +459,7 @@ nav {
   margin-top: 0.5rem;
   text-align: center;
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .video-grid {

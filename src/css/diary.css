@@ -21,7 +21,7 @@
 body {
   font-family: monospace, sans-serif;
   overflow-x: hidden; 
-  background: linear-gradient(to right, #f4f3e4, #FFFFFF);
+  background: linear-gradient(to right, #fbfbf6, #FFFFFF);
 }
 
 html,
@@ -33,10 +33,6 @@ body {
   max-width: var(--site-max-width);
   margin: auto;
   padding: 2.5rem 1rem;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 
@@ -174,7 +170,6 @@ nav {
 }
 
 
-
 /* Form Container */
 .form-container {
   max-width: 600px;
@@ -190,7 +185,7 @@ nav {
 .form-container h1 {
   font-size: 2rem;
   font-weight: bold;
-  color:  rgb(43, 75, 108);
+  color:  rgb(43, 69, 94);
   letter-spacing: 10px
 }
 
@@ -355,7 +350,7 @@ border-top-right-radius: var(--border-radius-m);
 }
 
 .calendar-date.today {
-  background-color: #fec045;
+  background-color: #4a9ecb75;
   color: black;
 }
 
@@ -424,8 +419,8 @@ border-top-right-radius: var(--border-radius-m);
 }
 
 .calendar-today-label {
-  font-size: 1rem;
-  color: #6c63ff;
+  font-size: 1.2rem;
+  color: #f16640;
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 0.4rem;
@@ -568,16 +563,19 @@ border-top-right-radius: var(--border-radius-m);
 
 /* Close Button */
 .close-button {
-  padding: 10px 30px;
   font-size: 1rem;
+  padding: 0.75rem 3rem;
   background: rgb(196, 71, 71);
   border: none;
-  border-radius: var(--border-radius-s);
+  border-radius: 16px;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
-  transition: 0.3s ease;
+  transition: background 0.3s ease; 
+  text-decoration: none; 
+  display: inline-block;   
+  cursor: pointer;
 }
 
 .close-button:hover {
@@ -586,19 +584,20 @@ border-top-right-radius: var(--border-radius-m);
 
 .tips-button {
 display: inline-block;  
-padding: 10px 20px;  
+padding: 0.9rem 1.2rem;
 font-size: 1rem;  
 font-weight: bold;
 text-align: center;
 text-decoration: none;  
-color: white;  
-background: rgb(43, 108, 196); 
-border-radius: var(--border-radius-s);  
+color: rgb(0, 0, 0);  
+background: #ffb6b9;  
 transition: background 0.3s ease; 
+border-radius: 16px;
+cursor: pointer;
 }
 
 .tips-button:hover {
-background: var(--hover-color, rgb(30, 90, 180)); 
+background: #ffe0e0; 
 }
 
 .analysis-title {
@@ -664,10 +663,19 @@ background: var(--hover-color, rgb(30, 90, 180));
 }
 
 #history-popup .close-button {
+  font-size: 1rem;
+  padding: 0.75rem 3rem;
   background: rgb(196, 71, 71);
-  border-radius: var(--border-radius-s);
-  padding: 10px;
-  color: white;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease; 
+  text-decoration: none; 
+  display: inline-block;   
+  cursor: pointer;
 }
 
 
@@ -692,7 +700,7 @@ background: var(--hover-color, rgb(30, 90, 180));
   }
   
   .delete-entry {
-    background-color: #e74c3c;
+    background-color: #df7152;
     color: white;
   }
 

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "https://stress-help.northeurope.cloudapp.azure.com/api/kubios-data/user-info";
+  const url = "http://127.0.0.1:3000/api/kubios-data/user-info";
   
   const options = {
     method: "GET",

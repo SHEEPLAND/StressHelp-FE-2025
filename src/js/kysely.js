@@ -40,16 +40,16 @@ function calculateStress() {
     let message = "";
   
     if (score <= 16) {
-      message = "Stressitasosi on matala.";
+      message = "<strong>Stressitasosi on matala.</strong>";
     } else if (score <= 26) {
-      message = "Stressitasosi on kohtalainen.";
+      message = "<strong>Stressitasosi on kohtalainen.</strong>";
     } else {
-      message = "Stressitasosi on korkea.";
+      message = "<strong>Stressitasosi on korkea.</strong>";
     }
   
-    message += ` Kokonaispisteet: ${score}`;
+    message += `<br>Kokonaispisteet: <strong>${score}</strong>`;
   
-    stressMessage.innerText = message;
+    stressMessage.innerHTML = message; 
     popup.style.display = "block";
   }
   
