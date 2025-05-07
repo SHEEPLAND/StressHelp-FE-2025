@@ -47,7 +47,7 @@
   transform: translateY(-50%);
   height: 45px;
   aspect-ratio: 1;
-  background-color: var(--primary-color);
+  background-color: #ffa952;
   z-index: -1;
 }
 
@@ -102,12 +102,12 @@ body {
 }
 
 header {
-  background-image: url("../img/401692905_1137f67f-6c27-4d47-8f21-80d50c37c6e2.jpg");
+  background-image: url("../img/serene-scene-depicting-person-meditating-vibrant-leaves-tropical-plants-promoting-mindfulness-tranquility.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 
 nav {
   margin: auto; 
@@ -188,9 +188,9 @@ nav {
   top: 122%;
   margin-top: 10px;
   min-width: 220px;
-  background: white;
+  background: #fbfbf6;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(32, 31, 31, 0.2);
   z-index: 20;
   
 }
@@ -256,13 +256,6 @@ nav {
   margin: auto;
 }
 
-.button{
-  border-radius: 30px;
-  padding: 15px 25px;
-  background-color: #eae9dd;
-  text-decoration: #84ad83;
-}
-
 .header-container h3 {
   text-align: center;
   font-size: 0.95rem;
@@ -283,7 +276,7 @@ nav {
   grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
   align-items: center;
-  background-color: #c2daaf;
+  background-color:#eae9dd;
   transform: translateY(-5rem);
   border-radius: 10px;
 }
@@ -294,14 +287,13 @@ nav {
 
 .about-content .paragraph{
   color: var(--text-dark);
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  line-height: 1.5;
 }
 
 .about-list {
   display: grid;
   gap: 2rem;
+  color: #13445a;
 }
 
 .about-item {
@@ -313,7 +305,7 @@ nav {
 .about-item span {
   padding: 13px 20px;
   font-size: 1.75rem;
-  color: var(--primary-color);
+  color: #13445a;
   border-radius: 5px;
 }
 
@@ -364,6 +356,7 @@ nav {
 
 .Info-card p {
   color: var(--text-dark);
+
 }  
 
 .moretips {
@@ -384,7 +377,6 @@ nav {
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-dark);
-
 }
 
 .tab-content h4 {
@@ -495,8 +487,6 @@ nav {
   transform: translate(-50%, -50%);
   font-size: 4rem;
   color: white;
-  border-radius: 40%;
-  padding: 0.5rem 0.75rem;
   pointer-events: none;
 }
 
@@ -507,6 +497,8 @@ nav {
   font-size: 0.9rem;
   color: #333;
 }
+
+
 
 
 .statistics {
@@ -527,7 +519,7 @@ nav {
 }
 
 .statistics-card {
-  background-color: #fdfdfd;
+  background-color: #ffffffc5;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -562,7 +554,7 @@ nav {
 
 .statistics-card p:first-of-type {
   font-weight: bold;
-  background-color: #eef4f8;
+  background-color: #91c3d54d;
   display: inline-block;
   padding: 4px 8px;
   border-radius: 6px;
@@ -586,13 +578,6 @@ nav {
   border-radius: 5px;
 }
 
-
-
-
-
-
-
-
 .footer {
   background-color: #eae9dd;
   padding: 0.8rem 1rem 1rem;
@@ -604,9 +589,8 @@ nav {
 }
 
 .footer-section h5 a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #2a2a2a;
   text-decoration: none;
 }
 
@@ -617,8 +601,8 @@ nav {
 
 .footer-section p {
   margin-top: 1rem;
-  color: #333;
-  line-height: 1.6;
+  color: black;
+  line-height: 1.5;
   text-align: center;
 
 }
@@ -723,6 +707,7 @@ nav {
 
   .paragraph {
     font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .header-container h1 {

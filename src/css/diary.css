@@ -350,7 +350,7 @@ border-top-right-radius: var(--border-radius-m);
 }
 
 .calendar-date.today {
-  background-color: #4a9ecb75;
+  background-color: #4faae6b8;
   color: black;
 }
 
@@ -435,9 +435,7 @@ border-top-right-radius: var(--border-radius-m);
   color: #333;
 }
 
-#calendar-meta .meta-time {
-  font-family: monospace;
-}
+
 
 .calendar-divider {
   border: none;
@@ -597,7 +595,8 @@ cursor: pointer;
 }
 
 .tips-button:hover {
-background: #ffe0e0; 
+background: #e49393; 
+color: white;
 }
 
 .analysis-title {
@@ -721,15 +720,19 @@ background: #ffe0e0;
     padding: 0.8rem 1rem 1rem;
   }
   
+  .footer {
+    background-color: #eae9dd;
+    padding: 0.8rem 1rem 1rem;
+  }
+  
   .footer-container {
     margin: 0 auto;
     text-align: left;
   }
   
   .footer-section h5 a {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #2a2a2a;
     text-decoration: none;
   }
   
@@ -737,9 +740,10 @@ background: #ffe0e0;
     text-align: center;
   }
   
+  
   .footer-section p {
     margin-top: 1rem;
-    color: #333;
+    color: black;
     line-height: 1.6;
     text-align: center;
   }

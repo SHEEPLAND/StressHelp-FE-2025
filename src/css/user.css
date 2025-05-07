@@ -19,12 +19,11 @@
     box-sizing: border-box;
   }
 
+  .section-container {
+    max-width: var(--max-width);
+    padding: 2.5rem 1rem;
+  }
 
-.container {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 2.5rem 1rem;
-}
 
 a {
     text-decoration: none;
@@ -119,11 +118,11 @@ body {
     top: 122%;
     margin-top: 10px;
     min-width: 220px;
-    background: white;
+    background: #fbfbf6;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(32, 31, 31, 0.2);
     z-index: 20;
-    
+
   }
   
   
@@ -167,14 +166,11 @@ body {
     font-size: 1.5rem;
   }
 
-  
-  
   .about {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     padding: 2rem;
     box-sizing: border-box;
   }
@@ -355,6 +351,8 @@ body {
     100% { transform: translateX(3px); }
   }
 
+
+
   .footer {
     background-color: #eae9dd;
     padding: 0.8rem 1rem 1rem;
@@ -366,9 +364,8 @@ body {
   }
   
   .footer-section h5 a {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #2a2a2a;
     text-decoration: none;
   }
   
@@ -379,10 +376,9 @@ body {
   
   .footer-section p {
     margin-top: 1rem;
-    color: #333;
+    color: black;
     line-height: 1.6;
     text-align: center;
-  
   }
   
   .footer-bar {
@@ -394,7 +390,6 @@ body {
     margin-top: 2rem;
     font-weight: bold;
   }
-  
   
   @media (width < 1200px) {
     nav {

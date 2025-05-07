@@ -318,24 +318,23 @@ input[type="radio"] {
 
 /* Primary button */
 .popup-button.primary {
-  background-color: #2c786c;
-  color: white;
-}
-
-.popup-button.primary:hover {
   background-color: #a8c686;
   color: black;
 }
 
-/* Secondary button */
+.popup-button.primary:hover {
+  background-color: #2c786c;
+  color: white;
+}
+
 .popup-button.secondary {
   background-color: #ffb6b9;
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .popup-button.secondary:hover {
-  background-color: #ffe0e0;
-  color: black;
+  background-color: #e49393;
+  color:white;
 }
 
 /* Close button */
@@ -463,28 +462,26 @@ padding: 0.8rem 1rem 1rem;
 }
 
 .footer-container {
-margin: 0 auto;
-text-align: left;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .footer-section h5 a {
-font-size: 2rem;
-font-weight: 700;
-color: #2a2a2a;
-text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .footer-section h5 {
-text-align: center;
+  text-align: center;
 }
 
 
 .footer-section p {
-margin-top: 1rem;
-color: #333;
-line-height: 1.6;
-text-align: center;
-
+  margin-top: 1rem;
+  color: black;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .footer-bar {

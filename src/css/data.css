@@ -104,7 +104,7 @@ body {
 }
 
 header {
-  background-image: url("../img/401692905_1137f67f-6c27-4d47-8f21-80d50c37c6e2.jpg");
+  background-image: url("../img/ai-loan-underwriting-within-retail-banking-where-artificial-intelligence-evaluates-risk-factor.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -192,11 +192,10 @@ nav {
   top: 122%;
   margin-top: 10px;
   min-width: 220px;
-  background: white;
+  background: #fbfbf6;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(32, 31, 31, 0.2);
   z-index: 20;
-  
 }
 
 
@@ -298,9 +297,7 @@ nav {
 
 .about-content .paragraph{
   color: var(--text-dark);
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  line-height: 1.5;
 }
 
 .about-table .section-subheader {
@@ -339,7 +336,7 @@ background-color: #a8c686;
   width: 100%;
   font-size: 1rem;
   color: rgb(43, 69, 94);
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .latest-entry-table th,
@@ -381,30 +378,40 @@ color: #c44747;
 
 /* Button styling for about list */
 
-.entry-buttons {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  
-}
-
-.entry-btn {
+/* Base button style */
+.btn {
   padding: 12px 26px;
-  background-color: #2c786c;;
-  color: white;
   font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.entry-btn:hover {
-  background-color: #a8c686;
-  color: #000000;
+.btn-primary {
+  background-color: #4a7c8c;
+  color: white;
 }
+
+.btn-primary:hover {
+  background-color: #84ad83;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #2c786c;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #1f5a4f;
+  color: #fff;
+}
+
 
 /* Accordion */
 
@@ -512,9 +519,6 @@ transform: translateY(-5px);
 .Info-card p {
 color: var(--text-dark);
 line-height: 1.5;
-text-align: justify;
--webkit-hyphens: auto;
-hyphens: auto;
 }
 
 /* Statistics and Chart*/
@@ -569,7 +573,7 @@ hyphens: auto;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.5;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -769,15 +773,19 @@ border-color: #E15759 transparent transparent transparent;
   padding: 0.8rem 1rem 1rem;
 }
 
+.footer {
+  background-color: #eae9dd;
+  padding: 0.8rem 1rem 1rem;
+}
+
 .footer-container {
   margin: 0 auto;
   text-align: left;
 }
 
 .footer-section h5 a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #2a2a2a;
   text-decoration: none;
 }
 
@@ -788,10 +796,9 @@ border-color: #E15759 transparent transparent transparent;
 
 .footer-section p {
   margin-top: 1rem;
-  color: #333;
-  line-height: 1.6;
+  color: black;
+  line-height: 1.5;
   text-align: center;
-
 }
 
 .footer-bar {
@@ -935,12 +942,20 @@ nav {
 
   .paragraph {
     font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .header-container h1{
     margin-top: 4rem;
     font-size: 3.5rem;
   }
+
+  .entry-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
   
 }
 
@@ -989,5 +1004,13 @@ nav {
   .statistics-card p {
     font-size: 0.9rem;
   }
+
+  .entry-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
 
 }

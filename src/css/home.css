@@ -296,9 +296,8 @@ nav {
 
 .about-content .paragraph{
   color: var(--text-dark);
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  line-height: 1.5;
+
 }
 
 .about-list {
@@ -372,9 +371,7 @@ nav {
 
 .Info-card p {
   color: var(--text-dark);
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  line-height: 1.5;
 }
 
 
@@ -447,9 +444,8 @@ nav {
 }
 
 .footer-section h5 a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #2a2a2a;
   text-decoration: none;
 }
 
@@ -460,10 +456,9 @@ nav {
 
 .footer-section p {
   margin-top: 1rem;
-  color: #333;
-  line-height: 1.6;
+  color: black;
+  line-height: 1.5;
   text-align: center;
-
 }
 
 .footer-bar {
@@ -566,6 +561,7 @@ nav {
 
   .paragraph {
     font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   .header-container h1{
