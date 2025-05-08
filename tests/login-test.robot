@@ -2,7 +2,7 @@
 Library     Browser    auto_closing_level=KEEP
 
 *** Variables ***
-${URL}        http://127.0.0.1:3003/src/html/login.html
+${URL}        https://stress-help.northeurope.cloudapp.azure.com/src/pages/login.html
 ${Username}   mickey
 ${Password}   juvtaw-Jighog-2qogvi
 

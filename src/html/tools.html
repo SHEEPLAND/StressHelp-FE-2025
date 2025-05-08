@@ -2,35 +2,54 @@
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="../css/tools.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/tools.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Stressivinkit</title>
   </head>
   <body>
     <header>
+      <!-- Navigation Links -->
       <nav>
-        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
+        <div class="navigation-logo"><a href="index.html">
+          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
         <ul class="navigation-links" id="navigation-links">
-
-          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
-          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
-          <li class="navigation-link"><a href="login.html">Kirjaudu Sisään</a></li>
-        
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+          <li class="navigation-link"><a href="tools.html">Vinkit & tuki</a></li>
+    
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+          <!-- Profile Dropdown -->
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content" id="profile-menu">
+
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
         </ul>
+
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
+        
       </nav>
 
       <div class="section-container header-container" id="home">
-        <h1></h1>
       </div>
     </header>
-
+<!-- About section-->
     <section class="about" id="about">
       <div class="section-container about-container">
         <div class="about-grid">
@@ -38,26 +57,22 @@
             <p class="section-subheader">Stressivinkit</p>
             <h2 class="section-header">Ota aikaa itsellesi</h2>
             <p class="paragraph">
-              Stressinhallinta on keskeinen asia psyykkiseen ja fyysiseen hyvinvointiin.
-            </p>
-            <br />
-            <p class="paragraph">
-
+              Hyvinvointisi vaatii huomiota – sekä kehon että mielen tasolla. Tältä sivulta löydät käytännöllisiä vinkkejä ja harjoituksia stressinhallintaan sekä tarvittaessa yhteystiedot ammattiavun piiriin.
             </p>
           </div>
 
           <div class="about-list">
             <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Päivittäiset rutiinit</h4>
+              <span><i class="ri-rest-time-line"></i></span>
+              <h3>Hyvinvointirutiinit</h3>
             </div>
             <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Mindfulness ja meditaatio</h4>
+              <span><i class="ri-brain-line"></i></span>
+              <h3>Mindfulness ja meditaatio</h3>
             </div>
             <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Omat tavoitteet</h4>
+              <span><i class="ri-task-line"></i></span>
+              <h3>Tavoitteet ja suunnitelmat </h3>
 
             </div>
           </div>
@@ -67,54 +82,267 @@
             
 
       <section class="Info" id="Info">
-        <div class="section-container Info-container">
-          <p class="section-subheader">Asioita, joita voit tehdä päivittäin</p>
+        <div class="section-container">
+          <p class="section-subheader">Jokapäiväiset stressinhallintakeinot</p>
           <h2 class="section-header">Pienet asiat, suuri vaikutus</h2>
           <div class="Info-grid">
             <div class="Info-card">
-              <img src="../img/mindfulness-abstract-illustration.png" alt="Info" />
-              <h4>🌼 Mindfulness ja meditaatio</h4>
-              <p>Käytä muutama minuutti päivittäin hengitysharjoituksiin tai ohjattuun meditaatioon. Nämä rauhoittavat mieltä ja parantavat keskittymistä.</p>
+              <img src="../img/family-conversation-isolated-cartoon-vector-illustration.png" alt=" Illustraatio yhteydenpito läheisiin" />
+              <h3>🌼 Yhteydenpito läheisiin</h3>
+              <p>Yhteydenpito tuo tukea ja iloa. Soita tai viestittele läheisillesi päivittäin.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../img/hand-drawn-notebook-with-flowers-flat-style.png" alt="Info" />
-              <h4>📝 Kirjoittaminen</h4>
-              <p>Kirjoita ajatuksiasi, aseita tavoitteita ja hallitse tunteitasi. Näin kehität itsetietoisuuttasi. </p>
+              <img src="../img/hand-drawn-notebook-with-flowers-flat-style.png" alt="Illustraatio kirjoittamisesta" />
+              <h3>📝 Kirjoittaminen</h3>
+              <p>Kirjoita ajatuksia ja tavoitteita. Se selkeyttää mieltä ja helpottaa tunteiden käsittelyä.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../img/5.png" alt="Info" />
-              <h4>🌿 Luonnossa oleminen</h4>
-              <p>Käy kävelyllä tai istu hiljaisessa ulkoilmassa. Nauti raikkaasta ilmasta ja raikasta mieltäsi.</p>
-
-            </div>
-
-            <div class="Info-card">
-                <img src="../img/flat-character-illustration-night-dream.png" alt="Info" />
-                <h4>😴 Unen priorisointi</h4>
-                <p>Tee itsellesi rentouttava iltarutiini ja tavoittele 7-9 tuntia laadukasta unta.</p>
+              <img src="../img/5.png" alt="Illustraatio luonnosta" />
+              <h3>🌿 Luonnossa oleminen</h3>
+              <p>Käy kävelyllä tai istu hiljaisessa ulkotilassa. Nauti raikkaasta ilmasta ja selkeytä ajatuksiasi.</p>
 
             </div>
 
             <div class="Info-card">
-                <img src="../img/vector-illustration-fruits-vegetables-healthy-food-isolated-design.png" alt="Info" />
-                <h4>🍎 Syö ravinteikkaasti</h4>
-                <p>Syö monipuolisesti, lisää kasviksia ruokavalioosi ja nesteytä vedellä usein.</p>
+                <img src="../img/flat-character-illustration-night-dream.png" alt="Illustraatio nukkuvasta henkilöstä" />
+                <h3>😴 Unen priorisointi</h3>
+                <p>7–9 tuntia laadukasta unta tukee palautumista ja jaksamista.</p>
+
             </div>
 
             <div class="Info-card">
-                <img src="../img/smartphone-playing-music-break-time-cozy-autumn-working-days-concept.png" alt="Info" />
-                <h4> 🎼 Rentoudu mieluisilla tavoilla</h4>
-                <p>Kuuntele musiikkia, lue kirjaa tai ota rentouttava kylpy. Mitä vain sinua rentouttaa.</p>
+                <img src="../img/vector-illustration-fruits-vegetables-healthy-food-isolated-design.png" alt="Illustraatio ruokavalio" />
+                <h3>🍎 Syö ravinteikkaasti</h3>
+                <p>Syö monipuolisesti ja muista juoda vettä – keho ja mieli kiittävät.</p>
+            </div>
+
+            <div class="Info-card">
+                <img src="../img/smartphone-playing-music-break-time-cozy-autumn-working-days-concept.png" alt="Illustraatio puhelimesta soittamassa musiikkia" />
+                <h3> 🎼 Rentoudu mieluisilla tavoilla</h3>
+                <p>Kuuntele musiikkia, lue tai ota kylpy – tärkeintä on oma rauhoittumisen tapa.</p>
             </div>
 
           </div>
         </div>
       </section>
- 
+
+
+ <!-- Moretips section -->
+      <section class="moretips" id="moretips">
+        <div class="section-container moretips-container">
+          <p class="section-subheader">Lisää vinkkejä arjen tueksi</p>
+          <h2 class="section-header">Laajenna keinojasi stressinhallintaan</h2>
+      
+          <div class="tabs">
+            <div class="tab-buttons">
+              <button class="tab-btn active" data-tab="breathing-meditation">Hengitys- ja meditaatio harjoitukset</button>
+              
+              <button class="tab-btn" data-tab="music">Musiikki</button>
+              <button class="tab-btn" data-tab="movement">Arjen aktiivisuus</button>
+              <button class="tab-btn" data-tab="apps">Sovellukset</button>
+            </div>
+      
+            <!-- Breathing tab -->
+            <div class="tab-content active" id="breathing-meditation">
+              <h3>Hengitys- ja meditaatioharjoitukset</h3>
+              
+              <p>
+                Hengitys- ja meditaatioharjoitukset auttavat rauhoittamaan kehoa ja mieltä. Ne ovat helppo tapa pysähtyä ja palautua arjen keskellä.
+              </p>
+              <p>
+                Alta löydät lyhyitä videoita, joiden avulla voit kokeilla hengitystä, meditaatiota ja lempeää joogaa. Valitse oma suosikkisi ja hengähdä hetki.
+              </p>
+                               
+              <div class="video-section">
+                <div class="video-grid">
+            
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/inpok4MKVLM', '_blank')">
+                      <img src="https://img.youtube.com/vi/inpok4MKVLM/0.jpg" alt="Illustraatio Meditaatio">
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Meditaatio (5 min)</p>
+                  </div>
+              
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/92xTPH7OtLs', '_blank')">
+                      <img src="https://img.youtube.com/vi/92xTPH7OtLs/0.jpg" alt="Illustraatio Hengitysharjoitus">
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Hengitysharjoitusanimaatio (3 min)</p>
+                  </div>
+
+
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/8TuRYV71Rgo', '_blank')">
+                      <img src="https://img.youtube.com/vi/8TuRYV71Rgo/0.jpg" alt="Illustraatio Yoga" />
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Jooga stressiin ja ahdistukseen (10 min)</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+      
+            <!-- Meditation tab -->
+            <div class="tab-content" id="music">
+              <h3>Rauhoittava musiikki ja äänimaisemat</h3>
+
+              <p>
+                Musiikki voi laskea sykettä, vähentää stressiä ja luoda rauhallisen tunnelman. Se toimii nopeana keinona palautua kiireestä.
+              <p>
+                Kuuntele rauhoittavaa musiikkia, luonnon ääniä tai soittolistoja, jotka auttavat sinua rentoutumaan – olitpa töissä, kotona tai matkalla.
+              </p>
+                
+              <div class="video-section">
+                <div class="video-grid">
+              
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/erkhEsH14aI', '_blank')">
+                      <img src="https://img.youtube.com/vi/erkhEsH14aI/0.jpg" alt="Musiikki rentouttavalla taajuudella" />
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Musiikki rentouttavalla taajuudella</p>
+                  </div>
+
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/3NycM9lYdRI', '_blank')">
+                      <img src="https://img.youtube.com/vi/3NycM9lYdRI/0.jpg" alt="Rentouttava pianomusiikki">
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Rentouttava pianomusiikki</p>
+                  </div>
+
+                  <div>
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/1ZYbU82GVz4', '_blank')">
+                      <img src="https://img.youtube.com/vi/1ZYbU82GVz4/0.jpg" alt="Musiikki nukahtamiseen">
+                      <span class="play-icon">▶</span>
+                    </div>
+                    <p class="video-caption">Musiikki nukahtamiseen ja stressinpoistoon</p>
+                  </div>
+              
+                </div>
+              </div>
+            </div>              
+            
+            <div class="tab-content" id="movement">
+              <h3>Arjen aktiivisuus</h3>
+              <p>Pienetkin liikkeet, kuten kävely, venyttely tai vaikkapa lempiharrastuksesi, voivat virkistää mieltä ja lievittää stressiä tehokkaasti.</p>
+            
+              <div class="video-section">
+                <div class="video-grid">
+                  <div class="thumbnail">
+                    <img src="../img/human-daily-activity-concept-vector-illustration.png" alt=" Illustraatio Puutarhanhoito" />
+                    <p class="video-caption">Puutarhanhoito tai kasvien hoito</p>
+                  </div>
+                  <div class="thumbnail">
+                    <img src="../img/woman-green-shirt-holding-cleaning-brush-bottle.png" alt=" Illustraatio Siivous tai järjestelyhetki" />
+                    <p class="video-caption">Siivous tai järjestelyhetki</p>
+                  </div>
+                  <div class="thumbnail">
+                    <img src="../img/freepik__background__963.png" alt="Illustraatio Harrastus" />
+                    <p class="video-caption">Löydä oma harrastuksesi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <!-- Apps tab -->
+            <div class="tab-content" id="apps">
+              <h3>Sovellukset avuksi</h3>
+              <p>Erilaiset hyvinvointisovellukset voivat auttaa sinua rentoutumaan, nukkumaan paremmin ja hallitsemaan stressiä arjessa.</p>
+              <p>Kokeile esimerkiksi meditaatioappeja, hengitysharjoituksia tai äänimaisemia tarjoavia sovelluksia – ne kulkevat aina mukanasi.</p>
+            
+              <div class="video-section">
+                <div class="video-grid">
+                  <div class="thumbnail" onclick="window.open('https://www.headspace.com/app')">
+                    <img src="../img/A456B828-E161-445D-AD78-F7AE09843087.jpeg" alt="Headspace logo" />
+                    <p class="video-caption">Headspace</p>
+                  </div>
+                  <div class="thumbnail" onclick="window.open('https://www.happify.com', '_blank')">
+                    <img src="../img/freepik__background__37329.png" alt="Happify logo" />
+                    <p class="video-caption">Happify</p>
+                  </div>
+                  <div class="thumbnail" onclick="window.open('https://www.calm.com', '_blank')">
+                    <img src="../img/Calm_(company)_logo.svg" alt="Calm logo" />
+                    <p class="video-caption">Calm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div> 
+        </div> 
+      </section>
+
+
+     <!-- Professional help section -->
+      
+     <section class="statistics" id="statistics">
+      <div class="section-container statistics-container">
+        <div class="statistics-content">
+          <p class="section-subheader"> Mielenterveys ja kriisiapu</p>
+          <h2 class="section-header">Ammattilaisapu</h2>
+          <p class="paragraph">
+            Jos stressi tuntuu ylivoimaiselta, kannattaa hakeutua terveydenhuollon ammattilaisen tai terapeutin puheille. He voivat tarjota työkaluja ja tukea stressin hallintaan.​
+          </p>
+          <div class="statistics-grid">
+            <div class="statistics-card">
+              <span><i class="ri-phone-line"></i></span>
+              <h3>MIELI ry:n Kriisipuhelin</h3>
+              <p><a href="tel:0925250111">📞 09 2525 0111</a> – Avoinna 24/7.</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-emotion-happy-line"></i></span>
+              <h3>Mielenterveyden keskusliitto</h3>
+              <p><a href="tel:020391920">📞 020 391 920</a> – Avoinna ma–pe klo 9–15</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-user-heart-line"></i></span>
+              <h3>Nuorten Kriisipiste (HelsinkiMissio)</h3>
+              <p><a href="tel:0453410583">📞 045 3410 583</a> – Avoinna ti–to klo 9–11</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-hospital-line"></i></span>
+              <h3>YTHS- Yleis- ja mielenterveyden palvelut</h3>
+              <p><a href="tel:0467101073">📞 046 710 1073</a> – Avoinna ma–to klo 8–15 pe klo 8–14</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="statistics-image">
+          <img src="../img/online-doctor-concept.png" alt="Illustraatio Ammattilaisapu" />
+        </div>
+      </div>
+    </section>
+    
+
+
+      <footer class="footer">
+        <div class="section-container footer-container">
+          <div class="footer-section">
+            <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h4>
+            <p>
+              StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+            </p>
+            
+  
+        </div>
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+  
+        </div>
+      </footer>
+    <!-- JavaScript Files -->
+    <script type="module" src="../js/auth.js"></script>
     <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/tools.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   </body>
 </html>
+ 

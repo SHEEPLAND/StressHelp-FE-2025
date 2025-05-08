@@ -3,161 +3,274 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <link rel="stylesheet" href="../css/data.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
     <title>Data</title>
   </head>
-  <body>
-    <header>
-      <!-- Navigation -->
-      <nav>
-        <div class="navigation-logo"><a href="home.html">StressHelp</a></div>
-        <ul class="navigation-links" id="navigation-links">
 
-          <li class="navigation-link"><a href="home.html">Etusivu</a></li>
+  <body>
+    <!-- Header and Navigation -->
+    <header>
+      <nav>
+        <div class="navigation-logo">
+          <a href="index.html">
+            <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
+          </a>
+        </div>
+
+        <ul class="navigation-links" id="navigation-links">
+          <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
-          <li class="navigation-link"><a href="login.html">Kirjaudu Sisään</a></li>
-        
+
+          <!-- Profile dropdown-->
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content" id="profile-menu">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
         </ul>
+
         <div class="navigation-menu-button" id="menu-button">
           <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
         </div>
       </nav>
 
-      <div class="section-container header-container" id="home">
-        <h1>Small Entries,Big Changes</h1> <h3>- Reflect on your day and discover patterns that empower personal growth.</h3> 
-      </div>
+      <div class="section-container header-container" id="home"></div>
     </header>
-    
-    <!-- About -->
+
+    <!-- Welcome + Diary Entry Overview -->
     <section class="about" id="about">
       <div class="section-container about-container">
         <div class="about-grid">
           <div class="about-content">
-            <p class="section-subheader">About Insightly</p>
-            <h2 class="section-header">Insightly</h2>
+            <p class="section-subheader">StressHelp</p>
+            <h2 class="section-header">Tervetuloa <span id="given-name"></span></h2> 
             <p class="paragraph">
-              Welcome to <strong>Insightly</strong>, your personal well-being companion. 
-              We believe that small daily reflections can lead to big personal growth. 
-              Easily track your daily mood, stress, and energy to gain insights into your well-being—one entry at a time.
-            </p>
-            <br />
-            <p class="paragraph">
-              With Insightly, journaling is simple yet powerful. By logging your daily 
-              emotions and setting small goals, you can discover patterns, improve habits, 
-              and enhance self-awareness—one entry at a time.
+              Olet kirjautunut sisään Kubios-tililläsi. Nyt voit seurata hyvinvointiasi kehon mittausten ja omien päiväkirjamerkintöjen avulla.
+              <br><br />
+              Näet viimeisimmät tulokset ja merkintäsi – sekä halutessasi myös pidemmän Kubios-historian, viikosta kolmeen kuukauteen. Säännöllinen seuranta tukee matkaasi kohti tasapainoa.
             </p>
           </div>
-          
-          <!-- About list -->
+
+          <!-- Diary Table -->
           <div class="about-list">
-            <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Track Your Mood & Energy Levels</h4>
+            <div class="about-item about-table">
+              <div>
+                <p class="section-subheader section-subheader--color">Viimeisin päiväkirjamerkintä 🗓️</p>
+                <table class="latest-entry-table">
+                  <tr><th>Päivä</th><td id="latest-date">-</td></tr>
+                  <tr><th>Stressitaso</th><td id="latest-stress">-</td></tr>
+                  <tr><th>Merkintä</th><td id="latest-notes">-</td></tr>
+                </table>
+                <div class="entry-buttons">
+                  <button class="btn btn-primary" onclick="window.location.href='diary-page.html'">
+                    + Uusi päiväkirjamerkintä
+                  </button>
+                  <a href="#statistics-second" class="btn btn-secondary">
+                    Katso mittaushistoria
+                  </a>
+                </div>
+                
+              </div>
             </div>
-            <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Understand Your Stress & Sleep Patterns</h4>
-            </div>
-            <div class="about-item">
-              <span><i class="ri-global-fill"></i></span>
-              <h4>Set Goals & Reflect on Your Progress</h4>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Measurement Instructions Accordion -->
+    <section class="Info" id="Info">
+      <div class="section-container Info-container">
+        <p class="section-subheader section-subheader--logo">Ohjeet ensimmäiseen mittaukseen</p>
+
+        <div class="accordion-container">
+          <button class="accordion active">Miten mittaus toimii?
+            <span class="accordion-icon">−</span>
+          </button>
+
+          <div class="panel">
+            <div class="Info-grid">
+              <div class="Info-card">
+                <img src="../img/freepik__background__22460.png" alt="Vaihe 1">
+                <h3>Vaihe 1: Valmistele mittaus</h3>
+                <p>
+                  Lataa puhelimeesi 
+                  <a href="https://www.kubios.com/hrv-app/" target="_blank" rel="noopener" style="font-weight: bold; color: #0066cc;">
+                    Kubios HRV -sovellus
+                  </a> 
+                  ja käytä yhteensopivaa laitetta (esim. Polar H10).
+                  Voit käyttää omaa laitetta tai lainata sellaisen YTHS:ltä tai oppilaitoksestasi.
+                </p>
+              </div>
+
+              <div class="Info-card">
+                <img src="../img/smartwatch-heart-rate-monitoring-abstract-concept-vector-illustration.png" alt="Vaihe 2 2">
+                <h3>Vaihe 2: Suorita mittaus</h3>
+                <p>Käynnistä mittaus Kubios-sovelluksessa. Istu rauhassa paikallasi mittauksen ajan (noin 3–5 minuuttia).</p>
+              </div>
+
+              <div class="Info-card">
+                <img src="../img/online-shopping-store-physical-shop-isolated-graphics.png" alt="Vaihe 3">
+                <h3>Vaihe 3: Seuraa tuloksia</h3>
+                <p>Näet mittaustulokset täällä StressHelpissä. Voit myös lisätä päiväkirjamerkintöjä ja seurata hyvinvointisi kehitystä.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Info -->
-   
-<section class="Info" id="Info">
-  <div class="section-container Info-container">
-    <p class="section-subheader">Get Started</p>
-    <h2 class="section-header">How to use Insightly</h2>
-
-    <div class="accordion-container">
-      <button class="accordion active">
-        Click to view the steps
-        <span class="accordion-icon">−</span>
-      </button>
-      <div class="panel">
-        <div class="Info-grid">
-          <div class="Info-card">
-            <img src="../img/login.png" alt="Step 1">
-            <h4>Step 1: Log In & Set Up</h4>
-            <p>Create an account and personalize your well-being tracking experience.</p>
-          </div>
-      
-          <div class="Info-card">
-            <img src="../img/entry.png" alt="Step 2">
-            <h4>Step 2: Add Your First Entry</h4>
-            <p>In just a few minutes, log your daily mood, sleep, and stress levels by logging in.</p>
-          </div>
-      
-          <div class="Info-card">
-            <img src="../img/last.png" alt="Step 3">
-            <h4>Step 3: Reflect & Improve</h4>
-            <p>Get personalized well-being recommendations based on your daily logs and improve your lifestyle.</p>
-          </div>
-        </div>
-      </div>      
-    </div>
-  </div>
-</section>
-
-    
+    <!-- Latest Measurements Summary -->
     <section class="statistics" id="statistics">
       <div class="section-container statistics-container">
         <div class="statistics-content">
-          <p class="section-subheader">Your Journey with Insightly</p>
-          <h2 class="section-header">Track Progress, Gain Insights</h2>
+          <p class="section-subheader">Data Analyysi</p>
+          <h2 class="section-header">Viimeisin mittaustulos</h2>
           <p class="paragraph">
-            Insightly empowers you to understand your well-being through daily tracking. 
-            By consistently logging your mood, stress levels, sleep, and energy, you can 
-            recognize patterns and make informed decisions for self-improvement.
+            Nämä mittaustulokset perustuvat Kubiosin mittauksiin ja kertovat stressitasostasi sekä kehon palautumiskyvystä.
           </p>
+
+          <!-- Stat cards -->
           <div class="statistics-grid">
             <div class="statistics-card">
-              <span><i class="ri-building-4-line"></i></span>
-              <h4>10,0000+</h4>
-              <p>Entries Logged</p>
+              <span><i class="ri-battery-charge-line"></i></span>
+              <h3 id="readiness-value">--%</h3>
+              <p>Valmiusindeksi (%)</p>
+              <div class="tooltiptext tooltip-readiness">
+                Kuvaa kehosi valmiutta selviytyä haasteista. Perustuu HRV-arvoihin ja stressitasoon.
+              </div>
+              <p id="readiness-category"></p>
             </div>
+
             <div class="statistics-card">
-              <span><i class="ri-trophy-fill"></i></span>
-              <h4>Over 100+</h4>
-              <p>Daily Logs Created</p>
+              <span><i class="ri-alert-line"></i></span>
+              <h3 id="stress-index-value">--</h3>
+              <p>Stressi-indeksi</p>
+              <div class="tooltiptext tooltip-stressi-indeksi">
+                Korkea arvo = korkea stressi, matala HRV.
+              </div>
             </div>
+
             <div class="statistics-card">
-              <span><i class="ri-user-fill"></i></span>
-              <h4>85%</h4>
-              <p>Users Report Improved Mood</p>
+              <span><i class="ri-brain-line"></i></span>
+              <h3 id="rmssd-value">-- ms</h3>
+              <p>RMSSD – sykevälivaihtelu</p>
+              <div class="tooltiptext tooltip-RMSSD">
+                Korkea arvo = hyvä palautuminen, aktiivinen parasympaattinen hermosto.
+              </div>
             </div>
+
             <div class="statistics-card">
-              <span><i class="ri-trophy-fill"></i></span>
-              <h4>Over 90%</h4>
-              <p>Users Achieve Their Goals</p>
+              <span><i class="ri-heart-pulse-line"></i></span>
+              <h3 id="mean-hr-value">-- bpm</h3>
+              <p>Keskisyke (BPM)</p>
+              <div class="tooltiptext tooltip-Syke">
+                Matala leposyke = hyvä kunto ja palautuminen.
+              </div>
             </div>
+
+            <p class="para" id="stress-level-text">Stressi taso: --</p>
+          </div>
+        </div>
+
+        <!-- Chart canvas -->
+        <div class="statistics-image">
+          <div class="chart-wrapper">
+            <canvas id="resultsChart"></canvas>
           </div>
         </div>
         
-        <div class="statistics-image">
-          <img src="../img/feedback.png" alt="statistics" />
-        </div>
       </div>
-
-
     </section>
 
- 
+    <!-- Measurement History Chart -->
+    <section class="chart-section" id="statistics-second">
+      <div class="section-container">
+        <p class="section-subheader">Historia</p>
+        <h2 class="section-header">Kubios-mittaushistoria</h2>
+        <p class="paragraph">
+          Seuraa stressiä, palautumista ja valmiutta eri ajanjaksoilla. Valitse haluamasi näkymä (esim. viikko, kuukausi tai 3 kuukautta) ja tarkastele mittareita kuten valmiusindeksi, stressi-indeksi tai sykevaihtelu erillisissä kaavioissa.
+        </p>
+
+        <!-- Chart controls -->
+        <div class="controls">
+          <label for="chartTypeSelect"><strong> Valitse näkymä:</strong></label>
+
+          <div class="custom-select-wrapper">
+            <select id="chartTypeSelect">
+              <option value="line">📈 Edistymisen aikajana</option>
+              <option value="bar">📊 Sessioyhteenveto historia</option>
+            </select>
+            <div class="custom-arrow">
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+          </div>
+
+          <div class="range-toggle">
+            <button class="range-btn active" data-range="3months">3 kuukautta</button>
+            <button class="range-btn" data-range="month">Kuukausi</button>
+            <button class="range-btn" data-range="week">Viikko</button>
+          </div>
+        </div>
+
+        <div id="chartdiv"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container footer-container">
+        <div class="footer-section">
+          <h4>
+            <a href="index.html">
+              <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
+            </a>
+          </h4>
+          <p>
+            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+          </p>
+          
+        </div>
+
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+        </div>
+      </div>
+    </footer>
+
+
+    
+
+    <!-- Scripts and libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script type="module" src="../js/home.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
-
+    <!-- Local JS modules -->
+    <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/user-info.js"></script>
+    <script type="module" src="../js/home.js"></script>
+    <script type="module" src="../js/data.js"></script>
+    <script type="module" src="../js/test.js"></script>
   </body>
 </html>

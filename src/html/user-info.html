@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+    <title>Omat tiedot</title>
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a>
+      </div>
+      <ul class="navigation-links" id="navigation-links">
+
+        <li class="navigation-link"><a href="index.html">Etusivu</a></li>
+        <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+        <li class="navigation-link"><a href="data.html">Stressidata</a></li>
+        <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+        <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+
+        <li class="navigation-link profile-dropdown">
+          <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+
+            <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+          </button>
+        
+          <div class="profile-dropdown-box">
+            <div class="arrow-up"></div> 
+            <div class="profile-dropdown-content" id="profile-menu">
+              <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+              <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+            </div>
+          </div>
+        </li>
+        <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+        <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a>
+      </ul>
+
+      <div class="navigation-menu-button" id="menu-button">
+        <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+      </div>
+      
+    </nav>
+
+    <div class="section-container header-container" id="home">
+    </div>
+</header>
+
+
+<section class="about" id="about">
+  <div class="profile-card">
+    <h1 class="profile-title">Omat tiedot</h1>
+    <div class="profile-info">
+      <p><strong>Etunimi:</strong> <span id="given-name"></span></p>
+      <p><strong>Sukunimi:</strong> <span id="family-name"></span></p>
+      <p><strong>Syntymäpäivä:</strong> <span id="birthdate"></span></p>
+      <p><strong>Sähköposti:</strong> <span id="email"></span></p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="section-container footer-container">
+    <div class="footer-section">
+      <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h4>
+      <p>
+        StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+      </p>
+      
+
+  </div>
+  <div class="footer-bar">
+    &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+
+  </div>
+</footer>
+
+  <script type="module" src="../js/auth.js"></script>
+  <script type="module" src="../js/user-info.js"></script>
+  <script type="module" src="../js/home.js"></script>
+
+  <script type="module" src="../js/home.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</body>
+</html>

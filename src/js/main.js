@@ -1,4 +1,4 @@
-import {getUsers, addUser} from './users.js';
+import {getUsers, addUser} from '';
 import { loginUser } from "./login.js"; 
 import {getEntries} from './diaryentries.js';
 
@@ -16,5 +16,5 @@ addUserForm.addEventListener('click', addUser);
 const getEntriesBtn = document.querySelector('.get_entries');
 getEntriesBtn.addEventListener('click', getEntries);
 
-const loginForm = document.querySelector(".loginForm");
-if (loginForm) loginForm.addEventListener("submit", loginUser);
+const logaccordionrm = document.querySelector(".logaccordionrm");
+if (logaccordionrm) logaccordionrm.addEventListener("submit", loginUser);

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/home.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <title>Etusivu</title>
+  </head>
+  
+  <body>
+    <!-- Header and Navigation -->
+    <header>
+      <nav>
+        <div class="navigation-logo">
+          <a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a>
+        </div>
+
+        <ul class="navigation-links" id="navigation-links">
+          <li class="navigation-link"><a href="index.html">Etusivu</a></li>
+          <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
+          <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
+          <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
+
+          <!-- Profile Dropdown -->
+          <li class="navigation-link profile-dropdown">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+              <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
+            </button>
+            <div class="profile-dropdown-box">
+              <div class="arrow-up"></div> 
+              <div class="profile-dropdown-content" id="profile-menu">
+                <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
+                <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="navigation-link mobile-only"><a href="user-info.html">Omat Tiedot</a></li>
+          <li class="navigation-link mobile-only"><a href="login.html" id="login-link-mobile">Kirjaudu sisään</a></li>
+        </ul>
+
+        <div class="navigation-menu-button" id="menu-button">
+          <span><i id="menu-btn-icon" class="ri-menu-line"></i></span>
+        </div>
+      </nav>
+
+      <div class="section-container header-container" id="home"></div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="section-container about-container">
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="section-subheader">StressHelp</p>
+            <h2 class="section-header">Tuki stressin keskellä</h2>
+            <p class="paragraph">
+              <strong>StressHelp</strong> auttaa sinua huomaamaan, miten kehosi ja mielesi voivat.
+              Yhdistä omat tuntemuksesi ja kehon mittaukset – ja saat selkeän kuvan hyvinvoinnistasi.
+              <br></br>
+              <strong>Miksi seurata stressiä?</strong>
+              <br></br>
+              Sovellus hyödyntää sydämesi sykevaihtelua (HRV), joka kertoo, kuinka kuormittunut tai palautunut kehosi on.
+          </div>
+
+          <div class="about-list">
+            <div class="about-item">
+              <span><i class="ri-heart-pulse-line"></i></span>
+              <h3>Tunnista stressi</h3>
+            </div>
+            <div class="about-item">
+              <span><i class="ri-empathize-line"></i></span>
+              <h3>Ymmärrä oloasi</h3>
+            </div>
+            <div class="about-item">
+              <span><i class="ri-lightbulb-line"></i></span>
+              <h3>Löydä keinot</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="Info" id="Info">
+      <div class="section-container Info-container">
+        <p class="section-subheader">Aloitusopas</p>
+        <h2 class="section-header">Kolme askelta stressinhallintaan</h2>
+
+        <div class="Info-grid">
+          <a href="kysely.html" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/task-mangement-flat-style-illustration-design.png" alt="Vaihe 1" />
+              <h3>Tunnista stressitasosi</h3> 
+              <p>Vastaa lyhyeen stressin itsearviointikyselyyn ja saat heti palautetta.<strong>– Ei vaadi kirjautumista!</strong></p>
+            </div>
+          </a>
+
+          <a href="https://kubioscloud.auth.eu-west-1.amazoncognito.com/login?response_type=code&client_id=1h4rmoi5s66u2cliaqcpuejgpg&redirect_uri=https://analysis.kubioscloud.com/v2/portal/login&scope=openid%20profile%20email%20phone" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/fruit-flat-vector-icon.png" alt="Vaihe 2" />
+              <h3>Seuraa hyvinvointiasi</h3>
+              <p>Luo Kubios-tili ja kirjaudu Stress-Helpiin samoilla käyttäjätunnuksilla yhdistääksesi mittausdatan ja seurataksesi hyvinvointiasi.
+              </p>
+            </div>
+          </a>
+
+          <a href="tools.html" class="info-link-wrapper">
+            <div class="Info-card">
+              <img src="../img/simple-flat-illustration-person-practicing-mindfulness-meditation.png" alt="Vaihe 3" />
+              <h3>Tukea palautumiseen</h3>
+              <p>Hyödynnä vinkkejä jaksamiseen – ja tarvittaessa ohjaus ammattilaiselle.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Call to action buttons -->
+        <div class="cta-buttons">
+          <a href="kysely.html" class="cta-btn primary" title="Aloita stressin itsearviointi">
+            📝 Aloita itsearviointi<span class="arrow">&raquo;</span>
+          </a>
+          <a href="https://kubioscloud.auth.eu-west-1.amazoncognito.com/login?response_type=code&client_id=1h4rmoi5s66u2cliaqcpuejgpg&redirect_uri=https://analysis.kubioscloud.com/v2/portal/login&scope=openid%20profile%20email%20phone" class="cta-btn secondary" title="Luo tili Kubios-järjestelmään">
+            👤 Luo Kubios-tili<span class="arrow">&raquo;</span>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container footer-container">
+        <div class="footer-section">
+          <h4>
+            <a href="index.html">
+              <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
+            </a>
+          </h4>
+          <p>
+            StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
+          </p>
+          
+        </div>
+
+        <div class="footer-bar">
+          &copy; 2025 Ryhmä 8 – StressHelp. Kaikki oikeudet pidätetään.
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript and external libraries -->
+    <script type="module" src="../js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="../js/home.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </body>
+</html>

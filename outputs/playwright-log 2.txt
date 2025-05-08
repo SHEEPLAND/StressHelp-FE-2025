@@ -1,0 +1,42 @@
+{"level":30,"time":"2025-05-08T15:36:49.611Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Listening on 127.0.0.1:53083"}
+(node:36474) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-05-08T15:36:50.685Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-05-08T15:36:52.010Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Adding browser to stack: chromium, version: 136.0.7103.25"}
+{"level":30,"time":"2025-05-08T15:36:52.011Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-05-08T15:36:52.011Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-05-08T15:36:52.031Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-05-08T15:36:52.031Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-05-08T15:36:52.123Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Changed active context"}
+{"level":30,"time":"2025-05-08T15:36:53.639Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-05-08T15:36:53.644Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2025-05-08T15:36:56.530Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-05-08T15:36:56.735Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-05-08T15:36:56.744Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with id=login-username in page."}
+{"level":30,"time":"2025-05-08T15:36:58.595Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-05-08T15:36:58.619Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-05-08T15:36:58.619Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with id=login-pass in page."}
+{"level":30,"time":"2025-05-08T15:37:02.846Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-05-08T15:37:02.871Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-05-08T15:37:02.872Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with css=.login-button in page."}
+{"level":30,"time":"2025-05-08T15:37:02.939Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2025-05-08T15:37:04.963Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-05-08T15:37:06.172Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method goTo"}
+{"level":30,"time":"2025-05-08T15:37:06.224Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-05-08T15:37:06.225Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with id=readiness-value in page."}
+{"level":50,"time":"2025-05-08T15:37:16.230Z","pid":36474,"hostname":"Henna-MacBook-Air.local","err":{"type":"TimeoutError","message":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('id=readiness-value')\u001b[22m\n","stack":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('id=readiness-value')\u001b[22m\n\n    at getTextContent (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:11580:33)\n    at getText (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:11594:21)\n    at async PlaywrightServer.getText (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:13135:28)","name":"TimeoutError"},"msg":"locator.elementHandle: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('id=readiness-value')\u001b[22m\n"}
+{"level":30,"time":"2025-05-08T15:37:16.230Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Error of node method  getText"}
+================= Original suppressed error =================
+locator.elementHandle: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('id=readiness-value')[22m
+
+    at getTextContent (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:11580:33)
+    at getText (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:11594:21)
+    at async PlaywrightServer.getText (/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js:13135:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-05-08T15:37:16.241Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-05-08T15:37:16.242Z","pid":36474,"hostname":"Henna-MacBook-Air.local","Take screenshot with options: ":{"path":"/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/screenshot/fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-05-08T15:37:16.483Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method takeScreenshot"}

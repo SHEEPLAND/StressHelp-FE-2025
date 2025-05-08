@@ -1,18 +1,8 @@
 import { fetchData } from "./fetch.js";
+import { getEntries, diaryEntries, renderCalendar } from "./calender.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
-
-   
-    if (dateInput) {
-        dateInput.addEventListener("focus", function () {
-            this.setAttribute("type", "date");
-        });
-    }
-
-    getEntries(); // Fetch diary entries when the page loads
-
-    // Form submission logic with popup
     const form = document.querySelector(".diaryForm");
     const popup = document.getElementById("popup");
     const diaryPopup = document.querySelector(".diary-popup");
@@ -21,202 +11,141 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById("close-popup");
 
     form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+        event.preventDefault();
+        const submitBtn = form.querySelector('input[type="submit"]');
+        submitBtn.disabled = true;
 
-        // Get values from form inputs
-        let entryDate = document.getElementById("entry_date").value;
-        let mood = document.getElementById("mood").value.toLowerCase();
-        let energyLevel = document.getElementById("energy_level").value;
-        let stressLevel = parseInt(document.getElementById("stress_level").value);
-        let sleepHours = parseInt(document.getElementById("sleep_hours").value);
-        let notes = document.getElementById("notes").value;
-        let goals = document.getElementById("goals").value;
+        const entryId = document.getElementById("entry_id").value;
+        const method = entryId ? "PUT" : "POST";
+        const url = entryId
+            ? `https://stress-help.northeurope.cloudapp.azure.com/api/entries/${entryId}`
+            : "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
 
-        // Check if required fields are filled
+        const entryDate = document.getElementById("entry_date").value;
+        const mood = document.getElementById("mood").value.toLowerCase();
+        const energyLevel = document.getElementById("energy_level").value;
+        const stressLevel = parseInt(document.getElementById("stress_level").value);
+        const sleepHours = parseInt(document.getElementById("sleep_hours").value);
+        const notes = document.getElementById("notes").value;
+        const goals = document.getElementById("goals").value;
+
         if (!entryDate || isNaN(stressLevel) || isNaN(sleepHours)) {
-            alert("Please fill out all required fields before saving.");
+            alert("Täytä kaikki vaaditut kentät.");
+            submitBtn.disabled = false;
             return;
         }
 
-        // Categorize stress levels
         let stressCategory = "";
         let stressMessage = "";
 
-
         if (stressLevel >= 8) {
-            stressCategory = "High Stress";
-            const highStressTips = [
-                "Try deep breathing.",
-                "Listen to calming music.",
-                "Step outside for fresh air.",
-                "Write down your thoughts.",
-            ];
-            const randomTip = highStressTips[Math.floor(Math.random() * highStressTips.length)];
-            stressMessage = `Your stress level is high. ${randomTip}`;
+            stressCategory = "Korkea stressi";
+            const tips = ["Kokeile syvähengitystä.", "Kuuntele rauhoittavaa musiikkia.", "Mene ulos raikkaaseen ilmaan.", "Kirjoita ajatuksiasi ylös."];
+            stressMessage = `Stressitasosi on korkea. ${tips[Math.floor(Math.random() * tips.length)]}`;
         } else if (stressLevel >= 4) {
-            stressCategory = "Moderate Stress";
-            stressMessage = "Your stress level is moderate. Take breaks & practice self-care.";
+            stressCategory = "Kohtalainen stressi";
+            stressMessage = "Stressitasosi on kohtalainen. Pidä taukoja ja huolehdi itsestäsi.";
         } else {
-            stressCategory = "Normal Stress";
-            stressMessage = "You're managing stress well!";
+            stressCategory = "Normaali stressi";
+            stressMessage = "Hallitset stressiä hyvin!";
         }
-    
 
-        // Provide sleep recommendations
         let sleepMessage = "";
         if (sleepHours < 4) {
-            sleepMessage = "Too little sleep! Improve your habits.";
+            sleepMessage = "Liian vähän unta! Paranna tapojasi.";
         } else if (sleepHours < 7) {
-            sleepMessage = "Your sleep could be better. Aim for at least 7 hours for better energy levels.";
+            sleepMessage = "Unesi voisi olla parempi. Pyri nukkumaan vähintään 7 tuntia.";
         } else {
-            sleepMessage = "Great job! Your sleep duration is healthy.";
+            sleepMessage = "Hienoa! Unesi kesto on terveellistä.";
         }
 
-        
-       // Assign messages based on mood
-        let moodMessage = "";
-        if (["happy", "joyful", "excited"].some(m => mood.includes(m))) {
-            moodMessage = "It's great to see you feeling positive!";
-        } else if (["calm", "relaxed", "content"].some(m => mood.includes(m))) {
-            moodMessage = "You're feeling peaceful today, that's wonderful!";
-        } else if (["motivated", "proud", "grateful", "hopeful"].some(m => mood.includes(m))) {
-            moodMessage = "You're feeling empowered! Keep pushing forward and achieving great things!";
-        } else if (["stressed", "anxious", "worried", "overwhelmed"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling stressed? Take deep breaths and give yourself a break.";
-        } else if (["depressed", "sad", "lonely", "disappointed"].some(m => mood.includes(m))) {
-            moodMessage = "It's okay to have bad days. You are not alone. Reach out to someone who cares.";
-        } else if (["tired", "bored", "indifferent"].some(m => mood.includes(m))) {
-            moodMessage = "Maybe today feels slow, but tomorrow is a new opportunity! Take care of yourself.";
-        } else if (["angry", "frustrated"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling angry or frustrated? Try a deep breath or stepping away for a moment. You're stronger than this! 💪";
-        } else if (["confused", "nostalgic", "shy"].some(m => mood.includes(m))) {
-            moodMessage = "Feeling uncertain? It's okay. Take your time to reflect, and things will get clearer.";
-        } else {
-            moodMessage = "Thanks for sharing your mood! Remember, every feeling is valid. Keep taking care of yourself. 🌟";
-        }
+        let moodMessage = "Kiitos, että jaoit mielialasi!";
 
-        // Display diary entry summary in the popup
-        diaryPopup.innerHTML = `
-            <h3>Diary Entry Summary</h3>
-            <p><strong>Date:</strong> ${entryDate}</p>
-            <p><strong>Mood:</strong> ${mood.charAt(0).toUpperCase() + mood.slice(1)}</p>
-            <p><strong>Energy Level:</strong> ${energyLevel ? energyLevel : "Not provided"}</p>
-            <p><strong>Stress Level:</strong> ${stressLevel} (${stressCategory})</p>
-            <p><strong>Sleep Hours:</strong> ${sleepHours}</p>
-            <p><strong>Notes:</strong> ${notes ? notes : "No notes added."}</p>
-            <p><strong>Goals:</strong> ${goals ? goals : "No goals added."}</p>
-        `;
-
-        categoryText.textContent = `Stress Level: ${stressCategory}`;
-        analysisText.innerHTML = `
-            <h4>🧘🏻 Stress Level Insights:</h4>
-            <p>${stressMessage}</p>
-
-            <h4>💤 Sleep Analysis:</h4>
-            <p>${sleepMessage}</p>
-
-            <h4>🤔 Mood Reflection:</h4>
-            <p>${moodMessage}</p>
-
-            <p><strong>✨ Keep going! Every small step matters for your well-being.</strong></p>
-        `;
-
-        // Show the popup
-        popup.style.display = "block";
-
-        // Store entry in backend
-        const token = localStorage.getItem("token");
-        if (!token) {
-            alert("You must be logged in to save entries.");
-            return;
-        }
-
-        const url = "http://127.0.0.1:3000/api/entries"; // API endpoint
         const entryData = {
             entry_date: entryDate,
-            mood: mood,
+            mood,
             energy_level: energyLevel,
             stress_level: stressLevel,
             sleep_hours: sleepHours,
-            notes: notes,
-            goals: goals,
+            notes,
+            goals
         };
 
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Sinun täytyy olla kirjautuneena.");
+            submitBtn.disabled = false;
+            return;
+        }
+
         const response = await fetchData(url, {
-            method: "POST",
+            method,
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(entryData),
+            body: JSON.stringify(entryData)
         });
 
         if (response.error) {
-            console.error("Error saving diary entry!", response.error);
-            alert("There was an error saving your diary entry.");
+            console.error("Virhe päiväkirjamerkinnän tallentamisessa!", response.error);
+            alert("Päiväkirjamerkintää ei voitu tallentaa.");
+            submitBtn.disabled = false;
             return;
         }
 
-        console.log("Diary entry saved successfully!");
+        console.log("Päiväkirjamerkintä tallennettu onnistuneesti!");
+        console.log("API-vastaus:", response);
 
-        // Refresh diary entries
-        getEntries();
+        if (!entryId) {
+            diaryEntries.push({
+                entry_id: response.entry_id,
+                entry_date: entryDate,
+                mood,
+                energy_level: energyLevel,
+                stress_level: stressLevel,
+                sleep_hours: sleepHours,
+                notes,
+                goals
+            });
+        }
+
+        renderCalendar();
+        submitBtn.disabled = false;
+
+        diaryPopup.innerHTML = `
+        <p><strong>Päivämäärä:</strong> ${new Date(entryDate).toLocaleDateString("fi-FI")}</p>
+        <p><strong>Mieliala:</strong> ${mood}</p>
+        <p><strong>Energia:</strong> ${energyLevel}/10</p>
+        <p><strong>Stressi:</strong> ${stressLevel}/10 (${stressCategory})</p>
+        <p><strong>Uni:</strong> ${sleepHours}h</p>
+        ${notes ? `<p><strong>Muistiinpanot:</strong> ${notes}</p>` : ""}
+        ${goals ? `<p><strong>Tavoitteet:</strong> ${goals}</p>` : ""}
+      `;
+      
+
+      analysisText.innerHTML = `
+      <h4 class="analysis-title">Mitä tämä tarkoittaa?</h4>
+      <div class="analysis-body">
+        <p>🧘🏻 <strong>Stressi:</strong> ${stressMessage}</p>
+        <p>💤 <strong>Uni:</strong> ${sleepMessage}</p>
+        <p>🤔 <strong>Mieliala:</strong> ${moodMessage}</p>
+        <p class="encouragement">Jatka eteenpäin! Pienet askeleet vievät suuriin muutoksiin 🫶🏻</p>
+      </div>
+    `;
+    
+      
+
+        popup.style.display = "block";
+
+        await getEntries();
+        renderCalendar();
+
+        form.reset();
+        document.getElementById("entry_id").value = "";
     });
 
-    // Close popup event
     closeBtn.addEventListener("click", function () {
         popup.style.display = "none";
-        form.reset(); // Reset the form after closing the popup
     });
 });
-
-// Fetch existing diary entries
-const getEntries = async () => {
-    console.log("Fetching diary entries...");
-    const diaryContainer = document.getElementById("diary");
-
-    if (!diaryContainer) {
-        console.error("Diary container not found!");
-        return;
-    }
-
-    //const token = localStorage.getItem("token");
-    //if (!token) {
-       // console.error("No token found! Redirecting to login...");
-       // alert("You must be logged in to access this page.");
-      //  window.location.href = "login.html";
-       // return;
-   //}
-
-    const url = "http://127.0.0.1:3000/api/entries";
-    const response = await fetchData(url, {
-        method: "GET",
-        headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-        }
-    });
-
-    if (response.error) {
-        console.error("Error fetching diary data!", response.error);
-        return;
-    }
-
-    diaryContainer.innerHTML = "";
-    response.forEach((entry) => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-            <p><strong>Date:</strong> ${entry.entry_date}</p>
-            <p><strong>Mood:</strong> ${entry.mood}</p>
-            <p><strong>Energy Level:</strong> ${entry.energy_level}</p>
-            <p><strong>Stress Level:</strong> ${entry.stress_level}</p>
-            <p><strong>Sleep:</strong> ${entry.sleep_hours} hours</p>
-            <p><strong>Notes:</strong> ${entry.notes}</p>
-            <p><strong>Goals:</strong> ${entry.goals}</p>
-        `;
-        diaryContainer.appendChild(card);
-    });
-};
-
-export { getEntries };
