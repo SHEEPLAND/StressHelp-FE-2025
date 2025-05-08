@@ -195,7 +195,6 @@ content-type: application/json
 ## Käytetyt teknologiat ja työkalut
 
 - **Frontend**: HTML, CSS, JavaScript (Vanilla)
-- **JavaScript-kirjastot**: *Lisää tähän käyttämäsi javascript-kirjastot*
 - **Backend**: *Node.js + Express.js, Cors, JWT, Bcrypt.js*
 - **Tietokanta**: *MariaDB*
 - **Hosting**: Microsoft Azure (northeurope.cloudapp.azure.com)
@@ -217,9 +216,9 @@ content-type: application/json
 
 
 ### Rautalankamallit
+
 <div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
   <img src="./readme-img/prototype-1.png" alt="Rautalankamalli" style="max-width: 100%; border-radius: 4px;" />
-
   <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
     Kuva 11: Rautalankamalli
   </p>
