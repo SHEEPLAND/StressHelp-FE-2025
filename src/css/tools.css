@@ -228,8 +228,6 @@ nav {
   background-color: #e7e7e7;
 }
 
-
-
 .mobile-only {
   display: none;
 }
@@ -263,6 +261,7 @@ nav {
   margin-bottom: 1rem;
 }
 
+/* About section */
 .about {
   background-color: var(--secondary-color);
 }
@@ -315,6 +314,7 @@ nav {
   font-weight: 600;
 }  
 
+/* Info */
 .Info {
   background-color: var(--secondary-color);
 }
@@ -360,12 +360,11 @@ nav {
 
 }  
 
+/* Moretips */
 .moretips {
   background-color: var(--secondary-color);
 }
 
-
-/* Moretips */
 .tab-content {
   display: none;
   max-width: 1000px;
@@ -500,9 +499,7 @@ nav {
   color: #333;
 }
 
-
-
-
+/* Contact content */
 .statistics {
   background-color: #fbfbf6;
 }
@@ -580,6 +577,7 @@ nav {
   border-radius: 5px;
 }
 
+/* Footer content */
 .footer {
   background-color: #eae9dd;
   padding: 0.8rem 1rem 1rem;
@@ -620,6 +618,8 @@ nav {
 }
 
 
+
+/* Responsive & Feames*/
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

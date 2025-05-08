@@ -11,7 +11,7 @@
   --dark-color:#252525;
 }
 
-
+/* Basics */
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +19,6 @@
   scroll-behavior: smooth;
 }
 
-/* Basics */
 .section-container {
   max-width: var(--max-width);
   margin: auto;
@@ -773,7 +772,7 @@ border-color: #E15759 transparent transparent transparent;
   border-color: #585858;
 }
 
-
+  /* Footer*/
 .footer {
   background-color: #eae9dd;
   padding: 0.8rem 1rem 1rem;
@@ -817,7 +816,7 @@ border-color: #E15759 transparent transparent transparent;
   font-weight: bold;
 }
 
-
+  /* Keyframes & Responsive*/
 
 @keyframes arrow-bounce {
   0% { transform: translateX(0); }
@@ -891,8 +890,6 @@ nav {
 
 
 }
-
-
 
 @media (max-width: 900px) {
 

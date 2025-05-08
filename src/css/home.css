@@ -12,6 +12,8 @@
 
 }
 
+/* Basics */
+
 * {
   padding: 0;
   margin: 0;
@@ -108,6 +110,7 @@ header {
 
 }
 
+/* Navbar */
 nav {
   margin: auto; 
   padding: 1.3rem 1rem;
@@ -155,8 +158,6 @@ nav {
   transform: scale(1.05); 
 }
 
-
-
 .navigation-link a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
@@ -195,7 +196,6 @@ nav {
   
 }
 
-
 .arrow-up {
   width: 0;
   height: 0;
@@ -227,8 +227,6 @@ nav {
   background-color: #e7e7e7;
 }
 
-
-
 .mobile-only {
   display: none;
 }
@@ -242,7 +240,6 @@ nav {
   padding-block: 5rem 12rem;
   padding-top: 200px;
 }
-
 
 .header-container h1 {
   max-width: 900px;
@@ -271,6 +268,7 @@ nav {
 }
 
 
+/* About */
 .about {
   background-color: var(--secondary-color);
 }
@@ -325,7 +323,7 @@ nav {
   font-weight: 600;
 }
 
-
+/* Info */
 .Info {
   background-color: var(--secondary-color);
 }
@@ -335,8 +333,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  
-  
 }
 
 .Info-card img {
@@ -381,8 +377,7 @@ nav {
   display: block;
 }
 
-
-
+/* Buttons*/
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -432,7 +427,7 @@ nav {
   animation: arrow-bounce 0.4s ease forwards;
 }
 
-
+/* Footer */
 .footer {
   background-color: #eae9dd;
   padding: 0.8rem 1rem 1rem;
@@ -473,7 +468,7 @@ nav {
 
 
 
-
+/* Frames & Responsive */
 @keyframes arrow-bounce {
   0% { transform: translateX(0); }
   50% { transform: translateX(6px); }

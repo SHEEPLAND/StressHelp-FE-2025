@@ -12,7 +12,7 @@
   
   }
   
-
+/* Basics */
 * {
     padding: 0;
     margin: 0;
@@ -39,6 +39,7 @@ body {
     color: var(--white);
   }
 
+  /* Navbar */
   nav {
     margin: auto; 
     padding: 1.3rem 1rem;
@@ -86,7 +87,6 @@ body {
     transform: scale(1.05); 
   }
   
-  
   .navigation-link a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
@@ -124,7 +124,6 @@ body {
     z-index: 20;
 
   }
-  
   
   .arrow-up {
     width: 0;
@@ -167,6 +166,7 @@ body {
     font-size: 1.5rem;
   }
 
+  /* About & profile info */
   .about {
     display: flex;
     justify-content: center;
@@ -345,13 +345,8 @@ body {
   .profile-btn:hover::after {
     animation: arrow-bounce 0.4s ease forwards;
   }
-  
-  @keyframes arrow-bounce {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(6px); }
-    100% { transform: translateX(3px); }
-  }
 
+  /* Footer*/
 
 
   .footer {
@@ -390,6 +385,14 @@ body {
     border-top: 1px solid #ccc;
     margin-top: 2rem;
     font-weight: bold;
+  }
+
+
+  /* Keyframes & Responsive*/
+  @keyframes arrow-bounce {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+    100% { transform: translateX(3px); }
   }
   
   @media (width < 1200px) {

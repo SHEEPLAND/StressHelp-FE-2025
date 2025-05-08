@@ -14,7 +14,6 @@
   --border-radius-m: 30px;
 }
 
-
 * {
   padding: 0;
   margin: 0;
@@ -74,7 +73,6 @@ nav {
   background-color: rgba(4, 4, 4, 0.722);
 
 }
-
 
 .navigation-logo a {
   font-size: 2.2rem;
@@ -144,11 +142,9 @@ nav {
   
 }
 
-
 .profile-dropdown-content a:hover {
   background-color: #e7e7e7;
 }
-
 
 .arrow-up {
   width: 0;
@@ -186,7 +182,6 @@ nav {
   font-size: 1.5rem;
 }
 
-
 .question {
   background-color: #ffffffc5;
   border-left: 6px solid #E07A5F;
@@ -195,7 +190,6 @@ nav {
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
-
 
 .question label {
   display: flex;
@@ -219,13 +213,11 @@ nav {
   transform: translateX(3px);
 }
 
-
 .question p {
   margin-bottom: 0.8rem;
   font-size: 1rem;
   font-weight: 550;
 }
-
 
 input[type="radio"] {
   accent-color: var(--black);
@@ -257,15 +249,12 @@ input[type="radio"] {
   
 }
 
-
-
 .cta-btn:hover {
   background-color: #fbfbf6;
   transform: scale(1.05) translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   color: black;
 }
-
 
 .popup {
   display: none;
@@ -420,7 +409,6 @@ input[type="radio"] {
   line-height: 1.7;
   color: #333;
   margin-bottom: 1rem;
-  
 }
 
 .accordion ul {
@@ -501,7 +489,7 @@ font-weight: bold;
 
 
 
-/* Responsive Navbar */
+/* Responsive */
 @media (max-width: 1200px) {
   nav {
     position: fixed;
@@ -607,9 +595,11 @@ font-weight: bold;
     font-size: 0.95rem;
     border-radius: 15px;
   }
+
   .accordion h3 {
     font-size: 1.25rem;
   }
+
   .accordion ul li {
     font-size: 0.95rem;
   }
@@ -617,7 +607,6 @@ font-weight: bold;
   .submit-wrapper {
     padding: 1rem 1rem;
   }
- 
 
   .cta-btn {
     max-width: 400px;

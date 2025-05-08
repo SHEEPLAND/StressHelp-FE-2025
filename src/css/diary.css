@@ -10,14 +10,13 @@
   --white: #ffffff;
 }
 
-
+/* Basics */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
   font-family: monospace, sans-serif;
   overflow-x: hidden; 
@@ -43,6 +42,7 @@ body {
 }
 
 
+/* Navbar */
 nav {
   margin: auto; 
   padding: 1.3rem 1rem;
@@ -189,7 +189,6 @@ nav {
   letter-spacing: 10px
 }
 
-/* Form Styling */
 .forms {
   width: 100%;
 }
@@ -477,8 +476,7 @@ border-top-right-radius: var(--border-radius-m);
   color: #fec045;
 }
 
-
-
+/* Diary image */
 .image-below {
   height: 50%;
   display: flex;
@@ -534,7 +532,6 @@ border-top-right-radius: var(--border-radius-m);
 
 }
 
-
 .diary-text {
   background: #f8f8f8;
   padding: 10px;
@@ -559,7 +556,7 @@ border-top-right-radius: var(--border-radius-m);
   border-radius: var(--border-radius-s);
 }
 
-/* Close Button */
+/* Buttons */
 .close-button {
   font-size: 1rem;
   padding: 0.75rem 3rem;
@@ -574,7 +571,6 @@ border-top-right-radius: var(--border-radius-m);
   text-decoration: none; 
   display: inline-block;   
   cursor: pointer;
-  font-family: monospace, sans-serif;
 }
 
 .close-button:hover {
@@ -593,7 +589,6 @@ background: #ffb6b9;
 transition: background 0.3s ease; 
 border-radius: 16px;
 cursor: pointer;
-font-family: monospace, sans-serif;
 }
 
 .tips-button:hover {
@@ -679,7 +674,6 @@ color: white;
   cursor: pointer;
 }
 
-
   .popup-buttons {
     margin-top: 10px;
     display: flex;
@@ -762,7 +756,7 @@ color: white;
   
 
  
-/* Responsive Navbar */
+/* Responsive */
 @media (max-width: 1200px) {
   nav {
     position: fixed;
@@ -838,8 +832,6 @@ color: white;
 
 }
 
- 
-/* Responsive Navbar */
 @media (max-width: 900px) {
   .container {
     display: flex;
