@@ -153,9 +153,10 @@ body {
     white-space: nowrap;
   }
   
-  .profile-dropdown-content a:hover {
-    background-color: #f5f5f5;
-  }
+  
+.profile-dropdown-content a:hover {
+  background-color: #e7e7e7;
+}
   
   .mobile-only {
     display: none;

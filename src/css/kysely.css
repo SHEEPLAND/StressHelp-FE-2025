@@ -145,6 +145,11 @@ nav {
 }
 
 
+.profile-dropdown-content a:hover {
+  background-color: #e7e7e7;
+}
+
+
 .arrow-up {
   width: 0;
   height: 0;
@@ -217,7 +222,8 @@ nav {
 
 .question p {
   margin-bottom: 0.8rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 550;
 }
 
 
@@ -240,18 +246,17 @@ input[type="radio"] {
   gap: 12px;
   padding: 1.2rem 5rem;
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 550;
   border-radius: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color:var(--accent-orange);
+  background-color:#f4b08397;
   color: black;
-  border: 2px solid #fea386;
+  border: 2px solid #00000064;
+  font-family: monospace, sans-serif;
   
 }
-.cta-btn.primary {
-  border-color: #4d6b58;
-}
+
 
 
 .cta-btn:hover {
@@ -289,7 +294,7 @@ input[type="radio"] {
 .popup p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #444;
+  color: var(--black);
   margin-bottom: 1.2rem;
 }
 
@@ -347,6 +352,7 @@ input[type="radio"] {
   border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: monospace, sans-serif;
 }
 
 #close-popup:hover {

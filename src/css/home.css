@@ -403,8 +403,8 @@ nav {
   border: 2px solid;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color:#fea2867b;
-  color: rgba(0, 0, 0, 0.917);
+  background-color:#fea2866b;
+  color: black;
 }
 
 .cta-btn.primary {
