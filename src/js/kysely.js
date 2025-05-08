@@ -1,3 +1,4 @@
+// Function to calculate the stress level based on the survey responses
 function calculateStress() {
     let score = 0;
     const survey = document.forms["stressSurvey"];
@@ -33,7 +34,7 @@ function calculateStress() {
       return;
     }
   
-    // Luo tulosviesti
+   // loads the popup element and sets the message based on the score
     const popup = document.getElementById("popup");
     const stressMessage = document.getElementById("stressMessage");
   
@@ -53,7 +54,7 @@ function calculateStress() {
     popup.style.display = "block";
   }
   
- 
+  // Function to close the popup when the close button is clicked
   document.addEventListener("DOMContentLoaded", function () {
     const calculateBtn = document.getElementById("calculate-btn");
     const closeBtn = document.getElementById("close-popup");

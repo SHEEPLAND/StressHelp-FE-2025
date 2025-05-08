@@ -1,5 +1,6 @@
 let kubiosData = [];
 
+// Function to fetch Kubios data from the API
 const getKubiosData = async () => {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -62,6 +63,7 @@ const getKubiosData = async () => {
   }
 };
 
+// Function to render the latest summary
 function renderLatestSummary(latest) {
   const formatDate = (isoDate) =>
     new Date(isoDate).toLocaleDateString('fi-FI', {
@@ -78,6 +80,7 @@ function renderLatestSummary(latest) {
   document.getElementById("stress-index-value").textContent = `${latest.stress_index}`;
 
 
+  // Set the readiness category based on the readiness value
   const readinessCategory = document.getElementById("readiness-category");
 
   if (latest.readiness < 25) {
@@ -97,7 +100,7 @@ function renderLatestSummary(latest) {
   const stressText = document.getElementById("stress-level-text");
   let stressLevel = "", message = "";
 
-
+// Set the stress level and message based on the stress index value
   if (latest.readiness < 50) {
     stressLevel = "Stressi taso: Korkea";
     message = `<p style="color: #ff5555; font-weight: bold;">Suosittelemme vierailemaan 
@@ -117,6 +120,7 @@ function renderLatestSummary(latest) {
   recommendationContainer.innerHTML = message;
   stressText.insertAdjacentElement("afterend", recommendationContainer);
 
+ // Render the chart with the latest data
   const ctx = document.getElementById("resultsChart").getContext("2d");
   new Chart(ctx, {
     type: 'bar',
@@ -233,6 +237,7 @@ function renderLineChart(data) {
     stress_index: d.stress_index
   }));
 
+   // function to add line series to the chart
   function addLineSeries(field, color, label) {
     const series = chart.series.push(am5xy.LineSeries.new(root, {
       name: label,
@@ -291,7 +296,7 @@ function renderBarChart(data) {
   root = am5.Root.new("chartdiv");
  
  
-
+// Function to render the bar chart
   root.setThemes([am5themes_Animated.new(root)]);
 
   chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -330,7 +335,8 @@ function renderBarChart(data) {
     centerX: am5.p50,
     x: am5.p50
   }));
-
+  
+// function to add bar series to the chart
   function addBarSeries(field, color, label) {
     let numberFormat;
     if (field === "mean_hr_bpm") {
@@ -370,6 +376,7 @@ function renderBarChart(data) {
   chart.appear(1000, 100);
 }
 
+// Function to filter data by date range
 function filterByRange(range) {
   const now = new Date();
   let cutoff = new Date(now);

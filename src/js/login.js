@@ -1,12 +1,13 @@
 import { fetchData } from "./fetch.js";
 
+// Function to handle login form submission
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.querySelector(".login-form");
 
   const loginUser = async (event) => {
     event.preventDefault();
 
-    // Haetaan kenttien arvot
+    // Extract values input fields
     const username = document.querySelector("#login-username").value.trim();
     const password = document.querySelector("#login-pass").value.trim();
 
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const url = "https://stress-help.northeurope.cloudapp.azure.com/api/auth/login";
 
+// API Request Options
     const options = {
       method: "POST",
       headers: {
@@ -28,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       console.log("Lähetetään kirjautumispyyntö:", options);
       const response = await fetchData(url, options);
-
+      
+// Call the API using fetchData function
       if (response.error) {
         console.error("Kirjautumisvirhe:", response.error);
         alert("Virheelliset tunnistetiedot.");

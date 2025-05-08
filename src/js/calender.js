@@ -1,5 +1,6 @@
 import { fetchData } from "./fetch.js";
 
+// Get elements from the DOM
 const dateInput = document.getElementById("entry_date");
 const monthYear = document.getElementById("month-year");
 const calendarDates = document.getElementById("calendar-dates");
@@ -26,7 +27,7 @@ const monthNames = [
   "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"
 ];
 
-
+// Function to open year selector
 function openMonthSelector() {
   const month = prompt("Valitse kuukausi (1–12):");
   const num = parseInt(month);
@@ -48,6 +49,7 @@ function openYearSelector() {
 if (selectedMonthEl) selectedMonthEl.addEventListener("click", openMonthSelector);
 if (selectedYearEl) selectedYearEl.addEventListener("click", openYearSelector);
 
+// Function to format date string to YYYY-MM-DD
 function formatDateOnly(dateString) {
   const d = new Date(dateString);
   const year = d.getFullYear();
@@ -60,6 +62,7 @@ function hasEntryForDate(dateStr) {
   return diaryEntries.some(entry => formatDateOnly(entry.entry_date) === dateStr);
 }
 
+// Fetches diary entries
 async function getEntries() {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -90,6 +93,7 @@ async function getEntries() {
   renderCalendar();
 }
 
+// Renders the calendar
 function renderCalendar() {
   const year = date.getFullYear();
   const month = date.getMonth();
@@ -117,6 +121,8 @@ function renderCalendar() {
       year === today.getFullYear();
     const isSelected = dateInput && dateInput.value === fullDate;
 
+
+    // Function to get dot HTML based on stress level
     function getDotHTML(dateStr) {
       const entries = diaryEntries.filter(entry => formatDateOnly(entry.entry_date) === dateStr);
       if (entries.length === 0) return "";
@@ -144,6 +150,8 @@ function renderCalendar() {
   if (todayEl) todayEl.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+
+// Adds event listener to each date in the calendar
 calendarDates.addEventListener("click", (e) => {
   const dateElement = e.target.closest('.calendar-date');
   if (!dateElement) return;
@@ -255,6 +263,7 @@ function updateLiveTime() {
   }
 }
 
+// Updates the date in the today section
 function updateTodaySection() {
   const timeEl = document.getElementById("today-clock");
   const dateEl = document.getElementById("today-date");

@@ -1,6 +1,7 @@
 import { fetchData } from "./fetch.js";
 import { getEntries, diaryEntries, renderCalendar } from "./calender.js";
 
+// Handles the diary form submission: creates or updates an entry
 document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("entry_date");
     const form = document.querySelector(".diaryForm");
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+// Determine stress category and message based on stress level
         let stressCategory = "";
         let stressMessage = "";
 
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stressMessage = "Hallitset stressiä hyvin!";
         }
 
+ // Determine sleep message based on sleep hours
         let sleepMessage = "";
         if (sleepHours < 4) {
             sleepMessage = "Liian vähän unta! Paranna tapojasi.";
@@ -113,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderCalendar();
         submitBtn.disabled = false;
 
+// Show the popup with the entry details
         diaryPopup.innerHTML = `
         <p><strong>Päivämäärä:</strong> ${new Date(entryDate).toLocaleDateString("fi-FI")}</p>
         <p><strong>Mieliala:</strong> ${mood}</p>
@@ -123,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ${goals ? `<p><strong>Tavoitteet:</strong> ${goals}</p>` : ""}
       `;
       
-
+// Show the analysis based on the stress level and sleep hours
       analysisText.innerHTML = `
       <h4 class="analysis-title">Mitä tämä tarkoittaa?</h4>
       <div class="analysis-body">
@@ -133,9 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="encouragement">Jatka eteenpäin! Pienet askeleet vievät suuriin muutoksiin 🫶🏻</p>
       </div>
     `;
-    
-      
-
         popup.style.display = "block";
 
         await getEntries();

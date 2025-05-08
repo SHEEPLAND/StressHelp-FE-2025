@@ -56,10 +56,18 @@
 
 - *Käyttäjän henkilökohtainen Stressimittaus-osio, jossa käyttäjä voi seurata HRV-data ja mittaushistoriaa.*
 <div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
-  <img src="./readme-img/data.png" alt="Data" style="max-width: 100%; border-radius: 4px;" />
+  <img src="./readme-img/data-1.png" alt="Data" style="max-width: 100%; border-radius: 4px;" />
 
   <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
-    Kuva 4: Stressidatasivu
+    Kuva 4: Stressidatasivun viimeisin mittaustulos
+  </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
+  <img src="./readme-img/datahistoria.png" alt="Data" style="max-width: 100%; border-radius: 4px;" />
+
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
+    Kuva 5: Stressidatasivun mittaushistoria
   </p>
 </div>
 
@@ -69,7 +77,15 @@
   <img src="./readme-img/päiväkirja.png" alt="Päiväkirjasivu" style="max-width: 100%; border-radius: 4px;" />
 
   <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
-    Kuva 5: Päiväkirjasivu
+    Kuva 6: Päiväkirjasivu
+  </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
+  <img src="./readme-img/päiväkirja-2.png" alt="Päiväkirjasivu" style="max-width: 100%; border-radius: 4px;" />
+
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
+    Kuva 7: Päiväkirjasivu yhteenveto
   </p>
 </div>
 
@@ -77,12 +93,14 @@
 - *Sovelluksen Vinkit & tukisivu, jossa käyttäjä voi tutustua eri stressihallinta keinoihin.
 
 <div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
-  <img src="./readme-img/vinkit.png" alt="Vinkit & Tuki" style="max-width: 100%; border-radius: 4px;" />
+  <img src="./readme-img/Vinkki-2.png" alt="Vinkit & Tuki" style="max-width: 100%; border-radius: 4px;" />
 
   <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
     Kuva 6: Vinkit & Tuki
   </p>
 </div>
+
+
 
 
 - Sovelluksen Omat tiedotsivu, jossa käyttäjä voi tarkastella omia tietojaan.

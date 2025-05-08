@@ -1,5 +1,6 @@
 import { fetchData } from "./fetch.js";
 
+//loads the latest diary entry from the API and updates the HTML elements with the data
 document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem('token');
   if (!token) {
@@ -27,7 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const latest = data.sort((a, b) => new Date(b.entry_date) - new Date(a.entry_date))[0];
 
-  // Päivitetään HTML-elementit
+  
+  // Update the HTML elements with the latest entry data
   document.getElementById("latest-date").textContent = formatDate(latest.entry_date);
   document.getElementById("latest-stress").textContent = latest.stress_level || "-";
   document.getElementById("latest-notes").textContent = latest.notes || "-";
