@@ -37,6 +37,7 @@ body {
 body {
     font-family: monospace, sans-serif;
     color: var(--white);
+    
   }
 
   /* Navbar */
@@ -46,8 +47,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    background-color:rgb(20, 19, 19);
-  
     position: fixed;
     top: 0;
     width: 100%;

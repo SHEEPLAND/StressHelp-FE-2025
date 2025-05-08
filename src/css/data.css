@@ -297,6 +297,7 @@ nav {
 .about-content .paragraph{
   color: var(--text-dark);
   line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .about-table .section-subheader {
