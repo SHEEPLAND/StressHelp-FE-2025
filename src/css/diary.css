@@ -627,7 +627,7 @@ color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffffc5;
+  background: var(--secondary-color);
   padding: 30px;
   border-radius: var(--border-radius-s);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
@@ -635,7 +635,6 @@ color: white;
   max-width: 95%;
   z-index: 9999;
 }
-
 #history-popup-content {
   max-height: 400px;
   overflow-y: auto;
@@ -649,7 +648,7 @@ color: white;
 }
 
 #history-popup .diary-popup {
-  background: #ffffffc5;
+  background: var(--white);
   border-radius: var(--border-radius-s);
   padding: 10px;
   margin-bottom: 10px;
