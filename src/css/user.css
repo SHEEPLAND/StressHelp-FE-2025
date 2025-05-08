@@ -484,7 +484,7 @@ body {
   
     .profile-info p {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       gap: 0.5rem;
       font-size: 0.9rem;
