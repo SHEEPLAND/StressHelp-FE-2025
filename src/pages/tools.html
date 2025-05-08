@@ -12,22 +12,25 @@
     <header>
       <!-- Navigation Links -->
       <nav>
-        <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+        <div class="navigation-logo"><a href="index.html">
+          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
         <ul class="navigation-links" id="navigation-links">
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & tuki</a></li>
     
           <li class="navigation-link profile-dropdown">
-            <button class="profile-button">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
           <!-- Profile Dropdown -->
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
-              <div class="profile-dropdown-content">
+              <div class="profile-dropdown-content" id="profile-menu">
+
                 <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
                 <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
               </div>
@@ -61,15 +64,15 @@
           <div class="about-list">
             <div class="about-item">
               <span><i class="ri-rest-time-line"></i></span>
-              <h4>Hyvinvointirutiinit</h4>
+              <h3>Hyvinvointirutiinit</h3>
             </div>
             <div class="about-item">
               <span><i class="ri-brain-line"></i></span>
-              <h4>Mindfulness ja meditaatio</h4>
+              <h3>Mindfulness ja meditaatio</h3>
             </div>
             <div class="about-item">
               <span><i class="ri-task-line"></i></span>
-              <h4>Tavoitteet ja suunnitelmat </h4>
+              <h3>Tavoitteet ja suunnitelmat </h3>
 
             </div>
           </div>
@@ -84,40 +87,40 @@
           <h2 class="section-header">Pienet asiat, suuri vaikutus</h2>
           <div class="Info-grid">
             <div class="Info-card">
-              <img src="../img/family-conversation-isolated-cartoon-vector-illustration.png" alt="Info" />
-              <h4>🌼 Yhteydenpito läheisiin</h4>
+              <img src="../img/family-conversation-isolated-cartoon-vector-illustration.png" alt="Yhteydenpito läheisiin" />
+              <h3>🌼 Yhteydenpito läheisiin</h3>
               <p>Yhteydenpito tuo tukea ja iloa. Soita tai viestittele läheisillesi päivittäin.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../img/hand-drawn-notebook-with-flowers-flat-style.png" alt="Info" />
-              <h4>📝 Kirjoittaminen</h4>
+              <img src="../img/hand-drawn-notebook-with-flowers-flat-style.png" alt="Kirjoittaminen" />
+              <h3>📝 Kirjoittaminen</h3>
               <p>Kirjoita ajatuksia ja tavoitteita. Se selkeyttää mieltä ja helpottaa tunteiden käsittelyä.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../img/5.png" alt="Info" />
-              <h4>🌿 Luonnossa oleminen</h4>
+              <img src="../img/5.png" alt="Luonnossa oleminen" />
+              <h3>🌿 Luonnossa oleminen</h3>
               <p>Käy kävelyllä tai istu hiljaisessa ulkotilassa. Nauti raikkaasta ilmasta ja selkeytä ajatuksiasi.</p>
 
             </div>
 
             <div class="Info-card">
-                <img src="../img/flat-character-illustration-night-dream.png" alt="Info" />
-                <h4>😴 Unen priorisointi</h4>
+                <img src="../img/flat-character-illustration-night-dream.png" alt="Uni" />
+                <h3>😴 Unen priorisointi</h3>
                 <p>7–9 tuntia laadukasta unta tukee palautumista ja jaksamista.</p>
 
             </div>
 
             <div class="Info-card">
-                <img src="../img/vector-illustration-fruits-vegetables-healthy-food-isolated-design.png" alt="Info" />
-                <h4>🍎 Syö ravinteikkaasti</h4>
+                <img src="../img/vector-illustration-fruits-vegetables-healthy-food-isolated-design.png" alt="Syö monipuolisesti " />
+                <h3>🍎 Syö ravinteikkaasti</h3>
                 <p>Syö monipuolisesti ja muista juoda vettä – keho ja mieli kiittävät.</p>
             </div>
 
             <div class="Info-card">
-                <img src="../img/smartphone-playing-music-break-time-cozy-autumn-working-days-concept.png" alt="Info" />
-                <h4> 🎼 Rentoudu mieluisilla tavoilla</h4>
+                <img src="../img/smartphone-playing-music-break-time-cozy-autumn-working-days-concept.png" alt="Musiikkia" />
+                <h3> 🎼 Rentoudu mieluisilla tavoilla</h3>
                 <p>Kuuntele musiikkia, lue tai ota kylpy – tärkeintä on oma rauhoittumisen tapa.</p>
             </div>
 
@@ -143,7 +146,7 @@
       
             <!-- Breathing tab -->
             <div class="tab-content active" id="breathing-meditation">
-              <h4>Hengitys- ja meditaatioharjoitukset</h4>
+              <h3>Hengitys- ja meditaatioharjoitukset</h3>
               
               <p>
                 Hengitys- ja meditaatioharjoitukset auttavat rauhoittamaan kehoa ja mieltä. Ne ovat helppo tapa pysähtyä ja palautua arjen keskellä.
@@ -185,7 +188,7 @@
       
             <!-- Meditation tab -->
             <div class="tab-content" id="music">
-              <h4>Rauhoittava musiikki ja äänimaisemat</h4>
+              <h3>Rauhoittava musiikki ja äänimaisemat</h3>
 
               <p>
                 Musiikki voi laskea sykettä, vähentää stressiä ja luoda rauhallisen tunnelman. Se toimii nopeana keinona palautua kiireestä.
@@ -225,7 +228,7 @@
             </div>              
             
             <div class="tab-content" id="movement">
-              <h4>Arjen aktiivisuus</h4>
+              <h3>Arjen aktiivisuus</h3>
               <p>Pienetkin liikkeet, kuten kävely, venyttely tai vaikkapa lempiharrastuksesi, voivat virkistää mieltä ja lievittää stressiä tehokkaasti.</p>
             
               <div class="video-section">
@@ -249,7 +252,7 @@
 
             <!-- Apps tab -->
             <div class="tab-content" id="apps">
-              <h4>Sovellukset avuksi</h4>
+              <h3>Sovellukset avuksi</h3>
               <p>Erilaiset hyvinvointisovellukset voivat auttaa sinua rentoutumaan, nukkumaan paremmin ja hallitsemaan stressiä arjessa.</p>
               <p>Kokeile esimerkiksi meditaatioappeja, hengitysharjoituksia tai äänimaisemia tarjoavia sovelluksia – ne kulkevat aina mukanasi.</p>
             
@@ -288,23 +291,23 @@
           </p>
           <div class="statistics-grid">
             <div class="statistics-card">
-              <span><i class="ri-building-4-line"></i></span>
-              <h4>MIELI ry:n Kriisipuhelin</h4>
+              <span><i class="ri-phone-line"></i></span>
+              <h3>MIELI ry:n Kriisipuhelin</h3>
               <p><a href="tel:0925250111">📞 09 2525 0111</a> – Avoinna 24/7.</p>
             </div>
             <div class="statistics-card">
-              <span><i class="ri-trophy-fill"></i></span>
-              <h4>Mielenterveyden keskusliitto</h4>
+              <span><i class="ri-emotion-happy-line"></i></span>
+              <h3>Mielenterveyden keskusliitto</h3>
               <p><a href="tel:020391920">📞 020 391 920</a> – Avoinna ma–pe klo 9–15</p>
             </div>
             <div class="statistics-card">
-              <span><i class="ri-trophy-fill"></i></span>
-              <h4>Nuorten Kriisipiste (HelsinkiMissio)</h4>
+              <span><i class="ri-user-heart-line"></i></span>
+              <h3>Nuorten Kriisipiste (HelsinkiMissio)</h3>
               <p><a href="tel:0453410583">📞 045 3410 583</a> – Avoinna ti–to klo 9–11</p>
             </div>
             <div class="statistics-card">
-              <span><i class="ri-user-fill"></i></span>
-              <h4>YTHS- Yleis- ja mielenterveyden palvelut</h4>
+              <span><i class="ri-hospital-line"></i></span>
+              <h3>YTHS- Yleis- ja mielenterveyden palvelut</h3>
               <p><a href="tel:0467101073">📞 046 710 1073</a> – Avoinna ma–to klo 8–15 pe klo 8–14</p>
             </div>
           </div>
@@ -321,7 +324,7 @@
       <footer class="footer">
         <div class="section-container footer-container">
           <div class="footer-section">
-            <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
+            <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h4>
             <p>
               StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
             </p>

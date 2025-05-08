@@ -309,7 +309,7 @@ nav {
   border-radius: 5px;
 }
 
-.about-item h4 {
+.about-item h3 {
   font-size: 1.2rem;
   font-weight: 600;
 }  
@@ -348,7 +348,7 @@ nav {
   color: var(--primary-color);
 }
 
-.Info-card h4 {
+.Info-card h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -379,7 +379,7 @@ nav {
   color: var(--text-dark);
 }
 
-.tab-content h4 {
+.tab-content h3 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -534,7 +534,7 @@ nav {
   color: var(--primary-color);
 }
 
-.statistics-card h4 {
+.statistics-card h3 {
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
@@ -588,13 +588,13 @@ nav {
   text-align: left;
 }
 
-.footer-section h5 a {
+.footer-section h4 a {
   font-size: 2.2rem;
   font-weight: 700;
   text-decoration: none;
 }
 
-.footer-section h5 {
+.footer-section h4 {
   text-align: center;
 }
 
@@ -734,7 +734,7 @@ nav {
     font-size: 0.95rem;
   }
 
-  .tab-content h4 {
+  .tab-content h3 {
     font-size: 1.3rem;
   }
 
@@ -806,7 +806,7 @@ nav {
     padding: 1rem;
   }
 
-  .tab-content h4 {
+  .tab-content h3 {
     font-size: 1.2rem;
   }
 

@@ -24,18 +24,18 @@
         <ul class="navigation-links" id="navigation-links">
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
           <!-- Profile dropdown-->
           <li class="navigation-link profile-dropdown">
-            <button class="profile-button">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
-              <div class="profile-dropdown-content">
+              <div class="profile-dropdown-content" id="profile-menu">
                 <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
                 <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
               </div>
@@ -109,7 +109,7 @@
             <div class="Info-grid">
               <div class="Info-card">
                 <img src="../img/freepik__background__22460.png" alt="Step 1">
-                <h4>Vaihe 1: Valmistele mittaus</h4>
+                <h3>Vaihe 1: Valmistele mittaus</h3>
                 <p>
                   Lataa puhelimeesi 
                   <a href="https://www.kubios.com/hrv-app/" target="_blank" rel="noopener" style="font-weight: bold; color: #0066cc;">
@@ -122,13 +122,13 @@
 
               <div class="Info-card">
                 <img src="../img/smartwatch-heart-rate-monitoring-abstract-concept-vector-illustration.png" alt="Step 2">
-                <h4>Vaihe 2: Suorita mittaus</h4>
+                <h3>Vaihe 2: Suorita mittaus</h3>
                 <p>Käynnistä mittaus Kubios-sovelluksessa. Istu rauhassa paikallasi mittauksen ajan (noin 3–5 minuuttia).</p>
               </div>
 
               <div class="Info-card">
                 <img src="../img/online-shopping-store-physical-shop-isolated-graphics.png" alt="Step 3">
-                <h4>Vaihe 3: Seuraa tuloksia</h4>
+                <h3>Vaihe 3: Seuraa tuloksia</h3>
                 <p>Näet mittaustulokset täällä StressHelpissä. Voit myös lisätä päiväkirjamerkintöjä ja seurata hyvinvointisi kehitystä.</p>
               </div>
             </div>
@@ -150,8 +150,8 @@
           <!-- Stat cards -->
           <div class="statistics-grid">
             <div class="statistics-card">
-              <span><i class="ri-building-4-line"></i></span>
-              <h4 id="readiness-value">--%</h4>
+              <span><i class="ri-battery-charge-line"></i></span>
+              <h3 id="readiness-value">--%</h3>
               <p>Valmiusindeksi (%)</p>
               <div class="tooltiptext tooltip-readiness">
                 Kuvaa kehosi valmiutta selviytyä haasteista. Perustuu HRV-arvoihin ja stressitasoon.
@@ -160,8 +160,8 @@
             </div>
 
             <div class="statistics-card">
-              <span><i class="ri-trophy-fill"></i></span>
-              <h4 id="stress-index-value">--</h4>
+              <span><i class="ri-alert-line"></i></span>
+              <h3 id="stress-index-value">--</h3>
               <p>Stressi-indeksi</p>
               <div class="tooltiptext tooltip-stressi-indeksi">
                 Korkea arvo = korkea stressi, matala HRV.
@@ -169,8 +169,8 @@
             </div>
 
             <div class="statistics-card">
-              <span><i class="ri-user-fill"></i></span>
-              <h4 id="rmssd-value">-- ms</h4>
+              <span><i class="ri-brain-line"></i></span>
+              <h3 id="rmssd-value">-- ms</h3>
               <p>RMSSD – sykevälivaihtelu</p>
               <div class="tooltiptext tooltip-RMSSD">
                 Korkea arvo = hyvä palautuminen, aktiivinen parasympaattinen hermosto.
@@ -179,7 +179,7 @@
 
             <div class="statistics-card">
               <span><i class="ri-heart-pulse-line"></i></span>
-              <h4 id="mean-hr-value">-- bpm</h4>
+              <h3 id="mean-hr-value">-- bpm</h3>
               <p>Keskisyke (BPM)</p>
               <div class="tooltiptext tooltip-Syke">
                 Matala leposyke = hyvä kunto ja palautuminen.
@@ -238,11 +238,11 @@
     <footer class="footer">
       <div class="section-container footer-container">
         <div class="footer-section">
-          <h5>
+          <h4>
             <a href="index.html">
               <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
             </a>
-          </h5>
+          </h4>
           <p>
             StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
           </p>

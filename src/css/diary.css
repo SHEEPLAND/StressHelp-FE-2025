@@ -730,13 +730,13 @@ color: white;
     text-align: left;
   }
   
-  .footer-section h5 a {
+  .footer-section h4 a {
     font-size: 2.2rem;
     font-weight: 700;
     text-decoration: none;
   }
   
-  .footer-section h5 {
+  .footer-section h4 {
     text-align: center;
   }
   
@@ -839,43 +839,48 @@ color: white;
  
 /* Responsive Navbar */
 @media (max-width: 900px) {
-  
-
   .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  padding: 0.5rem;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 2rem;
   }
 
   .calendar {
-      max-width: 100%;
-    }
-    
+    max-width: 100%;
+  }
+
   .image-below img {
-      max-width: 250px;
-      justify-content: center;
-    }
+    max-width: 250px;
+    justify-content: center;
+  }
 
   .form-container {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
   }
 
   .form-container h1 {
-      text-align: center;
-    }
+    text-align: center;
+  }
 
   .left-side {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .calendar-top {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   #menu-btn-icon {
@@ -893,48 +898,144 @@ color: white;
   .popup {
     width: 70%;
   }
-
 }
 
 
-@media (max-width: 900px) {
-  .left-side,
-  .form-container {
+@media (max-width: 500px) {
+  .calendar {
     width: 100%;
-    padding: 1rem;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .calendar-header {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  .calendar-days,
+  .calendar-dates {
+    gap: 2px;
+    padding: 5px;
+  }
+
+  .calendar-date {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .calendar-date.today,
+  .calendar-date.selected {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .calendar-date .dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+  }
+
+  .calendar-footer-box {
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+  }
+
+
+  .month-year-selector {
+    font-size: 1rem;
+  }
+
+
+  #calendar-legend {
+    gap: 1rem;
+    font-size: 0.8rem;
   }
 
   .calendar-top {
-    padding-top: 1rem;
-    margin-bottom: 1rem;
+    padding-top: 3rem;
   }
 
-  .form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .form-container h1 {
-    text-align: center;
-  }
-
-  .left-side {
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 600px) {
   .popup {
     width: 90%;
-}
+    padding: 20px 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Popup content */
+  .popup-content {
+    padding: 15px 10px;
+  }
+  
+  /* Diary popup text */
+  .diary-popup {
+    padding: 12px;
+    font-size: 0.75rem;
+  }
+  
+  /* Diary text area */
+  .diary-text {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  /* Category text */
+  .category-text {
+    margin: 12px 0;
+    font-size: 0.85rem;
+  }
+  
+  /* Analysis section */
+  .analysis {
+    margin: 12px 0;
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  
+  /* Analysis title */
+  .analysis-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Analysis body */
+  .analysis-body {
+    line-height: 1.5;
+  }
+  
+  .analysis-body p {
+    margin-bottom: 12px;
+  }
+  
+  /* Encouragement text */
+  .encouragement {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Close button */
+  .close-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Tips button */
+  .tips-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
 }
 
+
 @media (max-width: 400px) {
-  .form-input,
-  textarea {
-    padding: 10px;
-    font-size: 1rem;
+.form-input, textarea {
+  padding: 10px;
+  font-size: 1rem;
   }
 }
 

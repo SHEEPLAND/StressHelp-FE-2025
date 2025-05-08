@@ -15,23 +15,25 @@
 <body>
   <header>
     <nav>
-      <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+      <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a>
+      </div>
       <ul class="navigation-links" id="navigation-links">
 
         <li class="navigation-link"><a href="index.html">Etusivu</a></li>
         <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-        <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+        <li class="navigation-link"><a href="data.html">Stressidata</a></li>
         <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
         <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
         <li class="navigation-link profile-dropdown">
-          <button class="profile-button">
+          <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+
             <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
           </button>
         
           <div class="profile-dropdown-box">
             <div class="arrow-up"></div> 
-            <div class="profile-dropdown-content">
+            <div class="profile-dropdown-content" id="profile-menu">
               <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
               <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
@@ -48,7 +50,6 @@
     </nav>
 
     <div class="section-container header-container" id="home">
-      <h1></h1> <h3></h3> 
     </div>
 </header>
 
@@ -69,7 +70,7 @@
 <footer class="footer">
   <div class="section-container footer-container">
     <div class="footer-section">
-      <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
+      <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h4>
       <p>
         StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
       </p>

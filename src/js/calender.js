@@ -68,7 +68,7 @@ async function getEntries() {
     return;
   }
 
-  const url = "http://127.0.0.1:3000/api/entries";
+  const url = "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
   const response = await fetchData(url, {
     method: "GET",
     headers: {
@@ -190,7 +190,7 @@ calendarDates.addEventListener("click", (e) => {
         if (!token) return alert("Kirjaudu sisään.");
         if (!confirm("Poistetaanko merkintä?")) return;
 
-        const res = await fetch(`http://127.0.0.1:3000/api/entries/${entryId}`, {
+        const res = await fetch(`https://stress-help.northeurope.cloudapp.azure.com/api/entries/${entryId}`, {
           method: "DELETE",
           headers: { "Authorization": `Bearer ${token}` }
         });

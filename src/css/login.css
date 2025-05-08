@@ -13,8 +13,6 @@
     padding: 0;
     margin: 0;
   }
-
-  
   
   input, button {
     font-size: var(--normal-font-size);
@@ -94,8 +92,8 @@ nav {
     margin-inline: 1.5rem;
     padding: 2.5rem 1.5rem;
     border-radius: 1rem;
-    -webkit-backdrop-filter: blur(20px); 
-    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(45px); 
+    backdrop-filter: blur(45px); 
 }
 
   
@@ -124,8 +122,6 @@ nav {
     column-gap: 0.75rem;
     border-bottom: 2px solid var(--black-color);
   }
-  
-  
   
   .login-input {
     width: 100%;
@@ -167,24 +163,25 @@ nav {
   
   .login-info {
     font-size: 0.7rem;
-    color: #333;
+    color: black;
     margin-bottom: 1.5rem;
-    text-align: center;
-    line-height: 1.4;
-    font-weight: 500;
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 600;
   }
   
   
   /* Login Button */
   .login-button {
     width: 100%;
-    padding: 0.2rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
-    background-color: var(--white-color);
+    background-color: white;
     box-shadow: 4px 4px 15px rgba(44, 76, 44, 0.3);
-    font-weight: var(--font-medium);
+    font-weight: bold;
     cursor: pointer;
     margin-bottom: 2rem;
+    color: black;
   }
   
   /* Register Section */
@@ -222,10 +219,5 @@ nav {
     .login-title {
       font-size: 1.5rem;
     }
-
-    .login-info{
-      font-weight:bold;
-    }
   }
-  
  

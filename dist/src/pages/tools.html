@@ -6,31 +6,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Stressivinkit</title>
-    <script type="module" crossorigin src="../../assets/tools-D8fpJFJ4.js"></script>
+    <script type="module" crossorigin src="../../assets/tools-c8LNoSfy.js"></script>
     <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
     <link rel="modulepreload" crossorigin href="../../assets/home-B7Iwr7-j.js">
-    <link rel="stylesheet" crossorigin href="../../assets/tools-BMASTI_N.css">
+    <link rel="stylesheet" crossorigin href="../../assets/tools-COYB_QnO.css">
   </head>
   <body>
     <header>
       <!-- Navigation Links -->
       <nav>
-        <div class="navigation-logo"><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></span></a></div>
+        <div class="navigation-logo"><a href="index.html">
+          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a></div>
         <ul class="navigation-links" id="navigation-links">
           <li class="navigation-link"><a href="index.html">Etusivu</a></li>
           <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-          <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+          <li class="navigation-link"><a href="data.html">Stressidata</a></li>
           <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
           <li class="navigation-link"><a href="tools.html">Vinkit & tuki</a></li>
     
           <li class="navigation-link profile-dropdown">
-            <button class="profile-button">
+            <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
+
               <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
             </button>
           <!-- Profile Dropdown -->
             <div class="profile-dropdown-box">
               <div class="arrow-up"></div> 
-              <div class="profile-dropdown-content">
+              <div class="profile-dropdown-content" id="profile-menu">
+
                 <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
                 <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
               </div>
@@ -47,7 +50,6 @@
       </nav>
 
       <div class="section-container header-container" id="home">
-        <h1></h1> <h3></h3> 
       </div>
     </header>
 <!-- About section-->
@@ -60,24 +62,20 @@
             <p class="paragraph">
               Hyvinvointisi vaatii huomiota – sekä kehon että mielen tasolla. Tältä sivulta löydät käytännöllisiä vinkkejä ja harjoituksia stressinhallintaan sekä tarvittaessa yhteystiedot ammattiavun piiriin.
             </p>
-            <br />
-            <p class="paragraph">
-
-            </p>
           </div>
 
           <div class="about-list">
             <div class="about-item">
               <span><i class="ri-rest-time-line"></i></span>
-              <h4>Hyvinvointirutiinit</h4>
+              <h3>Hyvinvointirutiinit</h3>
             </div>
             <div class="about-item">
               <span><i class="ri-brain-line"></i></span>
-              <h4>Mindfulness ja meditaatio</h4>
+              <h3>Mindfulness ja meditaatio</h3>
             </div>
             <div class="about-item">
               <span><i class="ri-task-line"></i></span>
-              <h4>Tavoitteet ja suunnitelmat </h4>
+              <h3>Tavoitteet ja suunnitelmat </h3>
 
             </div>
           </div>
@@ -92,40 +90,40 @@
           <h2 class="section-header">Pienet asiat, suuri vaikutus</h2>
           <div class="Info-grid">
             <div class="Info-card">
-              <img src="../../assets/mindfulness-abstract-illustration-CGz5l7cq.png" alt="Info" />
-              <h4>🌼 Yhteydenpito läheisiin</h4>
+              <img src="../../assets/family-conversation-isolated-cartoon-vector-illustration-Cpq_2msd.png" alt="Yhteydenpito läheisiin" />
+              <h3>🌼 Yhteydenpito läheisiin</h3>
               <p>Yhteydenpito tuo tukea ja iloa. Soita tai viestittele läheisillesi päivittäin.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../../assets/hand-drawn-notebook-with-flowers-flat-style-C6wlHwOl.png" alt="Info" />
-              <h4>📝 Kirjoittaminen</h4>
+              <img src="../../assets/hand-drawn-notebook-with-flowers-flat-style-C6wlHwOl.png" alt="Kirjoittaminen" />
+              <h3>📝 Kirjoittaminen</h3>
               <p>Kirjoita ajatuksia ja tavoitteita. Se selkeyttää mieltä ja helpottaa tunteiden käsittelyä.</p>
             </div>
 
             <div class="Info-card">
-              <img src="../../assets/5-BszhIvLG.png" alt="Info" />
-              <h4>🌿 Luonnossa oleminen</h4>
+              <img src="../../assets/5-BszhIvLG.png" alt="Luonnossa oleminen" />
+              <h3>🌿 Luonnossa oleminen</h3>
               <p>Käy kävelyllä tai istu hiljaisessa ulkotilassa. Nauti raikkaasta ilmasta ja selkeytä ajatuksiasi.</p>
 
             </div>
 
             <div class="Info-card">
-                <img src="../../assets/flat-character-illustration-night-dream-2BA1DM4l.png" alt="Info" />
-                <h4>😴 Unen priorisointi</h4>
+                <img src="../../assets/flat-character-illustration-night-dream-2BA1DM4l.png" alt="Uni" />
+                <h3>😴 Unen priorisointi</h3>
                 <p>7–9 tuntia laadukasta unta tukee palautumista ja jaksamista.</p>
 
             </div>
 
             <div class="Info-card">
-                <img src="../../assets/vector-illustration-fruits-vegetables-healthy-food-isolated-design-DkJtNYFt.png" alt="Info" />
-                <h4>🍎 Syö ravinteikkaasti</h4>
+                <img src="../../assets/vector-illustration-fruits-vegetables-healthy-food-isolated-design-DkJtNYFt.png" alt="Syö monipuolisesti " />
+                <h3>🍎 Syö ravinteikkaasti</h3>
                 <p>Syö monipuolisesti ja muista juoda vettä – keho ja mieli kiittävät.</p>
             </div>
 
             <div class="Info-card">
-                <img src="../../assets/smartphone-playing-music-break-time-cozy-autumn-working-days-concept-d7-qdo_m.png" alt="Info" />
-                <h4> 🎼 Rentoudu mieluisilla tavoilla</h4>
+                <img src="../../assets/smartphone-playing-music-break-time-cozy-autumn-working-days-concept-d7-qdo_m.png" alt="Musiikkia" />
+                <h3> 🎼 Rentoudu mieluisilla tavoilla</h3>
                 <p>Kuuntele musiikkia, lue tai ota kylpy – tärkeintä on oma rauhoittumisen tapa.</p>
             </div>
 
@@ -151,7 +149,7 @@
       
             <!-- Breathing tab -->
             <div class="tab-content active" id="breathing-meditation">
-              <h4>Hengitys- ja meditaatioharjoitukset</h4>
+              <h3>Hengitys- ja meditaatioharjoitukset</h3>
               
               <p>
                 Hengitys- ja meditaatioharjoitukset auttavat rauhoittamaan kehoa ja mieltä. Ne ovat helppo tapa pysähtyä ja palautua arjen keskellä.
@@ -172,11 +170,11 @@
                   </div>
               
                   <div>
-                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/krBvzDlL0mM', '_blank')">
-                      <img src="https://img.youtube.com/vi/krBvzDlL0mM/0.jpg" alt="Meditation" />
+                    <div class="yt-thumbnail" onclick="window.open('https://youtu.be/92xTPH7OtLs', '_blank')">
+                      <img src="https://img.youtube.com/vi/92xTPH7OtLs/0.jpg" alt="Hengitysharjoitus">
                       <span class="play-icon">▶</span>
                     </div>
-                    <p class="video-caption">Meditaatio (10 min)</p>
+                    <p class="video-caption">Hengitysharjoitusanimaatio (3 min)</p>
                   </div>
 
 
@@ -193,7 +191,7 @@
       
             <!-- Meditation tab -->
             <div class="tab-content" id="music">
-              <h4>Rauhoittava musiikki ja äänimaisemat</h4>
+              <h3>Rauhoittava musiikki ja äänimaisemat</h3>
 
               <p>
                 Musiikki voi laskea sykettä, vähentää stressiä ja luoda rauhallisen tunnelman. Se toimii nopeana keinona palautua kiireestä.
@@ -206,7 +204,7 @@
               
                   <div>
                     <div class="yt-thumbnail" onclick="window.open('https://youtu.be/erkhEsH14aI', '_blank')">
-                      <img src="https://img.youtube.com/vi/erkhEsH14aI/0.jpg" alt="5 Minute Meditation" />
+                      <img src="https://img.youtube.com/vi/erkhEsH14aI/0.jpg" alt="Musiikki rentouttavalla taajuudella" />
                       <span class="play-icon">▶</span>
                     </div>
                     <p class="video-caption">Musiikki rentouttavalla taajuudella</p>
@@ -214,7 +212,7 @@
 
                   <div>
                     <div class="yt-thumbnail" onclick="window.open('https://youtu.be/3NycM9lYdRI', '_blank')">
-                      <img src="https://img.youtube.com/vi/3NycM9lYdRI/0.jpg" alt="Music">
+                      <img src="https://img.youtube.com/vi/3NycM9lYdRI/0.jpg" alt="Rentouttava pianomusiikki">
                       <span class="play-icon">▶</span>
                     </div>
                     <p class="video-caption">Rentouttava pianomusiikki</p>
@@ -222,7 +220,7 @@
 
                   <div>
                     <div class="yt-thumbnail" onclick="window.open('https://youtu.be/1ZYbU82GVz4', '_blank')">
-                      <img src="https://img.youtube.com/vi/1ZYbU82GVz4/0.jpg" alt="Music">
+                      <img src="https://img.youtube.com/vi/1ZYbU82GVz4/0.jpg" alt="Musiikki nukahtamiseen">
                       <span class="play-icon">▶</span>
                     </div>
                     <p class="video-caption">Musiikki nukahtamiseen ja stressinpoistoon</p>
@@ -233,118 +231,103 @@
             </div>              
             
             <div class="tab-content" id="movement">
-              <h4>Arjen aktiivisuus</h4>
-              
-              <p>
-              Pienetkin liikkeet, kuten kävely, venyttely tai vaikkapa lempiharrastuksesi, voivat virkistää mieltä ja lievittää stressiä tehokkaasti.
-              </p>
-              
-
+              <h3>Arjen aktiivisuus</h3>
+              <p>Pienetkin liikkeet, kuten kävely, venyttely tai vaikkapa lempiharrastuksesi, voivat virkistää mieltä ja lievittää stressiä tehokkaasti.</p>
+            
               <div class="video-section">
                 <div class="video-grid">
-                  <div class="yt-thumbnail">
-                    <img src="../img/liikunta-kuvitus.png" alt="Liikunta ja hyvinvointi" />
+                  <div class="thumbnail">
+                    <img src="../../assets/human-daily-activity-concept-vector-illustration-DCZqOYKL.png" alt="Puutarhanhoito tai kasvien hoito" />
                     <p class="video-caption">Puutarhanhoito tai kasvien hoito</p>
                   </div>
-
-                  <div class="yt-thumbnail">
-                    <img src="../img/liikunta-kuvitus.png" alt="Liikunta ja hyvinvointi" />
+                  <div class="thumbnail">
+                    <img src="../../assets/woman-green-shirt-holding-cleaning-brush-bottle-O4oBOlNd.png" alt="Siivous tai järjestelyhetki" />
                     <p class="video-caption">Siivous tai järjestelyhetki</p>
                   </div>
-
-                  <div class="yt-thumbnail">
-                    <img src="../img/liikunta-kuvitus.png" alt="Liikunta ja hyvinvointi" />
+                  <div class="thumbnail">
+                    <img src="../../assets/freepik__background__963-3bBI4FwU.png" alt="Löydä oma harrastuksesi" />
                     <p class="video-caption">Löydä oma harrastuksesi</p>
                   </div>
                 </div>
               </div>
-
-              
             </div>
+            
 
             <!-- Apps tab -->
             <div class="tab-content" id="apps">
-              <h4>Sovellukset avuksi</h4>
-              <p>
-                Erilaiset hyvinvointisovellukset voivat auttaa sinua rentoutumaan, nukkumaan paremmin ja hallitsemaan stressiä arjessa.
-              </p>
-              <p>
-                Kokeile esimerkiksi meditaatioappeja, hengitysharjoituksia tai äänimaisemia tarjoavia sovelluksia – ne kulkevat aina mukanasi.
-              </p>
-                
+              <h3>Sovellukset avuksi</h3>
+              <p>Erilaiset hyvinvointisovellukset voivat auttaa sinua rentoutumaan, nukkumaan paremmin ja hallitsemaan stressiä arjessa.</p>
+              <p>Kokeile esimerkiksi meditaatioappeja, hengitysharjoituksia tai äänimaisemia tarjoavia sovelluksia – ne kulkevat aina mukanasi.</p>
+            
               <div class="video-section">
                 <div class="video-grid">
-
-                  <div class="app-thumbnail" onclick="window.open('https://www.headspace.com/app')">
-                    <div class="logo-wrapper">
-                      <img src="../../assets/headspace-inc-logo-vector-CyHpzMC0.png" alt="Headspace logo" class="app-logo">
-                    </div>
+                  <div class="thumbnail" onclick="window.open('https://www.headspace.com/app')">
+                    <img src="../../assets/A456B828-E161-445D-AD78-F7AE09843087-qsTG4SBC.jpeg" alt="Headspace logo" />
                     <p class="video-caption">Headspace</p>
                   </div>
-
-                  <div class="app-thumbnail" onclick="window.open('https://www.happify.com', '_blank')">
-                    <div class="logo-wrapper">
-                    <img src="../../assets/happify-B_O0hK61.png" alt="Happify logo">
-                    </div>
+                  <div class="thumbnail" onclick="window.open('https://www.happify.com', '_blank')">
+                    <img src="../../assets/freepik__background__37329-BKBzlBn3.png" alt="Happify logo" />
                     <p class="video-caption">Happify</p>
                   </div>
-
-                  <div class="app-thumbnail" onclick="window.open('https://www.calm.com', '_blank')">
-                    <div class="logo-wrapper">
-                    <img src="data:image/svg+xml,%3csvg%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20128%20128'%20width='300'%20height='300'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M99.5%200h-71C12.76%200%200%2012.76%200%2028.5v71C0%20115.24%2012.76%20128%2028.5%20128h71c15.74%200%2028.5-12.76%2028.5-28.5v-71C128%2012.76%20115.24%200%2099.5%200z'%20fill='url(%23AppIcon_tsx__a)'%3e%3c/path%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M14.767%2048.77a34.046%2034.046%200%200%200-4.383%207.148c-1.182%202.609-2.073%205.41-2.544%208.32-2.262%2015.965%207.44%2018.505%209.094%2018.816%208.504.992%2014.767-3.643%2017.727-6.486%201.067%205.329%206.387%205.393%208.72%202.987.595-.614%201.072-1.368%201.442-2.154%201.384%205.037%205.815%203.322%206.336%203.098%202.47-.926%205.053-4.371%206.88-7.26%201.16%203.962%203.4%208.207%207.703%207.752%202.593-.063%209.095-6.984%209.696-6.081.6.747.76%202.119.72%204.166-.04%202.047%201.584%202.15%202.32%201.947%201.135-.315%201.85-2.557%203.039-4.506.932-1.528%201.627-2.393%202.552-3.411.466-.502%202.577-2.69%204.066-1.947%201.489.742%201.641%202.269%201.744%203.113.114.847.115%201.745.151%202.727-.043%203.39%201.547%203.869%201.996%203.994%203.679.995%203.907-5.933%206.606-8.504.253-.262%202.611-2.7%203.958%201.278%201.945%207.19%207.931%209.878%2015.989%205.88%201.495-.742%201.788-1.032%202.604-1.64a.788.788%200%200%200%20.317-.626v-.01a.783.783%200%200%200-1.165-.682l-.004.002c-.825.458-3.569%201.376-4.436%201.688-3.253.532-7.235.412-9.197-4.346-.591-1.434-1.176-2.725-2.187-4.082-1.143-1.534-4.885-3.36-8.38-.067-.908.833-1.578%201.755-2.16%202.674-.236.376-.455.754-.662%201.132l-.04-.15c-.309-1.066-1.297-5.005-5.405-5.645-.564-.046-2.85-.304-6.012%203.17-1.105%201.206-2.025%202.488-2.882%203.785l-.003.005c-.151-.705-.334-1.347-.515-1.628-2.687-4.141-6.757-.835-8.51.399-3.927%202.765-5.748%206.483-8.142-1.962a35.352%2035.352%200%200%201-.743-3.63c2.386-4.06%207.243-16.413%204.455-24.695-.181-.523-1.153-3.196-3.486-3.024-.335.033-2.993-.247-4.446%207.193-1.36%207.192-1.06%2016.462-.73%2019.535.038.319.107.948.231%201.77-2.3%203.942-5.32%208.424-7.16%208.632-2.39.272-1.724-1.935-3.184-6.838-.251-.636-1.057-3.667-4.685-3.516-1.774.073-3.653.536-6.218%203.346-4.164%204.562-13.662%2011.424-20.455%207.112-.738-.574-4.408-3.58-3.056-12.584.4-2.469%201.158-4.907%202.179-7.183a31.758%2031.758%200%200%201%203.73-6.293c6.98-8.585%2013.024-9.588%2014.217-9.536%203.06%200%203.854%203.966%203.851%203.93a1.266%201.266%200%201%200%202.519-.246c-.006-.035.006-1.296-.518-2.494-.479-1.56-1.858-3.01-2.661-3.545-.99-.69-2.301-1.059-3.846-1.059-4.44%200-10.81%203.042-17.027%2010.231zM60.493%2061.3c-.033-13.982%201.741-17.155%201.872-16.912.677%201.258%202.135%209.13-1.844%2017.735l-.029-.823zM37.474%2075.037c.052-3.7%204.652-6.025%205.887-3.45.101.21.17.448.235.682-.214.68-.3%201.778-1.023%203.267-.763%201.573-1.962%202.354-3.005%202.354-1.155%200-2.12-.956-2.093-2.853z'%20fill='%23fff'%20/%3e%3cdefs%3e%3clinearGradient%20id='AppIcon_tsx__a'%20x1='0'%20y1='0'%20x2='0'%20y2='128'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0'%20stop-color='%2360B4E7'%20/%3e%3cstop%20offset='1'%20stop-color='%236461E0'%20/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="Mindfulness Practice">
-                    </div>
+                  <div class="thumbnail" onclick="window.open('https://www.calm.com', '_blank')">
+                    <img src="data:image/svg+xml,%3csvg%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20128%20128'%20width='300'%20height='300'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M99.5%200h-71C12.76%200%200%2012.76%200%2028.5v71C0%20115.24%2012.76%20128%2028.5%20128h71c15.74%200%2028.5-12.76%2028.5-28.5v-71C128%2012.76%20115.24%200%2099.5%200z'%20fill='url(%23AppIcon_tsx__a)'%3e%3c/path%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M14.767%2048.77a34.046%2034.046%200%200%200-4.383%207.148c-1.182%202.609-2.073%205.41-2.544%208.32-2.262%2015.965%207.44%2018.505%209.094%2018.816%208.504.992%2014.767-3.643%2017.727-6.486%201.067%205.329%206.387%205.393%208.72%202.987.595-.614%201.072-1.368%201.442-2.154%201.384%205.037%205.815%203.322%206.336%203.098%202.47-.926%205.053-4.371%206.88-7.26%201.16%203.962%203.4%208.207%207.703%207.752%202.593-.063%209.095-6.984%209.696-6.081.6.747.76%202.119.72%204.166-.04%202.047%201.584%202.15%202.32%201.947%201.135-.315%201.85-2.557%203.039-4.506.932-1.528%201.627-2.393%202.552-3.411.466-.502%202.577-2.69%204.066-1.947%201.489.742%201.641%202.269%201.744%203.113.114.847.115%201.745.151%202.727-.043%203.39%201.547%203.869%201.996%203.994%203.679.995%203.907-5.933%206.606-8.504.253-.262%202.611-2.7%203.958%201.278%201.945%207.19%207.931%209.878%2015.989%205.88%201.495-.742%201.788-1.032%202.604-1.64a.788.788%200%200%200%20.317-.626v-.01a.783.783%200%200%200-1.165-.682l-.004.002c-.825.458-3.569%201.376-4.436%201.688-3.253.532-7.235.412-9.197-4.346-.591-1.434-1.176-2.725-2.187-4.082-1.143-1.534-4.885-3.36-8.38-.067-.908.833-1.578%201.755-2.16%202.674-.236.376-.455.754-.662%201.132l-.04-.15c-.309-1.066-1.297-5.005-5.405-5.645-.564-.046-2.85-.304-6.012%203.17-1.105%201.206-2.025%202.488-2.882%203.785l-.003.005c-.151-.705-.334-1.347-.515-1.628-2.687-4.141-6.757-.835-8.51.399-3.927%202.765-5.748%206.483-8.142-1.962a35.352%2035.352%200%200%201-.743-3.63c2.386-4.06%207.243-16.413%204.455-24.695-.181-.523-1.153-3.196-3.486-3.024-.335.033-2.993-.247-4.446%207.193-1.36%207.192-1.06%2016.462-.73%2019.535.038.319.107.948.231%201.77-2.3%203.942-5.32%208.424-7.16%208.632-2.39.272-1.724-1.935-3.184-6.838-.251-.636-1.057-3.667-4.685-3.516-1.774.073-3.653.536-6.218%203.346-4.164%204.562-13.662%2011.424-20.455%207.112-.738-.574-4.408-3.58-3.056-12.584.4-2.469%201.158-4.907%202.179-7.183a31.758%2031.758%200%200%201%203.73-6.293c6.98-8.585%2013.024-9.588%2014.217-9.536%203.06%200%203.854%203.966%203.851%203.93a1.266%201.266%200%201%200%202.519-.246c-.006-.035.006-1.296-.518-2.494-.479-1.56-1.858-3.01-2.661-3.545-.99-.69-2.301-1.059-3.846-1.059-4.44%200-10.81%203.042-17.027%2010.231zM60.493%2061.3c-.033-13.982%201.741-17.155%201.872-16.912.677%201.258%202.135%209.13-1.844%2017.735l-.029-.823zM37.474%2075.037c.052-3.7%204.652-6.025%205.887-3.45.101.21.17.448.235.682-.214.68-.3%201.778-1.023%203.267-.763%201.573-1.962%202.354-3.005%202.354-1.155%200-2.12-.956-2.093-2.853z'%20fill='%23fff'%20/%3e%3cdefs%3e%3clinearGradient%20id='AppIcon_tsx__a'%20x1='0'%20y1='0'%20x2='0'%20y2='128'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0'%20stop-color='%2360B4E7'%20/%3e%3cstop%20offset='1'%20stop-color='%236461E0'%20/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="Calm logo" />
                     <p class="video-caption">Calm</p>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div> 
         </div> 
       </section>
 
 
-     <!-- Professional help section --> 
-      <section class="statistics" id="statistics">
-        <div class="section-container statistics-wrapper">
-          <div class="statistics-box">
-            <p class="section-subheader"> Mielenterveys ja kriisiapu</p>
-            <h2 class="section-header">Ammattilaisapu</h2>
-            <p class="paragraph">
-              Jos stressi tuntuu ylivoimaiselta, kannattaa hakeutua terveydenhuollon ammattilaisen tai terapeutin puheille. He voivat tarjota työkaluja ja tukea stressin hallintaan.​
-            </p>
-            <div class="statistics-grid">
-              <div class="statistics-card">
-                <h4>MIELI ry:n Kriisipuhelin</h4>
-                <p>📞 092 525 0111 – Avoinna 24/7. </p>
-              </div>
-              <div class="statistics-card">
-                <h4>Mielenterveyden keskusliitto</h4>
-                <p>📞 020 391 920 – Avoinna ma–pe klo 9–15</p>
-              </div>
-              <div class="statistics-card">
-                <h4>YTHS- Yleis- ja mielenterveyden palvelut</h4>
-                <p>046 710 1073 - Avoinna ma–to klo 8–15, pe klo 8–14</p>
-              </div>
-
-              <div class="statistics-card">
-                <h4>Nuorten Kriisipiste (HelsinkiMissio)</h4>
-                <p>📞 045 3410 583 – Neuvonta ja ajanvaraus ti–to klo 9–11</p>
-              </div>
+     <!-- Professional help section -->
+      
+     <section class="statistics" id="statistics">
+      <div class="section-container statistics-container">
+        <div class="statistics-content">
+          <p class="section-subheader"> Mielenterveys ja kriisiapu</p>
+          <h2 class="section-header">Ammattilaisapu</h2>
+          <p class="paragraph">
+            Jos stressi tuntuu ylivoimaiselta, kannattaa hakeutua terveydenhuollon ammattilaisen tai terapeutin puheille. He voivat tarjota työkaluja ja tukea stressin hallintaan.​
+          </p>
+          <div class="statistics-grid">
+            <div class="statistics-card">
+              <span><i class="ri-phone-line"></i></span>
+              <h3>MIELI ry:n Kriisipuhelin</h3>
+              <p><a href="tel:0925250111">📞 09 2525 0111</a> – Avoinna 24/7.</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-emotion-happy-line"></i></span>
+              <h3>Mielenterveyden keskusliitto</h3>
+              <p><a href="tel:020391920">📞 020 391 920</a> – Avoinna ma–pe klo 9–15</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-user-heart-line"></i></span>
+              <h3>Nuorten Kriisipiste (HelsinkiMissio)</h3>
+              <p><a href="tel:0453410583">📞 045 3410 583</a> – Avoinna ti–to klo 9–11</p>
+            </div>
+            <div class="statistics-card">
+              <span><i class="ri-hospital-line"></i></span>
+              <h3>YTHS- Yleis- ja mielenterveyden palvelut</h3>
+              <p><a href="tel:0467101073">📞 046 710 1073</a> – Avoinna ma–to klo 8–15 pe klo 8–14</p>
             </div>
           </div>
-          
-          <div class="statistics-image">
-            <img src="../../assets/feedback-EgAnX3hn.png" alt="statistics" />
-          </div>
         </div>
-  
-  
-      </section>
+    
+        <div class="statistics-image">
+          <img src="../../assets/online-doctor-concept-C9NQcLqY.png" alt="statistics" />
+        </div>
+      </div>
+    </section>
+    
+
 
       <footer class="footer">
         <div class="section-container footer-container">
           <div class="footer-section">
-            <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h5>
+            <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></span></a></h4>
             <p>
               StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
             </p>

@@ -8,37 +8,36 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
   <title>Päiväkirja</title>
-  <script type="module" crossorigin src="../../assets/diary-DGSF4yc1.js"></script>
+  <script type="module" crossorigin src="../../assets/diary-C4_8MXvh.js"></script>
   <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="../../assets/home-B7Iwr7-j.js">
   <link rel="modulepreload" crossorigin href="../../assets/fetch-CfNAfVVD.js">
-  <link rel="stylesheet" crossorigin href="../../assets/diary-C3acpAu9.css">
+  <link rel="stylesheet" crossorigin href="../../assets/diary-DOVggITJ.css">
 </head>
 <body>
   <!-- Header and Navigation -->
   <header>
     <nav>
       <div class="navigation-logo">
-        <a href="index.html">
-          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
-        </a>
+        <a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a>
+
       </div>
 
       <ul class="navigation-links" id="navigation-links">
         <li class="navigation-link"><a href="index.html">Etusivu</a></li>
         <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-        <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+        <li class="navigation-link"><a href="data.html">Stressidata</a></li>
         <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
         <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
         <!-- Profile Dropdown -->
         <li class="navigation-link profile-dropdown">
-          <button class="profile-button">
+          <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
             <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
           </button>
           <div class="profile-dropdown-box">
             <div class="arrow-up"></div>
-            <div class="profile-dropdown-content">
+            <div class="profile-dropdown-content" id="profile-menu">
               <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
               <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
@@ -159,7 +158,7 @@
     <div class="popup-content">
       <h2>Päiväkirjamerkinnät <span id="popup-date"></span></h2>
       <div id="history-popup-content"></div>
-      <button class="close-button" id="close-history-popup">Close</button>
+      <button class="close-button" id="close-history-popup">Sulje</button>
     </div>
     <div id="diary"></div>
   </div>
@@ -168,11 +167,11 @@
   <footer class="footer">
     <div class="section-container footer-container">
       <div class="footer-section">
-        <h5>
+        <h4>
           <a href="index.html">
             <span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span>
           </a>
-        </h5>
+        </h4>
         <p>
           StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
         </p>        

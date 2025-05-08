@@ -9,35 +9,34 @@
      
     <title>Stressikysely</title>
 
-  <script type="module" crossorigin src="../../assets/kysely-CjCYlpve.js"></script>
+  <script type="module" crossorigin src="../../assets/kysely-CBeyziM8.js"></script>
   <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="../../assets/home-B7Iwr7-j.js">
-  <link rel="stylesheet" crossorigin href="../../assets/kysely-DPZ-yUKN.css">
+  <link rel="stylesheet" crossorigin href="../../assets/kysely-Cv3MLJ_U.css">
 </head>
 <body>
   <header>
     <nav>
       <div class="navigation-logo">
-        <a href="index.html">
-          <span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span>
-        </a>
+        <a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#ffffff;">Help</span></a>
+
       </div>
 
       <ul class="navigation-links" id="navigation-links">
         <li class="navigation-link"><a href="index.html">Etusivu</a></li>
         <li class="navigation-link"><a href="kysely.html">Itsearviointi</a></li>
-        <li class="navigation-link"><a href="data.html">Stressimittaus</a></li>
+        <li class="navigation-link"><a href="data.html">Stressidata</a></li>
         <li class="navigation-link"><a href="diary-page.html">Päiväkirja</a></li>
         <li class="navigation-link"><a href="tools.html">Vinkit & Tuki</a></li>
 
         <!-- Profile Dropdown -->
         <li class="navigation-link profile-dropdown">
-          <button class="profile-button">
+          <button class="profile-button" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" id="profile-button">
             <i class="ri-user-line"></i> <span>Käyttäjä</span> <i class="ri-arrow-down-s-line"></i>
           </button>
           <div class="profile-dropdown-box">
             <div class="arrow-up"></div> 
-            <div class="profile-dropdown-content">
+            <div class="profile-dropdown-content" id="profile-menu">
               <a href="user-info.html"><i class="ri-user-settings-line"></i> Omat tiedot</a>
               <a href="login.html" id="login-link"><i class="ri-login-box-line"></i> Kirjaudu sisään</a>
             </div>
@@ -144,13 +143,16 @@
                 <label><input type="radio" name="q10" value="3"> Melko usein</label><br>
                 <label><input type="radio" name="q10" value="4"> Hyvin usein</label><br>
             </div>
-            <button type="button" id="calculate-btn">Lasketaan stressitasosi</button>
+            <div class="submit-wrapper">
+              <button type="button" id="calculate-btn" class="cta-btn primary">Tarkastele tulosta</button>
+            </div>
+            
         </form>
 
 
         <div class="accordion">
-          <h3>Miten kyselyn tulokset arvioidaan?</h3>
-          <p>Tämä kysely perustuu Perceived Stress Scale (PSS) -kyselyyn.</p>
+          <h3><i class="ri-bar-chart-line"></i> Miten kyselyn tulokset arvioidaan?</h3>
+          <p>Tämä kysely perustuu <span lang="en">Perceived Stress Scale</span>-kyselyyn.</p>
           <p>Stressitasosi määräytyy yleisesti ottaen seuraavasti:</p>
           <ul>
             <li><strong>Matala stressitaso:</strong> Alle 16 pistettä</li>
@@ -178,7 +180,7 @@
     <footer class="footer">
       <div class="section-container footer-container">
         <div class="footer-section">
-          <h5><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></a></h5>
+          <h4><a href="index.html"><span style="color:#4faae6;">Stress</span><span style="color:#000000;">Help</span></a></h4>
           <p>
             StressHelp tukee sinua stressinhallinnassa – seuraa hyvinvointiasi, tee itsearviointeja ja löydä keinoja palautumiseen.
           </p>          
