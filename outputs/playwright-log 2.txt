@@ -40,3 +40,4 @@ Call log:
 {"level":30,"time":"2025-05-08T15:37:16.241Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Start of node method takeScreenshot"}
 {"level":30,"time":"2025-05-08T15:37:16.242Z","pid":36474,"hostname":"Henna-MacBook-Air.local","Take screenshot with options: ":{"path":"/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/screenshot/fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
 {"level":30,"time":"2025-05-08T15:37:16.483Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-05-08T18:54:54.272Z","pid":36474,"hostname":"Henna-MacBook-Air.local","msg":"Removed page=0064fca4-46ea-439f-accd-4664efd946a9 from context=42353007-c31a-4eb1-a8c0-07a06f0f6531 page stack"}

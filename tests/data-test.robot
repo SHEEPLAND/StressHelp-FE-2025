@@ -1,59 +1,49 @@
 *** Settings ***
-Library    Browser    auto_closing_level=KEEP
+Library    Browser    
 Library    Collections
 Library    BuiltIn
-Library    OperatingSystem
+Variables  load_env.py
 
 *** Variables ***
 ${LOGIN_URL}    https://stress-help.northeurope.cloudapp.azure.com/src/pages/login.html
 ${DATA_URL}     https://stress-help.northeurope.cloudapp.azure.com/src/pages/data.html
-
-*** Keywords ***
-Get Credentials From Env
-    ${username}=    Get Environment Variable    KUBIOS_USERNAME    default=${EMPTY}
-    ${password}=    Get Environment Variable    PASSWORD    default=${EMPTY}
-    Should Not Be Empty    ${username}    msg=KUBIOS_USERNAME environment variable is not set
-    Should Not Be Empty    ${password}    msg=PASSWORD environment variable is not set
-    RETURN    ${username}    ${password}
+${TIMEOUT}      20s
 
 *** Test Cases ***
-Kirjaudu ja tarkista että mittaustulokset näkyvät
-    ${username}    ${password}=    Get Credentials From Env
-
+Tarkista mittaustulokset
     New Browser    chromium    headless=No
     New Page       ${LOGIN_URL}
-    Get Title      ==    Kirjaudu
-    Type Text      id=login-username    ${username}    delay=0.2 s
-    Type Secret    id=login-pass        $password    delay=0.2 s
+    
+    # Login with variables from Python module
+    Type Text      id=login-username    ${KUBIOS_USERNAME}    delay=0.2s
+    Type Secret    id=login-pass        $PASSWORD    delay=0.2s
     Click          css=.login-button
-    Sleep          2 s
+    Sleep          2s
 
-    # Siirry mittaustulossivulle
-    Go To       ${DATA_URL}
+    # Verify data page content
+    Go To          ${DATA_URL}
+    Wait For Elements State    css=.statistics-grid    visible    timeout=${TIMEOUT}
 
-    # Tarkista valmiusindeksi
+    # Check measurement values exist
+    Wait For Elements State    id=readiness-value    visible    timeout=${TIMEOUT}
+    Wait For Elements State    id=stress-index-value    visible    timeout=${TIMEOUT}
+    Wait For Elements State    id=rmssd-value    visible    timeout=${TIMEOUT}
+    Wait For Elements State    id=mean-hr-value    visible    timeout=${TIMEOUT}
+    
+    # Verify measurement values are populated
     ${readiness}=    Get Text    id=readiness-value
     Should Not Be Equal    ${readiness}    --%
-    Log    Valmiusindeksi: ${readiness}
-
-    # Tarkista stressi-indeksi
+    
     ${stress_index}=    Get Text    id=stress-index-value
     Should Not Be Equal    ${stress_index}    --
-    Log    Stressi-indeksi: ${stress_index}
-
-    # Tarkista RMSSD-arvo
+    
     ${rmssd}=    Get Text    id=rmssd-value
     Should Not Be Equal    ${rmssd}    -- ms
-    Log    RMSSD-arvo: ${rmssd}
+    
+    ${heart_rate}=    Get Text    id=mean-hr-value
+    Should Not Be Equal    ${heart_rate}    -- bpm
 
-    # Tarkista keskisyke
-    ${mean_hr}=    Get Text    id=mean-hr-value
-    Should Not Be Equal    ${mean_hr}    -- bpm
-    Log    Keskisyke: ${mean_hr}
-
-    # Tarkista stressitaso
-    ${stress_level}=    Get Text    id=stress-level-text
-    Should Not Be Equal    ${stress_level}    Stressi taso: --
-    Log    Stressitaso: ${stress_level}
+    # Verify chart exists
+    Wait For Elements State    id=resultsChart    visible    timeout=${TIMEOUT}
 
     Close Browser

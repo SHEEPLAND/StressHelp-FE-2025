@@ -1,149 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.10 on darwin)" generated="2025-05-08T20:46:53.141910" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.10.10 on darwin)" generated="2025-05-09T12:00:11.957388" rpa="false" schemaversion="5">
 <suite id="s1" name="Data-Test" source="/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/tests/data-test.robot">
-<test id="s1-t1" name="Kirjaudu ja tarkista että mittaustulokset näkyvät" line="20">
-<kw name="Get Credentials From Env">
-<kw name="Get Environment Variable" owner="OperatingSystem">
-<msg time="2025-05-08T20:46:53.839962" level="INFO">${username} = henna.tuovinen@metropolia.fi</msg>
-<var>${username}</var>
-<arg>KUBIOS_USERNAME</arg>
-<arg>default=${EMPTY}</arg>
-<doc>Returns the value of an environment variable with the given name.</doc>
-<status status="PASS" start="2025-05-08T20:46:53.837273" elapsed="0.002768"/>
-</kw>
-<kw name="Get Environment Variable" owner="OperatingSystem">
-<msg time="2025-05-08T20:46:53.844721" level="INFO">${password} = Testisalasana3623</msg>
-<var>${password}</var>
-<arg>PASSWORD</arg>
-<arg>default=${EMPTY}</arg>
-<doc>Returns the value of an environment variable with the given name.</doc>
-<status status="PASS" start="2025-05-08T20:46:53.843662" elapsed="0.001135"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-08T20:46:53.845548" level="INFO">Length is 28.</msg>
-<arg>${username}</arg>
-<arg>msg=KUBIOS_USERNAME environment variable is not set</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-08T20:46:53.845068" elapsed="0.000598"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-05-08T20:46:53.848381" level="INFO">Length is 17.</msg>
-<arg>${password}</arg>
-<arg>msg=PASSWORD environment variable is not set</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-05-08T20:46:53.845916" elapsed="0.002598"/>
-</kw>
-<return>
-<value>${username}</value>
-<value>${password}</value>
-<status status="PASS" start="2025-05-08T20:46:53.848677" elapsed="0.004355"/>
-</return>
-<msg time="2025-05-08T20:46:53.855280" level="INFO">${username} = henna.tuovinen@metropolia.fi</msg>
-<msg time="2025-05-08T20:46:53.855474" level="INFO">${password} = Testisalasana3623</msg>
-<var>${username}</var>
-<var>${password}</var>
-<status status="PASS" start="2025-05-08T20:46:53.835400" elapsed="0.020182"/>
-</kw>
+<test id="s1-t1" name="Tarkista mittaustulokset" line="13">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-05-08T20:46:53.861175" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/traces/temp/fcf4a3a7-a2b9-493d-ba1b-45e1fdc07bba"}</msg>
-<msg time="2025-05-08T20:46:53.920277" level="INFO">Starting Browser process /Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js using at 127.0.0.1:58791</msg>
-<msg time="2025-05-08T20:46:58.047845" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/traces/temp/fcf4a3a7-a2b9-493d-ba1b-45e1fdc07bba"}</msg>
+<msg time="2025-05-09T12:00:12.500360" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/traces/temp/69b77765-3315-40c9-9970-8c1d5f58a3fc"}</msg>
+<msg time="2025-05-09T12:00:12.569894" level="INFO">Starting Browser process /Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/.venv/lib/python3.10/site-packages/Browser/wrapper/index.js using at 127.0.0.1:56173</msg>
+<msg time="2025-05-09T12:00:16.716161" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/browser/traces/temp/69b77765-3315-40c9-9970-8c1d5f58a3fc"}</msg>
 <arg>chromium</arg>
 <arg>headless=No</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-05-08T20:46:53.858480" elapsed="4.190099"/>
+<status status="PASS" start="2025-05-09T12:00:12.498478" elapsed="4.218580"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-05-08T20:47:00.120587" level="INFO">Successfully initialized new page object and opened url: https://stress-help.northeurope.cloudapp.azure.com/src/pages/login.html</msg>
-<msg time="2025-05-08T20:47:00.120840" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2025-05-09T12:00:18.550549" level="INFO">Successfully initialized new page object and opened url: https://stress-help.northeurope.cloudapp.azure.com/src/pages/login.html</msg>
+<msg time="2025-05-09T12:00:18.550700" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${LOGIN_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-05-08T20:46:58.049831" elapsed="2.071704"/>
-</kw>
-<kw name="Get Title" owner="Browser">
-<msg time="2025-05-08T20:47:00.168541" level="INFO">Title: 'Kirjaudu'</msg>
-<arg>==</arg>
-<arg>Kirjaudu</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-08T20:47:00.122100" elapsed="0.047175"/>
+<status status="PASS" start="2025-05-09T12:00:16.718368" elapsed="1.832622"/>
 </kw>
 <kw name="Type Text" owner="Browser">
-<msg time="2025-05-08T20:47:00.172335" level="INFO">Types the text 'henna.tuovinen@metropolia.fi' in the given field.</msg>
+<msg time="2025-05-09T12:00:18.553361" level="INFO">Types the text 'henna.tuovinen@metropolia.fi' in the given field.</msg>
 <arg>id=login-username</arg>
-<arg>${username}</arg>
-<arg>delay=0.2 s</arg>
+<arg>${KUBIOS_USERNAME}</arg>
+<arg>delay=0.2s</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-05-08T20:47:00.170465" elapsed="6.700514"/>
+<status status="PASS" start="2025-05-09T12:00:18.551568" elapsed="6.152447"/>
 </kw>
 <kw name="Type Secret" owner="Browser">
 <arg>id=login-pass</arg>
-<arg>$password</arg>
-<arg>delay=0.2 s</arg>
+<arg>$PASSWORD</arg>
+<arg>delay=0.2s</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given secret from ``variable_name`` into the text field
 found by ``selector``.</doc>
-<status status="PASS" start="2025-05-08T20:47:06.872432" elapsed="3.595538"/>
+<status status="PASS" start="2025-05-09T12:00:24.704606" elapsed="3.620808"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-05-08T20:47:10.469219" level="INFO">Clicks the element 'css=.login-button'.</msg>
+<msg time="2025-05-09T12:00:28.327201" level="INFO">Clicks the element 'css=.login-button'.</msg>
 <arg>css=.login-button</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-05-08T20:47:10.468480" elapsed="0.088178"/>
+<status status="PASS" start="2025-05-09T12:00:28.326097" elapsed="0.083024"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-08T20:47:12.560001" level="INFO">Slept 2 seconds.</msg>
-<arg>2 s</arg>
+<msg time="2025-05-09T12:00:30.413112" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-08T20:47:10.557035" elapsed="2.003266"/>
+<status status="PASS" start="2025-05-09T12:00:28.409646" elapsed="2.003684"/>
 </kw>
 <kw name="Go To" owner="Browser">
-<msg time="2025-05-08T20:47:14.638986" level="INFO">Successfully opened URL https://stress-help.northeurope.cloudapp.azure.com/src/pages/data.html</msg>
+<msg time="2025-05-09T12:00:33.138506" level="INFO">Successfully opened URL https://stress-help.northeurope.cloudapp.azure.com/src/pages/data.html</msg>
 <arg>${DATA_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Navigates to the given ``url``.</doc>
-<status status="PASS" start="2025-05-08T20:47:12.561289" elapsed="2.078035"/>
+<status status="PASS" start="2025-05-09T12:00:30.413925" elapsed="2.725326"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-09T12:00:53.406855" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-09T12:00:53.407519" level="INFO">See also file:///Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/playwright-log.txt for additional details.</msg>
+<msg time="2025-05-09T12:00:53.410203" level="FAIL">TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator('id=readiness-value') to be visible
+</msg>
+<arg>id=readiness-value</arg>
+<arg>visible</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-05-09T12:00:33.139932" elapsed="20.287434">TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator('id=readiness-value') to be visible
+</status>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>id=stress-index-value</arg>
+<arg>visible</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-05-09T12:00:53.428234" elapsed="0.000180"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>id=rmssd-value</arg>
+<arg>visible</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-05-09T12:00:53.428841" elapsed="0.000148"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>id=mean-hr-value</arg>
+<arg>visible</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-05-09T12:00:53.429307" elapsed="0.000131"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-05-08T20:47:24.912169" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-08T20:47:24.912493" level="INFO">See also file:///Users/hennatuovinen/Documents/GitHub/StressHelp-FE-2025/outputs/playwright-log.txt for additional details.</msg>
-<msg time="2025-05-08T20:47:24.913511" level="FAIL">TimeoutError: locator.elementHandle: Timeout 10000ms exceeded.
-Call log:
-  - waiting for locator('id=readiness-value')
-</msg>
 <var>${readiness}</var>
 <arg>id=readiness-value</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="FAIL" start="2025-05-08T20:47:14.640002" elapsed="10.288460">TimeoutError: locator.elementHandle: Timeout 10000ms exceeded.
-Call log:
-  - waiting for locator('id=readiness-value')
-</status>
+<status status="NOT RUN" start="2025-05-09T12:00:53.430080" elapsed="0.000458"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
 <arg>${readiness}</arg>
 <arg>--%</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.929379" elapsed="0.000312"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Valmiusindeksi: ${readiness}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.930285" elapsed="0.000207"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.431275" elapsed="0.000194"/>
 </kw>
 <kw name="Get Text" owner="Browser">
 <var>${stress_index}</var>
@@ -152,18 +131,13 @@ Call log:
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.930860" elapsed="0.000138"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.431857" elapsed="0.000144"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
 <arg>${stress_index}</arg>
 <arg>--</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.931313" elapsed="0.000278"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Stressi-indeksi: ${stress_index}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.932037" elapsed="0.000144"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.432298" elapsed="0.001192"/>
 </kw>
 <kw name="Get Text" owner="Browser">
 <var>${rmssd}</var>
@@ -172,71 +146,53 @@ Call log:
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.932490" elapsed="0.000131"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.435211" elapsed="0.000263"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
 <arg>${rmssd}</arg>
 <arg>-- ms</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.932920" elapsed="0.000124"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>RMSSD-arvo: ${rmssd}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.933397" elapsed="0.001249"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.436212" elapsed="0.000202"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<var>${mean_hr}</var>
+<var>${heart_rate}</var>
 <arg>id=mean-hr-value</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.935093" elapsed="0.000154"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.437473" elapsed="0.000174"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
-<arg>${mean_hr}</arg>
+<arg>${heart_rate}</arg>
 <arg>-- bpm</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.935557" elapsed="0.000139"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.438127" elapsed="0.000145"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Keskisyke: ${mean_hr}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.936129" elapsed="0.000155"/>
-</kw>
-<kw name="Get Text" owner="Browser">
-<var>${stress_level}</var>
-<arg>id=stress-level-text</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>id=resultsChart</arg>
+<arg>visible</arg>
+<arg>timeout=${TIMEOUT}</arg>
 <tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.936914" elapsed="0.000245"/>
-</kw>
-<kw name="Should Not Be Equal" owner="BuiltIn">
-<arg>${stress_level}</arg>
-<arg>Stressi taso: --</arg>
-<doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.937549" elapsed="0.000143"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Stressitaso: ${stress_level}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.938039" elapsed="0.000130"/>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-05-09T12:00:53.439858" elapsed="0.000197"/>
 </kw>
 <kw name="Close Browser" owner="Browser">
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-05-08T20:47:24.938713" elapsed="0.000174"/>
+<status status="NOT RUN" start="2025-05-09T12:00:53.440370" elapsed="0.000139"/>
 </kw>
-<status status="FAIL" start="2025-05-08T20:46:53.832452" elapsed="31.108116">TimeoutError: locator.elementHandle: Timeout 10000ms exceeded.
+<msg time="2025-05-09T12:00:53.523261" level="INFO">Switching context to context=27f8f2df-fd02-4b7c-ad3d-31f972c12aaf in CURRENT</msg>
+<msg time="2025-05-09T12:00:53.612540" level="INFO">Successfully changed active context: context=27f8f2df-fd02-4b7c-ad3d-31f972c12aaf</msg>
+<msg time="2025-05-09T12:00:53.721817" level="INFO">Successfully closed Context</msg>
+<status status="FAIL" start="2025-05-09T12:00:12.492617" elapsed="40.952582">TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
 Call log:
-  - waiting for locator('id=readiness-value')
+  - waiting for locator('id=readiness-value') to be visible
 </status>
 </test>
-<status status="FAIL" start="2025-05-08T20:46:53.144874" elapsed="31.807810"/>
+<status status="FAIL" start="2025-05-09T12:00:11.961917" elapsed="41.762778"/>
 </suite>
 <statistics>
 <total>

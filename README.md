@@ -137,15 +137,127 @@ Kirjaudu ja tallenna token
 
 ```
 
+# Tehtävä: Itsearviointikyselyn täyttäminen
+
+Tehtävässä testattiin itsearviointikyselyn täyttämistä ja lähettämistä Browser Libraryn avulla.
+
+## Testin toteutus
+
+Testitoteutus tehtiin tiedostossa `tests/questionnaire-test.robot`.
+
+```python
+*** Settings ***
+Library    Browser
+Library    Collections
+Library    BuiltIn
+
+*** Variables ***
+${URL}    https://stress-help.northeurope.cloudapp.azure.com/src/pages/kysely.html
+@{QUESTIONS}    q1    q2    q3    q4    q5    q6    q7    q8    q9    q10
+
+*** Test Cases ***
+Täytä Stressikysely Ja Tarkista Tulos
+    [Documentation]    Testaa kyselyn täyttämistä ja tuloksen tarkistamista.
+    New Browser    chromium
+    New Context
+    New Page    ${URL}
+    Wait For Elements State    css=form#stressSurvey    visible
+    Sleep    1s
+
+    ${total}=    Set Variable    0
+
+    FOR    ${question}    IN    @{QUESTIONS}
+        ${value}=    Evaluate    random.randint(0, 4)    modules=random
+        ${total}=    Evaluate    ${total} + ${value}
+        Log    Valitaan kysymykseen ${question} arvo ${value}, yhteensä: ${total}
+        Click Radio Button    ${question}    ${value}
+    END
+
+    Scroll To    css=button#calculate-btn
+    Sleep    0.5s
+    Click    css=button#calculate-btn
+
+    Wait For Elements State    css=div.popup    visible    timeout=5s
+    ${expected}=    Get Expected Stress Level    ${total}
+    ${message}=    Get Text    css=#stressMessage
+    Should Contain    ${message.lower()}    ${expected.lower()}
+
+    Click    css=#close-popup
+    Close Browser
+
+*** Keywords ***
+Click Radio Button
+    [Arguments]    ${name}    ${value}
+    Click    xpath=//input[@name='${name}' and @value='${value}']
+
+Get Expected Stress Level
+    [Arguments]    ${total}
+    Run Keyword If    ${total} < 16    Return From Keyword    matala
+    ...    ELSE IF    ${total} <= 26    Return From Keyword    kohtalainen
+    ...    ELSE    Return From Keyword    korkea
+```
+
+# Tehtävä: Stressivinkkien katselu ja yhteydenotto ammattilaisiin
+
+Tehtävässä testattiin stressivinkkisivun eri vinkkien katselua ja ammattilaisten yhteystietojen näkemistä Browser Libraryn avulla.
+
+## Testin toteutus
+
+Testitoteutus tehtiin tiedostossa `tests/tools-test.robot`.
+
+```python
+*** Settings ***
+Library    Browser    auto_closing_level=KEEP
+Library    Collections
+Library    BuiltIn
+
+*** Variables ***
+${TOOLS_URL}    https://stress-help.northeurope.cloudapp.azure.com/src/pages/tools.html
+${TIMEOUT}      10s
+
+*** Test Cases ***
+Tarkista vinkkisivun sisältö ja toiminnallisuus
+    New Browser    chromium    headless=No
+    New Context    viewport={'width': 1920, 'height': 1080}
+    New Page       ${TOOLS_URL}
+    
+    # Verify main headers using more specific selectors
+    Get Text    css=.about-content .section-header    ==    Ota aikaa itsellesi
+    Get Text    css=.Info .section-header    ==    Pienet asiat, suuri vaikutus
+    
+    # ... rest of the test case ...
+
+*** Keywords ***
+Verify Tab Content And Media
+    [Arguments]    ${tab_id}    ${expected_title}    ${expected_content}
+    Click          css=button[data-tab="${tab_id}"]
+    Sleep          1s
+    Wait For Elements State    css=#${tab_id}    visible    timeout=${TIMEOUT}
+    Get Text       css=#${tab_id} h3    ==    ${expected_title}
+    Get Text       css=#${tab_id} p    contains    ${expected_content}
+
+Verify Professional Help Section
+    Get Text       css=.statistics-content .section-header    ==    Ammattilaisapu
+    
+    # Verify crisis phone numbers with more specific selectors
+    ${content}=    Get Text    css=.statistics-grid
+    Should Contain    ${content}    MIELI ry:n Kriisipuhelin
+    Should Contain    ${content}    09 2525 0111
+    Should Contain    ${content}    Mielenterveyden keskusliitto
+    Should Contain    ${content}    020 391 920
+    Should Contain    ${content}    Nuorten Kriisipiste
+    Should Contain    ${content}    045 3410 583
+```
 
 ## Lopputulos
+
 Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
 - [Testiloki (log.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/log.html)
 
 - [Testiraportti (report.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/report.html)
 
--  Sisäänkirjautuminen epäonnistumisen varteen käytetään väärä tunnus tai salasana.
+-  Sisäänkirjautuminen epäonnistumisen varten käytetään väärä tunnus tai salasana.
 
 ## Tekoälyn käyttö
-Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
+Tehtävissä tekoälyä on käytetty testien kirjoittamiseen, virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
