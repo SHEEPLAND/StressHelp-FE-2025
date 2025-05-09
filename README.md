@@ -12,6 +12,12 @@
 - Frontend: [Frontend](https://github.com/SHEEPLAND/StressHelp-FE-2025)
 - Backend: [Backend](https://github.com/SHEEPLAND/StressHelp-BE-2025)
 
+### Sovellukseen on tehty parannuksia 9.5.2025
+- **Kirjautuminen** on nyt helpompaa
+- **Etusivun** painike, toinen kuvateksti ja linkit muuttuvat sen mukaan, onko käyttäjä kirjautunut sisään vai ei.
+- Stressitasot näytetään nyt sanallisina kuvauksina – kuten "matala", "kohtalainen" tai "korkea" – sekä **data- että päiväkirjasivulla.**
+- **Päiväkirjassa** lomakkeen numerokentät estävät nyt liian suurien arvojen syöttämisen.
+
 
 ## Kuvaus
 

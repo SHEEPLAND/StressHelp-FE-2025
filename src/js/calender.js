@@ -71,7 +71,7 @@ async function getEntries() {
     return;
   }
 
-  const url = "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
+  const url = "http://127.0.0.1:3000/api/entries";
   const response = await fetchData(url, {
     method: "GET",
     headers: {
@@ -151,7 +151,7 @@ function renderCalendar() {
 }
 
 
-// Adds event listener to each date in the calendar
+// Event listener to each date in the calendar
 calendarDates.addEventListener("click", (e) => {
   const dateElement = e.target.closest('.calendar-date');
   if (!dateElement) return;
@@ -177,14 +177,26 @@ calendarDates.addEventListener("click", (e) => {
       const card = document.createElement("div");
       card.className = "popup-entry-card";
 
+      let stressCategory = "Ei tietoa";
+      if (typeof entry.stress_level === "number") {
+        if (entry.stress_level >= 8) {
+          stressCategory = "Korkea stressi";
+        } else if (entry.stress_level >= 4) {
+          stressCategory = "Kohtalainen stressi";
+        } else {
+          stressCategory = "Normaali stressi";
+        }
+      }
+
       card.innerHTML = `
         <div class="popup-entry">
           <h4>Mieliala: ${entry.mood || "Ei ilmoitettu"}</h4>
           <p><strong>Energiataso:</strong> ${entry.energy_level ?? "Ei tietoa"}</p>
-          <p><strong>Stressitaso:</strong> ${entry.stress_level ?? "Ei tietoa"}</p>
+          <p><strong>Stressitaso:</strong> ${stressCategory}</p>
           <p><strong>Uni (tunnit):</strong> ${entry.sleep_hours ?? "Ei tietoa"}</p>
           <p><strong>Muistiinpanot:</strong> ${entry.notes || "Ei muistiinpanoja."}</p>
           <p><strong>Tavoitteet:</strong> ${entry.goals || "Ei tavoitteita."}</p>
+
           <div class="popup-buttons">
             <button class="modify-entry" data-id="${entry.entry_id}">✏️ Muokkaa</button>
             <button class="delete-entry" data-id="${entry.entry_id}">🗑️ Poista</button>
@@ -198,7 +210,7 @@ calendarDates.addEventListener("click", (e) => {
         if (!token) return alert("Kirjaudu sisään.");
         if (!confirm("Poistetaanko merkintä?")) return;
 
-        const res = await fetch(`https://stress-help.northeurope.cloudapp.azure.com/api/entries/${entryId}`, {
+        const res = await fetch(`http://127.0.0.1:3000/api/entries/${entryId}`, {
           method: "DELETE",
           headers: { "Authorization": `Bearer ${token}` }
         });

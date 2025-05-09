@@ -359,11 +359,6 @@ vertical-align: middle;
   border-bottom-right-radius: 12px;
 }
 
-#latest-stress {
-transition: all 0.3s ease;
-font-weight: bold;
-}
-
 .stress-low {
 color: #84ad83;     
 }
@@ -378,7 +373,6 @@ color: #c44747;
 
 /* Button styling for about list */
 
-/* Base button style */
 .btn {
   padding: 12px 26px;
   font-size: 0.9rem;
@@ -723,7 +717,7 @@ border-color: #E15759 transparent transparent transparent;
   width: 100%;
   padding: 12px 16px;
   padding-right: 50px; 
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: #f0f0f0;
   color: black;
   border: 2px solid #302d2f;

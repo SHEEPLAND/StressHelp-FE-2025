@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const entryId = document.getElementById("entry_id").value;
         const method = entryId ? "PUT" : "POST";
         const url = entryId
-            ? `https://stress-help.northeurope.cloudapp.azure.com/api/entries/${entryId}`
-            : "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
+            ? `http://127.0.0.1:3000/api/entries/${entryId}`
+            : "http://127.0.0.1:3000/api/entries";
 
         const entryDate = document.getElementById("entry_date").value;
         const mood = document.getElementById("mood").value.toLowerCase();

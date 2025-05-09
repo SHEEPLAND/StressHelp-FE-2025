@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       password,
     };
 
-    const url = "https://stress-help.northeurope.cloudapp.azure.com/api/auth/login";
+    const url = "http://127.0.0.1:3000/api/auth/login";
 
 // API Request Options
     const options = {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Kirjautuminen onnistui:", response.message);
         localStorage.setItem("token", response.token);
         localStorage.setItem("nimi", response.user.username);
-        alert("Kirjautuminen onnistui! Uudelleenohjataan...");
+        //alert("Kirjautuminen onnistui! Uudelleenohjataan...");
         window.location.href = "data.html";
       }
 

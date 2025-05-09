@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
   <title>Päiväkirja</title>
-  <script type="module" crossorigin src="../../assets/diary-DAQacvWG.js"></script>
+  <script type="module" crossorigin src="../../assets/diary-CgwAghod.js"></script>
   <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="../../assets/home-B7Iwr7-j.js">
   <link rel="modulepreload" crossorigin href="../../assets/fetch-CfNAfVVD.js">
@@ -115,13 +115,13 @@
           <input class="form-input" type="text" name="mood" id="mood" placeholder="Esim. Iloinen, stressaantunut, rentoutunut...">
 
           <label class="form-label" for="energy_level">Energiataso:</label>
-          <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+          <input class="form-input" type="number" name="energy_level" id="energy_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0" max="10" required>
 
           <label class="form-label" for="stress_level">Stressitaso:</label>
-          <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0">
+          <input class="form-input" type="number" name="stress_level" id="stress_level" placeholder="Asteikolla 1-10 (alhainen-korkea)" min="0" max="10" required>
 
           <label class="form-label" for="sleep_hours">Uni (tunteina):</label>
-          <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7 tuntia" min="0">
+          <input class="form-input" type="number" name="sleep_hours" id="sleep_hours" placeholder="Esim. 7 tuntia" min="0" required>
 
           <label class="form-label" for="notes">Muistiinpanoja:</label>
           <textarea class="form-input" id="notes" name="notes" rows="5"></textarea>

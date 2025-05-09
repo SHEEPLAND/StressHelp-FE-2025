@@ -399,7 +399,7 @@ nav {
   border: 2px solid;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color:#fea2866b;
+  background-color: #fea2866b;
   color: black;
 }
 
@@ -417,7 +417,6 @@ nav {
   transition: transform 0.3s ease;
 }
 
-
 .cta-btn:hover {
   background-color: #fbfbf6;
   transform: scale(1.05) translateY(-3px);
@@ -427,6 +426,23 @@ nav {
 .cta-btn:hover .arrow {
   animation: arrow-bounce 0.4s ease forwards;
 }
+
+.cta-btn.logged-in {
+  background-color: #a8c68697;
+  color: black;
+  border-color: #0c1b05;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cta-btn.logged-in:hover {
+  background-color: #fbfbf6;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
 
 /* Footer */
 .footer {
@@ -471,10 +487,11 @@ nav {
 
 /* Frames & Responsive */
 @keyframes arrow-bounce {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
-  100% { transform: translateX(3px); }
+  0% { transform: translateY(1px); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(1px); }
 }
+
 
 
 @media (width < 1200px) {

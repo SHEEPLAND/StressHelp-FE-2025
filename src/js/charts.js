@@ -4,12 +4,12 @@ let kubiosData = [];
 const getKubiosData = async () => {
   const token = localStorage.getItem("token");
   if (!token) {
-    alert("Sinun täytyy olla kirjautuneena nähdäksesi tämän datan.");
+    //alert("Sinun täytyy olla kirjautuneena nähdäksesi tämän datan.");
     window.location.href = "login.html";
     return;
   }
 
-  const url ="https://stress-help.northeurope.cloudapp.azure.com/api/kubios-data/user-data";
+  const url ="http://127.0.0.1:3000/api/kubios-data/user-data";
   
 
   try {
@@ -360,17 +360,20 @@ function renderBarChart(data) {
       width: am5.percent(90),
       tooltipY: 0,
       strokeOpacity: 0,
-      fill: am5.color(color)
+      fill: am5.color(color),
+
     });
+
+ 
 
     series.data.setAll(formattedData);
     legend.data.push(series);
   }
 
-  addBarSeries("readiness", 0x36a2eb, "Valmiusindeksi (%)");
-  addBarSeries("stress_index", 0xff6384, "Stressi-indeksi");
-  addBarSeries("rmssd_ms", 0x007bff, "RMSSD");
-  addBarSeries("mean_hr_bpm", 0xff9f40, "Keskisyke (BPM)");
+  addBarSeries("readiness", 0x4E79A7, "Valmiusindeksi (%)");
+  addBarSeries("stress_index", 0xE15759, "Stressi-indeksi");
+  addBarSeries("rmssd_ms", 0x76B7B2, "RMSSD");
+  addBarSeries("mean_hr_bpm", 0xF28E2B, "Keskisyke (BPM)");
  
 
   chart.appear(1000, 100);

@@ -181,6 +181,3 @@ window.addEventListener("resize", () => {
     }, 300);
   });
 });
-
-
-

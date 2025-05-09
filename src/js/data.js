@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
+  const url = "http://127.0.0.1:3000/api/entries";
   const options = {
     method: 'GET',
     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
@@ -31,8 +31,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   // Update the HTML elements with the latest entry data
   document.getElementById("latest-date").textContent = formatDate(latest.entry_date);
-  document.getElementById("latest-stress").textContent = latest.stress_level || "-";
   document.getElementById("latest-notes").textContent = latest.notes || "-";
+  let stressCategory = "-";
+  if (typeof latest.stress_level === "number") {
+    if (latest.stress_level >= 8) {
+      stressCategory = "Korkea stressi";
+    } else if (latest.stress_level >= 4) {
+      stressCategory = "Kohtalainen stressi";
+    } else {
+      stressCategory = "Normaali stressi";
+    }
+  }
+document.getElementById("latest-stress").textContent = stressCategory;
+
 });
 
 function formatDate(dateString) {
