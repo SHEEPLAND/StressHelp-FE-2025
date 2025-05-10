@@ -5,7 +5,7 @@
 ### Ryhmä 8
 
 ### Julkaistu Sovellus
-- [StressHelp](https://stress-help.northeurope.cloudapp.azure.com/src/pages/)
+- [StressHelp](https://stress-help.northeurope.cloudapp.azure.com/src/pages/index.html)
 
 ### Repository-linkit
 

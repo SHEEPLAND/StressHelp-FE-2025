@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const url = "http://127.0.0.1:3000/api/entries";
+  const url = "https://stress-help.northeurope.cloudapp.azure.com/api/entries";
   const options = {
     method: 'GET',
     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
